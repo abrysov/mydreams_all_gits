@@ -1,0 +1,16 @@
+---
+- name: nginx | update nginx config
+  template: src="nginx/site.conf.j2" dest=/etc/nginx/sites-available/default mode=0755
+  sudo: true
+  tags:
+    - dreams
+    - nginx
+    - balancer
+
+- name: nginx | enable app
+  file: src=/etc/nginx/sites-available/default dest=/etc/nginx/sites-enabled/default state=link
+  sudo: true
+  tags:
+    - dreams
+    - nginx
+    - balancer

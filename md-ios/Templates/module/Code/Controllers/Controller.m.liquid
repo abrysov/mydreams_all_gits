@@ -1,0 +1,29 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+#import "{{ prefix }}{{ module_info.name }}VC.h"
+#import "{{ prefix }}{{ module_info.name }}Logic.h"
+
+@interface {{ prefix }}{{ module_info.name }}VC ()
+@property (strong, nonatomic) {{ prefix }}{{ module_info.name }}Logic *logic;
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}VC
+@dynamic logic;
+
+- (void)bindUIWithLogics
+{
+    [super bindUIWithLogics];
+
+}
+
+#pragma mark - private
+
+-(IBAction)prepareForUnwind{{ module_info.name }}:(UIStoryboardSegue *)segue {}
+
+@end

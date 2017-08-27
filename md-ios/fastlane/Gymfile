@@ -1,0 +1,6 @@
+scheme "MyDreams"
+clean true
+use_legacy_build_api true
+
+output_directory "./build"
+output_name "MyDreams"

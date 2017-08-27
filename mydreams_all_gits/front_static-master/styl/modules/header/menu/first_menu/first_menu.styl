@@ -1,0 +1,60 @@
+.first_menu
+  position relative
+  display block
+  font-family Roboto
+  padding remify(20px) remify(15px) 0
+  clearfix()
+
+  &__left
+    float left
+
+  &__right
+    float right
+
+  .show-head_feed
+    color white
+    cursor pointer
+    float left
+    position relative
+    font-size 0.46rem
+    height 2.3rem
+    transition opacity base-speed ease-out
+    font-family RobotoLight
+
+    &:hover
+      opacity 0.7
+
+    &::after
+      content ''
+      position absolute
+      left 0
+      top 0
+      display block
+      width 100%
+      height 100%
+      background asset_url("icons/feed_open.svg") center center no-repeat
+
+    &.is-open::after
+      content ''
+      position absolute
+      left 0
+      top 0
+      display block
+      width 100%
+      height 100%
+      background asset_url("icons/feed_close.svg") center center no-repeat
+
+
+  .spotlight-link
+    cursor pointer
+    width remify(30px)
+    height remify(30px)
+    margin-left remify(30px)
+    background asset_url("icons/search.svg") center center no-repeat
+    transition opacity base-speed ease-out
+    position absolute
+    top 12px
+    left 73px
+
+    &:hover
+      opacity 0.6

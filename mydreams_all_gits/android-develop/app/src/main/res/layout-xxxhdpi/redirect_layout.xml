@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_back"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/ic_btn_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/redirect_title"
+            android:id="@+id/textView7"
+            android:textSize="19sp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/custom_view_login"
+        android:layout_width="311dp"
+        android:layout_height="61dp"
+        android:background="@drawable/edit_text_style_email"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="230dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="61dp"
+        android:inputType="textEmailAddress"
+        android:background="@color/transparent"
+        android:ems="10"
+        android:hint="email"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/user_mail"
+        android:layout_below="@+id/logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="230dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/redirect_title_user_mail"
+        android:id="@+id/textView8"
+        android:layout_alignBottom="@+id/custom_view_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/redirect_title_info"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/custom_view_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_circle_style"
+        android:text="@string/redirect_btn_title"
+        android:id="@+id/btn_profile_recovery"
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:background="@mipmap/ic_mail"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_above="@+id/textView9"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9" />
+
+</RelativeLayout>

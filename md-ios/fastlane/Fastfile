@@ -1,0 +1,96 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+require 'yaml'
+
+fastlane_version "1.66.0"
+
+default_platform :ios
+
+platform :ios do
+
+  before_all do
+    cocoapods
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+
+    ensure_git_branch(
+      branch: "(master|develop|release\\S+|hotfix\\S+)"
+    )
+
+    ensure_git_status_clean
+    git_pull
+    # ensure_git_in_sync
+
+    version_number = get_version_number
+    build_number = Time.now.getutc.to_i
+    increment_build_number build_number: build_number
+
+    changelog = prompt(text: "Enter the change log: ",
+                       multi_line_end_keyword: "END")
+
+    sigh(output_path: "Build/sigh/",
+         provisioning_name: "club.mydreams.MyDreams AdHoc",
+         force: true,
+         adhoc: true)
+
+    cert(output_path: "Build/cert/")
+
+    gym(configuration: "Release")
+
+    crashlytics(notes: changelog,
+                groups: "mydreams")
+
+    upload_symbols_to_crashlytics
+
+    clean_build_artifacts
+
+    git_tag = "beta/#{version_number}/#{build_number}"
+
+    # Tag release and push to GitHub
+    commit_version_bump message: "Deploying version #{git_tag}."
+
+    add_git_tag tag: git_tag
+    push_to_git_remote
+    push_git_tags
+  end
+
+end
+
+lane :storyboard do
+  config = YAML.load_file('../config.yml')
+
+  if config["storyboard"] && config["storyboard"]["storyboards"].kind_of?(Array)
+    storyboards = config["storyboard"]["storyboards"]
+    storyboardsPath = config["storyboard"]["storyboardsPath"]
+    classesPath = config["storyboard"]["classesPath"]
+
+    storyboards.each do |sbName|
+      sh "../tools/StoryboardConstantGenerator.app/Contents/MacOS/StoryboardConstantGenerator -t \"../tools/storyboardConstantGeneratorTemplates/\" -i \"#{storyboardsPath}#{sbName}.storyboard\" -o \"#{classesPath}\"";
+    end
+  end
+
+  error do |lane, exception|
+    reset_git_repo(
+      force: true
+    )
+  end
+end

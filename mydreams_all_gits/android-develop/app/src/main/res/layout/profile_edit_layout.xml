@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/white"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/title_toolbar_size"
+            android:text="@string/setting_title_edit_profile"
+            android:textColor="@color/text_color_grey"
+            android:id="@+id/title_toolbar"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:id="@+id/photo_user"
+                    android:src="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton7"
+                    android:background="@mipmap/ic_add"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignBottom="@+id/photo_user"
+                    android:layout_alignRight="@+id/photo_user"
+                    android:layout_alignEnd="@+id/photo_user"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/photo_user"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:id="@+id/textView25"
+                    android:text="@string/setting_title_name"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:textSize="@dimen/title_text_size"
+                    android:inputType="textFilter"
+                    android:background="@color/transparent"
+                    android:textColor="@color/grey"
+                    android:textColorHint="@color/grey"
+                    android:gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/user_name"
+                    android:layout_below="@+id/imageButton7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@+id/photo_user"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/divider_below_edit_name"
+                    android:layout_below="@+id/user_name"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/bg_divider_dream_grey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/setting_title_last_name"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/divider_below_edit_name"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:inputType="textFilter"
+                    android:maxLines="1"
+                    android:textSize="@dimen/title_text_size"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/transparent"
+                    android:textColor="@color/grey"
+                    android:gravity="right"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/user_last_name"
+                    android:layout_below="@+id/divider_below_edit_name"
+                    android:layout_alignStart="@+id/user_name" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/divider_below_edit_last_name"
+                    android:layout_below="@+id/user_last_name"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/bg_divider_dream_grey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/padding_data_picker"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/setting_title_birthday"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:id="@+id/textView"
+                    android:layout_below="@+id/divider_below_edit_last_name"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/padding_data_picker"
+                    android:textSize="@dimen/title_text_size"
+                    android:text="25"
+                    android:id="@+id/picker_day"
+                    android:layout_toLeftOf="@+id/picker_month"
+                    android:layout_below="@+id/divider_below_edit_last_name"/>
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/bg_divider_dream_grey"
+                    android:id="@+id/imageView18"
+                    android:layout_alignBottom="@+id/picker_day"
+                    android:layout_below="@+id/divider_below_edit_last_name"
+                    android:layout_toLeftOf="@+id/picker_month"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:padding="@dimen/padding_data_picker"
+                    android:text="сент"
+                    android:layout_below="@+id/divider_below_edit_last_name"
+                    android:layout_toLeftOf="@+id/imageView19"
+                    android:id="@+id/picker_month"/>
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/bg_divider_dream_grey"
+                    android:id="@+id/imageView19"
+                    android:layout_alignBottom="@+id/picker_month"
+                    android:layout_below="@+id/divider_below_edit_last_name"
+                    android:layout_toLeftOf="@+id/picker_year"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:padding="@dimen/padding_data_picker"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_alignRight="@+id/divider_below_edit_last_name"
+                    android:text="1990"
+                    android:layout_below="@+id/divider_below_edit_last_name"
+                    android:id="@+id/picker_year"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"
+                    android:id="@+id/imageView"
+                    android:background="@color/bg_divider_dream_grey"
+                    android:layout_below="@+id/picker_year"
+                    android:layout_alignLeft="@+id/picker_day"
+                    android:layout_alignRight="@+id/picker_year"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/setting_title_gender"
+                    android:textColor="@color/text_color_grey"
+                    android:layout_below="@+id/textView"
+                    android:textSize="@dimen/title_text_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:padding="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/imageView"
+                    android:layout_alignRight="@+id/imageView"
+                    android:id="@+id/male"
+                    android:text="Мужчина"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/divider_below_male"
+                    android:background="@color/tabwidget_bottom_line_color_blue"
+                    android:layout_below="@+id/male"
+                    android:layout_alignRight="@+id/male"
+                    android:layout_alignLeft="@+id/male"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:text="Девушка"
+                    android:layout_marginTop="20dp"
+                    android:padding="2dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/imageView"
+                    android:layout_toLeftOf="@+id/male"
+                    android:id="@+id/female"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:id="@+id/divider_below_female"
+                    android:background="@color/tabwidget_bottom_line_color_blue"
+                    android:layout_below="@+id/male"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignRight="@+id/female"
+                    android:layout_alignLeft="@+id/female"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/imageView1"
+                    android:layout_below="@+id/divider_below_female"
+                    android:background="@drawable/divider_edit_profile"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/setting_title_country"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_below="@+id/imageView1"
+                    android:id="@+id/textView27"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="@dimen/padding_arrow"
+                    android:id="@+id/imageView2"
+                    android:layout_alignRight="@+id/picker_year"
+                    android:layout_below="@+id/imageView1"
+                    android:background="@mipmap/ic_arrow_right_grey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/setting_no_selected_location"
+                    android:textSize="@dimen/title_text_size"
+                    android:gravity="right"
+                    android:background="@color/transparent"
+                    android:textColor="@color/grey"
+                    android:id="@+id/user_country"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_toStartOf="@+id/imageView2"
+                    android:layout_toEndOf="@+id/textView27"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/imageView3"
+                    android:layout_below="@+id/user_country"
+                    android:background="@color/bg_divider_dream_grey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/setting_title_city"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_below="@+id/imageView3"
+                    android:id="@+id/textView28"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="@dimen/padding_arrow"
+                    android:id="@+id/imageView5"
+                    android:layout_alignRight="@+id/picker_year"
+                    android:layout_below="@+id/imageView3"
+                    android:background="@mipmap/ic_arrow_right_grey"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/setting_no_selected_location"
+                    android:textSize="@dimen/title_text_size"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/transparent"
+                    android:textColor="@color/grey"
+                    android:id="@+id/user_city"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:layout_below="@+id/imageView3"
+                    android:layout_toStartOf="@+id/imageView5"
+                    android:layout_alignLeft="@+id/user_country"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/textView28"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:stateListAnimator="@null"
+                    android:id="@+id/btn_send_change_info_user"
+                    android:background="@drawable/btn_circle_style_fill_blue"
+                    android:text="@string/setting_title_btn_send_changed_password"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

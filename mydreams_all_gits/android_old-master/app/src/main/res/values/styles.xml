@@ -1,0 +1,437 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="windowNoTitle">true</item>
+        <item name="searchViewStyle">@style/AppTheme.SearchView</item>
+        <item name="flybook_user_info_background">@android:color/white</item>
+        <item name="flybook_user_info_text_color">@color/textColorPrimary</item>
+        <item name="flybook_user_info_ic_user">@drawable/ic_user_blue</item>
+        <item name="flybook_user_info_ic_location">@drawable/ic_location_blue</item>
+        <item name="flybook_user_info_ic_quote">@drawable/ic_quote_blue</item>
+        <item name="ToolbarTheme">@style/BaseToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_blue</item>
+        <item name="ic_like">@drawable/ic_like_blue</item>
+        <item name="ic_comments">@drawable/ic_comments_blue</item>
+        <item name="ic_user">@drawable/ic_user_blue</item>
+        <item name="ic_location">@drawable/ic_location_blue</item>
+        <item name="ic_launch">@drawable/ic_launch_blue</item>
+        <item name="bg_button">@drawable/bg_button_blue</item>
+        <item name="style_edit_text_divider">@drawable/white_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/white_edit_text_color_label</item>
+    </style>
+
+    <style name="GuestFlybookTheme" parent="AppTheme">
+        <item name="flybook_user_info_background">@color/colorPrimary</item>
+        <item name="flybook_user_info_text_color">@android:color/white</item>
+        <item name="flybook_user_info_ic_user">@drawable/ic_user_white</item>
+        <item name="flybook_user_info_ic_location">@drawable/ic_location_white</item>
+        <item name="flybook_user_info_ic_quote">@drawable/ic_quote_white</item>
+    </style>
+
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+
+    </style>
+
+    <style name="RedTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red_dark</item>
+        <item name="ToolbarTheme">@style/RedToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_red</item>
+        <item name="style_edit_text_divider">@drawable/red_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/red_edit_text_color_label</item>
+        <item name="colorAccent">@color/red</item>
+    </style>
+
+    <style name="BlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+        <item name="ToolbarTheme">@style/BlueToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_blue</item>
+        <item name="bg_button">@drawable/bg_button_blue</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="LightBlueTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/light_blue_dark</item>
+        <item name="ToolbarTheme">@style/LightBlueToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_lightblue</item>
+        <item name="ic_quote">@drawable/ic_quote_lightblue</item>
+        <item name="ic_user">@drawable/ic_user_lightblue</item>
+        <item name="ic_location">@drawable/ic_location_lightblue</item>
+        <item name="ic_launch">@drawable/ic_launch_lightblue</item>
+        <item name="ic_like">@drawable/ic_like_lightblue</item>
+        <item name="ic_comments">@drawable/ic_comments_lightblue</item>
+        <item name="ic_diamond">@drawable/ic_diamond_lightblue</item>
+        <item name="bg_button">@drawable/bg_button_lightblue</item>
+        <item name="style_edit_text_divider">@drawable/lightblue_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/lightblue_edit_text_color_label</item>
+        <item name="colorAccent">@color/light_blue</item>
+    </style>
+
+    <style name="PurpureTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/purpure</item>
+        <item name="colorPrimaryDark">@color/purpure_dark</item>
+        <item name="ToolbarTheme">@style/PurpureToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_purpure</item>
+        <item name="ic_quote">@drawable/ic_quote_purpure</item>
+        <item name="ic_user">@drawable/ic_user_purpure</item>
+        <item name="ic_location">@drawable/ic_location_purpure</item>
+        <item name="ic_launch">@drawable/ic_launch_purpure</item>
+        <item name="ic_like">@drawable/ic_like_purpure</item>
+        <item name="ic_comments">@drawable/ic_comments_purpure</item>
+        <item name="ic_diamond">@drawable/ic_diamond_purpure</item>
+        <item name="bg_button">@drawable/bg_button_purpure</item>
+        <item name="style_edit_text_divider">@drawable/purpure_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/purpure_edit_text_color_label</item>
+        <item name="colorAccent">@color/purpure</item>
+    </style>
+
+    <style name="YellowTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">@color/yellow_dark</item>
+        <item name="ToolbarTheme">@style/YellowToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_yellow</item>
+        <item name="ic_like">@drawable/ic_like_yellow</item>
+        <item name="ic_comments">@drawable/ic_comments_yellow</item>
+        <item name="style_edit_text_divider">@drawable/yellow_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/yellow_edit_text_color_label</item>
+        <item name="colorAccent">@color/yellow</item>
+    </style>
+
+    <style name="LightGreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryDark">@color/light_green_dark</item>
+        <item name="ToolbarTheme">@style/LightGreenToolbarTheme</item>
+        <item name="photo_placeholder">@drawable/photo_placeholder_lightgreen</item>
+        <item name="ic_user">@drawable/ic_user_lightgreen</item>
+        <item name="ic_location">@drawable/ic_location_lightgreen</item>
+        <item name="ic_group">@drawable/ic_group_lightgreen</item>
+        <item name="ic_launch">@drawable/ic_launch_lightgreen</item>
+        <item name="ic_like">@drawable/ic_like_lightgreen</item>
+        <item name="ic_comments">@drawable/ic_comments_lightgreen</item>
+        <item name="colorAccent">@color/light_green</item>
+    </style>
+
+    <style name="GreenTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="bg_button">@drawable/bg_button_green</item>
+        <item name="style_edit_text_divider">@drawable/green_edit_text_color_divider</item>
+        <item name="style_edit_text_label">@drawable/green_edit_text_color_label</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="BaseToolbarTheme" parent="Material.Drawable.Ripple.Touch.MatchView.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorHint">#D8FFFFFF</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="titleTextAppearance">@style/AppTheme.Toolbar.Title</item>
+    </style>
+
+    <style name="RedToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red_dark</item>
+    </style>
+
+    <style name="BlueToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+    </style>
+
+    <style name="LightBlueToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/light_blue_dark</item>
+    </style>
+
+    <style name="PurpureToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/purpure</item>
+        <item name="colorPrimaryDark">@color/purpure_dark</item>
+    </style>
+
+    <style name="YellowToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">@color/yellow_dark</item>
+    </style>
+
+    <style name="LightGreenToolbarTheme" parent="BaseToolbarTheme">
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryDark">@color/light_green_dark</item>
+    </style>
+
+    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarRippleStyle" parent="Material.Drawable.Ripple.Touch.MatchView.Light">
+        <item name="rd_backgroundColor">@android:color/transparent</item>
+        <item name="rd_rippleColor">#33FFFFFF</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="AppTheme">
+
+    </style>
+
+    <!-- Navigator Drawable Style -->
+
+    <style name="LightNavigatorDrawableIcon" parent="Material.Drawable.NavigationDrawerIcon">
+        <item name="lmd_strokeSize">3dp</item>
+        <item name="lmd_padding">18dp</item>
+        <item name="lmd_strokeColor">@color/primary_text_default_material_dark</item>
+    </style>
+
+    <style name="LightNavigationDrawerDrawable">
+        <item name="nd_ripple">@style/ToolbarRippleStyle</item>
+        <item name="nd_icon">@style/LightNavigatorDrawableIcon</item>
+    </style>
+
+    <array name="navigation_drawer">
+        <item>@style/LightNavigationDrawerDrawable</item>
+    </array>
+
+    <style name="BaseButton" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <style name="WhiteButton" parent="BaseButton">
+        <item name="android:textColor">@drawable/white_button_text_color</item>
+        <item name="android:background">@drawable/bg_button_white</item>
+        <item name="android:minHeight">42dp</item>
+        <item name="rd_topPadding">1dp</item>
+        <item name="rd_bottomPadding">2dp</item>
+        <item name="rd_leftPadding">1dp</item>
+        <item name="rd_rightPadding">1dp</item>
+    </style>
+
+    <style name="BlueButton" parent="WhiteButton">
+        <item name="android:background">@drawable/bg_button_blue</item>
+        <item name="android:textColor">@drawable/blue_button_text_color</item>
+        <item name="rd_rippleColor">#33000000</item>
+    </style>
+
+    <style name="AttrButton" parent="WhiteButton">
+        <item name="android:background">?attr/bg_button</item>
+        <item name="android:textColor">@drawable/blue_button_text_color</item>
+        <item name="rd_rippleColor">#33000000</item>
+    </style>
+
+    <style name="GreenButton" parent="WhiteButton">
+        <item name="android:background">@drawable/bg_button_green</item>
+        <item name="android:textColor">@drawable/green_button_text_color</item>
+        <item name="rd_rippleColor">#33000000</item>
+    </style>
+
+    <style name="FlatButton" parent="BaseButton">
+        <item name="android:textColor">@drawable/white_button_text_color</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="EditText" parent="Material.Widget.EditText.Light">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+
+        <item name="et_dividerColor">@drawable/edit_text_color_divider</item>
+        <item name="et_labelTextColor">@drawable/edit_text_color_label</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+
+        <item name="et_labelTextSize">12sp</item>
+        <item name="et_supportTextSize">12sp</item>
+        <item name="et_labelPadding">8dp</item>
+        <item name="et_dividerPadding">8dp</item>
+    </style>
+
+    <style name="WhiteEditText" parent="EditText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">#ccFFFFFF</item>
+
+        <item name="et_dividerColor">@drawable/white_edit_text_color_divider</item>
+        <item name="et_labelTextColor">@drawable/white_edit_text_color_label</item>
+    </style>
+
+    <style name="GreenEditText" parent="EditText">
+        <item name="et_dividerColor">@drawable/green_edit_text_color_divider</item>
+        <item name="et_labelTextColor">@drawable/green_edit_text_color_label</item>
+    </style>
+
+    <style name="AttrEditText" parent="EditText">
+        <item name="et_dividerColor">?attr/style_edit_text_divider</item>
+        <item name="et_labelTextColor">?attr/style_edit_text_label</item>
+    </style>
+
+    <style name="FABColor" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="fab_backgroundColor">#ffe91e63</item>
+        <item name="fab_radius">@dimen/fab_radius</item>
+        <item name="fab_elevation">4dp</item>
+    </style>
+
+    <style name="FABColorGreen" parent="FABColor">
+        <item name="fab_backgroundColor">@color/green</item>
+    </style>
+
+    <style name="SimpleDialog" parent="Material.App.Dialog.Simple.Light">
+        <item name="di_inAnimation">@anim/anim_scale_in</item>
+        <item name="di_outAnimation">@anim/anim_scale_out</item>
+        <item name="di_titleTextColor">@color/textColorPrimary</item>
+    </style>
+
+    <!-- Linear Progress Style -->
+
+    <style name="LinearProgressDrawable" parent="Material.Drawable.LinearProgress">
+        <item name="lpd_strokeColor">@color/colorPrimary</item>
+        <item name="lpd_strokeSecondaryColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ColorLinearProgressDrawable" parent="LinearProgressDrawable">
+        <item name="lpd_strokeColors">@array/progress_colors</item>
+    </style>
+
+    <style name="LinearProgressView">
+        <item name="pv_autostart">false</item>
+        <item name="pv_circular">false</item>
+        <item name="pv_progressStyle">@style/LinearProgressDrawable</item>
+        <item name="pv_progressMode">indeterminate</item>
+    </style>
+
+    <style name="ColorLinearProgressView" parent="LinearProgressView">
+        <item name="pv_progressStyle">@style/ColorLinearProgressDrawable</item>
+    </style>
+
+    <!-- Circular Progress Style -->
+
+    <style name="CircularProgressDrawable" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_strokeColor">@color/colorPrimary</item>
+        <item name="cpd_inAnimDuration">800</item>
+        <item name="cpd_inStepPercent">0.5</item>
+        <item name="cpd_inStepColors">@array/progress_colors</item>
+        <item name="cpd_outAnimDuration">400</item>
+    </style>
+
+    <style name="CircularProgressDrawableWithoutOutAnimation" parent="CircularProgressDrawable">
+        <item name="cpd_outAnimDuration">0</item>
+    </style>
+
+    <style name="CircularProgressView">
+        <item name="pv_autostart">true</item>
+        <item name="pv_circular">true</item>
+        <item name="pv_progressStyle">@style/CircularProgressDrawable</item>
+        <item name="pv_progressMode">indeterminate</item>
+    </style>
+
+    <!-- Switch Style -->
+
+    <style name="RadioButtonStyle" parent="Material.Drawable.RadioButton">
+        <item name="rbd_strokeColor">#f00</item>
+    </style>
+
+    <style name="RadioButtonDrawable" parent="Material.Drawable.RadioButton">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <!-- TabPageIndicator Style-->
+
+    <style name="TabPageIndicator" parent="Material.Widget.TabPageIndicator">
+        <item name="tpi_tabPadding">12dp</item>
+        <item name="tpi_tabRipple">@style/LightTabRippleStyle</item>
+        <item name="tpi_indicatorHeight">3dp</item>
+        <item name="tpi_indicatorColor">@android:color/white</item>
+        <item name="android:textAppearance">@style/TabTextAppearance</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="tpi_mode">scroll</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="@style/Base.TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@drawable/color_tpi_light</item>
+    </style>
+
+    <style name="LightTabRippleStyle" parent="Material.Drawable.Ripple.Wave">
+        <item name="android:background">@null</item>
+        <item name="rd_rippleColor">?attr/colorPrimaryDark</item>
+        <item name="rd_rippleAnimDuration">300</item>
+        <item name="rd_maskType">rectangle</item>
+        <item name="rd_cornerRadius">0dp</item>
+        <item name="rd_padding">0dp</item>
+    </style>
+
+    <!-- Скщз Style-->
+
+    <style name="Crop"/>
+
+    <style name="Crop.DoneCancelBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/crop__bar_height</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:divider">@drawable/crop__divider</item>
+        <item name="android:showDividers" tools:ignore="NewApi">middle</item>
+        <item name="android:dividerPadding" tools:ignore="NewApi">12dp</item>
+        <item name="android:background">@color/crop__button_bar</item>
+    </style>
+
+    <style name="Crop.ActionButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/crop__selectable_background</item>
+    </style>
+
+    <style name="Crop.ActionButtonText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingRight">20dp</item>
+        <!-- Offsets left drawable -->
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:textColor">@color/crop__button_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Crop.ActionButtonText.Done">
+        <item name="android:drawableLeft">@drawable/crop__ic_done</item>
+        <item name="android:text">@string/crop__done</item>
+    </style>
+
+    <style name="Crop.ActionButtonText.Cancel">
+        <item name="android:drawableLeft">@drawable/crop__ic_cancel</item>
+        <item name="android:text">@string/crop__cancel</item>
+    </style>
+
+    <!-- Spinner Style -->
+    <style name="LightGreenSpinner" parent="Material.Widget.Spinner.Light">
+        <item name="rd_style">@style/Material.Drawable.Ripple.Wave.Light</item>
+        <item name="spn_labelEnable">true</item>
+        <item name="spn_arrowSwitchMode">true</item>
+        <item name="spn_arrowAnimDuration">@android:integer/config_shortAnimTime</item>
+        <item name="spn_arrowInterpolator">@android:anim/decelerate_interpolator</item>
+        <item name="spn_arrowColor">@color/colorControlNormal</item>
+        <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
+        <item name="spn_dividerColor">@drawable/lightgreen_spiner_devider</item>
+    </style>
+
+    <style name="LightGreenSwitch" parent="Material.Widget.Switch">
+        <item name="sw_trackColor">@drawable/color_track_light</item>
+        <item name="sw_thumbColor">@drawable/color_thumb_light</item>
+    </style>
+</resources>

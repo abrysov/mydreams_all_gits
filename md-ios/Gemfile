@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'cocoapods', '~> 1.0'
+#gem 'generamba', :path => "~/RubyProjects/Generamba"
+# gem 'generamba', :github => 'PerpetuumLab/Generamba', :branch => 'develop'
+gem 'generamba', '~> 1.0'
+gem 'fastlane', '~> 1.99'

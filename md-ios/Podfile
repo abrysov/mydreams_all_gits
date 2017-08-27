@@ -1,0 +1,51 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+inhibit_all_warnings!
+use_frameworks!
+
+target 'MyDreams' do
+    pod 'Typhoon', '~> 3.3'
+    pod 'ReactiveCocoa', '~> 2.5'
+    pod 'UIGestureRecognizer+ReactiveCocoa', :git => 'https://github.com/IvanUshakov/UIGestureRecognizer-RACExtension.git'
+    pod 'ObjectiveSugar', '~> 1.1'
+    
+    pod 'AFNetworking', '~> 3.1'
+    pod 'SocketRocket', '~> 0.5'
+    pod 'DFImageManager/Core', '~> 2.0'
+    pod 'DFImageManager/AFNetworking', '~> 2.0'
+    
+    pod 'EGOCache', '~> 2.1'
+    pod 'Realm', '~> 0.98.1'
+    pod 'Realm+JSON', '~> 0.2.14'
+    pod 'Mantle', '~> 2.0'
+    pod 'Mocktail', '~> 1.2'
+    pod 'SimpleKeychain', '~> 0.7'
+    
+    pod 'TBStateMachine', '~> 5.20'
+
+    pod 'Masonry', '~> 0.6.3'
+    pod 'FrameAccessor', '~> 2.0'
+    pod 'TPKeyboardAvoiding', '~> 1.2'
+    pod 'PMNibLinkableView', '~> 0.1'
+
+    pod 'INSPullToRefresh', '~> 1.0.12'
+    pod 'OAStackView', '~> 0.2.0'
+    pod 'RESideMenu', '~> 4.0.7'
+    
+    pod 'Fabric', '~> 1.6'
+    pod 'Crashlytics', '~> 3.7'
+    
+    pod 'FBSDKLoginKit', '~> 4.10'
+    pod 'VK-ios-sdk', '~> 1.3.16'
+    pod 'TwitterKit', '~> 2.0.2'
+    pod 'InstagramKit', '~> 3.8'
+    
+    pod 'SORelativeDateTransformer', :git => 'https://github.com/PerpetuumLab/SORelativeDateTransformer.git'
+    
+    pod 'RSKImageCropper', '~> 1.5'
+    pod 'UIImage-Resize', '~> 1.0'
+    pod 'CircleProgressBar', '~> 0.31'
+    pod 'SZTextView', '~> 1.2.2'
+    pod 'SKPhotoBrowser', '~> 2.0'
+end
+

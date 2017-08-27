@@ -1,0 +1,112 @@
+.left
+  float left
+
+
+.right
+  float right
+
+
+.clearfix
+  clearfix()
+
+//todo: придумать что-то лучше так как это уже другая методология
+.mt25
+  margin-top 25px !important
+
+percentage($n)
+  if $n == 0
+    0
+  else
+    unit($n * 100, "%")
+
+
+remify(value)
+  u = unit(value)
+
+  if (u is 'px')
+    return round(unit(value/base-font-size, 'rem'),2)
+  else
+    return unit(value, u)
+
+
+grid-gutter-width = remify(20px)
+grid-columns = 4
+
+// Creates a wrapper for a series of columns
+make-row($gutter = grid-gutter-width)
+  margin-left ceil($gutter / -2)
+  margin-right ceil($gutter / -2)
+  clearfix()
+
+make-column($columns, $grid-columns = grid-columns, $gutter = grid-gutter-width)
+  position relative
+  float left
+  width percentage(($columns / $grid-columns))
+  min-height 1px
+  padding-left ($gutter / 2)
+  padding-right ($gutter / 2)
+  box-sizing border-box
+
+
+//from axis https://github.com/jenius/axis/blob/master/axis/typography.styl
+
+group()
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+inline-list($spacing = remify(20px))
+  group()
+  margin: 0
+  padding: 0
+
+  li
+    float: left
+    margin-right: $spacing
+    list-style-type: none
+
+  li:last-child
+    margin-right: 0
+
+reset-list()
+  margin: 0
+  padding: 0
+
+  li
+    float: none
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+set-size($s)
+  width $s
+  height $s
+
+fit($a)
+  if $a == 'absolute'
+    top 0
+    left 0
+    right 0
+    bottom 0
+  width 100%
+  height 100%
+
+
+asset_url($url)
+  url('/images/'  + $url )
+
+.center-block
+  margin 0 auto
+
+make-corner($top,$left,$color)
+  content ''
+  width 0
+  height 0
+  border-left 10px solid transparent
+  border-bottom 10px solid $color
+  border-right 10px solid transparent
+  position absolute
+  top $top
+  left $left
+  z-index 0

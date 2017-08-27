@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PMSettingsSwitchButtonView">
+            <connections>
+                <outlet property="button" destination="Y0m-mT-LrA" id="akB-XT-w5G"/>
+                <outlet property="separatorView" destination="b1k-VA-He1" id="3Ly-Y8-hMW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3gj-sk-9Ap">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="52"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAM-RA-eQt">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="52"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1k-VA-He1" userLabel="separatopView">
+                            <rect key="frame" x="0.0" y="51" width="100" height="1"/>
+                            <color key="backgroundColor" red="0.058823529409999999" green="0.62745098040000002" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="gYy-dB-ywm"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0m-mT-LrA" customClass="PMButtonWithKern">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="pkK-aY-gMY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Label">
+                                <color key="titleColor" red="0.51372549020000002" green="0.56470588239999997" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kern">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Y0m-mT-LrA" firstAttribute="top" secondItem="EAM-RA-eQt" secondAttribute="top" id="3RU-KZ-6vI"/>
+                        <constraint firstAttribute="bottom" secondItem="Y0m-mT-LrA" secondAttribute="bottom" id="B9S-lr-2R1"/>
+                        <constraint firstItem="b1k-VA-He1" firstAttribute="leading" secondItem="EAM-RA-eQt" secondAttribute="leading" id="BTR-Db-6Ce"/>
+                        <constraint firstItem="Y0m-mT-LrA" firstAttribute="leading" secondItem="EAM-RA-eQt" secondAttribute="leading" id="OsR-g0-vbr"/>
+                        <constraint firstAttribute="trailing" secondItem="Y0m-mT-LrA" secondAttribute="trailing" id="akg-ia-XVn"/>
+                        <constraint firstAttribute="trailing" secondItem="b1k-VA-He1" secondAttribute="trailing" id="vK4-yS-l85"/>
+                        <constraint firstAttribute="bottom" secondItem="b1k-VA-He1" secondAttribute="bottom" id="wWB-Mf-UV3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EAM-RA-eQt" firstAttribute="top" secondItem="3gj-sk-9Ap" secondAttribute="top" id="CRP-ia-3bA"/>
+                <constraint firstItem="EAM-RA-eQt" firstAttribute="leading" secondItem="3gj-sk-9Ap" secondAttribute="leading" id="CgR-HH-thO"/>
+                <constraint firstAttribute="trailing" secondItem="EAM-RA-eQt" secondAttribute="trailing" id="HSm-S0-HPT"/>
+                <constraint firstAttribute="bottom" secondItem="EAM-RA-eQt" secondAttribute="bottom" id="wsP-wq-fxK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="327.5" y="131"/>
+        </view>
+    </objects>
+</document>

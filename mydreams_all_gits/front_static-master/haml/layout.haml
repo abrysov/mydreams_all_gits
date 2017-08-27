@@ -1,0 +1,221 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    // %meta{name: 'robots', content: 'noindex, nofollow'}
+    %title My Dreams
+
+    %link{rel: 'stylesheet', media: 'screen', href: 'css/style.css'}
+
+    // = render 'favicon'
+
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"}
+
+    %body
+      .head_feed.is-hidden
+        .add-feed.head_feed__item
+          %a.add-feed-icon
+        - 40.times do
+          %a.head_feed__item
+            .feed_image_wrapper
+              %img{src: '//dncw63ov7q9kh.cloudfront.net/uploads/photo/file/753910b1/e1f1ace7/128e8aab/60b279df/small_1457358417-5w6L3wLzpYo.jpg'}
+            .tooltip
+              %h4.tooltip__top Text
+              .tooltip__bottom
+                .tooltip__name Кристина, 20
+                .tooltip__location
+                  Россия, Самара
+
+      #wrapper{class: true ? 'main' : ''}
+        %header#header
+          %nav.first_menu
+            .first_menu__left
+              %a.show-head_feed Показать
+              %a.spotlight-link
+            .userbar.first_menu__right
+              .userbar__avatar.clearfix
+                %a{href: '#'}
+                  %img{src: '//dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/12851/small_file.jpeg'}
+                .userbar__avatar-name Yury
+              .userbar__list.is-hidden
+                .first_group
+                  %a.userbar__item.userbar__item-gray.corner
+                    %span.userbar__item-icon.icon-dreambook
+                    %span.userbar__item-text Мой Dreambook
+                %a.userbar__item
+                  %span.userbar__item-text Новости
+                %a.userbar__item
+                  %span.userbar__item-text Сообщения
+                %a.userbar__item
+                  %span.userbar__item-text Мечты
+                %a.userbar__item
+                  %span.userbar__item-text Марки
+                %a.userbar__item
+                  - if true
+                    %span.userbar__item-couter 10
+                  %span.userbar__item-text Друзья
+                %a.userbar__item
+                  - if true
+                    %span.userbar__item-couter 102
+                  %span.userbar__item-text Мечты друзей
+                %a.userbar__item
+                  %span.userbar__item-text Подписчики
+                %a.userbar__item
+                  %span.userbar__item-text Записи
+                .second_group
+                  %a.userbar__item.userbar__item-gray
+                    %span.userbar__item-icon.icon-edit
+                    %span.userbar__item-text Редактировать профиль
+                  %a.userbar__item.userbar__item-gray
+                    %span.userbar__item-icon.icon-exit
+                    %span.userbar__item-text Выход
+
+          .container
+
+            %nav.second_menu
+              %ul.list.left
+                %li
+                  %a.item{href: '#'} Сбывшиеся Мечты
+                %li
+                  %a.item{href: '#'} Исполнить Мечту
+
+              %a.menu_logo{href: '#'}
+                //%img{src: '//d20pou9wppyzb1.cloudfront.net/assets/svg/logo_ru-c3fcfbd995c4a9dedb9efa0d78534ac64fcdcf64a11dab5dc2a9ff29ed014c7d.svg'}
+
+              %ul.list.right
+                %li
+                  %a.item{href: '#'} Мечтатели
+                %li
+                  %a.item{href: '#'} Топ 100
+                %li
+                  %a.item{href: '#'} Мечты клуба
+
+        .container
+          .dreamers_circles
+            - 8.times do |n|
+              %figure.dreamer{class: "dreamer-#{n}"}
+                .dreamer__wrapper
+                  .dreamer_shadow
+                  %a{class: "dreamer-#{n}"}
+                    %img{src: "http://dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/20675/pre_medium_file.png"}
+                  %figcaption.tooltip
+                    %h4.tooltip__top Кристина, 20
+                    .location.tooltip__bottom Россия, Самара
+            .btn.btn-welcome Исполнить мечту
+            .wellcome_slogan!= 'Каждые <big>5</big> секунд на Земле сбывается Мечта'
+
+        .container
+          %main.content
+            %h2.content__title Новости клуба
+            .news
+              - 3.times do |q|
+                .news__item
+                  .news__wrapper{style: "transition-delay: #{200*q}ms"}
+                    .news__inner
+                      .news__back
+                      .news__front
+                        %a{href: '#'}
+                          //TODO: ask backend to transform image width for cards
+                          %img.news__item-image{src: '//dncw63ov7q9kh.cloudfront.net/uploads/post/photo/341/medium_file.png'}
+                          .news__item-info
+                            .news__item-title Заголовок
+                            .news__item-date 24 Февраля 2016
+                            .news__item-description Исполнять Мечты и желания миллиардов людей по всей Земле.
+                        .news__item-buttons-wrap
+                          .news__item-buttons
+                            .left
+                              .news__item-likes.empty 10
+                              .news__item-comments.empty 10
+                            .right
+                              .news__item-share
+
+            .btn.btn-default.large.center-block Смотреть все
+
+            %h2.content__title Проект, который меняет Мир
+
+            %p.content__text!= 'Самые знаменитые и богатейшие люди Планеты объединились<br> в клуб мечтателей с единственной целью'
+            %p.content__text Исполнять Мечты и желания миллиардов людей по всей Земле.
+
+            .balloon
+
+            %h2.content__title Сбывшиеся Мечты
+            %p.content__text!= 'Каждый день у миллионов людей по всей Планете <br>Мечты сбываются'
+
+            .cards
+              - 4.times do |q|
+                .cards__item
+                  .cards__wrapper
+                    .cards__inner{style: "transition-delay: #{200*q}ms"}
+                      .cards__back
+                      .cards__front
+                        %a{href: '#'}
+                          .cards__header My Dreams
+                          %img.cards__item-image{src: '//dncw63ov7q9kh.cloudfront.net/uploads/dream/photo/23864/medium_file.png'}
+                          .cards__item-info
+                            .cards__item-title Заголовок
+                            .cards__item-description Пусть люди услышат, пусть люди поймут! Это заме...
+                        .cards__item-buttons-wrap
+                          .cards__item-buttons
+                            %a.cards__item-likes.cards__item-button.empty 10
+                            %a.cards__item-rocket.cards__item-button 10
+                            %a.cards__item-comments.cards__item-button.empty 10
+
+            .btn.btn-default.large.center-block.mt25 Смотреть все
+
+        .special
+
+      %footer#footer.clearfix
+        .container
+          .left
+            .footer__item.footer__item-copy MyDreams.club
+            %a.footer__item.footer_menu{href: '/ru/about'} О клубе
+            %a.footer__item{href: 'mailto:support@mydreams.club'} support@mydreams.club
+            %a.footer__item.footer__item-icon.vkontakte{href: 'https://vk.com/mydreams.club', target: '_blank'}
+            %a.footer__item.footer__item-icon.facebook{href: 'https://www.facebook.com/dreamshysteria/', target: '_blank'}
+            %a.footer__item.footer__item-icon.instagram{href: 'https://www.instagram.com/mydreams.club/', target: '_blank'}
+            %a.footer__item.footer__item-icon.twitter{href: 'https://twitter.com/mydreams_club', target: '_blank'}
+            %a.footer__item.footer__item-icon.odnoklassniki{href: 'http://ok.ru/group/52868376756319', target: '_blank'}
+          .right
+            .footer__item.footer__item-icon.android
+            .footer__item.footer__item-icon.apple
+
+      .modal
+        .close
+        %form.js-userfeed-form{"accept-charset" => "UTF-8", :action => "/ru/photobar/add", "data-remote" => "true", :method => "post"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+
+        .modal__title Попасть в фотоленту
+        .modal__subtitle Это бесплатно
+        .modal__avatar
+          %img{src: "//dncw63ov7q9kh.cloudfront.net/uploads/photo/file/52bbbc8c/4e9ed017/3bfa3119/af8b057a/small_1457347585-cPRhMkxP5Wg.jpg"}
+        .gradient-textarea
+          %textarea{name: "photobar_added_text", id: "photobar_added_text", maxlength: "80", placeholder: "Напишите свое приветствие"}
+        .modal__photos
+
+        .card-modal.card-modal-add-to-feed.frame.add-to-feed
+          .title
+          .subtitle
+          .photos-for-feed.js-add-to-feed-slider.slick-initialized.slick-slider
+            .slick-list.draggable{"aria-live" => "polite"}
+              .slick-track{:role => "listbox", :style => "opacity: 1; width: 5000px; transform: translate3d(-10px, 0px, 0px);"}
+                .photo-for-feed.slick-slide.slick-current.slick-active{"aria-describedby" => "slick-slide20", "aria-hidden" => "false", "data-slick-index" => "0", :role => "option", :tabindex => "0"}
+                  %input#photobar_added_photo_id_6380{:checked => "checked", :name => "photobar_added_photo_id", :tabindex => "0", :type => "radio", :value => "6380"}/
+                  .avatar
+                    %label.avatar-image{:for => "photobar_added_photo_id_6380"}
+                      %img{:alt => "Small 1457347585 cprhmkxp5wg", :src => "//dncw63ov7q9kh.cloudfront.net/uploads/photo/file/52bbbc8c/4e9ed017/3bfa3119/af8b057a/small_1457347585-cPRhMkxP5Wg.jpg"}/
+          .gradient-field-wrap
+            %textarea#photobar_added_text.js-limit{:maxlength => "80", :name => "photobar_added_text", :placeholder => "Напишите свое приветствие"}
+            .text-limit 80
+          .control.js-form-control
+            %label.button-bv-animated.js-form-submit{:for => "add_to_feed"}
+              %span Поехали
+            .preloader.js-preloader
+            %input#add_to_feed{:name => "commit", :type => "submit"}/
+
+
+      //%script{type: "text/babel", src: "js/components/users_feed.jsx"}
+      %script{type: "text/babel", src: "main.js"}

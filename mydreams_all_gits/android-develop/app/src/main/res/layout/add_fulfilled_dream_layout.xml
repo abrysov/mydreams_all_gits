@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/fulfilled_dreams_color_tollbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="@string/add_fulfilled_dream_title_toolbar"
+            android:id="@+id/title_toolbar"/>
+
+    </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_create_fulfilled_dream"
+            android:layout_below="@+id/toolbar">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view_add_photo_fulfill_dream"
+                    android:gravity="center"
+                    android:background="@color/grey_light">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_empty_photo"
+                        android:src="@mipmap/ic_add_image_fulfill_dream"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:id="@+id/img_fulfill_dream"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/text_color_grey"
+                        android:textSize="18sp"
+                        android:id="@+id/title_edit_dream"
+                        android:hint="@string/fulfill_dream_title_edit_hit_dream"
+                        android:textColor="@color/text_color_grey"
+                        android:background="@color/transparent"
+                        android:padding="10dp"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/grey"
+                        android:id="@+id/description_edit_dream"
+                        android:textSize="14sp"
+                        android:background="@color/transparent"
+                        android:hint="@string/fulfill_dream_description_edit_hit_dream"
+                        android:textColor="@color/grey"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    <Button
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/add_fulfilled_dream_btn_add_text"
+        android:background="@drawable/btn_circle_style_green"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:stateListAnimator="@null"
+        android:id="@+id/btn_create_fulfilled_dream" />
+
+</RelativeLayout>

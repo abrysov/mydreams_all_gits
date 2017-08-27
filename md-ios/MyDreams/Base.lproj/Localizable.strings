@@ -1,0 +1,393 @@
+/* 
+  localizable.strings
+  MyDreams
+
+  Created by Иван Ушаков on 03.03.16.
+  Copyright © 2016 Perpetuum Mobile lab. All rights reserved.
+*/
+
+"error.internalError" = "Внутренняя ошибка";
+"error.invalidInput" = "Неправильно заполнены поля";
+
+"alert_manager.Error" = "Ошибка";
+"alert_manager.OK" = "ОК";
+"alert_manager.Cancel" = "Отмена";
+
+"blankstate_view.text" = "По заданным параметрам ничего\nне нашлось…";
+
+"image_picker.take_photo" = "Сделать фотографию";
+"image_picker.select_photo" = "Выбрать из галереи";
+"image_picker.cancel" = "Отмена";
+
+"common.delete" = "Удалить";
+
+// Auth
+
+"auth.auth_vc.remaind_password" = "Забыли пароль?";
+"auth.auth_vc.sign_in" = "Войти";
+"auth.auth_vc.sign_up" = "Зарегистрироваться";
+"auth.auth_vc.email_placeholder" = "Email";
+"auth.auth_vc.password_placeholder" = "Пароль";
+
+"auth.remaind_password.title" = "Восстановить пароль";
+"auth.remaind_password.email_description" = "Введите Ваш Email";
+"auth.remaind_password.send_button_description" = "На Ваш Email будет выслана ссылка\nдля восстановления пароля";
+"auth.remaind_password.email_placehodler" = "Email";
+"auth.remaind_password.send_button_title" = "ВОССТАНОВИТЬ";
+
+"auth.success_sending_email.title" = "Письмо успешно отправлено на Ваш Email";
+"auth.success_sending_email.enter" = "ВХОД";
+"auth.success_sending_email.resend_button" = "ОТПРАВИТЬ ЕЩЕ РАЗ";
+"auth.success_sending_email.iteration_description" = "Письмо не пришло?";
+
+"auth.blocked_profile.title" = "Ваш профиль заблокирован";
+"auth.blocked_profile.contact_support_description" = "Обратитесь в службу технической поддержки:";
+"auth.blocked_profile.send_button_title" = "ПЕРЕЙТИ НА САЙТ";
+
+"auth.restore_profile.top_title" = "Восстановить профиль";
+"auth.restore_profile.title" = "Ваш профиль временно удален";
+"auth.restore_profile.email_description" = "Для восстановления введите Ваш Email";
+"auth.restore_profile.send_button_description" = "На ваш Email будет выслана ссылка для восстановления профиля";
+"auth.restore_profile.email_placehodler" = "Email";
+"auth.restore_profile.send_button_title" = "ВОССТАНОВИТЬ";
+
+"auth.registation.email_placeholder" = "mybestemail@mail.ru";
+"auth.registation.password_placeholder" = "typing...";
+"auth.registation.title" = "РЕГИСТРАЦИЯ";
+"auth.registation.email_description" = "Email";
+"auth.registation.password_description" = "Пароль";
+"auth.registation.confirm_password_description" = "Подтвердите пароль";
+"auth.registation.or" = "или";
+"auth.registation.next_button_title" = "ДАЛЕЕ";
+
+"auth.registation_step_2.first_name_description" = "Имя";
+"auth.registation_step_2.second_name_description" = "Фамилия";
+"auth.registation_step_2.title" = "РЕГИСТРАЦИЯ";
+"auth.registation_step_2.birth_day_description" = "Дата рождения и пол";
+"auth.registation_step_2.day" = "день";
+"auth.registation_step_2.month" = "мес.";
+"auth.registation_step_2.year" = "год";
+"auth.registation_step_2.selected_boy_button" = "Мужчина";
+"auth.registation_step_2.selected_girl_button" = "Девушка";
+"auth.registation_step_2.next_button_title" = "ДАЛЕЕ";
+
+"auth.registation_step_3.title" = "Регистрация";
+"auth.registation_step_3.location_description" = "Страна и город";
+"auth.registation_step_3.phone_number_description" = "Номер телефона";
+"auth.registation_step_3.send_button_title" = "ПОЕХАЛИ";
+"auth.registation_step_3.top_description_send_button" = "Нажимая на кнопку «Поехали», я соглашаюсь";
+"auth.registation_step_3.bot_description_send_button" = "с";
+"auth.registation_step_3.user_agreement_button_title" = "пользовательским соглашением";
+
+"auth.registration_progress.details" = "Подождите немного,\nмы обрабатываем Ваши данные…";
+
+"auth.user_agreement.title" = "Соглашение";
+
+"auth.select_country.search_placeholder" = "Найти";
+"auth.select_country.title" = "ВЫБЕРИТЕ СТРАНУ";
+
+"auth.select_locality.search_locality_placeholder" = "Найти";
+"auth.select_locality.title" = "ВЫБЕРИТЕ НАС. ПУНКТ";
+"auth.select_locality.show_offer_locality_button_title" = "ПРЕДЛОЖИТЬ НАСЕЛЕННЫЙ ПУНКТ";
+
+"auth.propose_locality.name_locality_placeholder" = "Название города";
+"auth.propose_locality.title" = "ПРЕДЛОЖИТЕ НАС. ПУНКТ";
+"auth.propose_locality.enter_area_description" = "Введите район";
+"auth.propose_locality.enter_region_description" = "Введите регион";
+"auth.propose_locality.more_info_description" = "Дополнительная информация";
+"auth.propose_locality.send_locality_button_title" = "ПРЕДЛОЖИТЬ";
+
+"auth.successful_proposal_locality.title" = "ПРЕДЛОЖИТЕ НАС. ПУНКТ";
+"auth.successful_proposal_locality.locality_description" = "Вы предложили населенный пункт";
+"auth.successful_proposal_locality.next_button_title" = "ДАЛЕЕ";
+    
+"auth.social_auth.instagram" = "Instagram";
+
+// Menu
+
+"menu.menu.self.add_credits" = "Пополнить баланс";
+"menu.menu.self.my_dreambook" = "Мой dreambook";
+"menu.menu.self.messages" = "Сообщения";
+"menu.menu.self.events" = "События";
+"menu.menu.self.news" = "Новости";
+"menu.menu.self.fulfill_dream" = "Исполнить мечту";
+"menu.menu.self.fulfilling_dreams" = "Сбывшиеся мечты";
+"menu.menu.self.dreams" = "Мечты";
+"menu.menu.self.dreamers" = "Мечтатели";
+"menu.menu.self.top100" = "ТОП-100";
+"menu.menu.self.club_dreams" = "Мечты клуба";
+"menu.menu.self.settings" = "Настройки";
+"menu.menu.coins" = "Монет";
+
+"menu.search.title" = "Поиск";
+"menu.search.dreams_title" = "Мечты";
+"menu.search.posts_title" = "Записи";
+"menu.search.dreamers_title" = "Мечтатели";
+
+// Fast links
+
+"fastlink.news" = "Главная";
+"fastlink.events" = "События";
+"fastlink.messages" = "Сообщения";
+"fastlink.search" = "Поиск";
+
+// Dreambook
+
+"dreambook.list_dreams.title" = "Мечты";
+"dreambook.list_dreams.own_dreams_title" = "Мои мечты";
+"dreambook.list_dreams.most_discussed_dreams" = "ОБСУЖДАЕМЫЕ";
+"dreambook.list_dreams.popular_dreams" = "ПОПУЛЯРНЫЕ";
+"dreambook.list_dreams.new_dreams" = "НОВЫЕ";
+"dreambook.list_dreams.search_text_field_placeholder" = "ИСКАТЬ МЕЧТУ";
+"dreambook.list_dreams.description_not_found" = "По заданным параметрам ничего не найдено";
+"dreambook.list_dreams.cancel_search_button_title" = "Отмена";
+
+"dreambook.list_completed_dreams.title" = "Сбывшиеся мечты";
+"dreambook.list_completed_dreams.own_dreams_title" = "Мои сбывшиеся";
+"dreambook.list_completed_dreams.all_dreams" = "ВСЕ";
+"dreambook.list_completed_dreams.man_dreams" = "МУЖСКИЕ";
+"dreambook.list_completed_dreams.woman_dreams" = "ЖЕНСКИЕ";
+"dreambook.list_completed_dreams.search_text_field_placeholder" = "Искать сбывшуюся мечту";
+"dreambook.list_completed_dreams.description_not_found" = "По заданным параметрам ничего не найдено";
+"dreambook.list_completed_dreams.cancel_search_button_title" = "Отмена";
+
+"dreambook.dreambook.dreamer_not_found" = "Мечатель не найден";
+"dreambook.dreambook.profile_not_confirmed" = "Профиль не подтвержден";
+"dreambook.dreambook.dreamer_deleted" = "Пользователь удалил свой профиль";
+"dreambook.dreambook.dreamer_blocked" = "Пользователь заблокирован за нарушение правил";
+
+"dreambook.dreambook.share" = "Поделиться";
+"dreambook.dreambook.copy_link" = "Скопировать ссылку";
+"dreambook.dreambook.open_in_web" = "Открыть в Safari";
+"dreambook.dreambook.cancel" = "Отменить";
+
+"dreambook.header.dreams" = "Мечтаний";
+"dreambook.header.completed" = "Сбывшиеся";
+"dreambook.header.marks" = "Марки";
+"dreambook.header.change_background" = "Сменить фон";
+"dreambook.header.edit" = "Редактировать";
+"dreambook.header.friends" = "Друзья";
+"dreambook.header.subscribe" = "Подписаться";
+"dreambook.header.subscriber" = "Подписчик";
+"dreambook.header.message" = "Сообщение";
+"dreambook.header.status_placeholder" = "Статус";
+"dreambook.header.photos" = "Фотографий";
+"dreambook.header.friends" = "Друзья";
+"dreambook.header.subscribers" = "Подписчики";
+"dreambook.header.subscriptions" = "Подписки";
+"dreambook.header.my_notes" = "Мои записи";
+"dreambook.header.all_notes" = "Всего записей";
+"dreambook.header.create_note" = "Создать запись";
+
+"dreambook.filters_dreamers.description_country" = "Страна";
+"dreambook.filters_dreamers.description_city" = "Город";
+"dreambook.filters_dreamers.description_age" = "Возраст";
+"dreambook.filters_dreamers.from_age_placeholder" = "От";
+"dreambook.filters_dreamers.before_age_placeholder" = "До";
+"dreambook.filters_dreamers.gender_woman" = "Девушка";
+"dreambook.filters_dreamers.gender_all" = "Все";
+"dreambook.filters_dreamers.gender_man" = "Мужчина";
+"dreambook.filters_dreamers.description_all_dreamers" = "Все";
+"dreambook.filters_dreamers.description_new_dreamers" = "Новые";
+"dreambook.filters_dreamers.description_popular_dreamers" = "Популярные";
+"dreambook.filters_dreamers.description_vip_dreamers" = "VIP";
+"dreambook.filters_dreamers.description_online_dreamers" = "Online";
+"dreambook.filters_dreamers.reset_filters" = "Сбросить фильтры";
+
+"dreambook.list_dreamers.title" = "Мечтатели";
+"dreambook.list_dreamers.search_text_field_placeholder" = "Искать мечтателя";
+"dreambook.list_dreamers.filters_title" = "Фильтры";
+"dreambook.list_dreamers.description_vip_dreamer" = "VIP";
+"dreambook.list_dreamers.found_description" = "Найдено";
+"dreambook.list_dreamers.dreamers_description" = "Мечтателей";
+"dreambook.list_dreamers.cancel_search_button_title" = "Отмена";
+
+"dreambook.filters_dreamers.title" = "Фильтры по мечтателям";
+"dreambook.filters_dreamers.send_button_title_show" = "Показать";
+"dreambook.filters_dreamers.send_button_title_results" = "результатов";
+"dreambook.filters_dreamers.send_button_title_not_found" = " Ничего не нашлось";
+"dreambook.filters_dreamers.country_not_selected" = "Не выбрана";
+"dreambook.filters_dreamers.city_not_selected" = "Не выбран";
+
+"dreambook.select_country_filter.search_placeholder" = "Искать страну";
+"dreambook.select_country_filter.cancel_search_button_title" = "Отмена";
+
+"dreambook.select_locality_filter.search_placeholder" = "Искать город";
+"dreambook.select_locality_filter.cancel_search_button_title" = "Отмена";
+
+"dreambook.add_dream.title" = "Добавить сбывшуюся";
+"dreambook.add_dream.dream_title_placeholder" = "Введите название мечты";
+"dreambook.add_dream.dream_description_placeholder" = "Детально опишите вашу мечту";
+"dreambook.add_dream.send_button_title" = "Готово";
+
+"dreambook.fulfill_dream.title" = "Исполнить мечту";
+"dreambook.fulfill_dream.dream_title_placeholder" = "Введите название мечты";
+"dreambook.fulfill_dream.dream_description_placeholder" = "Детально опишите вашу мечту";
+"dreambook.fulfill_dream.run_dream_button_title" = "Запустить мечту";
+"dreambook.fulfill_dream.send_in_dreambook_button_title" = "Добавить в DREAMBOOK";
+"dreambook.fulfill_dream.description_viewing_options" = "Кто сможет видеть эту мечту";
+"dreambook.fulfill_dream.private_viewing" = "Только я";
+"dreambook.fulfill_dream.friends_viewing" = "Только я и мои друзья";
+"dreambook.fulfill_dream.public_viewing" = "Все";
+"dreambook.fulfill_dream.description_select_mark" = "Выберите марку (платно)";
+"dreambook.fulfill_dream.toDreambook" = "Перейти в DREAMBOOK";
+"dreambook.fulfill_dream.create_new_dream" = "Создать новую мечту";
+"dreambook.fulfill_dream.successfully_created" = "Мечта успешно добавлена";
+"dreambook.fulfill_dream.invalid_title" = "Введите название мечты";
+"dreambook.fulfill_dream.invalid_description" = "Введите описание мечты";
+"dreambook.fulfill_dream.invalid_photo" = "Не выбрано фото";
+
+"dreambook.create_post.title" = "Новая запись";
+"dreambook.create_post.post_description_placeholder" = "Текст записи";
+"dreambook.create_post.send_button_title" = "Добавить запись";
+"dreambook.create_post.invalid_photo" = "Не выбрано фото";
+"dreambook.create_post.invalid_description" = "Введите текст записи";
+
+"dreambook.list_followers.title" = "Подписчики";
+"dreambook.list_followers.search_text_field_placeholder" = "Введите имя подписчика";
+"dreambook.list_followers.cancel_search_button_title" = "Отмена";
+"dreambook.list_followers.count_description" = "Всего";
+
+"dreambook.list_followees.title" = "Подписан";
+"dreambook.list_followees.search_text_field_placeholder" = "Найти";
+"dreambook.list_followees.cancel_search_button_title" = "Отмена";
+"dreambook.list_followees.count_description" = "Всего";
+
+"dreambook.post_cell.show_full" = "Читать полностью";
+
+"dreambook.list_friends.friends_count_description" = "Всего";
+"dreambook.list_friends.requests_count_description" = "Запросы в друзья";
+"dreambook.list_friends.title" = "Друзья";
+"dreambook.list_friends.search_text_field_placeholder" = "Введите имя друга";
+"dreambook.list_friends.cancel_search_button_title" = "Отмена";
+
+"dreambook.friendship_requests.request_count_description" = "Запросы в друзья";
+"dreambook.friendship_requests.total_count_description" = "Всего";
+
+"dreambook.list_certificates.title" = "Марки";
+"dreambook.list_certificates.from" = "из";
+
+"dreambook.detailed_post.title" = "Записи";
+"dreambook.detailed_post.show_comments_button_title" = "Показать комментарии";
+"dreambook.detailed_post.write_comment" = "Написать комментарий";
+"dreambook.detailed_post.add_comment_button_title" = "Добавить комментарий";
+"dreambook.detailed_post.comments" = "Комментария";
+"dreambook.detailed_post.new_comment_placeholder" = "Прокомментировать";
+"dreambook.detailed_post.delete_post" = "Удалить запись";
+"dreambook.detailed_post.editing_post" = "Редактировать";
+"dreambook.detailed_post.cancel" = "Отмена";
+
+"dreambook.certificate_detail.title" = "Марки";
+
+"dreambook.detailed_dream.title" = "Мечты";
+"dreambook.detailed_dream.show_comments_button_title" = "Показать комментарии";
+"dreambook.detailed_dream.write_comment" = "Написать комментарий";
+"dreambook.detailed_dream.add_comment_button_title" = "Добавить комментарий";
+"dreambook.detailed_dream.comments" = "Комментария";
+"dreambook.detailed_dream.new_comment_placeholder" = "Прокомментировать";
+"dreambook.detailed_dream.give_button_title" = "Подарить марку";
+"dreambook.detailed_dream.share_button_title" = "Поделиться";
+"dreambook.detailed_dream.add_button_title" = "Добавить себе";
+"dreambook.detailed_dream.buy_mark_button_title" = "Купить марку";
+"dreambook.detailed_dream.completed_dream_button_title" = "Мечта сбылась";
+"dreambook.detailed_dream.privacy" = "Приватность";
+"dreambook.detailed_dream.editing_dream" = "Редактировать";
+"dreambook.detailed_dream.delete_dream" = "Удалить Мечту";
+"dreambook.detailed_dream.cancel" = "Отменить";
+
+"dreambook.top_100_dreams.title" = "ТОП 100";
+
+"dreambook.edit_dream.title" = "Редактировать мечту";
+"dreambook.edit_dream.dream_title_placeholder" = "Введите название мечты";
+"dreambook.edit_dream.dream_description_placeholder" = "Введите описание мечты";
+"dreambook.edit_dream.save_button_title" = "Сохранить";
+
+"dreambook.detailed_likes.dream" = "Мечта";
+"dreambook.detailed_likes.post" = "Запись";
+"dreambook.detailed_likes.liked" = " понравилась";
+"dreambook.detailed_likes.total_count" = "Всего";
+
+"dreambook.edit_post.title" = "Изменить запись";
+"dreambook.edit_post.content_placeholder" = "Текст записи";
+"dreambook.edit_post.save_button_title" = "Сохранить";
+
+// Dreamclub
+
+"dreamclub.dreamclub.title" = "Мечты клуба";
+
+"dreamclub.dreamclub_header.dreams" = "Мечты";
+"dreamclub.dreamclub_header.completed" = "Сбывшиеся";
+"dreamclub.dreamclub_header.marks" = "Марки";
+"dreamclub.dreamclub_header.photos" = "Фотографий";
+"dreamclub.dreamclub_header.friends" = "Друзья";
+"dreamclub.dreamclub_header.subscribers" = "Подписчики";
+"dreamclub.dreamclub_header.create_message_button_title" = "Написать сообщение";
+
+// Settings
+
+"settings.settings.change_password" = "Сменить пароль";
+"settings.settings.change_email" = "Сменить E-MAIL";
+"settings.settings.edit_profile" = "Редактировать профиль";
+"settings.settings.account_deleting" = "Удалить аккаунт";
+"settings.settings.self.sign_out" = "Выйти";
+"settings.settings.title" = "Настройки";
+"settings.settings.account_deleting_description" = "Вы действительно хотите удалить свой аккаунт?"; 
+
+"settings.change_password.title" = "Сменить пароль";
+"settings.change_password.old_password_description" = "Введите старый пароль";
+"settings.change_password.new_password_description" = "Новый пароль";
+"settings.change_password.password_confirmation_description" = "Подтвердите пароль";
+"settings.change_password.send_button_description" = "Вам будет отправлено подтвержение";
+"settings.change_password.send_button_title" = "Готово";
+"settings.change_password.invalid_current_password" = "Неправильный пароль";
+"settings.change_password.invalid_new_password" = "Новый пароль меньше 6 символов";
+"settings.change_password.invalid_password_confirmation" = "Пароль не подтвержен";
+
+"settings.change_email.invalid_email" = "Неправильный Email";
+"settings.change_email.title" = "СМЕНИТЬ E-MAIL";
+"settings.change_email.current_email_description" = "ТЕКУЩИЙ E-mail";
+"settings.change_email.email_description" = "E-mail";
+"settings.change_email.send_button_description" = "Вам будет отправлено подтверждение";
+"settings.change_email.send_button_title" = "Готово";
+
+"settings.edit_profile.title" = "Редактировать профиль";
+"settings.edit_profile.first_name_description" = "Имя";
+"settings.edit_profile.second_name_description" = "Фамилия";
+"settings.edit_profile.birthday_description" = "День рождения";
+"settings.edit_profile.gender_description" = "Пол";
+"settings.edit_profile.gender_woman" = "Девушка";
+"settings.edit_profile.gender_man" = "Мужчина";
+"settings.edit_profile.country_description" = "Страна";
+"settings.edit_profile.country_value_placeholder" = "Не выбрана";
+"settings.edit_profile.city_description" = "Город";
+"settings.edit_profile.city_valiue_placeholder" = "Не выбран";
+"settings.edit_profile.send_button_title" = "Готово";
+"settings.edit_profile.day" = "день";
+"settings.edit_profile.month" = "мес.";
+"settings.edit_profile.year" = "год";
+
+// Photos
+
+"photos.list.title" = "Фотографии";
+
+// News
+"news.news_list.news_title" = "Новости";
+"news.news_list.news_feed_title" = "Лента новостей";
+"news.news_list.updating_title" = "Обновления";
+"news.news_list.recommendations_title" = "Рекомендации";
+"news.news_list.comments_title" = "Комментарии";
+
+"news.news_feed.create_post_title" = "Создать запись";
+"news.news_feed.latest_news" = "Свежие новости";
+
+"news.comments.my_comments" = "Мои комментарии";
+"news.comments.comments_friends" = "Комментарии друзей";
+
+"news.recommendations.my_recommendations" = "Мои рекомендации";
+"news.recommendations.recommendations_friends" = "Рекомендации друзей";
+
+// Messagess
+
+"messages.conversations_list.title" = "Сообщения";
+"messages.conversations_list.search_placeholder" = "Поиск по сообщениям";
+"messages.conversations_list.delete" = "Удалить";

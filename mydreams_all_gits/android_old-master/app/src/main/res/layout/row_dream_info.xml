@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/cardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="13dp"
+    android:layout_marginStart="13dp"
+    android:clickable="true"
+    android:orientation="horizontal"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgMainPhoto"
+                android:layout_alignEnd="@+id/imgMainPhoto"
+                android:layout_alignStart="@+id/imgMainPhoto"
+                android:layout_alignTop="@+id/imgMainPhoto"
+                android:layout_gravity="center"
+                android:contentDescription="@string/temp_string"
+                android:scaleType="centerCrop"
+                android:src="?attr/photo_placeholder"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/imgMainPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:placeholderImage="?attr/placeholderImage"
+                app:viewAspectRatio="@dimen/dream_photo_aspect_ratio"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/lblName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp_string"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="@string/temp_string"
+                android:textColor="#999999"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/lblDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/temp_string"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp">
+
+                <TextView
+                    android:id="@+id/lblLaunchesCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="?attr/ic_launch"
+                    android:text="@string/temp_string"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/lblLikeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="?attr/ic_like"
+                    android:text="@string/temp_string"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="14sp"/>
+
+                <com.rey.material.widget.TextView
+                    android:id="@+id/lblCommentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:drawablePadding="8dp"
+                    android:drawableStart="?attr/ic_comments"
+                    android:text="@string/temp_string"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

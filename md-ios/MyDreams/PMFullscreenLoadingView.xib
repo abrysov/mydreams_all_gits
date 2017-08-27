@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PMFullscreenLoadingView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czj-rt-gti">
+                    <rect key="frame" x="52" y="233" width="496" height="135"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-sg-FKf" customClass="CircleProgressBar">
+                            <rect key="frame" x="222.5" y="0.0" width="51" height="51"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="51" id="0VI-g1-OVp"/>
+                                <constraint firstAttribute="width" secondItem="Xbw-sg-FKf" secondAttribute="height" multiplier="1:1" id="LkJ-hZ-gCf"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progressBarWidth">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                    <real key="value" value="-135"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="progressBarTrackColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="progressBarProgressColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                    <real key="value" value="0.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hintHidden" value="NO"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hintViewBackgroundColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hintTextColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="hintViewSpacing">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDj-T8-kVW">
+                            <rect key="frame" x="0.0" y="86" width="496" height="41"/>
+                            <string key="text">Подождите немного,
+ мы обрабатываем Ваши данные...</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Xbw-sg-FKf" firstAttribute="centerX" secondItem="czj-rt-gti" secondAttribute="centerX" id="HFQ-3p-SAf"/>
+                        <constraint firstItem="Xbw-sg-FKf" firstAttribute="top" secondItem="czj-rt-gti" secondAttribute="top" id="aXw-ZU-fDO"/>
+                        <constraint firstItem="aDj-T8-kVW" firstAttribute="leading" secondItem="czj-rt-gti" secondAttribute="leading" id="etY-CE-C5P"/>
+                        <constraint firstAttribute="trailing" secondItem="aDj-T8-kVW" secondAttribute="trailing" id="iCF-FJ-hEE"/>
+                        <constraint firstAttribute="bottom" secondItem="aDj-T8-kVW" secondAttribute="bottom" constant="8" id="udo-09-bdJ"/>
+                        <constraint firstItem="aDj-T8-kVW" firstAttribute="top" secondItem="Xbw-sg-FKf" secondAttribute="bottom" constant="35" id="xH0-Lc-hRr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.16078431372549018" green="0.20000000000000001" blue="0.25098039215686274" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="czj-rt-gti" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="52" id="0uC-8r-klE"/>
+                <constraint firstAttribute="trailing" secondItem="czj-rt-gti" secondAttribute="trailing" constant="52" id="8KZ-wO-KnZ"/>
+                <constraint firstItem="czj-rt-gti" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="233" id="Plf-eW-7X1"/>
+            </constraints>
+            <connections>
+                <outlet property="infoTextLabel" destination="aDj-T8-kVW" id="ReX-3h-OId"/>
+                <outlet property="progressBar" destination="Xbw-sg-FKf" id="P9I-PR-W71"/>
+            </connections>
+        </view>
+    </objects>
+</document>

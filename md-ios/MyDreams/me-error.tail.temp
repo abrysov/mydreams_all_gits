@@ -1,0 +1,22 @@
+GET
+/api/v1/me
+404
+Cache-Control: max-age=0, private, must-revalidate;
+Connection: keep-alive;
+Content-Type: application/json; charset=utf-8;
+Date: Tue, 05 Apr 2016 09:13:32 GMT;
+Etag: W/\"6f79cba8f57ead56ada03aa18c0392c1\";
+Server: nginx;
+Transfer-Encoding: Identity;
+X-Content-Type-Options: nosniff;
+X-Frame-Options: SAMEORIGIN;
+X-Request-Id: a597aeed-d451-4caf-9406-07cae951efcd;
+X-Runtime: 0.146137;
+X-XSS-Protection: 1; mode=block;
+
+{
+  "meta": {
+    "status": "Not Found",
+    "code": 404,
+  }
+}

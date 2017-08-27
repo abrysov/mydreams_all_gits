@@ -1,0 +1,15 @@
+# Template information section
+name: service
+summary: create service
+author: i.ushakov (i.ushakov@perpetuumlab.com)
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+- {name: .h, path: Code/Service/service.h.liquid}
+- {name: Impl/Impl.h, path: Code/Service/serviceImpl.h.liquid}
+- {name: Impl/Impl.m, path: Code/Service/serviceImpl.m.liquid}
+
+# Template dependencies
+dependencies:

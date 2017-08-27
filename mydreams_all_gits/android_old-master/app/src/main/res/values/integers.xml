@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="max_dream_name_length">160</integer>
+    <integer name="max_dream_desc_length">500</integer>
+    <integer name="max_post_title_length">160</integer>
+    <integer name="max_post_desc_length">500</integer>
+    <integer name="min_dream_name_length">3</integer>
+    <integer name="min_dream_desc_length">3</integer>
+    <integer name="min_post_title_length">3</integer>
+    <integer name="min_post_desc_length">3</integer>
+    <integer name="max_dream_photo_size">1024</integer>
+    <integer name="max_first_name_length">20</integer>
+    <integer name="min_first_name_length">3</integer>
+    <integer name="max_last_name_length">20</integer>
+    <integer name="min_last_name_length">3</integer>
+    <integer name="max_phone_length">14</integer>
+    <integer name="min_phone_length">9</integer>
+    <integer name="max_password_length">20</integer>
+    <integer name="min_password_length">6</integer>
+    <integer name="max_avatar_photo_size">1024</integer>
+    <item name="dream_photo_aspect_ratio" format="float" type="dimen">1</item>
+    <item name="avatar_aspect_ratio" format="float" type="dimen">1</item>
+    <integer name="max_status_length">140</integer>
+    <integer name="max_photo_size">1024</integer>
+    <integer name="max_photo_count">30</integer>
+    <integer name="max_post_photo_size">1024</integer>
+    <item name="post_photo_aspect_ratio" format="float" type="dimen">1.41</item>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt_new_password">10sp</dimen>
+    <dimen name="txt_size_title_agreement">12sp</dimen>
+    <dimen name="txt_btn_offer_locality">16sp</dimen>
+    <dimen name="txt_top_offer_locality">20sp</dimen>
+
+    <!--EditProfile-->
+    <dimen name="title_toolbar_size">20sp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="padding_edit_text">10dp</dimen>
+    <dimen name="padding_arrow">10dp</dimen>
+    <dimen name="padding_data_picker">15dp</dimen>
+
+</resources>

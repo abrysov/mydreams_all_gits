@@ -1,0 +1,24 @@
+{application, messenger,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { messenger_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    bullet,
+    beruang,
+    lager,
+    syn,
+    pgapp,
+    eql,
+    jsx,
+    jwt
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.

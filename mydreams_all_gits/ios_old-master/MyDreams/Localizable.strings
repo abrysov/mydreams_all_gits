@@ -1,0 +1,255 @@
+/* 
+  Localizable.strings
+  MyDreams
+
+  Created by Игорь on 26.08.15.
+  Copyright (c) 2015 Unicom. All rights reserved.
+*/
+
+// Коды начинаются с "_" - это критерий ключа для локализованной строки.
+
+
+// Controls
+
+"_LOGOUT"           = "Выйти";
+"_CANCEL"           = "Отмена";
+"_LOGOUT_CONFIRM"   = "Выйти из Dreambook?";
+"_YES"              = "Да";
+"_NO"               = "Нет";
+"_SEX_MALE"         = "Мужской";
+"_SEX_FEMALE"       = "Женский";
+"_SELECT"           = "Выбрать";
+"_SELECT_DATE"      = "Выберите дату";
+"_SAVE"             = "Сохранить";
+"_APPLY"            = "Применить";
+
+
+// Menu Dialog
+
+"_MENU_ADD"         = "Добавить";
+"_MENU_FLYBOOK"     = "Dreambook";
+"_MENU_FRIENDS"     = "Друзья";
+"_MENU_NEWS"        = "Новости";
+"_MENU_TOP"         = "Топ 100";
+"_MENU_DREAMERS"    = "Мечтатели";
+
+
+// Resources
+
+"_LOGO_IMAGE_OPAQ"         = "LogoNewru.png";
+"_LOGO_IMAGE_BLUE"         = "LogoNewRU.jpg";
+
+
+// Messages
+
+"_ERROR_DATA_NOT_RECEIVED"  = "Данные не получены";
+"_STRING_LIMIT"             = "Ой... Буквы закончились:(";
+
+
+// Common
+
+"_LIKES_DECLENSION"   = "Нет лайков|%ld лайк|%ld лайка|%ld лайков";
+"_DREAMS_DECLENSION"    = "Мечтания|%ld мечта|%ld мечты|%ld мечтаний";
+"_POSTS_DECLENSION"     = "Записи|%ld запись|%ld записи|%ld записей";
+"_STAMPS_DECLENSION"  = "Нет марок|%ld марка|%ld марки|%ld марок";
+"_COMMENTS_DECLENSION"= "Комментарии|%ld комментарий|%ld комментария|%ld комментариев";
+"_DREAMSDONE_DECLENSION"= "Исполненные мечтания|%ld исполненная мечта|%ld исполненные мечты|%ld исполненных мечтаний";
+
+//
+
+"_MEDIA_PICK_CHOICE"    = "Выберите источник фото";
+"_MEDIA_PICK_GALLERY"   = "Выбрать из галереи";
+"_MEDIA_PICK_CAMERA"    = "Фотокамера";
+
+
+// PostDream VC
+
+"_DREAM_ADD_TITLE"       = "Добавить мечту";
+"_DREAM_EDIT_TITLE"      = "Обновить";
+"_DREAM_TITLE"           = "Название мечты";
+"_DREAM_DESCR"           = "Описание мечты";
+"_DREAM_ADD"             = "ДОБАВИТЬ в Dreambook";
+"_DREAM_ADD_CANCEL"      = "Отмена";
+"_DREAM_ADD_FILTER"      = "Выберите фотоэффект";
+"_DREAM_ADD_PENDING_T"   = "Добавляем мечту";
+"_DREAM_EDIT_PENDING_T"  = "Обновляем мечту";
+"_DREAM_ADD_PENDING_W"   = "Пожалуйста, подождите...";
+"_DREAM_ADD_SUCCESS"     = "Мечта успешно добавлена!";
+"_DREAM_EDIT_SUCCESS"    = "Мечта успешно обновлена!";
+
+"_DREAM_ADD_TITLE_NO"   = "Введите название мечты от 3 до 160 символов.";
+"_DREAM_ADD_DESCR_NO"   = "Введите описание мечты от 3 до 500 символов.";
+"_DREAM_ADD_IMAGE_NO"   = "Загрузите фото";
+
+
+// PostPost VC
+
+"_POST_ADD_TITLE"       = "Добавить запись";
+"_POST_EDIT_TITLE"      = "Обновить";
+"_POST_TITLE"           = "Заголовок записи";
+"_POST_DESCR"           = "Текст записи";
+"_POST_ADD"             = "ДОБАВИТЬ ЗАПИСЬ";
+"_POST_ADD_CANCEL"      = "Отмена";
+"_POST_ADD_FILTER"      = "Выберите фотоэффект";
+"_POST_ADD_PENDING_T"   = "Добавляем запись";
+"_POST_EDIT_PENDING_T"  = "Обновляем запись";
+"_POST_ADD_PENDING_W"   = "Пожалуйста, подождите...";
+"_POST_ADD_SUCCESS"     = "Запись успешно добавлена!";
+"_POST_EDIT_SUCCESS"    = "Запись успешно обновлена!";
+
+"_POST_ADD_TITLE_NO"   = "Введите заголовок записи от 3 до 160 символов.";
+"_POST_ADD_DESCR_NO"   = "Введите текст записи от 3 до 500 символов.";
+"_POST_ADD_IMAGE_NO"   = "Загрузите фото";
+
+
+// Login VC
+
+"_LOGIN_LOGIN"          = "Логин";
+"_LOGIN_PASSWORD"       = "Пароль";
+"_LOGIN_ENTER"          = "Войти";
+"_LOGIN_FORGOT"         = "Регистрация";//"Забыли пароль?";
+"_LOGIN_ENTER_WITH"     = "Войти с помощью:";
+"_LOGIN_ENTER_LOGIN"    = "Введите логин";
+"_LOGIN_ENTER_PASSWORD" = "Введите пароль";
+
+
+// Signup VC
+
+"_SIGNUP_NAME"      = "Имя";
+"_SIGNUP_SURNAME"   = "Фамилия";
+"_SIGNUP_EMAIL"     = "E-Mail";
+"_SIGNUP_PHONE"     = "Телефон";
+"_SIGNUP_PASSWORD"  = "Пароль";
+"_SIGNUP_REPEAT"    = "Повторите пароль";
+"_SIGNUP_DATE"      = "Дата рождения";
+"_SIGNUP_LOCATION"  = "Город";
+"_SIGNUP_REGISTER"  = "Зарегистрироваться";
+"_SIGNUP_AGREE"     = "Я согласен с условиями";
+
+"_SIGNUP_NAME_NO"           = "Введите имя";
+"_SIGNUP_NAME_LIMITS"       = "Имя может содержать от 3 до 20 символов";
+"_SIGNUP_SURNAME_LIMITS"    = "Фамилия может содержать от 3 до 20 символов";
+"_SIGNUP_EMAIL_NO"          = "Введите E-mail";
+"_SIGNUP_EMAIL_MATCH"       = "Некорректный E-mail";
+"_SIGNUP_PHONE_MATCH"       = "Телефон может состоять только из цифр и символов '(', ')', и '+'" ;//"Телефон может содержать от 9 до 14 цифр";
+"_SIGNUP_PASSWORD_NO"       = "Введите пароль";
+"_SIGNUP_PASSWORD_LIMITS"   = "Пароль должен содержать от 6 до 20 символов";
+"_SIGNUP_PASSWORD_MATCH"    = "Пароль должен содержать хотя бы 1 букву";
+"_SIGNUP_REPEAT_MATCH"      = "Пароли не совпадают";
+"_SIGNUP_AGREE_NO"          = "Вы должны согласиться с условиями";
+
+"_SIGNUP_SUCCESS"           = "Регистрация успешна!";
+
+"_LOCATION_SELECT_SEARCH"   = "Введите название города";
+"_LOCATION_SELECT_NOTHING"  = "Ничего не найдено";
+"_COUNTRY_SELECT_SEARCH"    = "";
+
+
+// Flybook VC
+
+"_FLYBOOK_FRIENDS"              = "друзей";
+"_FLYBOOK_FRIENDS_DECLENSION"   = "друзей|друг|друга|друзей";
+"_FLYBOOK_SUBSCRIBERS"          = "подписчиков";
+"_FLYBOOK_SUBSCRIBERS_DECLENSION"  = "подписчиков|подписчик|подписчика|подписчиков";
+"_FLYBOOK_LAUNCHES"             = "запусков";
+"_FLYBOOK_LAUNCHES_DECLENSION"  = "запусков|запуск|запуска|запусков";
+"_FLYBOOK_PROPOSED"             = "Вам предложили";
+"_FLYBOOK_PROPOSED_DECLENSION"      = "|%ld мечту|%ld мечты|%ld мечтаний";
+"_FLYBOOK_TITLE"                = "Dreambook";
+"_FLYBOOK_ALBUM"                = "Фотографии";
+"_FLYBOOK_DELETE_FRIEND"        = "Удалить из друзей";
+"_FLYBOOK_ADD_FRIEND"           = "Добавить в друзья";
+"_FLYBOOK_SUBSCRIBE"            = "Подписаться";
+"_FLYBOOK_UNSUBSCRIBE"          = "Отписаться";
+"_FLYBOOK_DENY_FRIENDREQUEST"   = "Отклонить заявку";
+"_FLYBOOK_ADDPOST"              = "Добавить запись";
+"_FLYBOOK_PROFILE"              = "Профиль";
+
+
+// Dream VC
+
+"_DREAM_TAKE"               = "Взять себе";
+"_DREAM_PROPOSE"            = "Предложить другу";
+"_DREAM_GIFT"               = "Подарить марку";
+"_DREAM_EDIT"               = "Редактировать";
+"_DREAM_PROPOSE_CONFIRM"    = "Предложить мечту «%@» другу %@?";
+"_FRIENDS_SEARCH"           = "Введите имя друга";
+"_DREAM_LIKES_N"            = "%ld Лайков";
+"_DREAM_LIKES_0"            = "Лайки";
+"_DREAM_STAMPS_N"           = "%ld Марок";
+"_DREAM_STAMPS_0"           = "Марки";
+"_DREAM_COMMENTS_N"         = "%ld Комментариев";
+"_DREAM_COMMENTS_0"         = "Комментарии";
+"_DREAM_DONE"               = "Исполненная";
+
+"_DREAM_COMMENT_ADD"        = "Добавить комментарий";
+"_DREAM_COMMENT_WRITE"      = "Написать комментарий";
+"_DREAM_COMMENT_CONFIRM"    = "Добавить комментарий?";
+"_DREAM_COMMENT_NO"         = "Текст комментария должен содержать от 3 до 500 символов";
+
+"_DREAM_LIKE_SUCCESS"       = "Лайк добавлен!";
+"_DREAM_UNLIKE_SUCCESS"     = "Лайк снят!";
+"_DREAM_TAKE_SUCCESS"       = "Мечта добавлена во флайбук!";
+"_DREAM_PROPOSE_SUCCESS"    = "Мечта предложена другу!";
+
+"_DREAM_MARK_DONE"          = "Отметить исполненной";
+"_DREAM_MARK_NOTDONE"       = "Отметить неисполненной";
+"_DREAM_DONE_SUCCESS"       = "Мечта исполнена!";
+"_DREAM_NOTDONE_SUCCESS"    = "Мечта неисполнена";
+
+
+// Friends VC
+
+"_FRIEND_ACCEPT"            = "Принять";
+"_FRIEND_ACCEPT_CONFIRM"    = "Принять заявку?";
+"_FRIEND_DECLINE"           = "Отклонить";
+"_FRIEND_DECLINE_CONFIRM"   = "Отклонить заявку?";
+"_FRIEND_DELETE"            = "Удалить";
+"_FRIEND_DELETE_CONFIRM"    = "Удалить друга?";
+
+
+// Profile VC
+
+"_PROFILE_UPDATE"           = "Обновить";
+"_PROFILE_PHOTOS"           = "Мои Фотографии";
+"_PROFILE_SUCCESS_UPDATE"   = "Изменения сохранены";
+"_PROFILE_SAVE"             = "Обновить";
+"_PROFILE_SAVE_CONFIRM"     = "Внести изменения в Dreambook?";
+"_PROFILE_EDIT"             = "Редактировать профиль";
+
+"_PROFILE_NEWPASSWORD"      = "Новый пароль";
+"_PROFILE_OLDPASSWORD"      = "Старый пароль";
+"_PROFILE_OLDPASSWORD_NO"   = "Введите старый пароль";
+
+"_PHOTO_ADD"        = "Добавить фото";
+"_PHOTO_DELETE"     = "Удалить выбранные";
+"_PHOTO_SAVE"       = "Сохранить в альбом";
+
+
+// User Filter
+
+"_FILTER_POPULAR"   = "Популярные";
+"_FILTER_NEW"       = "Новые";
+"_FILTER_ONLINE"    = "Онлайн";
+"_FILTER_VIP"       = "VIP";
+"_FILTER_ALL"       = "Все";
+"_FILTER_SEX"       = "Пол";
+"_FILTER_AGE"       = "Возраст";
+"_FILTER_COUNTRY"   = "Страна";
+"_FILTER_CITY"      = "Город";
+
+
+// Proposed
+
+"_PROPOSED_TITLE"   = "Предложенные мечтания";
+"_PROPOSED_ACCEPT"  = "Взять";
+"_PROPOSED_REJECT"  = "Отклонить";
+"_PROPOSED_ACCEPTED" = "Мечта добавлена";
+"_PROPOSED_REJECTED" = "Мечта отклонена";
+
+
+
+
+
+
+

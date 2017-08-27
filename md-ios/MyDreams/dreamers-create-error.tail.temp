@@ -1,0 +1,52 @@
+POST
+/api/v1/dreamers
+422
+Cache-Control: max-age=0, private, must-revalidate;
+Connection: keep-alive;
+Content-Type: application/json; charset=utf-8;
+Date: Tue, 05 Apr 2016 09:13:32 GMT;
+Etag: W/\"6f79cba8f57ead56ada03aa18c0392c1\";
+Server: nginx;
+Transfer-Encoding: Identity;
+X-Content-Type-Options: nosniff;
+X-Frame-Options: SAMEORIGIN;
+X-Request-Id: a597aeed-d451-4caf-9406-07cae951efcd;
+X-Runtime: 0.146137;
+X-XSS-Protection: 1; mode=block;
+
+{
+  "meta": {
+    "status": "fail",
+    "code": 422,
+    "message": "translate devise.registrations.validation_failed",
+    "errors": {
+      "email": [
+        "translate error desc"
+      ],
+      "phone": [
+        "translate error desc"
+      ],
+      "first_name": [
+        "translate error desc"
+      ],
+      "last_name": [
+        "translate error desc"
+      ],
+      "password": [
+        "translate error desc"
+      ],
+      "gender": [
+        "translate error desc"
+      ],
+      "birthday": [
+        "translate error desc"
+      ],
+      "country_id": [
+        "translate error desc"
+      ],
+      "city_id": [
+        "translate error desc"
+      ],
+    }
+  }
+}

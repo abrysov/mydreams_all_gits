@@ -1,0 +1,4 @@
+#!/bin/bash
+LOG_FOLDER=/var/log/dreams-{{ item.service }}-{{ item.name }}
+mkdir -p $LOG_FOLDER
+exec svlogd -tt $LOG_FOLDER

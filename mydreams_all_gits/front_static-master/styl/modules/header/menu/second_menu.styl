@@ -1,0 +1,97 @@
+.second_menu
+  display block
+  position relative
+  height remify(109px)
+  margin-top remify(-35px)
+
+  ul.list
+    margin-top remify(30px)
+    display block
+
+    li
+      all initial
+
+      > a.item
+        position relative
+        font-family "RobotoLight"
+        text-decoration none
+        padding 7px 22px
+        color white
+        text-align center
+        cursor pointer
+        font-size 0.65rem
+        letter-spacing 0.03em
+        transition color 0.3s ease-out 0s
+
+        &::after
+          content ''
+          display block
+          position absolute
+          width 8px
+          height 8px
+          left 50%
+          top -5px
+          transform translateY(-50%)
+          background-color white
+          opacity 0
+          border-radius 50%
+          transition opacity 0.3s ease-out 0s
+
+        &:hover
+          color alpha(white, 0.5)
+
+          &::after
+            opacity 0.5
+
+
+    &.right
+      li
+        > a.item
+          border-left 1px solid rgba(250,250,250,0.6)
+
+
+    &.left
+      li
+        > a.item
+          border-right 1px solid rgba(250,250,250,0.6)
+
+  .menu_logo
+    width remify(170px)
+    height remify(106px)
+    display block
+    text-align center
+    position absolute
+    left 50%
+    transform translateX(-50%)
+
+    &:hover:before
+      opacity 0.5
+
+    &:hover:after
+      display block
+
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 0
+      display block
+      width 100%
+      height 100%
+      background url(//d20pou9wppyzb1.cloudfront.net/assets/svg/logo_ru-c3fcfbd995c4a9dedb9efa0d78534ac64fcdcf64a11dab5dc2a9ff29ed014c7d.svg) center center no-repeat
+      opacity 1
+      -webkit-transition all base-speed ease-out 0s
+      
+    &:after
+      content ''
+      position absolute
+      left 0
+      top 0
+      display none
+      width 100%
+      height 100%
+      background url(//d20pou9wppyzb1.cloudfront.net/assets/svg/logo_ru_shine-ea044e925b865d670feabea14b801221b56db6384b9ea56853f50c96372d506c.svg) center center no-repeat
+
+    img
+      height $logo-height
+      width 94px

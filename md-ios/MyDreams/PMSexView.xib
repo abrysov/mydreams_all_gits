@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PMSexView">
+            <connections>
+                <outlet property="botSeparator" destination="Kd0-DE-ko0" id="BAu-Td-FtA"/>
+                <outlet property="titleButton" destination="dwe-jK-K1E" id="ZoW-3m-zt7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GEt-b4-cKJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="69" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-DE-ko0" userLabel="SeparatorView">
+                    <rect key="frame" x="0.0" y="50" width="69" height="1"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="zrc-w6-SiO"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-jK-K1E" userLabel="sex">
+                    <rect key="frame" x="0.0" y="5" width="69" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="title">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dwe-jK-K1E" secondAttribute="trailing" id="3bA-MG-yKQ"/>
+                <constraint firstAttribute="trailing" secondItem="Kd0-DE-ko0" secondAttribute="trailing" id="6RE-MI-hO8"/>
+                <constraint firstItem="Kd0-DE-ko0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lqu-92-gv1"/>
+                <constraint firstItem="dwe-jK-K1E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="PXL-NV-stF"/>
+                <constraint firstItem="dwe-jK-K1E" firstAttribute="bottom" secondItem="Kd0-DE-ko0" secondAttribute="top" id="Zre-fV-oO6"/>
+                <constraint firstItem="dwe-jK-K1E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oh3-v0-1Ox" userLabel="sex.leading = leading"/>
+                <constraint firstAttribute="bottom" secondItem="dwe-jK-K1E" secondAttribute="bottom" id="qYP-gq-JXy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

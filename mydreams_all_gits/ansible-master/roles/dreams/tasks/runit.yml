@@ -1,0 +1,45 @@
+---
+- name: runit | create application {{ item }} script directory
+  file: state=directory path=/etc/sv/dreams-{{ item.service }}-{{ item.name }} owner=root group=root mode=755
+  sudo: true
+  with_items: dreams_runit_services
+  tags:
+    - dreams
+    - runit
+
+- name: runit | create application {{ item }} script log directory
+  file: state=directory path=/etc/sv/dreams-{{ item.service }}-{{ item.name }}/log owner=root group=root mode=755
+  sudo: true
+  with_items: dreams_runit_services
+  tags:
+    - dreams
+    - runit
+
+- name: runit | add application {{ item }} script
+  template: src=runit/dreams.{{ item.service }}.run.j2 dest=/etc/sv/dreams-{{ item.service }}-{{ item.name }}/run mode=755
+  sudo: true
+  with_items: dreams_runit_services
+  tags:
+    - dreams
+    - runit
+
+- name: runit | add application {{ item }} log run script
+  template: src=runit/dreams.log.run.j2 dest=/etc/sv/dreams-{{ item.service }}-{{ item.name }}/log/run mode=755
+  sudo: true
+  with_items: dreams_runit_services
+  tags:
+    - dreams
+    - runit
+
+- name: runit | symlink {{ item }} dir to enable runit service
+  file: state=link src=/etc/sv/dreams-{{ item.service }}-{{ item.name }} dest=/etc/service/dreams-{{ item.service }}-{{ item.name }}
+  sudo: true
+  with_items: dreams_runit_services
+  tags:
+    - dreams
+    - runit
+
+- name: user can restart service
+  lineinfile: "dest=/etc/sudoers state=present regexp='^dev' line='dev  ALL=(ALL:ALL) NOPASSWD:/usr/bin/sv'"
+  sudo: true
+

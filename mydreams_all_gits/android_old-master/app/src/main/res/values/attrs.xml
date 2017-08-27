@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="flybook_user_info_background"/>
+    <attr name="flybook_user_info_text_color"/>
+    <attr name="flybook_user_info_ic_user"/>
+    <attr name="flybook_user_info_ic_location"/>
+    <attr name="flybook_user_info_ic_quote"/>
+
+    <attr name="photo_placeholder"/>
+
+    <attr name="ToolbarTheme"/>
+
+    <attr name="ic_like"/>
+    <attr name="ic_comments"/>
+    <attr name="ic_user"/>
+    <attr name="ic_location"/>
+    <attr name="ic_group"/>
+    <attr name="ic_quote"/>
+    <attr name="ic_launch"/>
+    <attr name="ic_diamond"/>
+    <attr name="bg_button"/>
+    <attr name="style_edit_text_divider"/>
+    <attr name="style_edit_text_label"/>
+
+    <attr name="cropImageStyle" format="reference"/>
+
+    <declare-styleable name="CropImageView">
+        <attr name="highlightColor" format="reference|color"/>
+        <attr name="showThirds" format="boolean"/>
+        <attr name="showCircle" format="boolean"/>
+        <attr name="showHandles">
+            <enum name="changing" value="0"/>
+            <enum name="always" value="1"/>
+            <enum name="never" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ImageViewTint">
+        <attr name="tintColor" format="reference|color"/>
+    </declare-styleable>
+
+</resources>

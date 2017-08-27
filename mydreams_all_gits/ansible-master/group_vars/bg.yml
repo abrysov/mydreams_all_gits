@@ -1,0 +1,29 @@
+---
+dreams_env:             production
+dreams_directory:       "{{ projects_directory }}"
+
+install_nginx: false
+
+dreams_deploy_user:
+  {
+    name: dev,
+    home: /home/dev,
+    groups: 'dev',
+    comment: 'dreams dev deploy user'
+  }
+
+dreams_web_repo:    "git@github.com:MyDreamsClub/mydreams.git"
+dreams_web_branch:  'master'
+
+dreams_web_base_dir:       "{{ dreams_directory }}/dreams"
+dreams_web_releases_dir:   "{{ dreams_web_base_dir }}/releases"
+dreams_web_shared_dir:     "{{ dreams_web_base_dir }}/shared"
+dreams_web_bundle_dir:     "{{ dreams_web_shared_dir }}/vendor/bundle"
+dreams_web_uploads_dir:    "{{ dreams_web_shared_dir }}/uploads"
+dreams_web_log_dir:        "{{ dreams_web_shared_dir }}/log"
+dreams_web_system_dir:     "{{ dreams_web_shared_dir }}/system"
+dreams_web_pids_dir:       "{{ dreams_web_shared_dir }}/pids"
+dreams_web_run_path_dir:   "{{ dreams_web_base_dir }}/current"
+
+dreams_runit_services:
+  - { service: sidekiq, name: main, queue: "-q default", concurency: 25 }

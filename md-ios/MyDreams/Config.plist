@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>api.url</key>
+	<string>NSURL(http://staging.mydreams.club/api/v1/)</string>
+	<key>api.application</key>
+	<string>936c2df0d752c810c9bbb3326067f6e1b8ab411c3a837b6b50d1c23ed4a8ea49</string>
+	<key>api.secret</key>
+	<string>acb63e210e161c3e85e86d181c0a0e0b5b3bbbc41e64423347ba784ea0715fed</string>
+	<key>support.email</key>
+	<string>support@mydreams.club</string>
+	<key>websocket.url</key>
+	<string>NSURL(http://staging.mydreams.club/bullet)</string>
+	<key>vk.appId</key>
+	<string>5386045</string>
+</dict>
+</plist>

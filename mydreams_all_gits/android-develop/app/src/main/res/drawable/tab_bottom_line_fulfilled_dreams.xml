@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:textColor="@color/text_color_grey"
+        android:state_selected="true"
+        android:drawable="@drawable/bg_tab_widget_dream_come" />
+    <item
+        android:textColor="@color/grey"
+        android:state_selected="false"
+        android:drawable="@color/white">
+    </item>
+
+</selector>

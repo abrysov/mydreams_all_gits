@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="marks_price_list">
+        <item>1</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+    </integer-array>
+
+    <integer-array name="marks_icon">
+        <item>@drawable/ic_mark_bronze</item>
+        <item>@drawable/ic_mark_silver</item>
+        <item>@drawable/ic_mark_gold</item>
+        <item>@drawable/ic_mark_platinum</item>
+        <item>@drawable/ic_mark_vip</item>
+    </integer-array>
+</resources>

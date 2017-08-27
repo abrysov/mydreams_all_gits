@@ -1,0 +1,38 @@
+---
+- name: Adds erlang-solutions repository
+  become: yes
+  apt_repository:
+    repo: deb http://packages.erlang-solutions.com/{{ansible_lsb.id | lower}} {{ansible_lsb.codename}} contrib
+    state: present
+
+- name: Adds the Erlang Solutions public key for apt-secure
+  become: yes
+  apt_key:
+    url: http://packages.erlang-solutions.com/{{ansible_lsb.id | lower}}/erlang_solutions.asc
+    state: present
+
+- name: Install erlang and git
+  become: yes
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  with_items:
+    - esl-erlang
+    - git
+
+- name: Ensure bin exists
+  file:
+    path: "{{ base_dir }}/bin"
+    state: directory
+
+- name: Fetch rebar3
+  get_url:
+    url: https://s3.amazonaws.com/rebar3/rebar3
+    dest: "{{ base_dir }}/bin/rebar3"
+
+- name: Set permissions for rebar3
+  file:
+    path: "{{ base_dir }}/bin/rebar3"
+    mode: u+x
+    state: file

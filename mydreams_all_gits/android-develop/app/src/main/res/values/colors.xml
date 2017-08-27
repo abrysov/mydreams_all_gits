@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0FA0DE</color>
+    <color name="colorPrimaryDark">#0b7bab</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="edit_text_auth">#1e000000</color>
+
+    <color name="edit_text_valid">#438BAF</color>
+    <color name="edit_text_not_valid">#AB4CAD</color>
+
+    <color name="black_support_mail">#14000000</color>
+    <color name="black_support_mail_pressed">#23000000</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="bg_field_selection_country">#05000000</color>
+    <color name="bg_user_agreement">#F6F6F6</color>
+
+    <color name="text_color_grey">#4A4A4A</color>
+    <color name="grey">#839098</color>
+    <color name="grey_extra_light">#83f5f8fa</color>
+    <color name="grey_ultra_light">#F0F2F4</color>
+    <color name="grey_medium_light">#F1F3F6</color>
+    <color name="grey_light">#F5F8FA</color>
+    <color name="green">#00C18C</color>
+    <color name="bg_divider_dream_grey">#E5EBF0</color>
+    <color name="tabwidget_bottom_line_color_blue">#0FA0DE</color>
+    <color name="fulfilled_dreams_bottom_divider_color">#EAEFF3</color>
+    <color name="fulfilled_dreams_color_tollbar">#00C18D</color>
+    <color name="bg_color_ic_vip_status">#F5D023</color>
+    <color name="dreamer_toolbar_color_bg">#4AADE2</color>
+    <color name="pressed_selector_tab_dreamers_filter">#434aade2</color>
+    <color name="snackbar_bg_color">#F06475</color>
+</resources>

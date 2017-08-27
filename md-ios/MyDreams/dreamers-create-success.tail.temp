@@ -1,0 +1,50 @@
+POST
+/api/v1/dreamers
+200
+Cache-Control: max-age=0, private, must-revalidate;
+Connection: keep-alive;
+Content-Type: application/json; charset=utf-8;
+Date: Tue, 05 Apr 2016 09:13:32 GMT;
+Etag: W/\"6f79cba8f57ead56ada03aa18c0392c1\";
+Server: nginx;
+Transfer-Encoding: Identity;
+X-Content-Type-Options: nosniff;
+X-Frame-Options: SAMEORIGIN;
+X-Request-Id: a597aeed-d451-4caf-9406-07cae951efcd;
+X-Runtime: 0.146137;
+X-XSS-Protection: 1; mode=block;
+
+{
+    "dreamer": {
+        "id": 5981,
+        "full_name": "Иван Ушаков",
+        "gender": "male",
+        "vip": false,
+        "celebrity": false,
+        "city": "Novoul'yanovsk",
+        "country": "Russian Federation",
+        "visits_count": 1,
+        "avatar": {
+            "small": "https://dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/147c493e/5352eb91/c414fd7a/9846eb58/small_1459432024-file.jpeg",
+            "pre_medium": "https://dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/147c493e/5352eb91/c414fd7a/9846eb58/pre_medium_1459432024-file.jpeg",
+            "medium": "https://dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/147c493e/5352eb91/c414fd7a/9846eb58/medium_1459432024-file.jpeg",
+            "large": "https://dncw63ov7q9kh.cloudfront.net/uploads/dreamer/avatar/147c493e/5352eb91/c414fd7a/9846eb58/large_1459432024-file.jpeg"
+        },
+        "first_name": "Иван",
+        "last_name": "Ушаков",
+        "birthday": null,
+        "status": null,
+        "friends_count": 0,
+        "dreams_count": 2,
+        "fulfilled_dreams_count": 0,
+        "views_count": 1,
+        "launches_count": 0,
+        "is_blocked": false,
+        "is_deleted": false,
+        "is_online": true
+    },
+    "meta": {
+        "status": "success",
+        "code": 200
+    }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/first_group" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/my_dreambook"
+            android:checked="false"
+            android:icon="@mipmap/ic_user"
+            android:title="@string/nav_my_dreambook" />
+
+        <item
+            android:id="@+id/message"
+            android:checked="false"
+            android:icon="@mipmap/ic_message"
+            android:title="@string/nav_message"
+            app:actionLayout="@layout/menu_counter"/>
+
+        <item
+            android:id="@+id/events"
+            android:checked="false"
+            android:icon="@mipmap/ic_bell"
+            android:title="@string/nav_events"
+            app:actionLayout="@layout/menu_counter"/>
+
+        <item
+            android:id="@+id/news"
+            android:checked="false"
+            android:icon="@mipmap/ic_news"
+            android:title="@string/nav_news" />
+    </group>
+
+    <group android:id="@+id/second_group" android:checkableBehavior="single">
+        <item
+            android:id="@+id/fulfill_dream"
+            android:checked="false"
+            android:icon="@mipmap/ic_gift"
+            android:title="@string/nav_fulfill_dream" />
+
+        <item
+            android:id="@+id/fulfilled_dream"
+            android:checked="false"
+            android:icon="@mipmap/ic_brilliant_white_tick"
+            android:title="@string/nav_dream_come"
+            app:actionLayout="@layout/menu_counter"/>
+
+        <item
+            android:id="@+id/dreams"
+            android:checked="false"
+            android:icon="@mipmap/ic_brilliant_white"
+            android:title="@string/nav_dreams" />
+
+        <item
+            android:id="@+id/top100"
+            android:checked="false"
+            android:icon="@mipmap/ic_cup"
+            android:title="@string/nav_top100"
+            app:actionLayout="@layout/menu_counter"/>
+
+        <item
+            android:id="@+id/dreamers"
+            android:checked="false"
+            android:icon="@mipmap/ic_world"
+            android:title="@string/nav_dreamers"
+            app:actionLayout="@layout/menu_counter"/>
+
+        <item
+            android:id="@+id/dreams_club"
+            android:checked="false"
+            android:icon="@mipmap/ic_star"
+            android:title="@string/nav_dreams_club" />
+    </group>
+
+    <group
+        android:id="@+id/third_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/setting"
+            android:checked="false"
+            android:icon="@mipmap/ic_setting"
+            android:title="@string/nav_setting" />
+    </group>
+</menu>

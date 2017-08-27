@@ -1,0 +1,104 @@
+body
+  background linear-gradient(135deg, #009eff 0%, #e237fa 100%)
+  background-size 100% 100%
+  background-attachment fixed
+
+#wrapper
+  background-image asset_url('ProkrutktaFULLWC-min-5000.jpg')
+  background-repeat no-repeat
+  background-position center center
+  background-size auto 100%
+  min-width remify(1260px)
+  max-width 77rem
+  margin 0 auto
+
+  &.main
+    background-color #0F1722
+
+.balloon 
+  width remify(940px)
+  height remify(735px)
+  margin 0 (content-sides-padding * -1)
+  background asset_url("balloon_action.jpg") center center no-repeat
+  background-size container-w auto
+
+.special
+  min-height 100px
+  width 100%
+  height 880px
+
+  &.not-vip
+    //background url(//d20pou9wppyzb1.cloudfront.net/assets/svg/city-91a7e43abc1a525bd71752f4184ed0d988fac5d9f40087208ec4c558315ce264.svg) center bottom -2px no-repeat
+    background-size 100% auto
+    width remify(900px) !important
+    margin remify(20px) auto remify(10px)
+    height remify(590px)
+
+//buttons
+.btn
+  text-align center
+  cursor pointer
+  font-family Roboto
+
+  &-default
+
+    display block
+    //margin 0 auto
+    padding remify(8px) remify(10px) remify(6px)
+    //todo rem
+    font-size remify(12px)
+    line-height 1.5em
+    letter-spacing 0.2px
+    font-weight 300
+    color #3e3e3e
+
+    border-radius remify(4px)
+    background-color #e9e9e9
+    transition opacity 0.3s ease-out 0s
+
+
+    &:hover
+      opacity 0.5
+
+    &.large
+      font-size "RobotoLight"
+      text-align center
+      width remify(220px)
+
+  &-welcome
+
+    font-family RobotoLight
+    background-size 100%
+    background-image  linear-gradient(to right, #f5dd33 0%,#efc02c 100%)
+    z-index 100
+
+    display block
+    padding remify(20px) 0
+    width remify(255px)
+    position absolute
+    right remify(14px)
+    top remify(180px)
+    border-radius remify(9px)
+    box-shadow 0 0 30px rgba(255,255,0,0.5)
+    font-size remify(18px)
+    font-weight 300
+    text-transform uppercase
+    letter-spacing 0
+
+    &:before
+      border-radius 9px
+      background-image linear-gradient(to right, #efc02c 0%, #f5dd33 100%)
+      content ''
+      display block
+      height 100%
+      position absolute
+      top 0
+      left 0
+      opacity 0
+      width 100%
+      z-index -100
+      transition opacity base-speed linear
+
+    &:hover
+      &:before
+        opacity 1

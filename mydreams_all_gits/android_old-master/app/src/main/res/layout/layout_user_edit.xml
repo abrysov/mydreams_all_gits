@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/flybook_user_info_background">
+
+    <RelativeLayout
+        android:id="@+id/avatarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imgAvatar"
+            android:layout_alignEnd="@+id/imgAvatar"
+            android:layout_alignStart="@+id/imgAvatar"
+            android:layout_alignTop="@+id/imgAvatar"
+            android:layout_gravity="center"
+            android:contentDescription="@string/temp_string"
+            android:scaleType="centerCrop"
+            android:src="?attr/photo_placeholder"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:placeholderImage="?attr/placeholderImage"
+            app:viewAspectRatio="@dimen/dream_photo_aspect_ratio"/>
+
+    </RelativeLayout>
+
+    <com.rey.material.widget.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/FABColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/avatarLayout"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fab_top_margin"
+        app:fab_iconSize="20dp"
+        app:fab_iconSrc="@drawable/ic_camera"/>
+
+    <TableLayout
+        android:id="@+id/descContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatarLayout"
+        android:gravity="start"
+        android:paddingBottom="20dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/fab_radius"
+        android:stretchColumns="2">
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_user_blue"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/firstNameWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_first_name_hint"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_first_name_length"
+                    app:et_inputId="@+id/editFirstName"
+                    app:et_supportMode="helper"/>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/lastNameWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_last_name_hint"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_last_name_length"
+                    app:et_inputId="@+id/editLastName"
+                    app:et_supportMode="helper"/>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_email"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/emailWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/edit_email_hint"
+                android:inputType="textEmailAddress"
+                app:et_inputId="@+id/editEmail"
+                app:et_supportMode="helper"/>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_phone"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/phoneWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/edit_phone_hint"
+                android:inputType="phone"
+                android:maxLength="@integer/max_phone_length"
+                app:et_inputId="@+id/editPhone"
+                app:et_supportMode="helper"/>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_quote_blue"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/statusWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/edit_status_hint"
+                android:inputType="textMultiLine"
+                android:maxLength="@integer/max_status_length"
+                app:et_inputId="@+id/editStatus"
+                app:et_supportMode="helper"/>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_password"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/passwordWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_password_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/max_password_length"
+                    app:et_inputId="@+id/editPassword"
+                    app:et_supportMode="helper"/>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/confirmPasswordWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_confirm_password_hint"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/max_password_length"
+                    app:et_inputId="@+id/editConfirmPassword"
+                    app:et_supportMode="helper"/>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/oldPasswordWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_old_password_hint"
+                    android:inputType="textPassword"
+                    app:et_inputId="@+id/editOldPassword"
+                    app:et_supportMode="helper"/>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/temp_string"
+                android:src="@drawable/ic_location_blue"/>
+
+            <android.widget.Space
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"/>
+
+            <FrameLayout
+                android:id="@+id/locationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/locationWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/edit_location_hint"
+                    app:et_inputId="@+id/editLocation"
+                    app:et_supportMode="helper"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:contentDescription="@string/temp_string"
+                    android:src="@drawable/ic_location"/>
+
+                <View
+                    android:id="@+id/locationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </FrameLayout>
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/descContainer"
+        android:background="#dbdbdb"/>
+</RelativeLayout>

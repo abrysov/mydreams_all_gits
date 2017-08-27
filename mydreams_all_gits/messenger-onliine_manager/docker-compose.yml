@@ -1,0 +1,24 @@
+web:
+  mem_limit: 4G
+  memswap_limit: 8G
+  build: .
+  environment:
+    LOG_LEVEL: 'info'
+    RELX_REPLACE_OS_VARS: 'true'
+    MYDREAMS_DATABASE_HOST: db
+    MYDREAMS_DATABASE_NAME: dreams
+    MYDREAMS_DATABASE_USER: postgres
+    MYDREAMS_DATABASE_PASSWORD: password
+  volumes:
+    - .:/messenger
+  ports:
+    - "8080:8080"
+  links:
+    - db
+
+db:
+  image: postgres
+  volumes:
+    - ./sql-scripts/populate:/docker-entrypoint-initdb.d
+  environment:
+    POSTGRES_DB: dreams

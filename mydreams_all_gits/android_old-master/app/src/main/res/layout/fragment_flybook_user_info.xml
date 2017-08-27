@@ -1,0 +1,298 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:id="@+id/userLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/flybook_user_info_background">
+
+            <RelativeLayout
+                android:id="@+id/avatarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgAvatar"
+                    android:layout_alignEnd="@+id/imgAvatar"
+                    android:layout_alignStart="@+id/imgAvatar"
+                    android:layout_alignTop="@+id/imgAvatar"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/temp_string"
+                    android:scaleType="centerCrop"
+                    android:src="?attr/photo_placeholder"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    app:placeholderImage="?attr/placeholderImage"
+                    app:viewAspectRatio="@dimen/dream_photo_aspect_ratio"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/layoutVip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/avatarLayout"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/fab_top_margin">
+
+                <com.rey.material.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    style="@style/FABColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:fab_backgroundColor="?attr/colorPrimary"
+                    app:fab_iconSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/vip"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"/>
+            </FrameLayout>
+
+            <TableLayout
+                android:id="@+id/descContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/avatarLayout"
+                android:gravity="start"
+                android:paddingBottom="20dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/fab_radius"
+                android:stretchColumns="2">
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/temp_string"
+                        android:src="?attr/ic_user"/>
+
+                    <android.widget.Space
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lblName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/temp_string"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"/>
+                </TableRow>
+
+                <TableRow android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/temp_string"
+                        android:src="?attr/ic_location"/>
+
+                    <android.widget.Space
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lblLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/temp_string"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/rowStatus"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/temp_string"
+                        android:src="?attr/ic_quote"/>
+
+                    <android.widget.Space
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lblStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/temp_string"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"/>
+                </TableRow>
+
+                <TableRow android:layout_marginTop="16dp">
+
+                    <android.widget.Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"/>
+
+                    <android.widget.Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblFriendCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/temp_string"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:id="@+id/lblFriend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/friends_1"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+
+                        <android.widget.Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblSubscriberCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/temp_string"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:id="@+id/lblSubscriber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/subscriber_1"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+
+                        <android.widget.Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblLaunchesCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/temp_string"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:id="@+id/lblLaunches"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="@string/launches_1"
+                                android:textColor="?attr/flybook_user_info_text_color"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+
+                        <android.widget.Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/descContainer"
+                android:background="#dbdbdb"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.rey.material.widget.ProgressView
+        android:id="@+id/progressBar"
+        style="@style/CircularProgressView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        app:pv_progressStyle="@style/CircularProgressDrawableWithoutOutAnimation"/>
+
+    <LinearLayout
+        android:id="@+id/layoutRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/retry_update_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <com.rey.material.widget.Button
+            android:id="@+id/btnRetry"
+            style="@style/WhiteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="@string/retry"/>
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,63 @@
+#footer
+  padding 0
+  background #F8F8F9
+  border-top 1px solid white
+  box-shadow 0 0 20px rgba(0,0,0,0.2)
+  font-family "RobotoLight"
+  font-size remify(12px)
+  height remify(50px)
+
+  .footer__item
+    display inline-block
+    margin remify(16px) 0
+    margin-right remify(60px)
+    font-size remify(12px)
+    letter-spacing remify(0.3px)
+    text-shadow 0 1px 0 white
+    font-family "RobotoLight"
+    color #46435A
+    text-decoration none
+    transition opacity base-speed linear, color base-speed linear
+
+    &:hover
+      opacity 0.6
+
+    &-icon
+      display inline-block
+      vertical-align middle
+      width remify(37px)
+      height remify(37px)
+      margin remify(6px) remify(3px)
+      opacity 0.5
+      background-color transparent
+      background-repeat no-repeat
+      background-position center center
+      background-size 100% 100%
+
+      &:hover
+        opacity 1
+
+    &-copy
+      &:before
+        content '\00A9'
+        display inline-block
+        margin-right remify(3px)
+
+      &:hover
+        opacity 1
+
+    &.vkontakte
+      background-image asset_url( 'icons/socials/vkontakte.svg' )
+    &.facebook
+      background-image asset_url( 'icons/socials/facebook.svg' )
+    &.instagram
+      background-image asset_url( 'icons/socials/instagram.svg' )
+    &.twitter
+      background-image asset_url( 'icons/socials/twitter.svg' )
+    &.odnoklassniki
+      background-image asset_url( 'icons/socials/odnoklassniki.svg' )
+    &.android
+      background asset_url("icons/app_android.svg") center center no-repeat
+      margin-right remify(20px)
+    &.apple
+      background asset_url("icons/app_ios.svg") center center no-repeat

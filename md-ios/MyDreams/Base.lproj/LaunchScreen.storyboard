@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOH-IS-6Rs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="f3I-mk-ufE">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Dh-wa-6LV">
+                                        <rect key="frame" x="203.5" y="188" width="193" height="224"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="f3I-mk-ufE" secondAttribute="trailing" id="7gm-8L-eDc"/>
+                                    <constraint firstItem="7Dh-wa-6LV" firstAttribute="centerX" secondItem="qOH-IS-6Rs" secondAttribute="centerX" id="Oc8-CP-hAZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="f3I-mk-ufE" secondAttribute="bottom" id="YMl-nz-IpF"/>
+                                    <constraint firstItem="7Dh-wa-6LV" firstAttribute="centerY" secondItem="qOH-IS-6Rs" secondAttribute="centerY" id="ZVR-Yf-UPA"/>
+                                    <constraint firstItem="f3I-mk-ufE" firstAttribute="top" secondItem="qOH-IS-6Rs" secondAttribute="top" id="h8Q-Sd-4BN"/>
+                                    <constraint firstItem="f3I-mk-ufE" firstAttribute="leading" secondItem="qOH-IS-6Rs" secondAttribute="leading" id="os4-Eq-hkx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qOH-IS-6Rs" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8e1-c6-qJB"/>
+                            <constraint firstItem="qOH-IS-6Rs" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Hfc-8H-wNu"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qOH-IS-6Rs" secondAttribute="bottom" id="lDP-mw-6qv"/>
+                            <constraint firstItem="qOH-IS-6Rs" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rpr-Fn-iXL"/>
+                            <constraint firstAttribute="trailing" secondItem="qOH-IS-6Rs" secondAttribute="trailing" id="t3V-RQ-fbp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Hfc-8H-wNu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="193" height="224"/>
+        <image name="splash_background" width="375" height="667"/>
+    </resources>
+</document>

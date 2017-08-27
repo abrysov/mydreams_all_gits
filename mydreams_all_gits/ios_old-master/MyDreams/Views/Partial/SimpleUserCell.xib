@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SimpleUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoNewEng.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4O0-mI-wEg">
+                        <rect key="frame" x="262" y="7" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="2Qb-0M-9HF"/>
+                            <constraint firstAttribute="height" constant="50" id="kZ5-vp-z7a"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZS-r1-wjB">
+                        <rect key="frame" x="68" y="21.5" width="184" height="20.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                        <color key="textColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xZS-r1-wjB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="36u-VL-aNr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4O0-mI-wEg" secondAttribute="trailing" id="6Fp-Vc-Tut"/>
+                    <constraint firstItem="xZS-r1-wjB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="60" id="GDV-oB-3c9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xZS-r1-wjB" secondAttribute="bottom" constant="14" id="Z5P-GT-UaD"/>
+                    <constraint firstAttribute="centerY" secondItem="xZS-r1-wjB" secondAttribute="centerY" id="jWR-mf-JLh"/>
+                    <constraint firstItem="4O0-mI-wEg" firstAttribute="leading" secondItem="xZS-r1-wjB" secondAttribute="trailing" constant="10" id="txL-5x-TXD"/>
+                    <constraint firstItem="4O0-mI-wEg" firstAttribute="centerY" secondItem="xZS-r1-wjB" secondAttribute="centerY" id="xa6-hs-exj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="avatarImageView" destination="4O0-mI-wEg" id="3GH-Vp-qa8"/>
+                <outlet property="nameLabel" destination="xZS-r1-wjB" id="mvq-MF-3F6"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="LogoNewEng.jpg" width="600" height="600"/>
+    </resources>
+</document>

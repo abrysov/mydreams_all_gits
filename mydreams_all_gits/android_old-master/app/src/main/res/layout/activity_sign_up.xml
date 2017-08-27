@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.mydreams.android.activities.SignUpActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="?attr/ToolbarTheme"/>
+
+    <ScrollView
+        android:id="@+id/mainScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/firstNameWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_first_name_hint"
+                android:inputType="text"
+                android:maxLength="@integer/max_first_name_length"
+                app:et_inputId="@+id/editFirstName"
+                app:et_supportMode="helper"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/lastNameWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_last_name_hint"
+                android:inputType="text"
+                android:maxLength="@integer/max_last_name_length"
+                app:et_inputId="@+id/editLastName"
+                app:et_supportMode="helper"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/emailWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_email_hint"
+                android:inputType="textEmailAddress"
+                app:et_inputId="@+id/editEmail"
+                app:et_supportMode="helper"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/phoneWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_phone_hint"
+                android:inputType="phone"
+                android:maxLength="@integer/max_phone_length"
+                app:et_inputId="@+id/editPhone"
+                app:et_supportMode="helper"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/passwordWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_password_hint"
+                android:inputType="textPassword"
+                android:maxLength="@integer/max_password_length"
+                app:et_inputId="@+id/editPassword"
+                app:et_supportMode="helper"/>
+
+            <com.rey.material.widget.EditText
+                android:id="@+id/confirmPasswordWrapper"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_confirm_password_hint"
+                android:inputType="textPassword"
+                android:maxLength="@integer/max_password_length"
+                app:et_inputId="@+id/editConfirmPassword"
+                app:et_supportMode="helper"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-4dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.rey.material.widget.RadioButton
+                    android:id="@+id/rbMale"
+                    style="@style/RadioButtonDrawable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:gravity="center_vertical|start"
+                    android:text="@string/sex_male"/>
+
+                <com.rey.material.widget.RadioButton
+                    android:id="@+id/rbFemale"
+                    style="@style/RadioButtonDrawable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|start"
+                    android:text="@string/sex_female"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/birthContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/birthWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/edit_birth_hint"
+                    app:et_inputId="@+id/editBirth"
+                    app:et_supportMode="helper"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:contentDescription="@string/temp_string"
+                    android:src="@drawable/ic_event"/>
+
+                <View
+                    android:id="@+id/birthView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/locationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/locationWrapper"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:hint="@string/edit_location_hint"
+                    app:et_inputId="@+id/editLocation"
+                    app:et_supportMode="helper"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:contentDescription="@string/temp_string"
+                    android:src="@drawable/ic_location"/>
+
+                <View
+                    android:id="@+id/locationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-4dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.rey.material.widget.CheckBox
+                    android:id="@+id/cbAgreeConditions"
+                    style="@style/Material.Drawable.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/labelAgreements"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/agree_conditions"
+                    android:textColor="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+            <com.rey.material.widget.Button
+                android:id="@+id/btnSignUp"
+                style="@style/WhiteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/do_sign_up_caps"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

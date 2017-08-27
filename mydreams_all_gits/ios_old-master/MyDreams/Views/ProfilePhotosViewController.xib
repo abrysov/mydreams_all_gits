@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfilePhotosViewController">
+            <connections>
+                <outlet property="contentView" destination="t06-wa-WCs" id="K9c-v1-piQ"/>
+                <outlet property="contentViewHeight" destination="Pkd-rn-kK9" id="rfB-U7-TQF"/>
+                <outlet property="photoCancelDeleteButton" destination="KC0-Gl-Gr4" id="3C0-WF-rhW"/>
+                <outlet property="photoCancelSaveButton" destination="X6Q-aM-4dU" id="c5D-Vx-CUY"/>
+                <outlet property="photoDeleteButton" destination="WAs-NH-op7" id="8qI-D6-x7J"/>
+                <outlet property="photoSaveButton" destination="mTr-OP-XKA" id="wnO-lc-mKh"/>
+                <outlet property="photosContainerView" destination="JSD-ko-g0i" id="hLa-2D-yaq"/>
+                <outlet property="photosContainerViewHeight" destination="GKQ-ZR-1pB" id="1wd-MK-CSK"/>
+                <outlet property="photosView" destination="aIH-0w-j8v" id="F1Y-nW-JCD"/>
+                <outlet property="scrollView" destination="3cw-XU-m2G" id="uhD-eO-GmS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cw-XU-m2G">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t06-wa-WCs" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIH-0w-j8v">
+                                    <rect key="frame" x="12" y="20" width="576" height="90"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSD-ko-g0i">
+                                            <rect key="frame" x="0.0" y="0.0" width="576" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="GKQ-ZR-1pB"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KC0-Gl-Gr4" customClass="BorderedButton">
+                                            <rect key="frame" x="346" y="40" width="83" height="36"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="SiF-C3-Juw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="_CANCEL">
+                                                <color key="titleColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoCancelTouch:" destination="-1" eventType="touchUpInside" id="Y91-v4-l1r"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAs-NH-op7" customClass="BorderedButton">
+                                            <rect key="frame" x="441" y="40" width="135" height="36"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="27T-pS-mKR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="_PHOTO_DELETE">
+                                                <color key="titleColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoDeleteTouch:" destination="-1" eventType="touchUpInside" id="vSh-lX-UTf"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-OP-XKA" customClass="BorderedButton">
+                                            <rect key="frame" x="458" y="40" width="118" height="36"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="hIM-sE-lNe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="_PHOTO_SAVE">
+                                                <color key="titleColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoSaveTouch:" destination="-1" eventType="touchUpInside" id="DMK-yn-0qI"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6Q-aM-4dU" customClass="BorderedButton">
+                                            <rect key="frame" x="363" y="40" width="83" height="36"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="Lou-YP-TIV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="_CANCEL">
+                                                <color key="titleColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="photoCancelTouch:" destination="-1" eventType="touchUpInside" id="8xe-GK-4oP"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="WAs-NH-op7" firstAttribute="top" secondItem="JSD-ko-g0i" secondAttribute="bottom" constant="10" id="3hL-SW-was"/>
+                                        <constraint firstAttribute="trailing" secondItem="JSD-ko-g0i" secondAttribute="trailing" id="7BX-Fk-9xa"/>
+                                        <constraint firstItem="mTr-OP-XKA" firstAttribute="centerY" secondItem="WAs-NH-op7" secondAttribute="centerY" id="BI1-5U-aaG"/>
+                                        <constraint firstAttribute="trailing" secondItem="WAs-NH-op7" secondAttribute="trailing" id="Gt1-mz-8Ke"/>
+                                        <constraint firstItem="X6Q-aM-4dU" firstAttribute="centerY" secondItem="mTr-OP-XKA" secondAttribute="centerY" id="Kop-oR-MML"/>
+                                        <constraint firstItem="WAs-NH-op7" firstAttribute="leading" secondItem="KC0-Gl-Gr4" secondAttribute="trailing" constant="12" id="Nyr-nd-ewz"/>
+                                        <constraint firstAttribute="trailing" secondItem="mTr-OP-XKA" secondAttribute="trailing" id="Pbb-N9-lzB"/>
+                                        <constraint firstAttribute="height" constant="90" placeholder="YES" id="YJJ-ok-ALe"/>
+                                        <constraint firstItem="JSD-ko-g0i" firstAttribute="leading" secondItem="aIH-0w-j8v" secondAttribute="leading" id="drA-3S-Bdu"/>
+                                        <constraint firstItem="JSD-ko-g0i" firstAttribute="top" secondItem="aIH-0w-j8v" secondAttribute="top" id="gQ9-Ul-5dl"/>
+                                        <constraint firstAttribute="bottom" secondItem="WAs-NH-op7" secondAttribute="bottom" constant="14" id="hrI-6D-Tsv"/>
+                                        <constraint firstItem="KC0-Gl-Gr4" firstAttribute="centerY" secondItem="WAs-NH-op7" secondAttribute="centerY" id="j17-aZ-UNW"/>
+                                        <constraint firstItem="mTr-OP-XKA" firstAttribute="leading" secondItem="X6Q-aM-4dU" secondAttribute="trailing" constant="12" id="pVJ-AF-96U"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="750" constant="600" id="Pkd-rn-kK9"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aIH-0w-j8v" secondAttribute="bottom" id="d2d-nk-ZLf"/>
+                                <constraint firstAttribute="width" constant="600" placeholder="YES" id="oho-zf-DiG"/>
+                                <constraint firstAttribute="trailing" secondItem="aIH-0w-j8v" secondAttribute="trailing" constant="12" id="sx4-Jn-2Fm"/>
+                                <constraint firstItem="aIH-0w-j8v" firstAttribute="leading" secondItem="t06-wa-WCs" secondAttribute="leading" constant="12" id="uh3-DM-TB1"/>
+                                <constraint firstItem="aIH-0w-j8v" firstAttribute="top" secondItem="t06-wa-WCs" secondAttribute="top" constant="20" id="viO-PT-NzJ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="t06-wa-WCs" secondAttribute="trailing" id="AlE-D7-tpC"/>
+                        <constraint firstItem="t06-wa-WCs" firstAttribute="top" secondItem="3cw-XU-m2G" secondAttribute="top" id="L0a-a0-hRg"/>
+                        <constraint firstAttribute="bottom" secondItem="t06-wa-WCs" secondAttribute="bottom" id="uON-EP-p1p"/>
+                        <constraint firstItem="t06-wa-WCs" firstAttribute="leading" secondItem="3cw-XU-m2G" secondAttribute="leading" id="vqq-3z-Mv0"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3cw-XU-m2G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4Bu-ud-IF4"/>
+                <constraint firstItem="3cw-XU-m2G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Co-MU-Zm4"/>
+                <constraint firstAttribute="trailing" secondItem="3cw-XU-m2G" secondAttribute="trailing" id="EH8-C2-86F"/>
+                <constraint firstAttribute="bottom" secondItem="3cw-XU-m2G" secondAttribute="bottom" id="i4v-5P-SxN"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:textColor="@color/white"
+        android:state_selected="true"
+        android:color="@color/white" />
+    <item
+        android:textColor="@color/dreamer_toolbar_color_bg"
+        android:state_selected="false"
+        android:color="@color/dreamer_toolbar_color_bg"/>
+</selector>

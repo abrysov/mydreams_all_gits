@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="60dp"
+              android:gravity="center"
+              android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="60dp"
+        android:layout_height="match_parent">
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/material_drawer_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/temp_string"
+            android:scaleType="center"
+            app:iiv_color="@android:color/white"
+            tools:src="@drawable/ic_close"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/material_drawer_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical|start"
+        android:lines="1"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:singleLine="true"
+        android:textColor="@drawable/menu_item_text_color_selector"
+        android:textDirection="anyRtl"
+        android:textSize="14sp"
+        tools:text="Some drawer text"/>
+</LinearLayout>

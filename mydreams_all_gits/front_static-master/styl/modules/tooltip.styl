@@ -1,0 +1,29 @@
+.tooltip
+  visibility hidden
+  width tooltip-w
+  color #797979
+  text-align center
+  position absolute
+  font-size remify(11px)
+  z-index 99999
+  font-family RobotoLight
+
+  &__top, &__bottom
+    padding remify(10px) 0
+
+  &__top
+    background-color white
+    border-top-right-radius 6px
+    border-top-left-radius 6px
+
+  &__bottom
+    background-color #f4f5f7
+    border-bottom-left-radius 6px
+    border-bottom-right-radius 6px
+
+  &__name
+    color #93a2fd
+    padding-bottom 3px
+
+  &:before
+    make-corner(remify(-6px),tooltip-w / 2 - remify(5px),white)

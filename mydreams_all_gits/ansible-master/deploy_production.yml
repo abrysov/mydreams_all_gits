@@ -1,0 +1,10 @@
+---
+- hosts:
+    - app01
+    - app02
+    - app03
+    - bg01
+  sudo: no
+  remote_user: dev
+  roles:
+    - deploy

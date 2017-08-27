@@ -1,0 +1,19 @@
+{
+  "name": "stylus_postcss",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-livereload": "^0.1.2",
+    "grunt-contrib-stylus": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-haml2html": "~0.3.0",
+    "grunt-postcss": "^0.7.1",
+    "pixrem": "^3.0.0",
+    "postcss": "^5.0.15",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-initial": "^1.4.1",
+    "poststylus": "^0.2.3"
+  },
+  "author": "Yury"
+}

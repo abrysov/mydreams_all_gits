@@ -1,0 +1,247 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fitsSystemWindows="true"
+             tools:context="com.mydreams.android.fragments.AddDreamFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/photoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgMainPhoto"
+                    android:layout_alignEnd="@+id/imgMainPhoto"
+                    android:layout_alignStart="@+id/imgMainPhoto"
+                    android:layout_alignTop="@+id/imgMainPhoto"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/temp_string"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/photo_placeholder_green"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgMainPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    app:placeholderImage="?attr/placeholderImage"
+                    app:viewAspectRatio="@dimen/dream_photo_aspect_ratio"/>
+
+            </RelativeLayout>
+
+            <com.rey.material.widget.FloatingActionButton
+                android:id="@+id/fabPhoto"
+                style="@style/FABColorGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/photoLayout"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/fab_top_margin"
+                app:fab_iconSize="20dp"
+                app:fab_iconSrc="@drawable/ic_camera"/>
+
+            <LinearLayout
+                android:id="@+id/descContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/photoLayout"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/fab_radius">
+
+                <LinearLayout
+                    android:id="@+id/photoEffectContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/choice_photo_effect"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp">
+
+                        <FrameLayout
+                            android:id="@+id/photoEffectContainer1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/photo_effect_border">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/imgEffect1"
+                                android:layout_width="@dimen/add_dream_effect_container_size"
+                                android:layout_height="@dimen/add_dream_effect_container_size"
+                                android:layout_gravity="center"
+                                android:layout_margin="0dp"
+                                android:padding="0dp"/>
+                        </FrameLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <FrameLayout
+                            android:id="@+id/photoEffectContainer2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/photo_effect_border">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/imgEffect2"
+                                android:layout_width="@dimen/add_dream_effect_container_size"
+                                android:layout_height="@dimen/add_dream_effect_container_size"
+                                android:layout_gravity="center"
+                                android:layout_margin="0dp"
+                                android:padding="0dp"/>
+                        </FrameLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <FrameLayout
+                            android:id="@+id/photoEffectContainer3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/photo_effect_border">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/imgEffect3"
+                                android:layout_width="@dimen/add_dream_effect_container_size"
+                                android:layout_height="@dimen/add_dream_effect_container_size"
+                                android:layout_gravity="center"
+                                android:layout_margin="0dp"
+                                android:padding="0dp"/>
+                        </FrameLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <FrameLayout
+                            android:id="@+id/photoEffectContainer4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/photo_effect_border">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/imgEffect4"
+                                android:layout_width="@dimen/add_dream_effect_container_size"
+                                android:layout_height="@dimen/add_dream_effect_container_size"
+                                android:layout_gravity="center"
+                                android:layout_margin="0dp"
+                                android:padding="0dp"/>
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/dreamNameWrapper"
+                    style="@style/AttrEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_dream_name_hint"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_dream_name_length"
+                    app:et_inputId="@+id/editDreamName"
+                    app:et_supportMode="helper"/>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/dreamDescWrapper"
+                    style="@style/AttrEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_dream_desc_hint"
+                    android:inputType="textMultiLine"
+                    android:maxLength="@integer/max_dream_desc_length"
+                    android:scrollbars="none"
+                    app:et_inputId="@+id/editDreamDesc"
+                    app:et_supportMode="helper"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-4dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbDreamDone"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cbd_strokeColor="?attr/colorPrimary"/>
+
+                    <TextView android:id="@+id/lblDreamDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/dream_done"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.Button
+                        android:id="@+id/btnAddToFlybook"
+                        style="@style/AttrButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="14dp"
+                        android:text="@string/add_to_flybook"/>
+
+                    <com.rey.material.widget.Button
+                        android:id="@+id/btnCancel"
+                        style="@style/WhiteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/cancel_caps"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@android:color/transparent"
+        app:popupTheme="@style/ToolbarPopupTheme"
+        app:theme="?attr/ToolbarTheme"/>
+</FrameLayout>

@@ -1,0 +1,89 @@
+.dreamers_circles
+  position relative
+  height remify(470px)
+
+  > .dreamer
+    position absolute
+    display block
+    background transparent
+
+    .dreamer_shadow
+      position absolute
+      width 100%
+      height 100%
+      box-shadow 0 0 15px rgba(255,255,255,0.7)
+      border-radius 50%
+
+    @import 'modules/tooltip'
+
+    &:hover
+
+      .tooltip
+        visibility visible
+        //todo: check that... twise..
+        left -50%
+
+    a
+      cursor pointer
+      display block
+      overflow hidden
+      background-color #F5F5F5
+      border-radius 50%
+      box-shadow 0 0 15px rgba(255,255,255,0.7)
+      -webkit-mask-image -webkit-radial-gradient(circle, white, black)
+      transition transform base-speed ease-out
+
+      &:hover
+
+        img
+          transform scale(1.08,1.08)
+          transition transform base-speed ease-out
+
+    //todo: SCALE WITHOUT BLURE - base smaller than end
+    img
+      width 100%
+      transform scale(1,1)
+      transition transform base-speed ease-out
+
+    &.dreamer
+
+      &-0
+        top remify(100px)
+        left remify(-40px)
+        a
+          set-size(3.33rem)
+      &-1
+        top remify(190px)
+        left remify(90px)
+        a
+          set-size(3rem)
+      &-2
+        top remify(70px)
+        left remify(145px)
+        a
+          set-size(2.8rem)
+      &-3
+        top remify(20px)
+        left remify(280px)
+        a
+          set-size(2.7rem)
+      &-4
+        top remify(25px)
+        right remify(350px)
+        a
+          set-size(2.3rem)
+      &-5
+        top remify(40px)
+        right remify(210px)
+        a
+          set-size(3.33rem)
+      &-6
+        top remify(65px)
+        right remify(80px)
+        a
+          set-size(3rem)
+      &-7
+        top remify(5px)
+        right remify(9px)
+        a
+          set-size(remify(55px))

@@ -1,0 +1,30 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install apt dependencies
+  apt: name={{ item }}
+  with_items:
+    - htop
+    - atop
+    - git
+
+- name: Install additional packages
+  apt: name={{ item }}
+  with_items: packages
+  when: packages
+
+- name: Create provision user
+  user:
+    name: {{ provision_user_name }}
+    groups: '{{ provision_user_name }}, wheel'
+    shell: /bin/bash
+    home: {{ provision_user_home }}
+    comment: 'User for server provisioning'
+
+- name: Authorize current user
+  authorized_key:
+    user: {{ provision_user_name }}
+    key: '{{ lookup('file', '~/.ssh/id_rsa.pub') }}'

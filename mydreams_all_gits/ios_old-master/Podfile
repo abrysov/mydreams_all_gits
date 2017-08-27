@@ -1,0 +1,11 @@
+platform :ios, '8.0'
+use_frameworks!
+pod "AFNetworking", "~> 2.0"
+pod "ImageFilters", :git => "https://github.com/jameswomack/iOS-Image-Filters.git"
+pod "RMDateSelectionViewController", "~> 2.0.1"
+pod "SDWebImage", "~>3.7"
+pod "MaterialControls", "~> 1.0.2"
+pod "iOS-Slide-Menu", "~> 1.5"
+pod "SVPullToRefresh"
+pod "MWPhotoBrowser"
+pod "YZSwipeBetweenViewController"

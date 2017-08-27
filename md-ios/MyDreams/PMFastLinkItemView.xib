@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PMFastLinkItemView">
+            <connections>
+                <outlet property="button" destination="TqR-hi-Iid" id="Ke8-Mc-xgD"/>
+                <outlet property="iconImageView" destination="5mA-y2-5fC" id="jnC-Bc-ROE"/>
+                <outlet property="titleLabel" destination="31I-pN-qvF" id="xWE-7M-Jl3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5mA-y2-5fC">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="84"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31I-pN-qvF">
+                    <rect key="frame" x="0.0" y="84" width="100" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.51372549019607838" green="0.56470588235294117" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqR-hi-Iid">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="96"/>
+                    <connections>
+                        <action selector="didSelect:" destination="-1" eventType="touchUpInside" id="Ljp-R0-m1c"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5mA-y2-5fC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1bx-in-Hat"/>
+                <constraint firstAttribute="trailing" secondItem="5mA-y2-5fC" secondAttribute="trailing" id="3bU-iC-2Yw"/>
+                <constraint firstItem="5mA-y2-5fC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AKv-Gc-CeO"/>
+                <constraint firstItem="31I-pN-qvF" firstAttribute="top" secondItem="5mA-y2-5fC" secondAttribute="bottom" id="DMZ-KV-0Au"/>
+                <constraint firstAttribute="trailing" secondItem="31I-pN-qvF" secondAttribute="trailing" id="Gsh-sH-Xwg"/>
+                <constraint firstAttribute="bottom" secondItem="TqR-hi-Iid" secondAttribute="bottom" id="NOh-li-z42"/>
+                <constraint firstItem="TqR-hi-Iid" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hia-yf-qNz"/>
+                <constraint firstAttribute="trailing" secondItem="TqR-hi-Iid" secondAttribute="trailing" id="kZP-Iq-1SZ"/>
+                <constraint firstItem="31I-pN-qvF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="t17-qI-Xe5"/>
+                <constraint firstAttribute="bottom" secondItem="31I-pN-qvF" secondAttribute="bottom" id="vc5-OY-Ldq"/>
+                <constraint firstItem="TqR-hi-Iid" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zJQ-yI-YTS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="173" y="154"/>
+        </view>
+    </objects>
+</document>

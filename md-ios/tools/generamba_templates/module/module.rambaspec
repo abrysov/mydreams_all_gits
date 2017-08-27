@@ -1,0 +1,16 @@
+# Template information section
+name: module
+summary: create module
+author: i.ushakov (i.ushakov@perpetuumlab.com)
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+- {name: Logics/Logic.h, path: Code/Logics/Logic.h.liquid}
+- {name: Logics/Logic.m, path: Code/Logics/Logic.m.liquid}
+- {name: Controllers/VC.h, path: Code/Controllers/Controller.h.liquid}
+- {name: Controllers/VC.m, path: Code/Controllers/Controller.m.liquid}
+
+# Template dependencies
+dependencies:

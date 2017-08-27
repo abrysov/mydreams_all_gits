@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="windowBackground">#fffafafa</color>
+    <color name="colorPrimary">@color/blue</color>
+    <color name="colorPrimaryDark">@color/blue_dark</color>
+    <color name="colorAccent">#ff4153b6</color>
+    <color name="textColorPrimary">#ff636363</color>
+    <color name="colorControlNormal">#ffdbdbdb</color>
+    <color name="textColorHint">#ff757575</color>
+    <color name="textColorDisable">#1e000000</color>
+
+    <color name="purpure">#FF673bb7</color>
+    <color name="purpure_dark">#FF522e92</color>
+
+    <color name="green">#FF43a647</color>
+    <color name="green_dark">#FF16791a</color>
+
+    <color name="light_blue">#FF2196f3</color>
+    <color name="light_blue_dark">#FF1a78c2</color>
+
+    <color name="blue">#FF3f51b5</color>
+    <color name="blue_dark">#FF354498</color>
+
+    <color name="red">#FFe9382b</color>
+    <color name="red_dark">#FFc42f24</color>
+
+    <color name="yellow">#FFfbbd03</color>
+    <color name="yellow_dark">#FFd39f03</color>
+
+    <color name="light_green">#FF00bfa5</color>
+    <color name="light_green_dark">#FF009984</color>
+
+    <array name="progress_colors">
+        <item>@color/blue</item>
+        <item>@color/red</item>
+        <item>@color/yellow</item>
+        <item>@color/green</item>
+    </array>
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+
+</resources>

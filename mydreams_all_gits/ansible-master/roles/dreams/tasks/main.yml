@@ -1,0 +1,10 @@
+---
+- name: Setup project dirs
+  include: direcories.yml
+
+- name: Setup NGNIX host
+  include: nginx.yml
+  when: inventory_hostname in groups['application']
+
+- name: Setup runit scripts
+  include: runit.yml

@@ -1,0 +1,4 @@
+storyboard :
+    storyboardsPath : "../MyDreams/"
+    classesPath : "../MyDreams/"
+    storyboards : ["Main", "Authentification", "Dreambook", "Settings", "News", "Photos", "Messages", "Dreamclub"]

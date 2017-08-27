@@ -1,0 +1,36 @@
+upstream dreams {
+    #least_conn;
+    server 108.61.159.235;
+    server 108.61.152.219;
+}
+
+upstream aws {
+    server dreams-user-files.s3.amazonaws.com;
+}
+
+server {
+    server_name www.mydreams.club;
+    return 301 $scheme://mydreams.club$request_uri;
+}
+
+server {
+    listen   80 default;
+    server_name mydreams.club;
+
+    location ~ /http* {
+        rewrite ^(.+)dreams-user-files.s3.amazonaws.com(.+)$ $2 break;
+        proxy_pass https://dreams-user-files.s3.amazonaws.com;
+    }
+
+    location / {
+        root   /srv/www/default;
+        try_files /maintenance.html @app;
+    }
+
+    location @app {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-for $remote_addr;
+        proxy_set_header Host $http_host;
+        proxy_pass http://dreams;
+    }
+}

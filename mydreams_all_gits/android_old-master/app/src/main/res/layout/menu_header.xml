@@ -1,0 +1,68 @@
+<FrameLayout
+    android:id="@+id/mainContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/temp_string"
+        android:scaleType="centerCrop"
+        android:src="@drawable/menu_header_background_purpure"/>
+
+    <RelativeLayout
+        android:id="@+id/material_drawer_account_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgAvatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_above="@+id/material_drawer_account_header_text_section"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            app:placeholderImage="?attr/colorPrimary"
+            app:roundAsCircle="true"/>
+
+        <LinearLayout
+            android:id="@+id/material_drawer_account_header_text_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/lblName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                tools:text="material_drawer_account_header_name"/>
+
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                tools:text="material_drawer_account_header_email"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>

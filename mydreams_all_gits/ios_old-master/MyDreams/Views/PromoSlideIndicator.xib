@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromoSlideIndicator"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PromoSlideIndicator">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsn-Ug-E6E">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="one." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwR-OJ-piW">
+                            <rect key="frame" x="38" y="1" width="37.5" height="26.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="two." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-AP-u18">
+                            <rect key="frame" x="81.5" y="1" width="38" height="26.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="three." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auw-cR-ZQz">
+                            <rect key="frame" x="125" y="1" width="50" height="26.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rfh-AP-u18" firstAttribute="leading" secondItem="hwR-OJ-piW" secondAttribute="trailing" constant="6" id="DMT-sk-ryk"/>
+                        <constraint firstItem="rfh-AP-u18" firstAttribute="centerX" secondItem="Zsn-Ug-E6E" secondAttribute="centerX" id="RYo-zb-lp1"/>
+                        <constraint firstItem="rfh-AP-u18" firstAttribute="centerY" secondItem="Zsn-Ug-E6E" secondAttribute="centerY" id="Rmm-Lq-USs"/>
+                        <constraint firstItem="auw-cR-ZQz" firstAttribute="centerY" secondItem="Zsn-Ug-E6E" secondAttribute="centerY" id="SzQ-kS-E39"/>
+                        <constraint firstItem="hwR-OJ-piW" firstAttribute="centerY" secondItem="Zsn-Ug-E6E" secondAttribute="centerY" id="ZTU-KS-I4c"/>
+                        <constraint firstItem="auw-cR-ZQz" firstAttribute="leading" secondItem="rfh-AP-u18" secondAttribute="trailing" constant="6" id="ysa-oQ-7KT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Zsn-Ug-E6E" secondAttribute="bottom" id="126-VQ-MSZ"/>
+                <constraint firstAttribute="trailing" secondItem="Zsn-Ug-E6E" secondAttribute="trailing" id="Jvf-An-XLk"/>
+                <constraint firstItem="Zsn-Ug-E6E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YsV-Ap-sCK"/>
+                <constraint firstItem="Zsn-Ug-E6E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yP1-Py-D6T"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="one" destination="hwR-OJ-piW" id="Fih-s8-5gS"/>
+                <outlet property="three" destination="auw-cR-ZQz" id="j7Y-ae-zFL"/>
+                <outlet property="two" destination="rfh-AP-u18" id="MfZ-fn-UVr"/>
+            </connections>
+        </view>
+    </objects>
+</document>

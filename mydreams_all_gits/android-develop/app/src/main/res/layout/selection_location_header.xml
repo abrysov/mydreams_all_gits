@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@mipmap/ic_btn_back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/txt_top_offer_locality"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_top_head_offer_locality"
+        android:id="@+id/txt_top_head_location"
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/btn_back"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/custom_view_search_country"
+        android:background="@color/bg_field_selection_country"
+        android:layout_below="@+id/btn_back"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_btn_clear"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/btn_clear_search"
+        android:layout_alignBottom="@+id/custom_view_search_country"
+        android:layout_alignRight="@+id/custom_view_search_country"
+        android:layout_alignEnd="@+id/custom_view_search_country" />
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:hint="@string/title_find"
+        android:inputType="textFilter"
+        android:lines="1"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/search"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/transparent"
+        android:layout_alignBottom="@+id/custom_view_search_country"
+        android:layout_toLeftOf="@+id/btn_clear_search"
+        android:layout_alignLeft="@+id/custom_view_search_country"
+        android:layout_alignStart="@+id/custom_view_search_country" />
+
+</RelativeLayout>

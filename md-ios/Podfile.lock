@@ -1,0 +1,176 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - CircleProgressBar (0.32)
+  - Crashlytics (3.7.2):
+    - Fabric (~> 1.6.3)
+  - DFImageManager/AFNetworking (2.0.1):
+    - AFNetworking/NSURLSession (~> 3.0)
+    - DFImageManager/Core
+  - DFImageManager/Core (2.0.1)
+  - EGOCache (2.1.3)
+  - Fabric (1.6.7)
+  - FBSDKCoreKit (4.14.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.14.0):
+    - FBSDKCoreKit
+  - FrameAccessor (2.0)
+  - INSPullToRefresh (1.0.12)
+  - InstagramKit (3.8):
+    - AFNetworking (~> 3.0)
+    - InstagramKit/Exclude-UICKeyChainStore (= 3.8)
+  - InstagramKit/Exclude-UICKeyChainStore (3.8):
+    - AFNetworking (~> 3.0)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Masonry (0.6.4)
+  - Mocktail (1.2.1)
+  - OAStackView (0.2.0)
+  - ObjectiveSugar (1.1.0)
+  - PMNibLinkableView (0.1.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - Realm (0.98.8):
+    - Realm/Headers (= 0.98.8)
+  - Realm+JSON (0.2.14):
+    - Realm (~> 0.95)
+  - Realm/Headers (0.98.8)
+  - RESideMenu (4.0.7)
+  - RSKImageCropper (1.5.1)
+  - SimpleKeychain (0.7.0)
+  - SKPhotoBrowser (2.0.1)
+  - SocketRocket (0.5.1)
+  - SORelativeDateTransformer (1.1.10)
+  - SZTextView (1.2.2)
+  - TBStateMachine (5.20.0):
+    - TBStateMachine/Core (= 5.20.0)
+  - TBStateMachine/Core (5.20.0)
+  - TPKeyboardAvoiding (1.3)
+  - TwitterCore (2.0.2):
+    - Fabric
+  - TwitterKit (2.0.2):
+    - TwitterCore (= 2.0.2)
+  - Typhoon (3.5.1):
+    - Typhoon/no-arc (= 3.5.1)
+  - Typhoon/no-arc (3.5.1)
+  - UIGestureRecognizer+ReactiveCocoa (0.1.1):
+    - ReactiveCocoa
+  - UIImage-Resize (1.0.1)
+  - VK-ios-sdk (1.3.17)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1)
+  - CircleProgressBar (~> 0.31)
+  - Crashlytics (~> 3.7)
+  - DFImageManager/AFNetworking (~> 2.0)
+  - DFImageManager/Core (~> 2.0)
+  - EGOCache (~> 2.1)
+  - Fabric (~> 1.6)
+  - FBSDKLoginKit (~> 4.10)
+  - FrameAccessor (~> 2.0)
+  - INSPullToRefresh (~> 1.0.12)
+  - InstagramKit (~> 3.8)
+  - Mantle (~> 2.0)
+  - Masonry (~> 0.6.3)
+  - Mocktail (~> 1.2)
+  - OAStackView (~> 0.2.0)
+  - ObjectiveSugar (~> 1.1)
+  - PMNibLinkableView (~> 0.1)
+  - ReactiveCocoa (~> 2.5)
+  - Realm (~> 0.98.1)
+  - Realm+JSON (~> 0.2.14)
+  - RESideMenu (~> 4.0.7)
+  - RSKImageCropper (~> 1.5)
+  - SimpleKeychain (~> 0.7)
+  - SKPhotoBrowser (~> 2.0)
+  - SocketRocket (~> 0.5)
+  - SORelativeDateTransformer (from `https://github.com/PerpetuumLab/SORelativeDateTransformer.git`)
+  - SZTextView (~> 1.2.2)
+  - TBStateMachine (~> 5.20)
+  - TPKeyboardAvoiding (~> 1.2)
+  - TwitterKit (~> 2.0.2)
+  - Typhoon (~> 3.3)
+  - UIGestureRecognizer+ReactiveCocoa (from `https://github.com/IvanUshakov/UIGestureRecognizer-RACExtension.git`)
+  - UIImage-Resize (~> 1.0)
+  - VK-ios-sdk (~> 1.3.16)
+
+EXTERNAL SOURCES:
+  SORelativeDateTransformer:
+    :git: https://github.com/PerpetuumLab/SORelativeDateTransformer.git
+  UIGestureRecognizer+ReactiveCocoa:
+    :git: https://github.com/IvanUshakov/UIGestureRecognizer-RACExtension.git
+
+CHECKOUT OPTIONS:
+  SORelativeDateTransformer:
+    :commit: 51f53d591b7c19da1fcea5a91e5c044089c99410
+    :git: https://github.com/PerpetuumLab/SORelativeDateTransformer.git
+  UIGestureRecognizer+ReactiveCocoa:
+    :commit: 8824ba40f7b960019c8df9365ad54dbd8f746dc7
+    :git: https://github.com/IvanUshakov/UIGestureRecognizer-RACExtension.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
+  DFImageManager: c19b62a3e15d89f3532ae6fdb222531ec7e811b1
+  EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
+  FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  INSPullToRefresh: 3c3840b1837870d6553f749dab6520e31f551a76
+  InstagramKit: 402d6bba375357b548039de08eea19a1b8716354
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  Mocktail: f3c03eb3a267e891a58a3e556cc201477c06b5fa
+  OAStackView: a05adfec3669a5187b968a8c0a2690ae517271b6
+  ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+  PMNibLinkableView: 282f5f490e2911c32ca75b6b2bea0b5ea5fb4e8c
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
+  Realm+JSON: 39bef066156e589b209a14e5f2d68754793f8843
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
+  SKPhotoBrowser: 8d2dd1c476c8e01226f885e2ba581a4601a1cdf1
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SORelativeDateTransformer: 307489386df4697780902bc16e99881d69a629b3
+  SZTextView: 3a81174dce0710a9ab069bc73a813e6df53b9c82
+  TBStateMachine: 5956bd4fdc86052a818815f70588719ed52aab8e
+  TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
+  TwitterCore: 0f44d8980a6879d5205dcb4e010d15e643e56fa0
+  TwitterKit: c4e40f289a3d7cc9fab9f241edd7502385468b65
+  Typhoon: c0950bb9f2e835eb8a7dc6983160109b6baf2dda
+  UIGestureRecognizer+ReactiveCocoa: e6080387238af2e43449c6762b1beeeb180f4798
+  UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
+  VK-ios-sdk: 671b7bc84596da7040544eb848b3c71787906fbd
+
+PODFILE CHECKSUM: 5a1d294cc507d0cb2b9a91ea4699f91bbc7d77f2
+
+COCOAPODS: 1.0.1

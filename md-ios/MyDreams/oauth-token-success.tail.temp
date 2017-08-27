@@ -1,0 +1,22 @@
+POST
+/api/v1/oauth/token
+200
+Cache-Control: max-age=0, private, must-revalidate;
+Connection: keep-alive;
+Content-Type: application/json; charset=utf-8;
+Date: Tue, 05 Apr 2016 09:13:32 GMT;
+Etag: W/\"6f79cba8f57ead56ada03aa18c0392c1\";
+Server: nginx;
+Transfer-Encoding: Identity;
+X-Content-Type-Options: nosniff;
+X-Frame-Options: SAMEORIGIN;
+X-Request-Id: a597aeed-d451-4caf-9406-07cae951efcd;
+X-Runtime: 0.146137;
+X-XSS-Protection: 1; mode=block;
+
+{
+    "access_token": "49fc739c1657e0d2dc48bf445fe2b15a83ba0a636c4b6f2cf3c93a64d0cd11cd",
+    "created_at": 1456923668,
+    "expires_in": 7200,
+    "token_type": "bearer"
+}

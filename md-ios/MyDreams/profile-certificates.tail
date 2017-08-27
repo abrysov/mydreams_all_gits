@@ -1,0 +1,134 @@
+GET
+/api/v1/profile/certificates
+200
+Cache-Control: max-age=0, private, must-revalidate;
+Connection: keep-alive;
+Content-Type: application/json; charset=utf-8;
+Date: Tue, 05 Apr 2016 09:13:32 GMT;
+Etag: W/\"6f79cba8f57ead56ada03aa18c0392c1\";
+Server: nginx;
+Transfer-Encoding: Identity;
+X-Content-Type-Options: nosniff;
+X-Frame-Options: SAMEORIGIN;
+X-Request-Id: a597aeed-d451-4caf-9406-07cae951efcd;
+X-Runtime: 0.146137;
+X-XSS-Protection: 1; mode=block;
+
+
+
+{
+	"certificates": [
+		{
+			"id": 3057,
+			"accepted": true,
+			"created_at": "2016-07-20T11:55:01.926Z",
+			"wish": "Все самого наилучшего",
+			"launches": 150,
+			"certificate_type": "Platinum",
+			"certificate_type_name": "Platinum",
+			"certifiable": {
+				"id": 7873,
+				"title": "Мечта мечтательной особы фывоаж оыфвжа оыфвжао джывфоа ждфвоы адлжоыфвлджао длыфво аджлфвоы аждоыфвл ажоыфвджао жыфвоа дыфвоа жоывфжад оыфвджао фвдыжао фвыжао ",
+				"description": "Asdfasdfasdf",
+				"photo": {
+					"small": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/8bed16d9/85d33db7/b6358ddb/0fe2a782/small_1468583702-image.jpg",
+					"medium": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/8bed16d9/85d33db7/b6358ddb/0fe2a782/medium_1468583702-image.jpg",
+					"large": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/8bed16d9/85d33db7/b6358ddb/0fe2a782/large_1468583702-image.jpg"
+				},
+				"certificate_type": "My Dreams",
+				"liked_by_me": false,
+				"likes_count": 1,
+				"comments_count": 2,
+				"launches_count": 3,
+				"created_at": "2016-07-15T11:55:01.926Z",
+				"restriction_level": "public",
+				"fulfilled": false
+			},
+			"gifted_by": {
+				"id": 6095,
+				"full_name": "Алексей Якунин",
+				"gender": "male",
+				"birthday": "1988-01-17",
+				"age": 28,
+				"avatar": {
+					"small": "http://d1bqk81vosxcch.cloudfront.net/assets/defaults/avatars/male_small-e4ec9da9400eb5ad2835a4122b4e9092e5f998b02b358414229015791f96bfe0.png",
+					"pre_medium": "http://d1bqk81vosxcch.cloudfront.net/assets/defaults/avatars/male_pre_medium-2cf9770fbc87f9a6dd31b1b751c0a3b02af3c32c373cce6ec9ee99efcc98ef22.png",
+					"medium": "http://d1bqk81vosxcch.cloudfront.net/assets/defaults/avatars/male_medium-bf20d1c5b755bfdfee12dd1a079df4f0b50af58cc1dd01d9ba4b7ec953739d00.png",
+					"large": "http://d1bqk81vosxcch.cloudfront.net/assets/defaults/avatars/male_large-c8989f617061dc3eeade7e25b776f80aa82117dd8166d0385f65232cc8bc1877.png"
+				},
+				"url": "/en/account/dreamers/6095/dreams",
+				"vip": false,
+				"celebrity": false,
+				"is_online": true,
+				"first_name": "Алексей",
+				"last_name": "Якунин",
+				"status": null,
+				"dreambook_bg": {
+					"cropped": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dreamer/dreambook_bg/a99322da/440f42d3/0e152a03/c8372a4d/cropped_1468407618-image.jpg"
+				},
+				"friends_count": 0,
+				"followers_count": 0,
+				"dreams_count": 71,
+				"fulfilled_dreams_count": 11,
+				"launches_count": 0,
+				"photos_count": 0,
+				"visits_count": 0,
+				"views_count": 0,
+				"is_blocked": false,
+				"is_deleted": false,
+				"i_friend": false,
+				"i_follower": false,
+				"followees_count": 0,
+				"unreaded_messages_count": 0,
+				"email": "yakunin237@gmail.com",
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2MDk1fQ.x597lPVPdNFo-4NkXbySA5oWoD5yPyFNVfGIFw2ivA0",
+				"country": {
+					"id": 465,
+					"name": "United Kingdom"
+				},
+				"city": {
+					"id": 76143,
+					"name": "Кентон",
+					"city_meta": null
+				}
+			}
+		},
+		{
+			"id": 3058,
+			"accepted": false,
+			"created_at": "2016-05-20T12:55:01.926Z",
+			"wish": null,
+			"launches": 0,
+			"certificate_type": "bronze",
+			"certificate_type_name": "Bronze",
+			"certifiable": {
+				"id": 7874,
+				"title": "asdfsadf",
+				"description": "j;k;j",
+				"photo": {
+					"small": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/7e0ab624/c5820385/5b477fe7/ea77f012/small_1468593873-file.png",
+					"medium": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/7e0ab624/c5820385/5b477fe7/ea77f012/medium_1468593873-file.png",
+					"large": "http://d3jcylvy4vlifj.cloudfront.net/uploads/dream/photo/7e0ab624/c5820385/5b477fe7/ea77f012/large_1468593873-file.png"
+				},
+				"certificate_type": "My Dreams",
+				"liked_by_me": false,
+				"likes_count": 0,
+				"comments_count": 0,
+				"launches_count": 0,
+				"created_at": "2016-07-15T14:44:33.545Z",
+				"restriction_level": "public",
+				"fulfilled": false
+			},
+			"gifted_by": null
+		}
+	],
+	"meta": {
+		"status": "success",
+		"code": 200,
+		"total_count": 2,
+		"pages_count": 1,
+		"remaining_count": 0,
+		"per": 10,
+		"page": 1
+	}
+}

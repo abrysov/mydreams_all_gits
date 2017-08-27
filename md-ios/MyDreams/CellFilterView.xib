@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CellFilterView">
+            <connections>
+                <outlet property="button" destination="uAH-Z0-WUN" id="td2-2L-hbz"/>
+                <outlet property="fillIconImageView" destination="m8E-VZ-79i" id="rON-38-E5S"/>
+                <outlet property="titleLabel" destination="iW1-Mt-YfF" id="EDn-fP-dFJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdU-5H-IAW" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="751" text="Страна" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-Mt-YfF">
+                            <rect key="frame" x="25" y="12" width="59" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fill filter_icon" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-VZ-79i">
+                            <rect key="frame" x="332" y="18" width="13" height="10"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsV-eZ-ISB" userLabel="SeparatorView">
+                            <rect key="frame" x="15" y="44" width="345" height="1"/>
+                            <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="tkx-Jj-nnH"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAH-Z0-WUN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="nsV-eZ-ISB" secondAttribute="bottom" id="Ada-Qm-gFO"/>
+                        <constraint firstItem="iW1-Mt-YfF" firstAttribute="centerY" secondItem="FdU-5H-IAW" secondAttribute="centerY" id="DHa-mJ-Yeh"/>
+                        <constraint firstAttribute="trailing" secondItem="nsV-eZ-ISB" secondAttribute="trailing" constant="15" id="GCD-Lx-ih5"/>
+                        <constraint firstAttribute="bottom" secondItem="uAH-Z0-WUN" secondAttribute="bottom" id="IO7-sd-uOu"/>
+                        <constraint firstAttribute="height" constant="45" id="JPw-L0-6AO"/>
+                        <constraint firstItem="iW1-Mt-YfF" firstAttribute="leading" secondItem="FdU-5H-IAW" secondAttribute="leading" constant="25" id="Mw1-69-m9v"/>
+                        <constraint firstItem="nsV-eZ-ISB" firstAttribute="leading" secondItem="FdU-5H-IAW" secondAttribute="leading" constant="15" id="S9G-qk-DB4"/>
+                        <constraint firstAttribute="trailing" secondItem="uAH-Z0-WUN" secondAttribute="trailing" id="aPi-ew-GUz"/>
+                        <constraint firstItem="m8E-VZ-79i" firstAttribute="centerY" secondItem="FdU-5H-IAW" secondAttribute="centerY" id="fa5-Wd-22n"/>
+                        <constraint firstAttribute="trailing" secondItem="m8E-VZ-79i" secondAttribute="trailing" constant="30" id="jMI-8i-IOu"/>
+                        <constraint firstItem="uAH-Z0-WUN" firstAttribute="leading" secondItem="FdU-5H-IAW" secondAttribute="leading" id="kDs-iM-d3D"/>
+                        <constraint firstItem="uAH-Z0-WUN" firstAttribute="top" secondItem="FdU-5H-IAW" secondAttribute="top" id="qFu-dC-lh2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FdU-5H-IAW" secondAttribute="trailing" id="8xc-YM-QOt"/>
+                <constraint firstItem="FdU-5H-IAW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8yx-kc-PdA"/>
+                <constraint firstAttribute="bottom" secondItem="FdU-5H-IAW" secondAttribute="bottom" id="BmJ-YO-lWd"/>
+                <constraint firstItem="FdU-5H-IAW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bgs-mJ-EyU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fill filter_icon" width="13" height="10"/>
+    </resources>
+</document>

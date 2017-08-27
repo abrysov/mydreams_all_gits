@@ -1,0 +1,55 @@
+# ---
+# - hosts:
+#     - db01
+#   remote_user: admin
+#   roles:
+#     - { role: ANXS.postgresql, sudo: true }
+
+# - name: configure the master redis server
+#   hosts:
+#     - redis01
+#   remote_user: admin
+#   roles:
+#     - { role: DavidWittman.redis, sudo: true }
+
+# - hosts:
+#     - balancer01
+#   remote_user: admin
+#   roles:
+#     - { role: ANXS.nginx, sudo: true }
+#     - { role: balancer, sudo: true }
+
+# - hosts:
+#     - app01
+#     - app02
+#     - app03
+#   remote_user: admin
+#   roles:
+#      - { role: base, sudo: true }
+#      - { role: zzet.rbenv, sudo: true }
+#      - { role: ANXS.nginx, sudo: true }
+#      - { role: ANXS.nodejs, sudo: true }
+#      - { role: gotansible.runit, sudo: true}
+#      - { role: dreams, sudo: true }
+
+# - hosts:
+#     - bg01
+#   remote_user: admin
+#   roles:
+#      - { role: base, sudo: true }
+#      - { role: zzet.rbenv, sudo: true }
+#      - { role: gotansible.runit, sudo: true}
+#      - { role: dreams, sudo: true }
+
+- hosts:
+    - staging
+  remote_user: admin
+  roles:
+     - { role: ANXS.postgresql, sudo: true }
+     - { role: base, sudo: true }
+     - { role: zzet.rbenv, sudo: true }
+     - { role: ANXS.nginx, sudo: true }
+     - { role: ANXS.nodejs, sudo: true }
+     - { role: gotansible.runit, sudo: true}
+     - { role: dreams, sudo: true }
+     - { role: DavidWittman.redis, sudo: true }

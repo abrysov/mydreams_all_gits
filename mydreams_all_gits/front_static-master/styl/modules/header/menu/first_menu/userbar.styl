@@ -1,0 +1,119 @@
+.userbar
+  position relative
+  width remify(220px)
+  z-index 1000
+
+  .first_group
+    border-bottom 1px solid #e0e0e0
+
+    .userbar__item
+      padding-top 15px
+
+      .userbar__item-icon
+        top 12px
+
+  .second_group
+    border-top 1px solid #eaeaea
+
+  &__avatar
+    padding-left remify(80px)
+
+    img
+      set-size(remify(30px))
+      border-radius 50%
+      border 1px solid white
+      float left
+
+    &-name
+      float left
+      cursor pointer
+      padding-top remify(10px)
+      font-size remify(14px)
+      letter-spacing 0.03em
+      font-family "RobotoLight"
+      margin-left remify(6px)
+      padding-right remify(15px)
+      color #ffffff
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      background url(//d20pou9wppyzb1.cloudfront.net/assets/svg/user_menu_arrow-3f40dc76eac53981804fb9841fd13eabc19f483d4a5a1e694a9bf18847f5765c.svg) right 14px no-repeat;
+      //todo: hmmm
+      max-width remify(85px) !important
+
+  &__list
+    position absolute
+    top remify(42px)
+    width remify(220px)
+    background-color white
+    box-shadow 0 2px 20px rgba(0,0,0,0.4)
+    border-radius userbar-border-radius
+
+    &.is-hidden
+      display none
+
+  &__item
+    padding remify(12px) remify(25px) remify(12px) remify(40px)
+    font-family "RobotoLight"
+    display block
+    cursor pointer
+    color #262626
+    font-size remify(12px)
+    letter-spacing remify(0.5px)
+    text-align justify
+    position relative
+
+    &.corner::before
+      make-corner(remify(-6px),remify(112px),white)
+
+    &.corner:hover::before
+      border-bottom-color #f0f0f0
+
+    &-icon, .userbar__item-couter
+      position absolute
+      left remify(12px)
+      top remify(9px)
+      text-align center
+      font-weight 500
+      font-size remify(13px)
+
+    .userbar__item-couter
+      top remify(12px)
+      left 0
+      width remify(40px)
+      text-align center
+      font-size remify(13px)
+      font-family "RobotoMedium"
+      background transparent
+      color #2e9aff
+
+    &:hover .userbar__item-couter
+      color white
+
+    &-icon
+      set-size(remify(16px))
+
+    .icon
+      &-dreambook
+        background asset_url("icons/my_dreambook_icon.svg") center center no-repeat
+      &-edit
+        background asset_url("icons/profile_icon.svg") center center no-repeat
+      &-exit
+        background asset_url("icons/logout_icon.svg") center center no-repeat
+
+    &:hover
+      background-color #2e9aff
+
+      .userbar__item-text
+        color white
+
+    //todo remove !important
+    &-gray:hover
+      background-color #f0f0f0 !important
+      border-radius userbar-border-radius
+
+      .userbar__item-text
+        color black !important
+
+  &__divider
+    border-bottom 1px solid #e0e0e0

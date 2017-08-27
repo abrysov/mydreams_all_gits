@@ -1,0 +1,216 @@
+<resources>
+
+    <string name="facebook_app_id">1679087135642315</string>
+    <integer name="com_vk_sdk_AppId">5389709</integer>
+
+    <!--Authorization-->
+    <string name="app_name">MyDreams</string>
+    <string name="title_login">Email</string>
+    <string name="title_password">Пароль</string>
+    <string name="title_btn_log_in">Войти</string>
+    <string name="title_new_password"><u>Забыли пароль?</u></string>
+    <string name="title_registration">Зарегистрироваться</string>
+    <string name="notification_err_auth">Ошибка авторизации</string>
+
+    <!--Registration-->
+    <string name="title_user_name">Ваше имя и фамилия</string>
+    <string name="title_user_age">18 лет</string>
+    <string name="title_user_country">Страна и город</string>
+    <string name="title_user_email">Email</string>
+    <string name="title_user_password">Пароль</string>
+    <string name="title_btn_registration">Поехали</string>
+    <string name="title_top_registration">РЕГИСТРАЦИЯ</string>
+    <string name="title_password_again">Подтвердите пароль</string>
+    <string name="title_or">или</string>
+    <string name="title_onward">далее</string>
+    <string name="title_name">Имя</string>
+    <string name="title_second_name">Фамилия</string>
+    <string name="title_data_orbith_and_sex">Дата рождения и пол</string>
+    <string name="title_man">Мужчина</string>
+    <string name="title_girl">Девушка</string>
+    <string name="title_phone_number">Номер телефона</string>
+    <string name="title_country_and_city">Страна и город</string>
+    <string name="title_agreement">Нажимая на кнопку «Поехали», я соглашаюсь с <u>пользовательским соглашением</u></string>
+    <string name="title_btn_go">Поехали</string>
+    <string name="title_day">день</string>
+    <string name="title_month">мес.</string>
+    <string name="title_year">год</string>
+    <string name="title_notification_processing_send_reg_data">Подождите немного, мы обрабатываем Ваши данные…</string>
+
+    <!--Agreement-->
+    <string name="txt_top_head_agreement">СОГЛАШЕНИЕ</string>
+
+    <!--Selection photo dialog-->
+    <string name="dialog_camera">Камера</string>
+    <string name="dialog_gallery">Галлерея</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_photo">Фотография</string>
+
+    <!--selection country-->
+    <string name="title_select_country_top">ВЫБЕРИТЕ СТРАНУ</string>
+    <string name="title_find">найти</string>
+    <string name="title_search_not_results">Поиск не дал результатов...</string>
+    <string name="title_user_offer_result">Вы можете предложить эту страну</string>
+    <string name="title_btn_offer_locality">Предложить населенный пункт</string>
+    <string name="title_top_head_offer_locality">ПРЕДЛОЖИТЕ НАС. ПУНКТ</string>
+    <string name="title_top_head_select_locality">ВЫБЕРИТЕ НАС. ПУНКТ</string>
+    <string name="title_country_offer">Страна предложена!</string>
+    <string name="title_more_info">Дополнительная информация</string>
+    <string name="title_edit_region">Введите регион</string>
+    <string name="title_edit_district">Введите район</string>
+    <string name="title_btn_offer">Предложить</string>
+    <string name="title_offered_locality">Вы предложили населенный пункт</string>
+
+    <!--NavigationDrawer-->
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    
+    <string name="nav_my_dreambook">МОЙ DREAMBOOK</string>
+    <string name="nav_events">СОБЫТИЯ</string>
+    <string name="nav_dreams">МЕЧТЫ</string>
+    <string name="nav_dreamers">МЕЧТАТЕЛИ</string>
+    <string name="nav_message">СООБЩЕНИЯ</string>
+    <string name="nav_news">НОВОСТИ</string>
+    <string name="nav_fulfill_dream">ИСПОЛНИТЬ МЕЧТУ</string>
+    <string name="nav_dreams_club">МЕЧТЫ КЛУБА</string>
+    <string name="nav_top100">TOP-100</string>
+    <string name="nav_dream_come">СБЫВШИЕСЯ МЕЧТЫ</string>
+    <string name="nav_setting">НАСТРОЙКИ</string>
+    <string name="nav_balance">Пополнить баланс</string>
+    <string name="nav_coins">Монет</string>
+    <string name="nav_logout">ВЫЙТИ</string>
+    
+    <!--Profile-->
+    <string name="profile_dreams">мечтаний</string>
+    <string name="profile_dream_come">сбывшиеся</string>
+    <string name="profile_run_dreams">запусков</string>
+    <string name="profile_friends">Друзья</string>
+    <string name="profile_dreamers">Мечтатели</string>
+    <string name="profile_news">Новости</string>
+
+    <!--Redirect-->
+    <string name="redirect_title">ВОССТАНОВИТЬ ПАРОЛЬ</string>
+    <string name="redirect_title_user_mail">Введите Ваш Email</string>
+    <string name="redirect_title_info">На Ваш Email будет выслана ссылка для восстановления пароля</string>
+    <string name="redirect_btn_title">Восстановить</string>
+    <string name="redirect_title_info_mail">Письмо успешно отправлено на Ваш Email</string>
+    <string name="redirect_btn_entry">Вход</string>
+    <string name="redirect_question_mail">Письмо не пришло?</string>
+    <string name="redirect_btn_send_again">Отправить еще раз</string>
+    <string name="redirect_error_notification">Внутренняя ошибка</string>
+
+    <!--Blocked user-->
+    <string name="blocked_user_info">Ваш профиль заблокирован</string>
+    <string name="blocked_user_info_service">Обратитесь в службу технической поддержки:</string>
+    <string name="blocked_user_support_mail">support@mydreams.club</string>
+    <string name="blocked_user_goto_website">Перейти на сайт</string>
+
+    <!--Deleted user layout-->
+    <string name="deleted_user_title_top">ВОССТАНОВИТЬ ПРОФИЛЬ</string>
+    <string name="deleted_user_title_info">Ваш профиль временно удален</string>
+
+    <!--Dreams-->
+    <string name="search_dream">Искать Мечту</string>
+    <string name="popular_dreams">ПОПУЛЯРНЫЕ</string>
+    <string name="discussed_dreams">ОБСУЖДАЕМЫЕ</string>
+    <string name="new_dreams">НОВЫЕ</string>
+
+    <!--Fulfilled dreams-->
+    <string name="fulfilled_dreams_title_toolbar">СБЫВШИЕСЯ МЕЧТЫ</string>
+    <string name="fulfilled_dreams_text_search">Искать сбывшуюся Мечту</string>
+    <string name="fulfilled_dreams_tab_text_all">ВСЕ</string>
+    <string name="fulfilled_dreams_tab_text_female">ЖЕНСКИЕ</string>
+    <string name="fulfilled_dreams_tab_text_male">МУЖСКИЕ</string>
+
+    <!--Dreamers-->
+    <string name="dreamers_title_toolbar">МЕЧТАТЕЛИ</string>
+    <string name="dreamers_title_search">Искать мечтателя</string>
+    
+    <!--Fulfill dream-->
+    <string name="fulfill_dream_title_edit_hit_dream">Введите название Мечты</string>
+    <string name="fulfill_dream_description_edit_hit_dream">Детально опишите Вашу Мечту</string>
+    <string name="fulfill_dream_title_who_see_dream">Кто сможет видеть эту Мечту</string>
+    <string name="fulfill_dream_title_who_see_dream_only_me">Только я</string>
+    <string name="fulfill_dream_title_who_see_dream_me_and_friends">Только я и мои друзья</string>
+    <string name="fulfill_dream_title_who_see_dream_all">Все</string>
+    <string name="fulfill_dream_title_selected_marks">Выберите марку (платно)</string>
+    <string name="fulfill_dream_title_btn_added_in_dreambook">Добавить в DREAMBOOK</string>
+    <string name="fulfill_dream_title_btn_launches_dream">Запустить Мечту</string>
+    <string name="fulfill_dream_title_toolbar">ИСПОЛНИТЬ МЕЧТУ</string>
+    <string name="notification_no_results_search_dreams">По заданным параметрам ничего не нашлось…</string>
+    <string name="notification_err_server">Не удалось получить данные с сервера</string>
+
+    <!--Dreamers filter-->
+    <string name="dreamers_filter_title_toolbar">ФИЛЬТРЫ ПО МЕЧТАТЕЛЯМ</string>
+    <string name="dreamers_filter_title_country">Страна</string>
+    <string name="dreamers_filter_title_city">Город</string>
+    <string name="dreamers_filter_title_age">Возраст</string>
+    <string name="dreamers_filter_title_female">Девушка</string>
+    <string name="dreamers_filter_title_all">Все</string>
+    <string name="dreamers_filter_title_male">Мужчина</string>
+    <string name="dreamers_filter_title_new">Новые</string>
+    <string name="dreamers_filter_title_popular">Популярные</string>
+    <string name="dreamers_filter_title_vip">VIP</string>
+    <string name="dreamers_filter_title_online">Online</string>
+    <string name="dreamers_filter_title_not_selected">Не выбран</string>
+    <string name="dreamers_filter_title_reset_filter">Сбросить фильтры</string>
+    <string name="dreamers_filter_text_hint_age_from">От</string>
+    <string name="dreamers_filter_text_hint_age_to">До</string>
+    <string name="dreamers_filter_text_button_show_results">Показать %1$s результат</string>
+    <string name="dreamers_filter_text_results">Найдено %1$s мечтателя</string>
+    <string name="dreamers_filter_text_button_no_results">Ничего не нашлось...</string>
+
+    <string name="fulfill_dream_successfully_added">Мечта успешно добавлена</string>
+    <string name="fulfill_dream_alert_dialog_btn_to_dreembook">перейти в DREAMBOOK</string>
+    <string name="fulfill_dream_alert_dialog_btn_create_new">Создать новую мечту</string>
+
+    <string name="fulfill_dream_notification_description_empty">Введите описание Мечты</string>
+    <string name="fulfill_dream_notification_title_empty">Введите название мечты</string>
+    <string name="fulfill_dream_notification_photo_empty">Не выбрано фото</string>
+
+    <string name="dreamers_filter_title_search">Искать страну</string>
+    <string name="dreamers_filter_title_country_search">Искать страну</string>
+    <string name="dreamers_filter_title_locality_search">Искать населенный пункт</string>
+    <string name="dreamers_filter_title_filter_results">Фильтры</string>
+    
+    <string name="dreamers_filter_declination_text_plural">ов</string>
+    <string name="dreamers_filter_declination_text_singular">а</string>
+
+    <string name="notification_device_does_not_support_framing">Извините, но ваше устройство не поддерживает кадрирование</string>
+    <string name="notification_internet_is_not_connection">Нет подключения к интернету</string>
+
+    <!--Settings-->
+    <string name="setting_btn_text_logout">ВЫХОД</string>
+    <string name="setting_title_toolbar">НАСТРОЙКИ</string>
+    <string name="setting_title_change_password">СМЕНИТЬ ПАРОЛЬ</string>
+    <string name="setting_title_change_email">СМЕНИТЬ E-MAIL</string>
+    <string name="setting_title_edit_profile">РЕДАКТИРОВАТЬ ПРОФИЛЬ</string>
+    <string name="setting_title_old_password">Введите старый пароль</string>
+    <string name="setting_title_new_password">Новый пароль</string>
+    <string name="setting_title_confirm_password">Подтвердите пароль</string>
+    <string name="setting_title_notification_confirm">Вам будет отправлено подтверждение</string>
+    <string name="setting_title_btn_send_changed_password">Готово</string>
+    <string name="setting_title_email">E-mail</string>
+    <string name="setting_title_user_email">ТЕКУЩИЙ E-mail</string>
+    <string name="setting_hint_edit_email">введите новый E-mail</string>
+    <string name="setting_title_name">ИМЯ</string>
+    <string name="setting_title_last_name">ФАМИЛИЯ</string>
+    <string name="setting_title_birthday">ДАТА РОЖДЕНИЯ</string>
+    <string name="setting_title_gender">ПОЛ</string>
+    <string name="setting_title_country">СТРАНА</string>
+    <string name="setting_title_city">ГОРОД</string>
+    <string name="setting_notification_incorrect_email">Не правильный E-mail</string>
+    <string name="setting_notification_incorrect_password">Неправильный пароль</string>
+    <string name="setting_notification_incorrect_new_password">Новый пароль меньше 6 символов</string>
+    <string name="setting_notification_not_confirm_password">Пароль не подтвержден</string>
+    <string name="setting_notification_empty_name">Не правильно заполнено поле</string>
+    <string name="setting_no_selected_location">Не выбран</string>
+
+    <!--CropActivity-->
+    <string name="crop_image_menu_rotate_right">Повернуть</string>
+    <string name="crop_image_menu_crop">Обрезать</string>
+
+    <!--AddFulfilledDream-->
+    <string name="add_fulfilled_dream_title_toolbar">ДОБАВИТЬ СБЫВШУЮСЯ</string>
+    <string name="add_fulfilled_dream_btn_add_text">ГОТОВО</string>
+</resources>

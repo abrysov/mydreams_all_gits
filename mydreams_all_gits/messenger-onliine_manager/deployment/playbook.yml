@@ -1,0 +1,31 @@
+---
+- hosts: staging
+  vars:
+    release_ver: 0.0.1
+    release_name: mydreams
+    app_dir: /srv/apps/messenger
+  remote_user: admin
+  tasks:
+    - name: Ensure app dir created
+      become: yes
+      file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ ansible_user_id }}"
+
+    - name: Upload tarball with erlang release
+      unarchive:
+        src: "../vagrant-build/releases/{{ release_name }}-{{ release_ver }}.tar.gz"
+        dest: "{{ app_dir }}"
+
+    - name: Restart service
+      environment:
+        LOG_LEVEL: 'info'
+        RELX_REPLACE_OS_VARS: 'true'
+        MYDREAMS_DATABASE_HOST: localhost
+        MYDREAMS_DATABASE_NAME: dreams_staging
+        MYDREAMS_DATABASE_USER: app
+        MYDREAMS_DATABASE_PASSWORD: tA3UjcugmhgqK6
+      command: ./bin/mydreams restart
+      args:
+        chdir: "{{ app_dir }}"

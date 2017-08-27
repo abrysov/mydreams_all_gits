@@ -1,0 +1,23 @@
+nav:
+  main:
+    title: PageTitle
+    route: why-not
+  common:
+    title: PageTitle2
+    route: why-not2
+cubes:
+    - 
+      title: title1
+      text: |
+        Aliquam erat volutpat. Nunc pretium enim a tempor facilisis. 
+        Praesent fringilla sem sit amet nisi ornare pulvinar. 
+        In nec ante posuere, ornare nulla hendrerit, lobortis felis. 
+        Nam non turpis at diam ultricies tempus non nec leo. 
+        Phasellus lacinia felis at blandit semper.
+    - 
+      title: title2
+      text: |
+          Cras sed leo sit amet tortor tempus placerat. 
+          Pellentesque at pellentesque metus, vel malesuada arcu. 
+          Nullam ullamcorper massa at risus tristique condimentum. 
+          Cras quis mauris condimentum, feugiat nunc varius, rutrum metus. Nunc a mi est.
