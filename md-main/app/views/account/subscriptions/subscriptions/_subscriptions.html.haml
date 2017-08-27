@@ -1,0 +1,6 @@
+- fix_collection(@subscriptions, @subscriptions.limit_value).each do |subscribe|
+  - if subscribe.nil?
+    .card.fake-card
+  - else
+    - # NOTE: subscriptions is passed to prevent mutual followings AND a friend request
+    = render partial: 'subscribe', locals: { dreamer: subscribe, subscriptions: params[:subscriptions] }

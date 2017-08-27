@@ -1,0 +1,24 @@
+.coin-input {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  text-align: left;
+  color: $light-gray-text-color;
+  font-style: .875rem;
+
+  .title {
+    flex: 1;
+  }
+
+  input {
+    width: 5.8rem;
+    margin: 0 .7rem;
+    padding-right: .75rem;
+    text-align: center;
+    color: inherit;
+    border-color: $yellow-color;
+    border-radius: 1rem;
+    font-size: inherit;
+    font-weight: bold;
+  }
+}

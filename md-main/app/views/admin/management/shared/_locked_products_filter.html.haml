@@ -1,0 +1,14 @@
+.btn-group{ role: 'group' }
+  %a.btn.btn-default.disabled{ href: '#', role: 'button' }
+    = t('admin.management.products.product_type')
+  = link_to t('admin.management.filters.all'), admin_management_lockeds_path,
+    class: "btn btn-default", role: 'button'
+  = link_to t('admin.management.products.special'), admin_management_lockeds_path(special: true),
+    class: "btn btn-default #{ params[:special] ? 'active' : nil }", role: 'button'
+  = link_to t('admin.management.products.certificate'), admin_management_lockeds_path(certificates: true),
+    class: "btn btn-default #{ params[:certificates] ? 'active' : nil }", role: 'button'
+  = link_to t('admin.management.products.vip_status'), admin_management_lockeds_path(vip_statuses: true),
+    class: "btn btn-default #{ params[:vip_statuses] ? 'active' : nil }", role: 'button'
+
+= link_to t('admin.management.actions.create'), new_admin_management_product_path,
+  class: 'btn btn-success block', role: 'button'

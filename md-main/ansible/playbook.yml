@@ -1,0 +1,75 @@
+# ---
+# - hosts:
+#     - db01.dreams
+#   remote_user: admin
+#   roles:
+#     - { role: resmo.ntp, sudo: true }
+#     # - { role: ANXS.postgresql, sudo: true }
+
+# - name: configure the master redis server
+#   hosts:
+#     - redis01.dreams
+#   remote_user: admin
+#   roles:
+#     - { role: resmo.ntp, sudo: true }
+#     # - { role: DavidWittman.redis, sudo: true }
+
+# - hosts:
+#     - balancer01.dreams
+#   remote_user: admin
+#   roles:
+#     - { role: resmo.ntp, sudo: true }
+#     # - { role: ANXS.nginx, sudo: true }
+#     # - { role: balancer, sudo: true }
+
+# - hosts:
+#     # - gw.dreams
+#     - staging.dreams
+#   remote_user: admin
+#   roles:
+#     - { role: messenger, sudo: true }
+
+# - hosts:
+#     - app01.dreams
+#     - app02.dreams
+#     - app03.dreams
+#     - app04.dreams
+#     - app05.dreams
+#     - app06.dreams
+#     - app07.dreams
+#     - app08.dreams
+#     - gw.dreams
+#   remote_user: admin
+#   roles:
+#     # - { role: base, sudo: true }
+#     # - { role: zzet.rbenv, sudo: true }
+#     # - { role: resmo.ntp, sudo: true }
+#     # - { role: ANXS.nginx, sudo: true }
+#     # - { role: ANXS.nodejs, sudo: true }
+#     # - { role: gotansible.runit, sudo: true}
+#     - { role: dreams, sudo: true }
+
+- hosts:
+    - bg01.dreams
+  remote_user: admin
+  roles:
+    # - { role: base, sudo: true }
+    # - { role: zzet.rbenv, sudo: true }
+    # - { role: resmo.ntp, sudo: true }
+    # - { role: gotansible.runit, sudo: true}
+    - { role: ANXS.nodejs, sudo: true }
+    - { role: dreams, sudo: true }
+
+# - hosts:
+#     - staging.dreams
+#   remote_user: admin
+#   roles:
+#      # - { role: ANXS.postgresql, sudo: true }
+#      # - { role: base, sudo: true }
+#      # - { role: zzet.rbenv, sudo: true }
+#     - { role: resmo.ntp, sudo: true }
+#      # - { role: ANXS.nginx, sudo: true }
+#      # - { role: ANXS.nodejs, sudo: true }
+#      # - { role: gotansible.runit, sudo: true}
+#      # - { role: dreams, sudo: true }
+#      # - { role: DavidWittman.redis, sudo: true }

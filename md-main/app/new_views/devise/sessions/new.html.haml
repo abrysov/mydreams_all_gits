@@ -1,0 +1,31 @@
+.block
+  .header
+    .title.content
+      %h2= t('authentication.authentication')
+.block.autorisation-page.login-page
+  .content
+    = form_for resource, url: session_path(resource), html: { method: :post } do |f|
+      - if @login_error
+        %ul
+          %li= @login_error
+      = hidden_field_tag :new_design, value: 1
+      %h4= t('authentication.enter_account_data')
+      .form
+        %label
+          = f.text_field :login, placeholder: 'E-mail'
+        %label
+          = f.text_field :password, placeholder: t('authentication.enter_password'), type: :password
+      .actions
+        %label.conditions
+          .checkbox.green
+            = f.check_box :remember_me
+            %span
+          %span= t('authentication.remember_me')
+        %a.accent{ href: "#" }= t('authentication.forgot_pass')
+      %button.accent.blue= t('authentication.submit')
+      %hr
+      %h5= t('authentication.login_with_social')
+      .social-buttons.size-xl
+        - resource_class.omniauth_providers.each do |provider|
+          = link_to '', omniauth_authorize_path(resource, provider), class: "button purple #{social_abbrev(provider)}"
+

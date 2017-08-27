@@ -1,0 +1,51 @@
+upstream dreams {
+    server 127.0.0.1:{{ dreams_web_web_port }} fail_timeout=0;
+}
+
+server {
+    listen 80 default;
+    access_log /var/log/nginx/dreams.access.log combined_plus;
+    error_log /var/log/nginx/dreams.error.log;
+
+    gzip on;
+    gzip_comp_level 9;
+    gzip_min_length 1000;
+    gzip_types text/css image/png image/gif image/jpeg application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_disable msie6;
+
+    root {{ dreams_web_run_path_dir }}/public;
+
+    client_max_body_size 4G;
+
+    client_body_buffer_size 128k;
+    proxy_redirect off;
+    proxy_connect_timeout 300;
+    proxy_send_timeout 300;
+    proxy_read_timeout 500;
+    proxy_buffer_size 4k;
+    proxy_buffers 4 32k;
+    proxy_busy_buffers_size 64k;
+    proxy_temp_file_write_size 64k;
+
+    location / {
+        try_files /maintenance.html $uri @app;
+    }
+
+    location ~ ^/api {
+        try_files /maintenance.html $uri @app;
+        access_log /var/log/nginx/dreams-api.access.log combined_plus;
+    }
+
+    location ~ ^/(assets)/ {
+        root {{ dreams_web_run_path_dir }}/public;
+        gzip_static on;
+        expires max;
+    }
+
+    location @app{
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-for $remote_addr;
+        proxy_set_header Host $http_host;
+        proxy_pass http://dreams;
+    }
+}

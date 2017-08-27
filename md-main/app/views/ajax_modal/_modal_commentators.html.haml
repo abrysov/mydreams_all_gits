@@ -1,0 +1,10 @@
+- url = url_for(index_comments_path(entity_type: entity_type, entity_id: entity_id))
+
+.frame.dream-comments.js-modal{data: {'modal-type' => 'commentators_list', page: '1', url: url }}
+  .frame-icon
+  .title= t('actions.comment')
+  .count-title= "#{comments.total_count} #{custom_pluralize(comments.count, 'comments')}"
+
+  .frame-content
+    .list-body.js-list-body
+      = render partial: 'ajax_modal/modal_commentators/commentators', locals: {comments: comments}

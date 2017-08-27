@@ -1,0 +1,13 @@
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th= t('.picture')
+      %th= t('.title')
+      %th= t('.body')
+      %th= t('.content')
+      %th= t('.action')
+  %tbody
+    = render @posts
+    = paginate @posts, theme: 'moderate'
+

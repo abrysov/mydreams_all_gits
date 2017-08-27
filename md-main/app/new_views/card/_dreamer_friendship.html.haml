@@ -1,0 +1,24 @@
+- vip = (Random.rand(2) == 1)
+.card.dreamer.online{ class: ( "vip" if vip ) }
+  .front
+    .top
+      - if Random.rand(2) == 1
+        %a.picture{ href: "#" }
+          %img{ src: "http://unsplash.it/200/?random=" + Random.rand(100).to_s }
+      %a.avatar-block{ href: "#" }
+        .avatar
+          %img{ alt: "user", src: "https://randomuser.me/api/portraits/men/" + Random.rand(30).to_s + ".jpg" }
+    .actions
+      %a.options-button{ href: "#" }
+      %a.button.blue.circle.add-friend{ href: "#", class: ( "confirmed" if Random.rand(3) == 1 ) }
+    .description
+      %a{ href: "#" }
+        %h3.username{ class: ( "vip" if vip ) } User Name
+        .icon-text.info
+          .icon.size-8.male.female
+          %span 23, Россия, Санкт-Петербург
+        %h5 Althusser Competing Interpellations And The...
+    .button-group
+      %a.button.blue.accent{ href: "#" } Добавить
+      %a.button.blue{ href: "#" } Отклонить
+

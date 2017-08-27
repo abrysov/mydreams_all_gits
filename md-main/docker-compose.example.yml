@@ -1,0 +1,27 @@
+version: '2'
+services:
+  web:
+    mem_limit: 4G
+    memswap_limit: 8G
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/mydreams
+    ports:
+      - "3000:3000"
+      - "80:8080"
+    depends_on:
+      - db
+    links:
+      - db
+      - redis
+
+  db:
+    image: postgres
+    environment:
+      POSTGRESQL_DB: fp
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis

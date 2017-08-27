@@ -1,0 +1,86 @@
+- if dreamer_signed_in?
+  - if current_dreamer?(@dreamer)
+    .add_photo#js-photo-loader{ class: (@dreamer.is_vip? ? 'button-w-bordered' : 'button-gray') }
+      %span= t('dreamers.edit.add_photo')
+  - else
+    = link_to modal_send_msg_path(dreamer_id: @dreamer.id), {remote: true, class: "send_message jmod-btn js-send-msg-btn #{@dreamer.is_vip ? 'button-w-bordered' : 'button-skyblue'}", data: {'modal-type' => 'send_message'}} do
+      %span= t('dreamers.send_message')
+
+  - if @dreamer.is_vip?
+    .label-VIP
+      %span.sign
+  - else
+    - if current_dreamer? @dreamer
+      = link_to buy_vip_invoices_path, method: :post, class: 'button button-bv-bordered vip_btn' do
+        %span= t('flybook.become_vip')
+    - elsif !@dreamer.is_vip?
+      = link_to gift_vip_invoices_path(dreamer_id: @dreamer.id, redirect_path: account_dreamer_dreams_path(@dreamer)), method: :post, class: 'button button-bv-bordered vip_btn' do
+        %span= t('flybook.gift_vip')
+
+- else
+  = link_to modal_authorization_path, {remote: true, class: "send_message jmod-btn #{@dreamer.is_vip? ? 'button-w-bordered' : 'button-skyblue'}", data: {'modal-type' => 'authorization'}} do
+    %span= t('dreamers.send_message')
+
+  - if @dreamer.is_vip?
+    .label-VIP
+      %span.sign
+  - else
+    = link_to modal_authorization_path, {remote: true, class: 'jmod-btn button button-bv-bordered vip_btn', data: {'modal-type' => 'authorization'}} do
+      %span= t('flybook.become_vip')
+
+- content_for :mydreams_js do
+
+  :javascript
+    var uploader = new plupload.Uploader({
+      runtimes : "html5",
+      browse_button : 'js-photo-loader',
+      url : "/photos/upload",
+      multipart: true,
+      urlstream_upload: true,
+      filters: {
+        mime_types : [
+          { title : "Image files", extensions : "jpg,gif,png" }
+        ],
+        max_file_size : '10mb',
+        prevent_duplicates: true
+      },
+      multipart_params: {
+        '#{request_forgery_protection_token}': '#{form_authenticity_token}',
+        '#{Rails.application.config.session_options[:key]}': '#{request.session_options[:id]}'
+      },
+      init: {
+        FilesAdded: function(up, files){
+          up.start();
+        },
+        UploadComplete: function(up, files) {
+          var
+          url = $('.js-open-photoslideshow').attr('href'),
+          max_preview = 4,
+          previews = [];
+
+          $.get(url, {photo_count: 4}, function(data){
+            for(var i = 0; i < max_preview; i++){
+              if(data[i] != undefined){
+                var
+                link = $('<a type="json" class="photo_holder js-open-photoslideshow" data-remote="true"></a>'),
+                img = new Image();
+
+                link.attr('href', data[i].del_link);
+                $(img).attr('src', data[i].thumb).addClass('image');
+                link.html(img);
+                previews.push(link);
+
+              }else {
+                var empty_block = $('<div class="photo_holder empty"/>');
+                previews.push(empty_block);
+              }
+
+              $('.js-photos-container').html(previews);
+              window.location.reload();
+            }
+          });
+        }
+      }
+    });
+
+    uploader.init();

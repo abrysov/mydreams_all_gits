@@ -1,0 +1,11 @@
+.col-js
+  .top
+    %ul.vertical-menu
+      %li= link_to_current "Лента новостей", feed_path
+      %li= link_to_current "Обновления", updates_feed_path
+      %li= link_to_current "Рекомендации", recommendations_feed_path
+      - if current_page?(recommendations_feed_path) || current_page?(my_recommendations_feed_path)
+        %li= link_to_current "Мои рекоммендации", my_recommendations_feed_path, class: 'sub-item'
+      %li= link_to_current "Комментарии", comments_feed_path
+      - if current_page?(comments_feed_path) || current_page?(my_comments_feed_path)
+        %li= link_to_current "Мои комментарии", my_comments_feed_path, class: 'sub-item'

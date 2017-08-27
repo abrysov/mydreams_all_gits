@@ -1,0 +1,36 @@
+---
+- name: Create application script directory
+  file:
+    state: directory
+    path: "{{ item }}"
+    owner: root
+    group: root
+    mode: 755
+  become: yes
+  with_items:
+    - "{{ messenger_sv_dir }}"
+    - "{{ messenger_sv_dir }}/log"
+
+- name: Add application script
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 755
+  with_items:
+    - { src: "runit/{{ messenger_runit_service }}.run.j2",     dest: "{{ messenger_sv_dir }}/run" }
+    - { src: "runit/{{ messenger_runit_service }}.log.run.j2", dest: "{{ messenger_sv_dir }}/log/run" }
+
+- name: Symlink dir to enable runit service
+  file:
+    state: link
+    src: "{{ messenger_sv_dir }}"
+    dest: "/etc/service/{{ messenger_runit_service }}"
+  become: yes
+
+- name: user can restart service
+  lineinfile:
+    dest: /etc/sudoers
+    line: "{{ messenger_deploy_user.name }} ALL=(ALL:ALL) NOPASSWD:/usr/bin/sv"
+    state: present
+    regexp: "^{{ messenger_deploy_user.name }}"
+  become: yes

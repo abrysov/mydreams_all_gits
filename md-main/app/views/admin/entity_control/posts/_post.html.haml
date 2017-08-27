@@ -1,0 +1,14 @@
+%tr
+  %td
+    = show_link(post.id)
+  %td
+    = link_to (post.photo.url(:large) || '#') do
+      = image_tag post.photo.url(:admin)
+  %td
+    = link_to post.title, account_dreamer_post_path(post.dreamer, post)
+  %td
+    = post.body
+  %td
+    = post.content
+  %td.actions
+    = render 'admin/entity_control/shared/actions', object: post

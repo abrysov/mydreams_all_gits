@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  color: $light-gray-text-color;
+  border-bottom: 1px solid $border-gray-color;
+  font-size: .85375rem;
+
+  .tab {
+    position: relative;
+    flex: 1;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      display: block;
+      height: 0;
+      margin: 0 1.75rem;
+      content: '';
+      transition: height.2s ease, color.2s ease;
+      background: $light-purple-color;
+    }
+
+    &.active,
+    &:hover {
+      color: $light-purple-color;
+
+      &::after {
+        height: 2px;
+      }
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

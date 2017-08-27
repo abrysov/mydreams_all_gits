@@ -1,0 +1,16 @@
+.col-center.content-body
+  .header
+    .title
+      %h2= t('payments.operation.history')
+  %div.operations_history-page
+    %table.history-tabble
+      %tr
+        %th= t('payments.datetime')
+        %th= t('payments.operation.type')
+        %th= t('payments.coins_in_genetive_case')
+        %th= t('payments.operation.balance_after')
+      - @operation_history.each do |transaction|
+        %tr= raw render_by_opertation_type(transaction)
+.col-right
+  .col-js
+    = render partial: 'right_menu'

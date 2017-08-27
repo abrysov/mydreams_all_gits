@@ -1,0 +1,4 @@
+#!/bin/bash
+LOG_FOLDER=/var/log/{{ messenger_runit_service }}
+mkdir -p $LOG_FOLDER
+exec svlogd -tt $LOG_FOLDER

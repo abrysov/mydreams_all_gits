@@ -1,0 +1,15 @@
+%tr
+  %td= photo.id
+  %td
+    = link_to_if (ava_link = photo.dreamer.avatar.url(:large)),
+      image_tag(avatar_or_default(photo.dreamer, :admin)), ava_link
+    = dreamer_link photo.dreamer
+  %td
+    = link_to photo.file.url(:large) do
+      = image_tag photo.file.url(:medium)
+  %td
+    = photo.complains.count
+  %td
+    = photo.dreamer.abuses.count
+  %td.actions
+    = render 'moderate/shared/actions', object: photo

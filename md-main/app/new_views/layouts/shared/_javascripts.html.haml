@@ -1,0 +1,40 @@
+:javascript
+  var col = document.querySelectorAll('.col-js');
+  document.querySelector('.layout').classList.add('fixed');
+  function fixedCol(){
+    for (var i = 0; i < col.length; i++){
+      col[i].classList.add('fixed');
+      col[i].style.height = (window.innerHeight - document.querySelector('.header-group').clientHeight) + 'px';
+    }
+  }
+  fixedCol();
+  window.addEventListener('load', fixedCol);
+  window.addEventListener('resize', fixedCol);
+  if(localStorage.userTapeVisible=="false") document.body.classList.remove('photo-feed-visible');
+  document.querySelector('.photo-feed-toggler').addEventListener('click', function(){
+    localStorage.userTapeVisible = localStorage.userTapeVisible=="false"
+    document.body.classList.toggle('photo-feed-visible');
+    fixedCol();
+  });
+
+
+= javascript_include_tag 'new/application'
+= yield :js
+
+:javascript
+  onReady(function() {
+    MyDreams.NotificationsList.init("#notifications-list");
+    MyDreams.LeadersBar.init("#leaders-bar");
+    MyDreams.LeadersBar.initModal("#leaders-bar-modal");
+    MyDreams.Messenger.init("#messenger");
+    MyDreams.CreateDream.init("#create-dream-modal");
+    MyDreams.PhotoViewer.init("#photo-viewer-modal");
+    MyDreams.GiftModals.init("#gift-modal");
+    MyDreams.LikesModal.init("#likes-modal");
+  });
+
+- unless Rails.env.development?
+  = render 'layouts/ok'
+  = render 'layouts/ga'
+  = render 'layouts/ym'
+

@@ -1,0 +1,2 @@
+- if dreamer_signed_in? && can?(:request_friendship, @dreamer)
+  = link_to t('actions.request_friendship'), request_friendship_dreamer_path(@dreamer)

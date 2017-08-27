@@ -1,0 +1,50 @@
+.suggested-dream-group
+  .dreamer-info
+    = link_to account_dreamer_dreams_path(suggest.sender), class: 'avatar sender-avatar' do
+      .avatar-image
+        = image_tag(avatar_or_default(suggest.sender, :small))
+
+    .data
+      .name= suggest.sender.first_name
+      - if suggest.sender.age.present?
+        .age= ", #{suggest.sender.age}"
+      - if suggest.sender.dream_city.present?
+        .city= ", #{suggest.sender.dream_city}"
+
+  .card.card-hover.js-flip.js-suggest-dream{class: "#{'logged' if dreamer_signed_in?}", data: {type: 'dream', 'dream-type' => 'my_dreams'}}
+
+    .card__wrap.flip
+      .card_back
+        .card_back__wrap
+          .logo_color
+      .card_front
+        .card_dream__header.group
+          .card_dream__header__status
+            %span My dreams
+
+        .card_dream__img
+          - if dream.photo.present?
+            = image_tag dream.photo.url(:medium)
+          .card-ctrls
+            .card-ctrls-wrapper
+              .card-ctrls-wrapper-in
+                = link_to accept_account_suggested_dream_path(suggest), remote: true, class: 'card-ctrl accept js-action', data: {action: 'accept'} do
+                  .card-ctrl_icon
+                  .card-ctrl_name= t('actions.accept')
+
+                = link_to reject_account_suggested_dream_path(suggest), remote: true, class: 'card-ctrl reject js-action', data: {action: 'reject'} do
+                  .card-ctrl_icon
+                  .card-ctrl_name= t('actions.reject')
+
+        = link_to account_dreamer_dream_path(suggest.sender, dream), data: {push: "true", target: "#js-ajax-content"} do
+          .card_dream__name{data: {push: "true", target: "#js-ajax-content"}}
+            %span= dream.title
+
+          .card_dream__description{data: {push: "true", target: "#js-ajax-content"}}
+            %p= dream.description
+
+        .card_dream__footer
+          .additional_data.group
+            .additional_data__likes.js-like-count 0
+            .additional_data__starts 0
+            .additional_data__comments 0

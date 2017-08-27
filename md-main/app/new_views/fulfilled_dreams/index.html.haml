@@ -1,0 +1,24 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211)"}
+    .title
+      %h2= t('layout.fulfilled_dreams')
+  #dreams-list
+    .preloader
+.col-right
+  .col-js
+    %div
+      #dreams-filter
+        .preloader
+      #dreams-user
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.FulfilledDreamsListWidget.init({
+        dreamsList: '#dreams-list',
+        dreamsFilter: '#dreams-filter'
+      }, {
+        type: 'all_dreamers'
+      });
+    });

@@ -1,0 +1,23 @@
+%tr
+  %td
+    = banner.id
+  %td
+    = banner.name
+  %td
+    = link_to banner.image.url do
+      = image_tag banner.image.url(:admin)
+  %td
+    = banner.link
+  %td
+    = moscow_time(banner.date_start)
+  %td
+    = moscow_time(banner.date_end)
+  %td
+    = banner.show_count
+  %td
+    = banner.cross_count
+  %td
+    = link_to 'test', away_path(banner.link_hash)
+  %td.actions
+    = render 'advertisement/shared/actions', object: banner
+

@@ -1,0 +1,9 @@
+#{I18n.t('.email.hello')}, #{@dreamer.full_name ? @dreamer.full_name : I18n.t('.email.dreamer')}!
+
+#{I18n.t('.email.thanks_for_registration')} https://mydreams.club'
+= I18n.t('.email.please_confirm_email')
+= link_to I18n.t('.email.confirmation_link'), confirmation_url(:dreamer, confirmation_token: @token)
+= I18n.t('.email.confirmation_rules')
+= '-' * 80
+= I18n.t('.email.company_information')
+MyDreams.club

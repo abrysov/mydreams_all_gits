@@ -1,0 +1,23 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render 'layouts/shared/head'
+  %body.photo-feed-visible
+    .layout
+      = render 'layouts/shared/header'
+      .scroll-top
+      .block.col-bars
+        .content.row.row-page
+          .col-left
+            .col-js
+              = render 'layouts/shared/left'
+          = yield
+          #messenger
+          #leaders-bar-modal
+          #create-dream-modal
+          #photo-viewer-modal
+          #gift-modal
+          #likes-modal
+    #notifications-list
+
+    = render 'layouts/shared/javascripts'

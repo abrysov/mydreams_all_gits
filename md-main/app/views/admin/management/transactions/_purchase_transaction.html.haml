@@ -1,0 +1,37 @@
+%h4
+  = t('admin.management.transactions.purchase')
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t('admin.management.id')
+      %th
+        = t('admin.management.transactions.actions')
+      %th
+        = t('admin.management.transactions.amount')
+      %th
+        = t('admin.management.transactions.operation')
+      %th
+        = t('admin.management.transactions.state')
+      %th
+        = t('admin.management.transactions.updated_at')
+      %th
+        = t('admin.management.transactions.created_at')
+  %tbody
+    %tr
+      %td
+        = object.id
+      %td
+        = link_to t('admin.management.actions.show'), admin_management_purchase_path(object.purchase),
+          class: 'btn btn-info block', role: 'button'
+      %td
+        = object.amount
+      %td
+        = object.operation
+      %td
+        = object.state
+      %td
+        = object.updated_at
+      %td
+        = object.created_at

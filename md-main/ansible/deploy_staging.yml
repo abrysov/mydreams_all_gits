@@ -1,0 +1,8 @@
+---
+- hosts:
+    - staging.dreams
+  sudo: no
+  remote_user: dev
+  roles:
+    - deploy
+    - messenger-deploy

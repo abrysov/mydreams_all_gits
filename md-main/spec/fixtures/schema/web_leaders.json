@@ -1,0 +1,39 @@
+{
+  "title": "Api:WEB Leaders Schema",
+  "type": "object",
+  "required": [ "leaders", "meta" ],
+  "properties": {
+    "dreamers": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "full_name",
+        "age",
+        "city",
+        "country",
+        "photo",
+        "message"
+      ],
+      "properties": {
+          "id": { "type": "integer" },
+          "full_name": { "type": "string" },
+          "age": { "type": "integer" },
+          "city": { "type": [ "hash", "null" ] },
+          "country": { "type": [ "hash", "null" ] },
+          "photo": { "type": "string" },
+          "message": { "type": [ "string", "null" ] }
+      }
+    },
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

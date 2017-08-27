@@ -1,0 +1,13 @@
+.feed_content.js-feed
+  .feed_wrapper.group
+    .feed__item.feed__add-item.js-feed-add-btn
+      - if dreamer_signed_in?
+        = link_to '', modal_add_to_feed_path, { remote: true, class: 'add-item__icon jmod-btn', data:{'modal-type' => 'add_to_feed'} }
+      - else
+        = link_to '', modal_authorization_path, { remote: true, class: 'add-item__icon jmod-btn', data: {'modal-type' => 'authorization'} }
+
+    - if dreamer_signed_in?
+      = render partial: 'application/dreamers_feed/feed_item', collection: Dreamer.for_photobar.includes(:photobar_photo, dream_city: :translations, dream_country: :translations).limit(40), as: :dreamer
+    - else
+      - cache('unlogged_id:dreamers_feed', expires_in: 1.hour) do
+        = render partial: 'application/dreamers_feed/feed_item', collection: Dreamer.for_photobar.includes(:photobar_photo, dream_city: :translations, dream_country: :translations).limit(40), as: :dreamer

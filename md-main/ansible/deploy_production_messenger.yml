@@ -1,0 +1,7 @@
+---
+- hosts:
+    - gw.dreams
+  sudo: no
+  remote_user: dev
+  roles:
+    - messenger-deploy

@@ -1,0 +1,16 @@
+:ruby
+  purchase = transaction.reason.purchase
+  certificate_name = purchase.product.certificate_name
+  dream = purchase.destination
+
+%td= render 'datetime', transaction: transaction
+%td
+  = raw t('payments.operation.cert_buy', name: certificate_name.upcase)
+  .dream-mark.row
+    .col-1
+      .dream
+        .label{ class: certificate_name }= certificate_name
+        = image_tag dream.photo.url(:medium)
+    .col
+      .mark{ class: certificate_name }
+= render 'amount_and_balance', transaction: transaction

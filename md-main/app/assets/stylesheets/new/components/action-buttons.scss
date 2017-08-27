@@ -1,0 +1,35 @@
+.action-buttons {
+  a {
+    margin-left: 2em;
+    cursor: pointer;
+    color: $light-purple-color;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  a::before {
+    display: inline-block;
+    width: .688rem;
+    height: .688rem;
+    margin-right: .3rem;
+    margin-bottom: -.1rem;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .cancel::before {
+    background-image: asset-url('new/back.svg');
+  }
+
+  .edit::before {
+    background-image: asset-url('new/edit.svg');
+  }
+
+  .save::before {
+    background-image: asset-url('new/ok.svg');
+  }
+}

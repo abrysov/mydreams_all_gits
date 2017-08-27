@@ -1,0 +1,9 @@
+= form_for [:admin, :entity_control, comment], html: { class: 'form-horizontal' } do |f|
+  = render 'admin/tags/shared/form_errors', object: comment
+  .form-group
+    %label.col-sm-2.control-label{ for: 'body' } Body
+    .col-sm-5
+      = f.text_field :body, class: 'form-control'
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit (comment.new_record? ? 'Create' : 'Save'), class: 'btn btn-default'

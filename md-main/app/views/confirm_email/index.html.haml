@@ -1,0 +1,27 @@
+.confirm-email
+  .content
+    %h1= t('.title')
+    %h3= t('.body')
+    %br
+    %br
+    %br
+    = form_for current_dreamer, as: current_dreamer,
+                                url: confirmation_path(current_dreamer),
+                                html: { method: :post } do |f|
+      %ul
+        - current_dreamer.errors.messages.each do |key, message|
+          %li
+            = (key == :email) ? t('.wrong_email') : message
+      .input_wrapper
+        = f.email_field :email, placeholder: t('.your_email'), autofocus: true, value: (current_dreamer.unconfirmed_email || current_dreamer.email), type: 'text', class: 'js-validation', data: {valid: 'email'}
+      %br
+      = f.submit t('.send'), id:'confirm_email'
+      .info-text= t('.notice')
+      %br
+      %br
+      %hr
+    .mini-footer
+      .info-text= t('.questions')
+      %a.email{ href:'mailto:support@mydreams.club' } support@mydreams.club
+      %br
+      %a.button{ href: destroy_dreamer_session_path }= t('.exit')

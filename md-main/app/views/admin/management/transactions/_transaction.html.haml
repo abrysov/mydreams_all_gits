@@ -1,0 +1,24 @@
+%tr
+  %td
+    = transaction.id
+  %td
+    = link_to t('admin.management.actions.show'), admin_management_transaction_path(transaction),
+      class: 'btn btn-info block', role: 'button'
+  %td
+    = dreamer_link transaction.account.dreamer
+  %td
+    = transaction.operation
+  %td
+    = transaction.amount
+  %td
+    = transaction.state
+  %td
+    = transaction.before
+  %td
+    = transaction.after
+  %td
+    = transaction.reason.class.name
+  %td
+    = short_date transaction.updated_at
+  %td
+    = short_date transaction.created_at

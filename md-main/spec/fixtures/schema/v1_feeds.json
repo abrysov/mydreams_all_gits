@@ -1,0 +1,37 @@
+{
+  "title": "Api:v1 Feeds",
+  "type": "object",
+  "required": [ "feeds", "meta" ],
+  "properties": {
+    "feeds": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "content",
+        "photos",
+        "likes_count",
+        "comments_count",
+        "restriction_level"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "content": { "type": "string" },
+        "photos": { "type": [ "hash", "array" ] },
+        "likes_count": { "type": "integer" },
+        "comments_count": { "type": "integer" },
+        "restriction_level": { "type": "string" }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+        "status": { "type": "string" },
+        "code": { "type": "integer" }
+      }
+    }
+  }
+}

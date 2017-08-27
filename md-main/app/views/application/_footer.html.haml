@@ -1,0 +1,18 @@
+.footer
+  .container.group
+    .footer_l
+      .footer_l__item.copy= t('layout.footer.copyright')
+
+      = link_to t('static_pages.about.title'), about_path, class: 'footer_l__item footer_menu'
+      = mail_to 'support@mydreams.club', nil, class: 'footer_l__item'
+
+    .footer_r
+      %a.social-link.vkontakte{target: '_blank', href: 'https://vk.com/mydreams.club'}
+      %a.social-link.facebook{target: '_blank', href: 'https://www.facebook.com/dreamshysteria/'}
+      %a.social-link.instagram{target: '_blank', href: 'https://www.instagram.com/mydreams.club/'}
+      %a.social-link.twitter{target: '_blank', href: 'https://twitter.com/mydreams_club'}
+      %a.social-link.odnoklassniki{target: '_blank', href: 'http://ok.ru/group/52868376756319'}
+      / .footer_r__item{'data-app' => "android"}
+      /   %a{href: "#"}
+      / .footer_r__item{'data-app' => "apple"}
+      /   %a{href: "#"}

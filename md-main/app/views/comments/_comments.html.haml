@@ -1,0 +1,7 @@
+- if comments.blank?
+  %h2.page_content-title.js-no_comment= t('comments.no_comments')
+- else
+  - comments.each do |comment|
+    = render partial: 'comments/comment', locals: { comment: comment}
+
+  = paginate comments, object: object, theme: 'more_comments'

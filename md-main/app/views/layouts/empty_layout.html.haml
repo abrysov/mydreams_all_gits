@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'robots', content: 'noindex, nofollow'}
+    %title My Dreams
+    = render 'favicon'
+    = display_meta_tags
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'application'
+
+  %body{ lang: locale,  class: 'dreambook-body special-page-empty-layout'}
+    = render 'flash_messages'
+    .container
+      = yield
+
+    = render 'layouts/ok'
+    = render 'layouts/ga'
+    = render 'layouts/ym'

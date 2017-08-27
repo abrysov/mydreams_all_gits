@@ -1,0 +1,6 @@
+%center.wrapper1
+  %p
+    %span #{@treatment}, #{@name}
+    %p= @additional_text
+    - if @snapshot
+      = image_tag @snapshot.url

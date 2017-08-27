@@ -1,0 +1,4 @@
+%h3
+  = t('admin.management.actions.create')
+
+= render 'admin/management/shared/form', path: admin_management_products_path, method: :post, product: Product.new

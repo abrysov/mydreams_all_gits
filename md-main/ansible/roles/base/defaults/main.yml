@@ -1,0 +1,4 @@
+---
+profile_d_path: '{{ user_home_path }}/profile.d'
+new_pub_key: ~/.ssh/mydreams_gw_key.pub
+new_priv_key: ~/.ssh/mydreams_gw_key

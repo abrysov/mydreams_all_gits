@@ -1,0 +1,86 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211?random=5);" }
+    .title
+      %h2 Мечты
+  %div
+    .card-list
+      - (0..11).each do |dream|
+        = render partial: 'card/dream'
+    .preloader
+.col-right
+  .col-js
+    = render 'layouts/shared/right_menu'
+
+.messages-modal
+  .main
+    .header
+      %a.dreamer-link{ href: "#" } Virginia Perez
+      %span.status online
+    .messages-list
+      - (0..31).each do |message|
+        %div{ class: ['message', ("active" unless (message != 31))] }
+          %a.avatar-link{ href: "#" }
+            .avatar.size-s
+              %img{ src:"https://randomuser.me/api/portraits/men/"+Random.rand(100).to_s+".jpg" }
+          .body
+            .header
+              %a{href:"#"} Virginia Perez
+              - if (Random.rand(2) == 1)
+                .icon.vip
+              .date.icon-text
+                .icon.size-8.time
+                .text 12 Ноября
+            %p
+              = truncate("When asked, “If you could wish for one thing only, what would that wish be?” almost everyone; from beauty pagent contestants, to politicians, to religious leaders, to children, to the average person on the street states, “Peace On Earth” or “An end to all wars”. Those wishes, while exemplary, are meaningless. As long as humans exist there will never be peace on earth. Throughout the history of humankind there has never been peace on earth. Cavemen fought other cavemen over territory, food and even women. Cain killed Abel over God’s respect. Gabriel blew down the walls of Jericho. America fought the Revolutionary War for freedom and brother fought against brother in our Civil War for more freedom. There have always been wars and there will always be wars. As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God. What is right and proper to some people can be wrong or even enraging to other people. Religion can not stop wars, in fact many wars are fought over religion (Note: I believe that religion is used as an excuse for war not the real reason for war.). Christians fought against Muslims during the Crusades, Many Muslims want death for all non believers. The Catholic Church killed heretics during the Inquisition. The Nazis killed millions of Jews and then started killing Catholics. The Russians under Stalin killed anyone even remotly religious. Protestants killed other Protestants for being the wrong type of Protestant. Muslims killed Muslims for being the wrong type of Muslim. Don’t forget about Atheists (I believe that Atheism is also a religion, it is a religion of non belief.), Stalin was an Atheist and wanted to get rid of all religion. Most of China’s leaders are Atheists and have jailed and killed huge numbers of religious people. History is rife with various types of religious battles. The main reason for war, however, is the lust for power. The power to make others do and believe as you do and believe, the power to make other people render unto you what you believe is rightfully yours, the power to make other people treat you as you believe you should be treated, the power to gain what you want (ie: money, love, respect, etc.), the power to punish others for doing things that you don’t believe they should do, the power to keep other from having things or thoughts that you don’t have. In other words, the power to be, in some ways God, to make everyone else in your image with you as their ruler. As long as people have the ability to think, there will be greed, envy, prejudice and anger. As long as those things exist, there will be wars. Most people believe, either religiously or secularly, in the rules set down in the Ten Commandments, but very few people can follow those rules all of the time because our ability to think causes us to want. Wanting causes us to break some or all of the rules. Humans are not perfect. If they were they would not be human.", :length => Random.rand(500)+20)
+    .textarea-block
+      .message-textarea
+        %textarea{ rows: 3, placeholder: "Написать сообщение..." }
+        .control-panel
+          %button.accent.blue Отправить
+  .right
+    .header
+      Диалоги
+      %span.dialog-count 23
+      .close
+    .dialog-list
+      - (0..15).each do |dialog|
+        .dialog{ class: [("active" unless (dialog != 1)), ("new" unless (dialog > 3))] }
+          %a.avatar-link{ href: "#" }
+            .avatar.size-s
+              %img{ src:"https://randomuser.me/api/portraits/men/"+Random.rand(100).to_s+".jpg" }
+          .body
+            .header
+              %a{ href:"#" } Virginia Perez
+              - if (Random.rand(2) == 1)
+                .icon.vip
+
+              - if dialog <= 3
+                .noti-count.button.accent.blue
+                  = Random.rand(15)
+              .date 12 Дек.
+            %p If you could wish for one thing only, what would that wish be?
+
+:javascript
+  var m = document.querySelector('.messages-modal');
+  function messages(){
+    var page = document.querySelector('.row-page');
+    var colWidth = document.querySelector('.col-right').clientWidth;
+    var headerHeight = document.querySelector('.header-group').clientHeight;
+    m.style.width = document.querySelector('.content-body').clientWidth + colWidth + 'px';
+    m.style.left = page.offsetLeft + colWidth + 'px';
+    m.style.top = headerHeight + 'px';
+    m.style.height = window.innerHeight - headerHeight + 'px'
+  }
+
+  messages();
+  window.addEventListener('resize', messages);
+
+  document.querySelector('.messages-modal .close').onclick = function(){ // close modal
+    m.classList.remove('visible');
+    document.body.classList.remove('popup-opened');
+  }
+  document.querySelector('.vertical-menu .messages').onclick = function(){ // open modal
+    m.classList.add('visible');
+    document.body.classList.add('popup-opened');
+  }

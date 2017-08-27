@@ -1,0 +1,13 @@
+-#  The container tag
+-#  available local variables
+-#    current_page:  a page object for the currently displayed page
+-#    total_pages:   total number of pages
+-#    per_page:      number of items to fetch per page
+-#    remote:        data-remote
+-#    paginator:     the paginator that renders the pagination tags inside
+
+= paginator.render do
+  - unless current_page.last?
+    .pagination
+      .pagination__group__item
+        = link_to t('views.pagination.more'), index_comments_path( entity_type: object.class.to_s.underscore, entity_id: object.id, page: current_page + 1, show_page: true ), id: 'pagination_link', data: { current_page: current_page.to_i, total_pages: total_pages }

@@ -1,0 +1,9 @@
+.top
+  .widget-balance
+    .title= t('payments.on_my_account')
+    .count
+      .icon.money.size-28
+      .number= raw t('payments.coin_number', number: current_dreamer.account.amount)
+  %ul.vertical-menu
+    %li= link_to_current t('payments.operation.refill'), buy_account_path
+    %li= link_to_current t('payments.operation.history'), history_account_path

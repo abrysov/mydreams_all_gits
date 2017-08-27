@@ -1,0 +1,54 @@
+.content_wrap
+  - if @all_my_conversations.count == 0
+    %h2.page_content-title= t('mail.no_message')
+
+  - else
+    %h2.page_content-title= t('mail.title')
+
+  .mail-box.js-card-group{'data-mail-sort' => 'all'}
+    - fix_collection(@all_my_conversations, 8).each do |conversation|
+      - if conversation.nil?
+        .conversation.fake-card
+          .conversation__wrap
+      - else
+        - message = conversation.messages.last
+        - dreamer = DreamerDecorator.decorate conversation.opponent_for(current_dreamer)
+        - if message
+          .conversation.js-conversation{class: "#{'new' unless message.read}"}
+            .conversation__wrap.group
+              = link_to account_dreamer_dreams_path(dreamer), class: 'avatar mail-box' do
+                - if dreamer.is_vip?
+                  .label_vip
+                    %span= t('flybook.vip')
+
+                - if dreamer.online?
+                  .label_online
+                    %span= t('flybook.online')
+
+                .avatar-image
+                  = image_tag(avatar_or_default(dreamer, :medium))
+
+              .conversation__body
+                .dreamer-name= dreamer.first_name_and_age
+                - if dreamer.dream_city.present?
+                  .dreamer-location= "#{dreamer.dream_country}, #{dreamer.dream_city}"
+                .comment-preview= strig_tags(simple_format(message.message)).truncate(150)
+
+              .conversation__ctrl
+                - my_new = dreamer.send_to(current_dreamer).not_read.count
+                .new-messages-count.js-new-messages
+                  - unless my_new.zero?
+                    %span.js-new-messages-val= my_new
+                    = "#{custom_pluralize(my_new, 'new_message')}"
+
+                - dreamer_said = message.sender == current_dreamer
+                = link_to t('mail.' + (dreamer_said ? 'write' : 'replay') + '_btn'), dreamer_messages_path(dreamer.id), remote: true, class: 'response-btn js-chat-init' + ( dreamer_said ? ' write_btn' : '')
+
+                .all-messages-count= "#{t('mail.all')} #{t('mail.messages')}: #{current_dreamer.messages_with(dreamer).count}"
+
+            .chat.js-chat{data: {page: '1'}}
+              .chat__wrap
+                .chat__close.hide.js-chat-close
+                .chat__messages.js-chat-messages
+
+  = paginate @all_my_conversations, theme: 'more'

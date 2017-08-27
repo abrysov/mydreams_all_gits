@@ -1,0 +1,19 @@
+:ruby
+  purchase = transaction.reason.purchase
+  dreamer = purchase.dreamer
+  destination_dreamer = purchase.destination_dreamer
+  vip_for_self = destination_dreamer == dreamer
+
+%td= render 'datetime', transaction: transaction
+- if vip_for_self
+  %td= t('payments.operation.vip_buy')
+- else
+  %td.present-vip
+    .action.row
+      .title= t('payments.operation.vip_gift')
+      .vip.arrow
+      = link_to account_dreamer_path(destination_dreamer), class: 'user' do
+        .avatar.size-m
+          = image_tag destination_dreamer.avatar.url(:small)
+        = destination_dreamer.first_name
+= render 'amount_and_balance', transaction: transaction

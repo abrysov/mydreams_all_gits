@@ -1,0 +1,80 @@
+.wrapper
+  .filter
+    .couple
+      %div
+        %label
+          .checkbox
+            %input{:name => "sex", :type => "checkbox"}/
+            %span
+          %span Все
+        %label
+          .checkbox
+            %input{:name => "sex", :type => "checkbox"}/
+            %span
+          %span Новые
+        %label
+          .checkbox
+            %input{:name => "sex", :type => "checkbox"}/
+            %span
+          %span Популярные
+      %div
+        %label
+          .checkbox
+            %input{:name => "sex", :type => "checkbox"}/
+            %span
+          %span VIP
+        %label
+          .checkbox
+            %input{:name => "sex", :type => "checkbox"}/
+            %span
+          %span Online
+  %label.filter
+    %span Страна
+    .select
+      %select
+        %option{:value => ""} Выберити страну
+        %option{:value => ""} Россия
+        %option{:value => ""} Беларусия
+        %option{:value => ""} Украина
+  %label.filter
+    %span Город
+    .select
+      %select
+        %option{:value => ""} Выберити страну
+        %option{:value => ""} Москва
+  %label.filter
+    %span Возраст
+    .couple
+      .select
+        %select
+          %option{:value => ""} От
+          %option{:value => ""} 1
+          %option{:value => ""} 2
+          %option{:value => ""} 3
+      %span −
+      .select
+        %select
+          %option{:value => ""} До
+          %option{:value => ""} 1
+          %option{:value => ""} 2
+          %option{:value => ""} 3
+  .filter
+    %span Пол
+    .couple
+      %div
+        %label
+          .radio
+            %input{:name => "sex", :type => "radio"}/
+            %span
+          %span Девушка
+        %label
+          .radio
+            %input{:name => "sex", :type => "radio"}/
+            %span
+          %span Мужчина
+      %div
+        %label
+          .radio
+            %input{:checked => "checked", :name => "sex", :type => "radio"}/
+            %span
+          %span Любой

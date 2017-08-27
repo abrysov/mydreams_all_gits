@@ -1,0 +1,55 @@
+.crop-area {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    margin: auto;
+    content: '';
+    pointer-events: none;
+    box-shadow: 0 0 0 100rem rgba(255, 255, 255, .7);
+  }
+
+  &.for-avatar {
+    width: 25rem;
+    height: 25rem;
+
+    &::before {
+      width: 16rem;
+      height: 16rem;
+      border-radius: 100%;
+    }
+  }
+
+  &.for-dream {
+    width: 25rem;
+    height: 25rem;
+
+    &::before {
+      width: 16rem;
+      height: 16rem;
+    }
+  }
+
+  &.for-header {
+    width: 39.375rem;
+    height: 14.375rem;
+
+    &::before {
+      width: 36rem;
+      height: 13.1875rem;
+    }
+  }
+
+  img {
+    position: absolute;
+    display: block;
+    cursor: move;
+  }
+}

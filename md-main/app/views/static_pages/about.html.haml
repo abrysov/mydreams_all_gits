@@ -1,0 +1,11 @@
+= render layout: 'static_pages/layout', locals: { title: t('about.title') } do
+  .page-title &nbsp;
+  .about
+    %p.gray one
+    %p= t('about.one').html_safe
+    %p.gray two
+    %p= t('about.two').html_safe
+    %p.gray three
+    %p= t('about.three').html_safe
+    %p= t('about.info').html_safe
+    %p= link_to t('about.details'), agreement_path, class:"jmod-btn"

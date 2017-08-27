@@ -1,0 +1,8 @@
+.frame.unviewed-news{ data: {'modal-type' => 'unviewed_news'} }
+  .main
+    .main_content
+      .content_wrap
+        .homepage-club-news
+        .page-title= t('wellcome.club_news_title')
+        .post-list
+          = render partial: 'posts/light_post', collection: @posts, as: :post

@@ -1,0 +1,21 @@
+.photoalbum {
+  display: block;
+  padding: 12px;
+  font-size: 0;
+  line-height: 0;
+
+  .photo {
+    display: inline-block;
+    width: calc(25% - 4px);
+    margin: 2px;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+      display: block;
+      margin-top: 100%;
+      content: '';
+    }
+  }
+}

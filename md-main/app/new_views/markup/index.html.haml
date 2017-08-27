@@ -1,0 +1,10 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{:style => "background-image: url(http://unsplash.it/578/211?random=5);"}
+    .title
+      %h2 Мечты
+  %div
+    .card-list
+      - (0..11).each do |dream|
+        = render partial: 'card/dream'
+    .preloader

@@ -1,0 +1,127 @@
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  .button {
+    min-width: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &.size-l, &.size-xl {
+    .button {
+      width: 1.8125rem;
+      height: 1.8125rem;
+      border-radius: 100%;
+      background-size: 120%;
+
+      &.vk {
+        background-image: asset-url('new/social/vk_purple.svg');
+      }
+
+      &.fb {
+        background-image: asset-url('new/social/fb_purple.svg');
+      }
+
+      &.tw {
+        background-image: asset-url('new/social/tw_purple.svg');
+      }
+
+      &.in {
+        background-image: asset-url('new/social/in_purple.svg');
+      }
+
+      &.ok {
+        background-image: asset-url('new/social/ok_purple.svg');
+      }
+    }
+  }
+
+  &.size-xl .button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &.size-s {
+    justify-content: center;
+
+    .button {
+      position: relative;
+      width: 1.8125rem;
+      height: 1.8125rem;
+      transition: opacity.3s ease;
+      border: none;
+      border-radius: 0;
+      background-size: 100%;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: inherit;
+        height: inherit;
+        content: '';
+        transition: opacity.3s ease;
+        opacity: .3;
+        background: inherit;
+        background-color: transparent;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .vk::before {
+      background-image: asset-url('new/social/vk.svg');
+    }
+
+    .fb::before {
+      background-image: asset-url('new/social/fb.svg');
+    }
+
+    .tw::before {
+      background-image: asset-url('new/social/tw.svg');
+    }
+
+    .in::before {
+      background-image: asset-url('new/social/in.svg');
+    }
+
+    .ok::before {
+      background-image: asset-url('new/social/ok.svg');
+    }
+
+    .vk::after {
+      background-image: asset-url('new/social/vk_color.svg');
+    }
+
+    .fb::after {
+      background-image: asset-url('new/social/fb_color.svg');
+    }
+
+    .tw::after {
+      background-image: asset-url('new/social/tw_color.svg');
+    }
+
+    .in::after {
+      background-image: asset-url('new/social/in_color.svg');
+    }
+
+    .ok::after {
+      background-image: asset-url('new/social/ok_color.svg');
+    }
+  }
+}

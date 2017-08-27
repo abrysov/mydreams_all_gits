@@ -1,0 +1,827 @@
+!!!
+%html{ lang: "ru" }
+  %head
+    = render 'layouts/shared/head'
+  %body
+    %main.block
+      .content
+        %h1 MyDreams.club UI kit
+      .content.row
+        .col-1
+          %h2 Pages
+        .col-4
+          %ul
+            %li
+              %h3 Баланс
+              %ul
+                %li
+                  %a{ href: "/markup/balance" } Пополнение баланса
+                %li
+                  %a{ href: "/markup/balance2" } Успешное пополнение баланса
+                %li
+                  %a{ href: "/markup/operations_history" } История операций
+            %li
+              %h3 Новости
+              %ul
+                %li
+                  %a{ href: "/markup/news" } Новости
+                %li
+                  %a{ href: "/markup/comments" } Коментарии
+                %li
+                  %a{ href: "/markup/edit_record" } Редактировать запись
+                %li
+                  %a{ href: "/markup/no-news" } Новостей нет
+            %li
+              %h3 Друзья
+              %ul
+                %li
+                  %a{ href: "/markup/friends" } Друзья
+                %li
+                  %a{ href: "/markup/my-friends" } Мои друзья
+                %li
+                  %a{ href: "/markup/friendship" } Запрос на дружбу
+            %li
+              %h3
+                %a{ href: "/markup/dream" } Мечта
+            %li
+              %h3
+                %a{ href: "/markup/create_dream" } Создать новую мечту
+            %li
+              %h3
+                %a{ href: "/markup/dream_foreign" } Чужая мечта
+            %li
+              %h3 Мечтатель (Дримбук, dremabook)
+              %ul
+                %li
+                  %a{ href: "/markup/dreamer" } моя страница
+                %li
+                  %a{ href: "/markup/dreamer_vip" } моя страница VIP
+                %li
+                  %a{ href: "/markup/dreamer_foreign" } чужая страница
+                %li
+                  %a{ href: "/markup/dreamer_foreign_vip" } чужая страница VIP
+                %li
+                  %a{ href: "/markup/dreambook_club" } Дримбук клуба
+            %li
+              %h3
+                %a{ href: "/markup/dreamers" } Мечтатели
+            %li
+              %h3 Мечты
+              %ul
+                %li
+                  %a{ href: "/markup/dreams" } Мечты
+                %li
+                  %a{ href: "/markup/mydreams" } Мои мечты
+                %li
+                  %a{ href: "/markup/fulfilled_dreams" } Сбыщыеся мечты
+                %li
+                  %a{ href: "/markup/my_fulfilled_dreams" } Мои сбыщыеся мечты
+                %li
+                  %a{ href: "/markup/belive_in_dream" } Исполнить мечты
+            %li
+              %h3 Мечта
+              %ul
+                %li
+                  %a{ href: "/markup/dream" } Мечта
+                %li
+                  %a{ href: "/markup/dream_foreign" } Чужая мечта
+            %li
+              %h3
+                %a{ href: "/markup/events" } События
+            %li
+              %h3
+                %a{ href: "/markup/update" } Обновления
+            %li
+              %h3
+                %a{ href: "/markup/my-marks" } Мои марки
+            %li
+              %h3 Подписчики
+              %ul
+                %li
+                  %a{ href: "/markup/subscribers" } Подписчики
+                %li
+                  %a{ href: "/markup/my-subscribers" } Мои подписчики
+            %li
+              %h3 Фотоальбом
+              %ul
+                %li
+                  %a{ href: "/markup/photoalbum" } Мой фотоальбом
+                %li
+                  %a{ href: "/markup/photoalbum_foreign" } Чужой фотоальбом
+                %li
+                  %a{ href: "/markup/photoalbum_popup" } Фотоальбом popup
+            %li
+              %h3
+                %a{ href: "/markup/recommendations" } Рекомендации
+            %li
+              %h3 Настройки
+              %ul
+                %li
+                  %a{ href: "/markup/settings" } Редактировать профиль
+                %li
+                  %a{ href: "/markup/settings" } Настройки аккаунта
+            %li
+              %h3
+                %a{ href: "/markup/top-100" } Топ-100
+            %li
+              %h3
+                %a{ href: "/markup/messages" } Сообщения
+            %li
+              %h3
+                %a{ href: "/markup/restore_profile" }
+                  Восстановление профиля
+                  %br
+                  (Ваш профиль временно удален)
+            %li
+              %h3 Ошибки
+              %ul
+                %li
+                  %a{ href: "/markup/404" } Ошибка 404
+                %li
+                  %a{ href: "/markup/error" } Ошибка 500 (Что-то пошло не так...)
+                %li
+                  %a{ href: "/markup/blocked" } Пользователь заблокирован
+            %li
+              %h3
+                %a{ href: "/markup/about" } О Клубе
+            %li
+              %h3
+                %a{ href: "/markup/termsofuse" } Пользовательское соглашение
+            %li
+              %h3
+                %a{ href: "/markup/password_reset" } Восстановление пароля
+            %li
+              %h3
+                %a{ href: "/markup/landingpage" } Главная для неавторизованного пользователя
+            %li
+              %h3 Подтверждение почты
+              %ul
+                %li
+                  %a{ href: "/markup/confirm_email" } Подтверждение почты
+                %li
+                  %a{ href: "/markup/confirm_email2" } Подтверждение почты 2
+            %li
+              %h3 Аутентификация
+              %ul
+                %li
+                  %a{ href: "/markup/login" } Вход
+                %li
+                  %a{ href: "/markup/registration" } Регистрация
+            %li
+              %h3 Попапы
+              %ul
+                %li
+                  %a{ href: "/markup/popup_add_to_leaders" } Попасть в фотоленту
+                %li
+                  %h4 Кропалки crop
+                  %ul
+                    %li
+                      %a{ href: "/markup/popup_crop_avatar" } Аватар профиля
+                    %li
+                      %a{ href: "/markup/popup_crop_dream" } Аватар мечты
+                    %li
+                      %a{ href: "/markup/popup_crop_header" } Шапка мечтателя
+                %li
+                  %h4 Подарки
+                  %ul
+                    %li
+                      %h4 Подарить Монеты
+                      %ul
+                        %li
+                          %a{ href: "/markup/popup_gift_coins" } Подарить монеты
+                        %li
+                          %a{ href: "/markup/popup_gift_coins_fail" } Подарить монеты (ошибка)
+                        %li
+                          %a{ href: "/markup/popup_gift_coins_success" } Подарить монеты (успешно)
+                    %li
+                      %h4 Подарить VIP
+                      %ul
+                        %li
+                          %a{ href: "/markup/popup_gift_vip" } Подарить VIP
+                        %li
+                          %a{ href: "/markup/popup_gift_vip_fail" } Подарить VIP (ошибка)
+                        %li
+                          %a{ href: "/markup/popup_gift_vip_success" } Подарить VIP (успешно)
+                    %li
+                      %h4 Купить себе VIP
+                      %ul
+                        %li
+                          %a{ href: "/markup/popup_gift_vip_for_me" } Купить VIP
+                        %li
+                          %a{ href: "/markup/popup_gift_vip_for_me_fail" } Купить VIP (ошибка)
+                        %li
+                          %a{ href: "/markup/popup_gift_vip_for_me_success" } Купить VIP (успешно)
+                %li
+                  %h4
+                    %a{ href: "/markup/popup_likes" } Лайки (Понравилось)
+                %li
+                  %h4 Марки
+                  %ul
+                    %li
+                      %h4 Запустить Мечту во Вселенную
+                      %ul
+                        %li
+                          %a{ href: "/markup/popup_marks" } Запустить Мечту во Вселенную
+                        %li
+                          %a{ href: "/markup/popup_marks_fail" } Запустить Мечту во Вселенную (ошибка)
+                        %li
+                          %a{ href: "/markup/popup_marks_success" } Запустить Мечту во Вселенную (успешно)
+                    %li
+                      %h4 Подарить марку
+                      %ul
+                        %li
+                          %a{ href: "/markup/popup_marks2" } Подарить марку
+                        %li
+                          %a{ href: "/markup/popup_marks_fail" } Подарить марку (ошибка)
+                        %li
+                          %a{ href: "/markup/popup_marks_success" } Подарить марку (успешно)
+            %li
+              %h3
+                %a{ href: "/markup/ui" } UI kit
+      .content.row
+        .col-1
+          %h2 Headers
+        .col-4
+          .x-area
+            %h1 Header h1
+            %h2 Header h2
+            %h3 Header h3
+            %h4 Header h4
+            %h5 Header h5
+      .content.row
+        .col-1
+          %h2 Buttons
+        .col-4
+          %h3 Standard:
+          .x-area
+            %input{ type: "button", value: "button" }
+            %input.accent{ type: "button", value: "accent" }
+            %input.accent.disabled{ type: "button", value: "accent disabled" }
+          %h3 Size: S, M, L
+          .x-area
+            %input.s{ type: "button", value: "size s" }
+            %input.accent.s{ type: "button", value: "size s" }
+            %input.accent.s.disabled{ type: "button", value: "size s" }
+            %hr
+            %input.m{ type: "button", value: "size m" }
+            %input.accent.m{ type: "button", value: "size m" }
+            %input.accent.disabled{ type: "button", value: "size m" }
+            %hr
+            %input.l{ type: "button", value: "size l" }
+            %input.accent.l{ type: "button", value: "size l" }
+            %input.accent.l.disabled{ type: "button", value: "size l" }
+          %h3 Cubic:
+          .x-area
+            %input.blue.cubic.s{ type: "button", value: "cubic" }
+            %input.blue.cubic.m{ type: "button", value: "cubic" }
+            %input.blue.cubic.l{ type: "button", value: "cubic" }
+            %input.blue.cubic.accent.l{ type: "button", value: "cubic" }
+          %h3 Colors:
+          .x-area
+            %input{ type: "button", value: "standard"  }
+            %input.accent{ type: "button", value: "standard" }
+            %input.cubic{ type: "button", value: "standard" }
+            %input.cubic.accent{ type: "button", value: "standard" }
+            %hr
+            %input.blue{ type: "button", value: "blue" }
+            %input.blue.accent{ type: "button", value: "blue" }
+            %input.blue.cubic{ type: "button", value: "blue" }
+            %input.blue.cubic.accent{ type: "button", value: "blue" }
+            %hr
+            %input.yellow{ type: "button", value: "yellow" }
+            %input.yellow.accent{ type: "button", value: "yellow" }
+            %input.yellow.cubic{ type: "button", value: "yellow" }
+            %input.yellow.cubic.accent{type: "button", value: "yellow" }
+            %hr
+            %input.green{ type: "button", value: "green" }
+            %input.green.accent{ type: "button", value: "green" }
+            %input.green.cubic{ type: "button", value: "green" }
+            %input.green.cubic.accent{ type: "button", value: "green" }
+            %hr
+            %input.purple{ type: "button", value: "purple" }
+            %input.purple.accent{ type: "button", value: "purple" }
+            %input.purple.cubic{ type: "button", value: "purple" }
+            %input.purple.cubic.accent{ type: "button", value: "purple" }
+            %hr
+            %input.pink{ type: "button", value: "pink" }
+            %input.pink.accent{ type: "button", value: "pink" }
+            %input.pink.cubic{ type: "button", value: "pink" }
+            %input.pink.cubic.accent{ type: "button", value: "pink" }
+            %hr
+            %input.gray{ type: "button", value: "gray" }
+            %input.gray.accent{ type: "button", value: "gray" }
+            %input.gray.cubic{ type: "button", value: "gray" }
+            %input.gray.cubic.accent{ type: "button", value: "gray" }
+          %h3 Button circle iccon
+          .x-area{ style: "width: 150px;" }
+            .button.circle-icon.gray.accent{ type: "button", value: "standard" }
+              .circle
+              %span Text
+            .button.circle-icon.gray.accent{ type: "button", value: "standard" }
+              .circle{ style: "background-color: #49e" }
+              %span Text text
+      .content.row
+        .col-1
+          %h2 Tabs
+        .col-4
+          .x-area
+            .tabs
+              .tab.active Подарить VIP статус
+              .tab Подарить монеты
+
+      .content.row
+        .col-1
+          %h2 range
+        .col-4
+          .x-area{ style: "width: 300px" }
+            .range
+              .btn{ style: "margin-left: 30%" }
+
+      .content.row
+        .col-1
+          %h2 Input text
+        .col-4
+          %h3 Minimal style
+          .x-area{ style: "width:300px;"}
+            .input.minimal
+              %input{ placeholder: "Input", type: "text" }
+              .focus-line
+            .input.minimal.input-icon
+              %input{ placeholder: "Input & icon", type: "text" }
+              %span.icon.size-16.sprite.email
+              .focus-line
+          %h3 Circle style
+          .x-area{ style: "width:300px;" }
+            .input.circle.icon-right
+              %input{ placeholder: "Поиск", type: "text" }
+              %span.icon.size-10.search
+          %h3 Default style
+          .x-area{ style: "width:300px;" }
+            %input{ placeholder: "Имя", type: "text" }
+            %input{ placeholder: "Фамилия", type: "text" }
+          %h3 Default style + labels
+          .x-area{ style: "width:300px;" }
+            %label.title
+              .name Имя:
+              %input{ type: "text" }
+            %label.title
+              .name Фамилия:
+              %input{ type: "text" }
+      .content.row
+        .col-1
+          %h2 Radio
+        .col-4
+          .x-area{:style => "width:300px;"}
+            .filter
+              %span Пол
+              %label
+                .radio
+                  %input{ name: "sex", type: "radio" }
+                  %span
+                %span Девушка
+              %label
+                .radio
+                  %input{ name: "sex", type: "radio" }
+                  %span
+                %span Мужчина
+              %label
+                .radio
+                  %input{ checked: "checked", name: "sex", type: "radio" }
+                  %span
+                %span Любой
+      .content.row
+        .col-1
+          %h2 Checkbox
+        .col-4
+          .x-area{ style: "width:300px;" }
+            .filter
+              %label
+                .checkbox.green
+                  %input{ name: "sex", type: "checkbox" }
+                  %span
+                %span Все
+              %label
+                .checkbox
+                  %input{ name: "sex", type: "checkbox" }
+                  %span
+                %span Новые
+      .content.row
+        .col-1
+          %h2 Preloader
+        .col-4
+          .x-area{ style: "width:300px;" }
+            .preloader
+      .content.row
+        .col-1
+          %h2 Vertical menu
+        .col-4
+          .x-area{ style: "width:400px;" }
+            %ul.vertical-menu
+              %li
+                %a{ href: "#" } Item first
+              %li
+                %a.active{ href: "#" } Item 2
+              %li
+                %a{ href: "#" } Item 3
+              %li
+                %a{ href: "#" } New Item
+              %li
+                %a{ href: "#" } Item 5
+              %li
+                %a{ href: "#" } Item Last
+      .content.row
+        .col-1
+          %h2 Social buttons
+        .col-4
+          %h3 Size: L
+          .x-area{ style: "width:200px;" }
+            .social-buttons.size-l
+              %a.button.purple.vk{ href: "#" }
+              %a.button.purple.fb{ href: "#" }
+              %a.button.purple.in{ href: "#" }
+              %a.button.purple.tw{ href: "#" }
+              %a.button.purple.ok{ href: "#" }
+          %h3 Size: S
+          .x-area{ style: "width:200px;" }
+            .social-buttons.size-s
+              %a.button.purple.vk{ href: "#" }
+              %a.button.purple.fb{ href: "#" }
+              %a.button.purple.in{ href: "#" }
+              %a.button.purple.tw{ href: "#" }
+              %a.button.purple.ok{ href: "#" }
+      .content.row
+        .col-1
+          %h2 App buttons
+        .col-4
+          %h3 normal
+          .x-area{ style: "width:250px;" }
+            .apps-buttons
+              %a.app-store{ href: "//itunes.apple.com", target: "_blank" } App Store
+              %a.google-play{ href: "//play.google.com", target: "_blank" } Google Pplay
+          %h3 size-xl
+          .x-area{ style: "width:22rem; background: #CCC;" }
+            .apps-buttons
+              %a.app-store.size-xl{ href: "//itunes.apple.com", target: "_blank" } App Store
+              %a.google-play.size-xl{ href: "//play.google.com", target: "_blank" } Google Pplay
+
+      .content.row
+        .col-1
+          %h2 Icons
+        .col-4
+          .x-area{ style: "width:200px;" }
+            %span.icon.size-16.email
+            %span.icon.size-16.password
+            %hr
+            .icon-text
+              %img.icon.size-16{ alt: "info", src: asset_url("new/about.svg") }
+              %span.light-gray icon & text
+            %hr
+            .icon-text.center
+              %img.icon.size-16{ alt: "info", src: asset_url("new/about.svg") }
+              %span.light-gray center
+      .content.row
+        .col-1
+          %h2 Links
+        .col-4
+          .x-area{ style: "width:200px;" }
+            %a{ href: "#" } hash link
+            %br
+            %a{ href: "#" } Google.com
+            %br
+            %a{ href: "mailto:support@mydreams.club" } support@mydreams.club
+      .content.row
+        .col-1
+          %h2 Select
+        .col-4
+          .x-area{ style: "width:200px;" }
+            %label.filter
+              %span Город
+              .select
+                %select
+                  %option{ value: "" } Выберити страну
+                  %option{ value: "" } Москва
+            %label.filter
+              %span Возраст
+              .couple
+                .select
+                  %select
+                    %option{ value: "" } От
+                    %option{ value: "" } 1
+                    %option{ value: "" } 2
+                    %option{ value: "" } 3
+                %span −
+                .select
+                  %select
+                    %option{ value: "" } До
+                    %option{ value: "" } 1
+                    %option{ value: "" } 2
+                    %option{ value: "" } 3
+      .content.row
+        .col-1
+          %h2 Coins
+        .col-4
+          .x-area{ style: "width:160px;" }
+            .coin 1
+            .coin 15
+            .coin 100
+
+      .content.row
+        .col-1
+          %h2 Flags
+        .col-4
+          %h3 RUS, GER, USA, ENG
+          .x-area{ style: "width:60px;" }
+            .flag.rus
+            .flag.ger
+            .flag.usa
+            .flag.eng
+
+      .content.row
+        .col-1
+          %h2 Lang-select
+        .col-4
+          %h3 RUS, GER, USA, ENG
+          .x-area{ style: "width:120px;" }
+            .lang-select
+              .flag.eng
+              .title English
+
+      .content.row
+        .col-1
+          %h2 Avatar
+        .col-4
+          %h3 Size: XS, S, M, L
+          .x-area{ style: "width:200px;" }
+            .avatar.size-xs
+              %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/17.jpg" }
+            %hr
+            .avatar.size-s
+              %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/17.jpg" }
+            %hr
+            .avatar.size-m
+              %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/17.jpg" }
+            %hr
+            .avatar.size-l
+              %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/17.jpg" }
+            %hr
+            .avatar.size-xl
+              %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/17.jpg" }
+      .content.row
+        .col-1
+          %h2 User card
+        .col-4
+          .x-area{ style: "width:200px;" }
+            .user-card
+              .avatar.size-s
+                %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/7.jpg" }
+              .description
+                %a{ href: "#" } User Name
+                .icon-text
+                  .icon.size-8.time
+                  %span.text 12 Ноября
+            %hr
+            .user-card
+              .avatar.size-s
+                %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/8.jpg" }
+              .description
+                %a{ href: "#" } User Name
+                .icon-text
+                  .icon.size-8.time
+                  %span.text Российская Федирация, Нижний Новгород 21
+      .content.row
+        .col-1
+          %h2 Cards
+        .col-4
+          .x-area{ style: "width:740px;" }
+            .card-list
+              .card
+                .front
+                  .label.vip vip
+                  .picture.open-menu
+                    .picture-wrap
+                      %img{ src: "http://unsplash.it/200/200" }
+                    .menu
+                      %ul.opt-list
+                        %li.icon-text
+                          .icon.circle.add
+                          %span.text Добавить себе
+                        %li.icon-text
+                          .icon.circle.share-friends
+                          %span.text Предложить другу
+                        %li.icon-text
+                          .icon.circle.share
+                          %span.text Поделиться
+                        %li.icon-text
+                          .icon.circle.gift
+                          %span.text Подарить марку
+                        %li.icon-text
+                          .icon.circle.in-progress
+                          %span.text Исполнить мечту
+                    .icon.circle.options
+                  .description
+                    %h3 Мечтаю свою большую мечту
+                    %h5 Мечтаю об этом, с таким длинным описанием...
+                  .reactions
+                    .icon-text.like
+                      .icon
+                      %span.text 0
+                    .icon-text.in-progress
+                      .icon
+                      %span.text 0
+                    .icon-text.comments
+                      .icon
+                      %span.text 0
+                .back
+              .card
+                .front
+                  .label.gold gold
+                  .picture
+                    .picture-wrap
+                      %img{ src: "http://unsplash.it/200/200" }
+                    .menu
+                      %ul.opt-list
+                        %li.icon-text
+                          .icon.circle.add
+                          %span.text Добавить себе
+                        %li.icon-text
+                          .icon.circle.share-friends
+                          %span.text Предложить другу
+                        %li.icon-text
+                          .icon.circle.share
+                          %span.text Поделиться
+                        %li.icon-text
+                          .icon.circle.gift
+                          %span.text Подарить марку
+                        %li.icon-text
+                          .icon.circle.in-progress
+                          %span.text Исполнить мечту
+                    .icon.circle.options
+                  .description
+                    %h3 Мечтаю свою большую мечту
+                    %h5 Мечтаю об этом, с таким длинным описанием...
+                  .reactions
+                    .icon-text.like
+                      .icon
+                      %span.text 0
+                    .icon-text.in-progress
+                      .icon
+                      %span.text 0
+                    .icon-text.comments
+                      .icon
+                      %span.text 0
+                .back
+              .card
+                .front
+                  .label.default My Dreams
+                  .picture
+                    .picture-wrap
+                      %img{ src: "http://unsplash.it/200/200" }
+                    .menu
+                      %ul.opt-list
+                        %li.icon-text
+                          .icon.circle.add
+                          %span.text Добавить себе
+                        %li.icon-text
+                          .icon.circle.share-friends
+                          %span.text Предложить другу
+                        %li.icon-text
+                          .icon.circle.share
+                          %span.text Поделиться
+                        %li.icon-text
+                          .icon.circle.gift
+                          %span.text Подарить марку
+                        %li.icon-text
+                          .icon.circle.in-progress
+                          %span.text Исполнить мечту
+                    .icon.circle.options
+                  .description
+                    %h3 Мечтаю свою большую мечту
+                    %h5 Мечтаю об этом, с таким длинным описанием...
+                  .reactions
+                    .icon-text.like
+                      .icon
+                      %span.text 0
+                    .icon-text.in-progress
+                      .icon
+                      %span.text 0
+                    .icon-text.comments
+                      .icon
+                      %span.text 0
+                .back
+              .card.dreamer
+                .front
+                  .top
+                    .picture
+                      %img{ src: "http://unsplash.it/200/150" }
+                    .avatar-block.online.vip
+                      .avatar
+                        %img{ alt: "user", src: "https://randomuser.me/api/portraits/men/1.jpg" }
+                  .description
+                    %h3 User Name
+                    .icon-text.info
+                      .icon.size-8.male
+                      %span 23, Россия, Санкт-Петербург
+                    %h5 Althusser Competing Interpellations And The...
+                    %a.button.blue.accent{ href: "#" } Сообщение
+              .card.add-dream
+                .front
+                  .plus
+                  .title Добавить сбывшуюся Мечту
+              .card
+                .front
+      .content.row
+        .col-1
+          %h2 likes-block
+        .col-4
+          .x-area
+            .likes-block
+              .like-button.icon-text
+                .icon.like
+                .text
+                  Нравится
+                  %strong 12
+              .like-list
+                - (0..8).each do |i|
+                  %a.avatar.size-xs{ href: "/ru/account/dreamers/1/dreams" }
+                    %img{ alt: "", src: "https://randomuser.me/api/portraits/men/" + i.to_s  + ".jpg" }
+      .content.row
+        .col-1
+          %h2 Attach
+        .col-4
+          %h3 attach-button
+          .x-area
+            .attach-button.filearea
+              %input{ type: "file" }
+          %h3 default
+          .x-area
+            .filearea{ style: "width: 100px; height: 100px; background: #eee;" }
+              %input{ type: "file" }
+          %h3 picture
+          .x-area
+            .filearea.picture.icon{ style: "width: 200px; height: 200px; background-color: #fcfcfc;" }
+              %input{ type: "file" }
+      .content.row
+        .col-1
+          %h2 image grid
+        .col-4
+          %h3 one row
+          .x-area
+            .image-grid
+              .row
+                - (1..3).each do |i|
+                  .img{ style: "background-image: url(http://unsplash.it/800/600/?random=" + i.to_s + ")" }
+          %h3 four row
+          .x-area
+            .image-grid
+              - (1..4).each do |n|
+                .row
+                  - (1..n).each do |i|
+                    .img{ style: "background-image: url(http://unsplash.it/800/600/?random=" + Random.rand(50).to_s + ")" }
+      .content.row
+        .col-1
+          %h2 load-more-comments button
+        .col-4
+          .x-area{ style: "width: 350px;" }
+            .load-more-comments
+              Показать все
+              %strong 228
+              комментариев
+
+      .content.row
+        .col-1
+          %h2 Sort buttons
+        .col-4
+          .x-area{ style: "width:400px;" }
+            .sort-btn.up Сортировать
+            %hr
+            .sort-btn.down Сортировать
+
+      .content.row
+        .col-1
+          %h2 Comments list
+        .col-4
+          .x-area{ style: "width:500px;" }
+            .comments-list
+              - (1..4).each do |items|
+                .comment
+                  .header
+                    .user-card
+                      .avatar.size-s
+                        %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/women/" + Random.rand(30).to_s + ".jpg" }
+                      .description
+                        %a{ href: "#" } User Name
+                        .icon-text
+                          .icon.size-8.time
+                          %span.text 12 Ноября
+                  %p.content
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id
+                    %a.answer{ href: "#" } Ответить
+
+      .content.row
+        .col-1
+          %h2 Mark
+        .col-4
+          .x-area{ style: "width:500px;" }
+            .mark.gold
+            .mark.presidental
+            .mark.vip

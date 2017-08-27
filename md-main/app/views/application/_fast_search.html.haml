@@ -1,0 +1,6 @@
+.search_field_holder
+  = text_field_tag(param_name, params[param_name], placeholder: t('misc.search_placeholder'))
+  = submit_tag '', id: 'fast_search'
+  .fast_search__btn.js-fast-search-btn
+    = label_tag '', for: 'fast_search' do
+      %span

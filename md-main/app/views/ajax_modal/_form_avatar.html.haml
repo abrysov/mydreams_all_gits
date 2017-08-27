@@ -1,0 +1,21 @@
+.frame.change-avatar.js-modal{data: {'modal-type' => 'avatar'}}
+
+  = form_tag upload_crop_avatar_account_dreamer_path(dreamer.id), remote: true, multipart: true, method: :patch, data: { crop: 'avatar' }, class: "js-imageLoader-form" do
+
+    .title= t('dreamers.edit.change_avatar')
+
+    = hidden_field_tag :avatar, nil, class: 'js-imageLoader-input'
+
+    .crop-img-container.js-imageLoader-preview
+      = image_tag( avatar_or_default(dreamer, :medium), class: 'current_avatar' )
+
+    .submit-photo.control.js-form-control.js-imageSaver
+      %label.button-bv-animated.js-form-submit{for: 'avatar-save'}
+        %span= t('actions.save')
+      .preloader.js-preloader
+      = submit_tag nil, id: 'avatar-save'
+  
+  .load-btn-container.js-load-btn-container
+    .load-photo.button-bv-animated.active.js-imageLoader#js-add-avatar{ data: { min_height: 250, min_width: 250, orient: 'square', input_name: 'avatar' } }
+      %span= t('actions.upload')    
+  

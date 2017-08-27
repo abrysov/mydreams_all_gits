@@ -1,0 +1,20 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Мои сбывшиеся
+  %div
+    .card-list
+      .card.add-dream
+        .front
+          .plus
+          .title Добавить сбывшуюся Мечту
+      - (0..10).each do |dream|
+        = render partial: 'card/fulfilled_dream'
+    .preloader
+.col-right
+  .col-js
+    .top
+      .wrapper.size-l.justify
+        .row
+          .col-1.sort-btn.down По статусу
+          .col-1.sort-btn.up По дате

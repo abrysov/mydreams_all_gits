@@ -1,0 +1,9 @@
+- if @dreamers.count == 0
+  %h2.page_content-title= t('dreamers.no_dreamers')
+
+= hidden_field_tag :filter_url, request.url
+
+- dreamers = fix_collection(@dreamers, @dreamers.limit_value)
+= render partial: 'account/dreamers/dreamer', collection: dreamers
+
+= paginate @dreamers, theme: 'more'

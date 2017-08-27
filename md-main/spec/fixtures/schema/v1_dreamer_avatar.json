@@ -1,0 +1,49 @@
+{
+  "title": "Api:v1 Dreamer create new",
+  "type": "object",
+  "required": [ "avatar", "meta" ],
+  "properties": {
+  	"avatar": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "photo",
+        "crop_meta",
+        "dreamer"
+      ],
+      "properties": {
+          "id": { "type": "integer" },
+          "photo": {
+            "type": [ "hash", "array" ],
+            "required": [
+              "small",
+              "pre_medium",
+              "medium",
+              "large"
+            ],
+            "properties": {
+              "small": { "type": "string" },
+              "pre_medium": { "type": "string" },
+              "medium": { "type": "string" },
+              "large": { "type": "string" }
+            }
+          },
+          "crop_meta": { "type": [ "hash", "array" ] },
+          "dreamer": {"type": [ "hash", "array" ] }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "message"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"message": { "type": "string" }
+      }
+  	}
+  }
+}

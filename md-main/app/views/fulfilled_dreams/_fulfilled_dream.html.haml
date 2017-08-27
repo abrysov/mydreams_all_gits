@@ -1,0 +1,74 @@
+- certificates_count = dream.certificates.count
+.card.fulfilled-dream.card-hover.js-flip
+  .card__wrap.flip
+    .card_back
+      .card_back__wrap
+        .logo_color
+    .card_front
+      = link_to [:account, dream] do
+        .card_dream__header.group
+          .card_dream__header__status
+            %span= dream.summary_certificate_type_name || 'My Dreams'
+        .card_dream__img
+          - if dream.photo.present?
+            = image_tag dream.photo.url(:medium)
+        .card_dream__name
+          %span= strig_tags(simple_format(dream.title)).truncate(30)
+        .card_dream__description
+          %p= strig_tags(simple_format(dream.description)).truncate(50)
+
+      .card_dream__footer
+        .additional_data.group
+          - if dreamer_signed_in?
+            - like_action = current_dreamer.liked?(dream) ? :unlike : :like
+
+            .additional_data__likes.js-like-btn{class: "#{'js-tooltipster' if dream.likes_count != 0} #{'empty' unless current_dreamer.liked?(dream)}", data: {'t-target' => 'liked_list', 't-position' => 'bottom', 't-width' => '300', 't-interactive' => 'true', target: 'dream', id: dream.id, 'ctrl-type' => like_action, count: dream.likes_count}}
+              %span.js-like-btn-count= number_to_human(dream.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+              .bubble.js-tooltipster-content
+                .bubble-wrap
+                  .bubble_counter.js-bubble-counter
+                    = "#{dream.likes_count} #{custom_pluralize(dream.likes_count, 'people')} #{custom_pluralize(dream.likes_count, 'like')}"
+                  .bubble_items.js-bubble_items
+                    - dream.last_likes.limit(5).each do |l|
+                      = link_to [:account, l.dreamer, :dreams] do
+                        = image_tag avatar_or_default(l.dreamer, :small)
+                  .bubble_link.js-bubble-link{class: "#{'active' if dream.likes_count > 5}"}
+                    = link_to t("dreams.popup.show_liked"), modal_liked_list_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, data: {'modal-type' => 'liked_list', 'jmod-width' => '320'}, class: 'jmod-btn'}
+
+            .additional_data__starts{class: "#{(certificates_count == 0) ? 'empty' : 'js-tooltipster'}", data: {'t-position' => 'bottom', 't-width' => '300', 't-interactive' => 'true'}}
+              %span.js-starts-btn-count= number_to_human(dream.launches_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+              .bubble.js-tooltipster-content
+                .bubble-wrap
+                  .bubble_counter.js-bubble-counter
+                    = "#{certificates_count} #{custom_pluralize(certificates_count, 'marks')}"
+                  .bubble_items.js-bubble_items
+                    .tooltip-certificates
+                      - dream.certificates.last(5).each do |c|
+                        .tooltip-certificate
+                          .certificate-image.certificate-small{ data: {'dream-type' => "#{c.certificate_type.try(:name)}"} }
+                  .bubble_link{class: "#{'active' if certificates_count > 5}"}
+                    = link_to t("dreams.popup.show_all"), modal_certificates_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, data: {'modal-type' => 'certificates'}, class: 'jmod-btn'}
+
+
+            .additional_data__comments{class: "#{(dream.comments_count == 0) ? 'empty' : 'js-tooltipster'}", data: {'t-target' => 'comments', 't-position' => 'bottom', 't-width' => '300', 't-interactive' => 'true'}}
+              %span.js-comments-btn-count= number_to_human(dream.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+              .bubble.js-tooltipster-content
+                .bubble-wrap
+                  .bubble_counter.js-bubble-counter
+                    = "#{dream.comments_count} #{custom_pluralize(dream.comments_count, 'comments')}"
+                  .bubble_items.js-bubble_items
+                    - dream.last_comments.limit(5).each do |comment|
+                      = link_to [:account, dream] do
+                        = image_tag avatar_or_default(comment.dreamer, :small)
+                  .bubble_link{class: "#{'active' if dream.comments_count > 5}"}
+                    = link_to t("dreams.popup.show_all"), modal_commentators_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, data: {'modal-type' => 'commentators_list', 'jmod-width' => '320'}, class: 'jmod-btn'}
+
+          - else
+            = link_to modal_authorization_path, class: "empty additional_data__likes jmod-btn", remote: true, data: {"jmod-width" => "410px", "modal-type" => "authorization"} do
+              %span.js-like-btn-count= number_to_human(dream.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+            = link_to modal_authorization_path, class: "empty additional_data__starts jmod-btn", remote: true, data: {"jmod-width" => "410px", "modal-type" => "authorization"} do
+              %span.js-starts-btn-count= number_to_human(certificates_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+            = link_to modal_authorization_path, class: "empty additional_data__comments jmod-btn", remote: true, data: {"jmod-width" => "410px", "modal-type" => "authorization"} do
+              %span.js-comments-btn-count= number_to_human(dream.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })

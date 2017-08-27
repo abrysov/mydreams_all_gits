@@ -1,0 +1,25 @@
+.widget-balance {
+  box-sizing: border-box;
+  height: 3.75rem;
+  padding: .3rem .7rem;
+  color: $light-gray-text-color;
+  border-bottom: 1px solid $border-gray-color;
+
+  .count {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    margin: .3rem;
+    font-style: .6875rem;
+  }
+
+  .number {
+    color: $light-purple-color;
+  }
+
+  .icon {
+    margin-right: .5rem;
+  }
+}

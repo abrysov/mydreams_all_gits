@@ -1,0 +1,15 @@
+= render 'admin/management/shared/products_filter'
+
+%table.table
+  %thead
+    %tr
+      %th= t('admin.management.id')
+      %th= t('admin.management.products.name')
+      %th= t('admin.management.products.cost')
+      %th= t('admin.management.products.product_type')
+      %th= t('admin.management.products.state')
+      %th= t('admin.management.products.actions')
+  %tbody
+    = render @products
+
+= render 'admin/management/shared/group_actions', objects: @products

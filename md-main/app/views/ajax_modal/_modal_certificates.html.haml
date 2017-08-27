@@ -1,0 +1,10 @@
+- url = url_for(modal_certificates_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id))
+
+.frame.dream-certificates.js-modal{ data: {'modal-type' => 'certificates', page: '1', url: url} }
+  .frame-icon
+  .title= t('marks.modal_title')
+  .count-title= "#{certificates.count} #{custom_pluralize(certificates.count, 'marks')}"
+
+  .frame-content
+    .list-body.js-list-body
+      = render partial: 'ajax_modal/modal_certificates/certificates', locals: {certificates: certificates}

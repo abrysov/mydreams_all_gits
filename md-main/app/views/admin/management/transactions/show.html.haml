@@ -1,0 +1,45 @@
+= render 'admin/management/shared/dreamer', dreamer: @transaction.account.dreamer
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t('admin.management.id')
+      %th
+        = t('admin.management.transactions.amount')
+      %th
+        = t('admin.management.transactions.operation')
+      %th
+        = t('admin.management.transactions.state')
+      %th
+        = t('admin.management.transactions.before')
+      %th
+        = t('admin.management.transactions.after')
+      %th
+        = t('admin.management.transactions.updated_at')
+      %th
+        = t('admin.management.transactions.created_at')
+
+  %tbody
+    %tr
+      %td
+        = @transaction.id
+      %td
+        = @transaction.operation
+      %td
+        = @transaction.amount
+      %td
+        = @transaction.state
+      %td
+        = @transaction.before
+      %td
+        = @transaction.after
+      %td
+        = short_date @transaction.updated_at
+      %td
+        = short_date @transaction.created_at
+
+- if external? @transaction
+  = render 'admin/management/transactions/external_transaction', object: @transaction.reason
+- else
+  = render 'admin/management/transactions/purchase_transaction', object: @transaction.reason

@@ -1,0 +1,4 @@
+- admin_section_menu(current_section).each do |item|
+  - path_flag = item[:path].split('/').last == controller_name
+  %li{ class:"#{ 'active' if path_flag }" }
+    = link_to item[:name], item[:path]

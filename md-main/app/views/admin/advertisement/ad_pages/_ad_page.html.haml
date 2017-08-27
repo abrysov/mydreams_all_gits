@@ -1,0 +1,14 @@
+%tr
+  %td
+    = ad_page.id
+  %td
+    = ad_page.route
+  %td
+    = ad_page.banners.map &:name
+  %td
+    - ad_page.banners.each do |banner|
+      = link_to banner.image.url do
+        = image_tag banner.image.url(:admin)
+  %td.actions
+    = render 'admin/advertisement/shared/actions', object: ad_page
+

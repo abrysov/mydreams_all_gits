@@ -1,0 +1,5 @@
+- path = "moderate_#{controller_name.classify.downcase}s_path"
+%form.dreamer-form-find-by-id.form-inline{ url: send(path) }
+  .form-gorup
+    %input.form-control.find-id{ type:'text', placeholder: t('.placeholder') }
+    %button.btn.btn-primary{ type: 'submit' }= t('.find')

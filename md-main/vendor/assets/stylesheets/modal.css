@@ -1,0 +1,87 @@
+/*                                                                            */
+/*   XXXX        XXXX    XXXXXXXX    XXXXXXXXXX       XXXXXX     XXXX         */
+/*   XXXXX      XXXXX  XXXXXXXXXXXX  XXXXXXXXXXXX    XXXXXXXX    XXXX         */
+/*   XXXXXX    XXXXXX  XXXX    XXXX  XXXX    XXXX   XXXX  XXXX   XXXX         */
+/*   XXXXXXX  XXXXXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX         */
+/*   XXXX XXXXXX XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX         */
+/*   XXXX  XXXX  XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX         */
+/*   XXXX   XX   XXXX  XXXX    XXXX  XXXX    XXXX  XXXXXXXXXXXX  XXXX         */
+/*   XXXX        XXXX  XXXX    XXXX  XXXX    XXXX  XXXXXXXXXXXX  XXXX         */
+/*   XXXX        XXXX  XXXXXXXXXXXX  XXXXXXXXXXXX  XXXX    XXXX  XXXXXXXXXX   */
+/*   XXXX        XXXX    XXXXXXXX    XXXXXXXXXX    XXXX    XXXX  XXXXXXXXXX   */
+/*                                                                            */
+/******************************************************************************/
+
+.modal-wrapper {
+
+	max-width: 100%;
+
+}
+.modal-scroller {
+
+	padding: 50px;
+
+}
+.modal-container {
+
+	margin: 0 auto;
+	max-width: 100%;
+
+}
+.modal-close-overlay {
+
+	background-color: rgba(0,0,0,0.7);
+
+}
+.modal-close-button {
+
+	width: 50px;
+	height: 50px;
+	top: 0;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url( data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjEuMzgxcHgiIGhlaWdodD0iMjEuMzgxcHgiIHZpZXdCb3g9IjAgMCAyMS4zODEgMjEuMzgxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyMS4zODEgMjEuMzgxIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yMC45NDMsMi41NThMMi41NTgsMjAuOTQzYy0wLjU4MywwLjU4My0xLjUzOCwwLjU4My0yLjEyMSwwbDAsMGMtMC41ODMtMC41ODMtMC41ODMtMS41MzgsMC0yLjEyMQ0KCUwxOC44MjIsMC40MzdjMC41ODMtMC41ODMsMS41MzgtMC41ODMsMi4xMjEsMGwwLDBDMjEuNTI2LDEuMDIsMjEuNTI2LDEuOTc1LDIwLjk0MywyLjU1OHoiLz4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xOC44MjIsMjAuOTQzTDAuNDM3LDIuNTU4Yy0wLjU4My0wLjU4My0wLjU4My0xLjUzOCwwLTIuMTIxbDAsMGMwLjU4My0wLjU4MywxLjUzOC0wLjU4MywyLjEyMSwwDQoJbDE4LjM4NSwxOC4zODVjMC41ODMsMC41ODMsMC41ODMsMS41MzgsMCwyLjEyMWwwLDBDMjAuMzYsMjEuNTI2LDE5LjQwNSwyMS41MjYsMTguODIyLDIwLjk0M3oiLz4NCjwvc3ZnPg0K );
+
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+
+}
+.modal-close-button.absolute {
+
+	top: -50px;
+
+}
+.modal-close-button:hover {
+
+	opacity: 0.7;
+
+}
+.modal-close-button:active {
+
+	opacity: 0.5;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+
+/************************************************************************************/
+/*                                                                                  */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXX     XXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXXX    XXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXX   XXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXXX  XXXX    XXXX    XXXX          XXXX     XXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXX XXXX    XXXX    XXXXXXXXXX    XXXXXXXXXXXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXXXXXXX    XXXX      XXXXXXXXXX  XXXXXXXXXXXXX   */
+/*   XXXX            XXXX    XXXX XXXXXXXX    XXXX            XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXX  XXXXXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX   XXXXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX    XXXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*                                                                                  */

@@ -1,0 +1,29 @@
+{
+  "title": "Api:v1 Dreamer likes",
+  "type": "object",
+  "required": [ "like", "meta" ],
+  "properties": {
+    "like": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "dreamer"
+      ],
+      "properties": {
+          "id": { "type": [ "hash", "array" ] },
+          "dreamer": { "type": [ "hash", "array" ] }
+      }
+    },
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

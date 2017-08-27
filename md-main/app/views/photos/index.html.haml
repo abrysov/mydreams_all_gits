@@ -1,0 +1,26 @@
+.content_wrap.group
+  - if dreamer_signed_in?
+    %h2.photo-album-title= t('photos.album')
+    = render partial: 'form', locals: {current_dreamer: current_dreamer, photo: @photo}
+  - else
+    %h2.photo-album-title= t('photos.all')
+
+  - if @photos.count == 0
+    %h3.mini-title
+      = t('photos.no_photos')
+  - else
+    %h3.mini-title 
+      %b= @photos.count
+      = custom_pluralize(@photos.count, 'photos')
+
+    .photos#js-photos
+      - @photos.each do |photo|
+        = render partial: 'photo', locals:{photo: photo, dreamer: @dreamer}
+
+    = paginate @photos
+
+-content_for :mydreams_js do
+  -# = javascript_include_tag 'imagesLoaded.pkdg.min.js'
+  -# = javascript_include_tag 'masonry'
+  -# = javascript_include_tag 'photo.mydreams'
+

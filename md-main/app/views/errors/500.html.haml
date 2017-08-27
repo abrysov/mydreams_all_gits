@@ -1,0 +1,14 @@
+.main
+  .error-title
+    %p Что-то пошло не так,
+    %p команда уже разбирается.
+  .errors-page-search
+    %p Воспользуйтесь поиском
+    %form.fast_search.js-fast-search{ action: '/ru/search', 'accept-charset' => 'UTF-8', method: 'get' }
+      .search_field_holder
+        %input{ type: 'text', name: 'search', id: 'search', placeholder: 'Быстрый поиск' }
+        %input{ type: 'submit', name: 'commit', value: '', id: 'fast_search' }
+        .fast_search__btn.js-fast-search-btn
+          %label{ for: 'fast_search' }
+            %span
+    %p Или обратитесь в службу поддержки

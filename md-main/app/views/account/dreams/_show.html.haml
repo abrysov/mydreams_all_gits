@@ -1,0 +1,101 @@
+- certificate_count = @dream.launches_count
+
+.dream.js-single-page{data: {'page-id' => @dream.id, type: 'dream'}}
+
+  .content_wrap
+    .containers.js-containers
+
+      -# SHOW
+
+      .container-show.active.js-container-show{data: {container: 'show'}}
+        .dream-header
+          .creation-date= pretty_date(@dream.created_at)
+          .dream-title
+            %span.js-edit-node{data: {node: 'title'}}= @dream.title
+            -# if @previous
+              =# link_to '', account_dream_path(@previous), data: {push: true, target: '#js-ajax-content'}, class: 'prev-dream js-flybook-link'
+
+            -# if @next
+              =# link_to '', account_dream_path(@next), data: {push: true, target: '#js-ajax-content'}, class: 'next-dream js-flybook-link'
+
+        = dream_status_for @dream
+
+        .dream-photo.js-edit-node{data: {node: 'photo'}}
+          = image_tag @dream.photo.url(:large)
+
+        .dream-description
+          %p.js-edit-node{data: {node: 'description'}}= clear_format @dream.description
+
+        .dream-data
+          .left-cell
+            = render 'shared/like_button', object: @dream
+          .center-cell
+            .icon-starts= dream_launches @dream
+          .right-cell
+            .icon-comments.js-comment-counter= number_to_human(@dream.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+      -# EDIT
+
+      .container-show.js-container-show{data: {container: 'edit'}}
+        = form_for @dream, url: account_dream_path(@dream), html: { remote: true, method: :patch, class: 'js-imageLoader-form js-edit-form'} do |f|
+          .dream-header
+            .creation-date= pretty_date(@dream.created_at)
+            .dream-title
+              = f.text_area :title, class: 'autoheight'
+
+          = dream_status_for @dream
+
+          .dream-photo
+            .js-imageLoader#js-add-dream-photo{ class: "#{@dream.photo.present? ? 'change-photo' : 'upload-photo'}", data: { min_height: 540, min_width: 540, orient: 'square', title_change: t( 'dreams.new.photo_change' ), title_upload: t('dreams.new.photo_upload')} }
+
+              = f.hidden_field :photo, class: 'js-imageLoader-input'
+
+            .image.js-imageLoader-preview
+              = image_tag @dream.photo.url(:large)
+
+          .dream-description
+            = f.text_area :description, class: 'autoheight'
+
+          .dream-edit-buttons
+            .restore.js-container-show-btn{data: {container: 'show'}}
+            = f.submit  value: '', class: 'confirm'
+            = link_to t('dreams.delete'), account_dream_path(@dream), method: :delete, class: 'delete js-delete remove-dream', data: { confirm: t('dreams.popup.confirm') }
+
+    .dream-controls.js-controls
+      - if dreamer_signed_in?
+        - unless @dream.top_dream?
+          = link_to t("#{current_dreamer?(@dreamer) ? 'actions.buy_mark' : 'actions.present_mark'}"), modal_buy_certificates_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id, dreamer_id: current_dreamer.id), { remote: true, class: "jmod-btn control #{current_dreamer?(@dreamer) ? 'buy-mark' : 'present'}", data: {'modal-type' => 'present_mark'} }
+
+        = link_to t('actions.suggest'), modal_suggest_dream_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id, dreamer_id: current_dreamer.id), {remote: true, class: "#{'disabled' if current_dreamer.friends.count > 0} jmod-btn control suggest"  , data: {'modal-type' => 'suggest_dream'}}
+      - else
+        - unless @dream.top_dream?
+          = link_to t('actions.present_mark'), modal_authorization_path, {remote: true, class: 'control present jmod-btn', data: {'modal-type' => 'authorization'}}
+
+        = link_to t('actions.suggest'), modal_authorization_path, {remote: true, class: 'control suggest jmod-btn', data: {'modal-type' => 'authorization'}}
+
+      = link_to t('dreams.share'), modal_share_path(entity_type: @dream.class.name.underscore, entity_id: @dream.id), {remote: true, class: 'control share jmod-btn',data: {'modal-type' => 'share', 'link' => dream_path(@dream)}}
+
+      %br
+
+      - if !@dream.top_dream? && dreamer_signed_in? && current_dreamer?(@dream.dreamer)
+        = link_to t('dreams.dreams_come_true'), modal_fulfill_dream_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id), { remote: true, class: "control fullfiled #{'jmod-btn' unless @dream.came_true}", data: {'modal-type' => 'fulfill_dream'} }
+
+        - unless @dream.top_dream?
+          = link_to t('dreams.set_private'), modal_set_private_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id), {remote: true, class: 'jmod-btn control hide', data: {'modal-type' => 'set_private'}}
+
+        %br
+
+        .control.edit.js-container-show-btn{data: {container: 'edit'}}
+          = t('dreams.edit')
+
+      - else
+        = link_to t('dreams.borrow'), modal_take_dream_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id), {remote: true, class: 'jmod-btn control add', data: {'modal-type' => 'take_dream'}}
+
+        .control.soon Скоро :)
+
+
+    = render partial: 'comments/index', locals: { object: @dream }
+
+- content_for :mydreams_js do
+  :javascript
+    $('.js-imageLoader:visible').imageLoader();

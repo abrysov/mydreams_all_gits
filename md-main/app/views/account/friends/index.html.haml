@@ -1,0 +1,24 @@
+.content_wrap
+  - if params[:search].blank? && @friends.first_page? && current_dreamer?(@dreamer)
+    = render partial: 'account/friends/index/new_friends'
+
+  .accepted-friend.js-search-content
+    = hidden_field_tag :filter_url, request.url
+
+    - if @friends.total_count == 0
+      %h2.page_content-title= t('friends.no_friends')
+
+    - else
+      %h2.page_content-title
+        %b= @friends.total_count
+        = custom_pluralize(@friends.total_count, 'friends')
+
+    - if @friends.total_count > 0 || params[:search].present?
+      .friends-filter
+        = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+          = render 'application/fast_search', param_name: :search
+
+    .card_group.group.js-card-group
+      = render partial: 'account/friends/friends'
+
+    = paginate @friends, theme: 'more'

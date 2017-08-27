@@ -1,0 +1,50 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- locale_gen: name=en_US.UTF-8 state=present
+- locale_gen: name=en_GB.UTF-8 state=present
+
+- name: Install apt dependencies
+  apt: name={{ item }}
+  with_items:
+    - autoconf
+    - bison
+    - build-essential
+    - libssl-dev
+    - libyaml-dev
+    - libreadline6-dev
+    - zlib1g-dev
+    - libncurses5-dev
+    - python-pip
+    - python-dev
+    - htop
+    - git
+    - vim
+    - libpq-dev
+    - libmagickwand-dev
+    - imagemagick
+
+- name: Create application group
+  group: name={{ group_name }}
+
+- name: Create application user
+  user: name={{ user_name }} group={{ group_name }} shell=/bin/bash home={{ user_home_path }}
+
+- name: Create profile.d directory
+  file: path={{ profile_d_path }} state=directory owner={{ user_name }} group={{ group_name }}
+
+- name: Create ~/.bash_profile which loads all from ~/profile.d
+  template: src=bash_profile.j2 dest={{ user_home_path }}/.bash_profile owner={{ user_name }} group={{ group_name }}
+
+- name: Update /etc/hosts
+  lineinfile: dest=/etc/hosts regexp='.*{{item}}$' line='{{hostvars[item]['ansible_ssh_host']}} {{item}}' state=present
+  with_items: groups['production']
+
+- name: Setup hostname
+  hostname: name={{ inventory_hostname }}
+
+- name: Setup okmeter
+  shell: 'sudo echo Starting&&(export OKURL="http://download.okmeter.ru/agent/install_supervisor.sh"&&\wget -O - $OKURL||\fetch -o - $OKURL||\curl $OKURL||echo "echo ERROR: \"wget curl or fetch not found\"&&exit 1")|sudo sh -s - 8c293f83-5e84-495d-80cf-93fd5e4f8940'

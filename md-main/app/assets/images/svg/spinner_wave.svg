@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="10px" viewBox="0 0 100 10" enable-background="new 0 0 100 10" xml:space="preserve">
+	<defs>
+		<linearGradient id="SpinnerGradient" gradientUnits="userSpaceOnUse" x1="-200" y1="0" x2="100" y2="0">
+
+			<stop offset="-200%" stop-color="#009cfe" stop-opacity="1">
+				<animate attributeName="offset" values="-2.0;0.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-175%" stop-color="#3770ff" stop-opacity="1">
+				<animate attributeName="offset" values="-1.75;0.25" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-150%" stop-color="#8637ff" stop-opacity="1">
+				<animate attributeName="offset" values="-1.5;0.5" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-125%" stop-color="#b500ff" stop-opacity="1">
+				<animate attributeName="offset" values="-1.25;0.75" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-100%" stop-color="#d100ff" stop-opacity="1">
+				<animate attributeName="offset" values="-1.0;1.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+
+			<stop offset="-100%" stop-color="#d100ff" stop-opacity="1">
+				<animate attributeName="offset" values="-1.0;1.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-75%" stop-color="#b500ff" stop-opacity="1">
+				<animate attributeName="offset" values="-0.75;1.25" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-50%" stop-color="#8637ff" stop-opacity="1">
+				<animate attributeName="offset" values="-0.5;1.5" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="-25%" stop-color="#3770ff" stop-opacity="1">
+				<animate attributeName="offset" values="-0.25;1.75" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="0%" stop-color="#009cfe" stop-opacity="1">
+				<animate attributeName="offset" values="0.0;2.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+
+			<stop offset="0%" stop-color="#009cfe" stop-opacity="1">
+				<animate attributeName="offset" values="0.0;2.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="25%" stop-color="#3770ff" stop-opacity="1">
+				<animate attributeName="offset" values="0.25;2.25" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="50%" stop-color="#8637ff" stop-opacity="1">
+				<animate attributeName="offset" values="0.5;2.5" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="75%" stop-color="#b500ff" stop-opacity="1">
+				<animate attributeName="offset" values="0.75;2.75" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+			<stop offset="100%" stop-color="#d100ff" stop-opacity="1">
+				<animate attributeName="offset" values="1.0;3.0" dur="2.5s" repeatCount="indefinite" />
+			</stop>
+
+		</linearGradient>
+	</defs>
+	<rect x="0" y="0" fill="url(#SpinnerGradient)" width="100" height="10"/>
+</svg>
+<!-- #009cfe;#3770ff;#8637ff;#b500ff;#d100ff;#b500ff;#8637ff;#3770ff;#009cfe; -->

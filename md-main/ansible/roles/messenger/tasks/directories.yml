@@ -1,0 +1,45 @@
+---
+- name: Ensure group created
+  group:
+    name: "{{ messenger_deploy_user.name }}"
+    state: present
+  become: yes
+
+- name: Ensure created {{ messenger_deploy_user.comment }}
+  user:
+    state: present
+    name: "{{ messenger_deploy_user.name }}"
+    home: "{{ messenger_deploy_user.home }}"
+    groups: "{{ messenger_deploy_user.groups }}"
+    generate_ssh_key: no
+    comment: "{{ messenger_deploy_user.comment }}"
+  become: yes
+
+- name: Ensure created {{ messenger_deploy_user.comment }} .ssh directory
+  file:
+    state: directory
+    path: "{{ messenger_deploy_user.home }}/.ssh"
+    mode: 700
+    owner: "{{ messenger_deploy_user.name }}"
+    group: "{{ messenger_deploy_user.name }}"
+  become: yes
+
+- name: Upload SSH authorized_keys for {{ messenger_deploy_user.comment }}.
+  authorized_key:
+    state: present
+    user: "{{ messenger_deploy_user.name }}"
+    key: "{{ item }}"
+  become: yes
+  with_file:
+    - authorized_keys/zzet
+    - authorized_keys/zzet-alt
+    - authorized_keys/jbmeerkat
+    - authorized_keys/nikitin
+
+- name: create project directory
+  file: state=directory path={{ item }} owner={{ messenger_deploy_user.name }} group="{{ messenger_deploy_user.groups }}"
+  with_items:
+    - "{{ messenger_base_dir }}"
+    - "{{ messenger_releases_dir }}"
+    - "{{ messenger_src_dir }}"
+  become: yes

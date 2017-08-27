@@ -1,0 +1,6 @@
+- liked_dreamers.each do |dreamer|
+  = link_to [:account, dreamer, :dreams] do
+    = image_tag avatar_or_default(dreamer, :medium)
+    .card-modal__user-info
+      %span= dreamer.decorate.full_name_and_age
+      %span= "#{dreamer.city_and_country}"

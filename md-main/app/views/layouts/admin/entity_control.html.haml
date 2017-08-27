@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'robots', content: 'noindex, nofollow' }
+    %title My Dreams
+
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'admin/entity_control/application'
+    = javascript_include_tag 'admin/entity_control/application'
+
+  %body.body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{ class:"#{ 'active' if controller_name == 'dashboard' }" }
+              = link_to t('.dashboard'), admin_entity_control_root_path
+            = render 'layouts/admin/current_section_menu'
+          = render 'layouts/admin/dropdown_section_menu'
+    .container-fluid
+      .row
+        .col-md-12
+          - if ['top_dreams'].include? controller_name
+            = link_to controller: controller_name, action: :new do
+              %button.btn.btn-primary{ type:"button" } Create
+          - if ['show', 'update'].include? action_name
+            = link_to controller: controller_name, action: :edit, id: params[:id] do
+              %button.btn.btn-warning{ type:"button" } Edit
+
+    #layout
+      = render 'application/flash_messages'
+      .page
+        .container-fluid
+          = yield
+
+      - if Rails.env.development? && params[:console]
+        = console

@@ -1,0 +1,5 @@
+var object_modal = $(".modal[data-object-id=<%= @abusable.id %>]");
+object_modal.find('input[type=submit]').prop('class', 'btn btn-success');
+object_modal.find('input[type=submit]').val('Done').prop('disabled', 'disabled');
+object_modal.modal('hide');
+<%= render 'moderate/shared/approve', object: @abusable %>

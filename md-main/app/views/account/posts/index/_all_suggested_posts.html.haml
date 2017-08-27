@@ -1,0 +1,2 @@
+- @suggested_posts.each do |suggested_post|
+	= render partial: 'account/posts/suggested_post', locals: {post: suggested_post.post, suggest: suggested_post}

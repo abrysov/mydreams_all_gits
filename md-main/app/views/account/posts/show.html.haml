@@ -1,0 +1,78 @@
+.post.js-single-page{data: {'page-id' => @post.id, type: 'post'}}
+
+  .content_wrap
+    .containers.js-containers
+
+      -# SHOW
+
+      #post.container-show.active.js-container-show{data: {container: 'show'}}
+        .post-header
+          .creation-date= pretty_date(@post.created_at)
+          .post-title
+            %span.js-edit-node{data: {node: 'title'}}= @post.title
+            - if @previous
+              = link_to '', account_post_path(@previous), data: {push: true, target: '#js-ajax-content'}, class: 'prev-post js-flybook-link'
+
+            - if @next
+              = link_to '', account_post_path(@next), data: {push: true, target: '#js-ajax-content'}, class: 'next-post js-flybook-link'
+
+        .post-photo.js-edit-node{data: {node: 'photo'}}
+          = image_tag @post.photo.url(:large)
+
+        .post-body
+          %p.js-edit-node{data: {node: 'body'}}= clear_format @post.body
+        .post-data
+          .left-cell
+            = render 'shared/like_button', object: @post
+
+          .right-cell
+            .icon-comments.js-comment-counter= number_to_human(@post.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+
+      -# EDIT
+
+      .container-show.js-container-show{data: {container: 'edit'}}
+        = form_for @post, url: account_post_path(@post), html: { remote: true, method: :patch, class: 'js-imageLoader-form js-edit-form'} do |f|
+          .post-header
+            .creation-date= pretty_date(@post.created_at)
+            .post-title
+              = f.text_area :title, class: 'autoheight'
+
+          .post-photo
+
+            .js-imageLoader#js-add-post-photo{ class: "#{@post.photo.present? ? 'change-photo' : 'upload-photo'}", data: { min_height: 540, min_width: 800, orient: 'list', title_change: t( 'dreams.new.photo_change' ), title_upload: t('dreams.new.photo_upload')} }
+
+              = f.hidden_field :photo, class: 'js-imageLoader-input'
+
+            .image.js-imageLoader-preview
+              = image_tag @post.photo.url(:large)
+
+          .post-body
+            = f.text_area :body, class: 'autoheight'
+
+          .post-edit-buttons
+            .restore.js-container-show-btn{data: {container: 'show'}}
+            = f.submit  value: '', class: 'confirm'
+
+    .post-controls.js-controls
+      - if dreamer_signed_in?
+        - if @post.dreamer == current_dreamer
+          .control.edit.js-container-show-btn{data: {container: 'edit'}}
+            = t('dreams.edit')
+        - else
+          = link_to t('dreams.borrow'), modal_take_post_path(entity_type: @post.class.to_s.underscore, entity_id: @post.id), {remote: true, class: 'jmod-btn control add', data: {'modal-type' => 'take_post'}}
+
+        = link_to t('dreams.suggest'), modal_suggest_post_path(entity_type: @post.class.to_s.underscore, entity_id: @post.id, dreamer_id: current_dreamer.id), {remote: true, class: "#{'disabled' if current_dreamer.friends.count > 0} jmod-btn control suggest"  , data: {'modal-type' => 'suggest_post', 'jmod-width' => '410px'}}
+      - else
+        = link_to t('dreams.suggest'), modal_authorization_path, {remote: true, class: 'control present jmod-btn', data: {'modal-type' => 'authorization'}}
+
+        = link_to t('dreams.suggest'), modal_authorization_path, {remote: true, class: 'control suggest jmod-btn', data: {'modal-type' => 'authorization'}}
+
+      = link_to t('dreams.share'), modal_share_path(entity_type: @post.class.to_s.underscore, entity_id: @post.id), {remote: true, class: 'control share jmod-btn',data: {'modal-type' => 'share'}}
+
+
+    = render partial: 'comments/index', locals: { object: @post }
+
+- content_for :mydreams_js do
+  :javascript
+    $('.js-imageLoader:visible').imageLoader();

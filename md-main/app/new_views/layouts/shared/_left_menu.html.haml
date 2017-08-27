@@ -1,0 +1,32 @@
+.align-right
+  %ul.vertical-menu.main
+    %li
+      %a.user-card
+        .avatar.size-s
+          = image_tag(avatar_or_default(current_dreamer, :small))
+        .description
+          %span Мой Dreambook
+    %li.messages
+      %a{ href: "#" } Сообщения
+    %li.dreams
+      %a{ href: "#" } Мечты
+    %li.fulfilled_dreams
+      %a{ href: "#" } Сбывшиеся
+    %li.stamps
+      %a{ href: "#" } Марки
+    %li.photos
+      %a{ href: "#" } Фотографии
+    %li.friends
+      %a{ href: "#" } Друзья
+    %li.subscribers
+      %a{ href: "#" } Подписчики
+    %li.notification
+      %a{ href: "#" } События
+    %li.news
+      %a{ href: "#" } Новости
+    %li.settings
+      %a{ href: "#" } Настройки
+    / %li
+    /   %hr
+    / %li
+    /   %a{ href: "mailto:support@mydreams.club" } support@mydreams.club

@@ -1,0 +1,5 @@
+- fix_collection(@posts, @posts.limit_value).each do |post|
+  - if post.nil?
+    .card.fake-card.post
+  - else
+    = render partial: 'account/posts/post', locals: {post: post}

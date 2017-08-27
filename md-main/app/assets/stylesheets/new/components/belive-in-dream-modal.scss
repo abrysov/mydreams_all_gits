@@ -1,0 +1,178 @@
+.belive-in-dream-modal {
+  flex-direction: column;
+  border: 1px solid $border-gray-color;
+  border-weight: 0 1px;
+
+  .header {
+    display: flex;
+    height: 4.375rem;
+    border-bottom: 1px solid $border-gray-color;
+
+    .content {
+      padding-right: 6.5625rem;
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  .body {
+    position: relative;
+    overflow-y: scroll;
+    padding-right: 13.9375rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    flex: 1;
+  }
+
+  .close {
+    position: relative;
+    width: 7.375rem;
+    height: auto !important;
+  }
+
+  .mark-list {
+    display: flex;
+    width: 30rem;
+    margin: 2rem auto;
+    justify-content: space-around;
+  }
+
+  .mark-wrapper {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -.7rem;
+      right: 0;
+      left: 0;
+      display: block;
+      width: .438rem;
+      height: .313rem;
+      margin: 0 auto;
+      content: '';
+      opacity: 0;
+      background-image: asset_url('new/check_green.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:hover::before {
+      opacity: .5;
+    }
+
+    &.active::before {
+      opacity: .5;
+    }
+  }
+
+  .envelope {
+    position: relative;
+    width: 20.438rem;
+    height: 25rem;
+    margin: 0 auto;
+
+    & > .back {
+      position: absolute;
+      bottom: 0;
+      overflow: hidden;
+      width: inherit;
+      height: 21.1rem;
+      transform: scale(1, .6);
+
+      &::before {
+        position: relative;
+        bottom: -5rem;
+        display: block;
+        width: inherit;
+        height: 20.438rem;
+        content: '';
+        transform: rotate(45deg);
+        background-color: $light-gray-color;
+      }
+    }
+
+    .corner {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      width: inherit;
+      height: 10.25rem;
+      pointer-events: none;
+
+      &::after {
+        position: absolute;
+        bottom: -4.7rem;
+        display: block;
+        width: 120%;
+        height: inherit;
+        content: '';
+        transform: rotate(-26.4deg);
+        background: $light-gray-color;
+        box-shadow: .188rem -.125rem .813rem rgba(0, 0, 0, .04);
+      }
+    }
+
+    .corner.left::after {
+      right: 0;
+      transform: rotate(26.4deg);
+    }
+  }
+
+  .card-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 6.7rem;
+    left: 0;
+    width: 11.0625rem;
+    margin: auto !important;
+
+    .card {
+      margin: 0;
+
+      h3, h5 {
+        overflow-y: auto;
+      }
+
+      h3 {
+        height: 1.2em;
+      }
+
+      h5 {
+        height: 2.5em;
+      }
+    }
+
+    .reactions {
+      pointer-events: none;
+    }
+  }
+
+  .access {
+    position: absolute;
+    top: 2rem;
+    left: 28rem;
+    width: 10rem;
+
+    & > span {
+      text-align: left;
+      color: $light-gray-text-color;
+    }
+  }
+
+  hgroup {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    h5 {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    color: $light-gray-text-color;
+    line-height: 1.4em;
+  }
+}

@@ -1,0 +1,18 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Настройки аккаунта
+  #user-settings-account
+    .preloader
+
+.col-right
+  .col-js
+    = render 'settings/right_menu'
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.UserSettings.init('#user-settings-account', {
+        type: 'account'
+      });
+    });

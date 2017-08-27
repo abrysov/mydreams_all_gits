@@ -1,0 +1,118 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211?random=5);" }
+    .title
+      %h2 Мечты
+  %div
+    .card-list
+      - (0..11).each do |dream|
+        = render partial: 'card/dream'
+    .preloader
+.col-right
+  .col-js
+    = render 'layouts/shared/right_menu'
+
+.modal.belive-in-dream-modal
+  .header
+    .content
+      %h2 Исполнить мечту
+    .close
+  .body
+
+    %label.filter.access
+      %span Кто может видеть эту Мечту
+      .select
+        %select
+          %option{ value: "" } Я и мои друзья
+
+    .envelope
+      .corner.left
+      .corner.right
+      .back
+
+
+      .card-wrapper
+        %ul.description-list
+          %li.status
+            %span Статус Мечты
+          %li.photo
+            %span
+              Фото Мечты
+              %span.asterisk *
+          %li.name
+            %span
+              Название Мечты
+              %span.asterisk *
+          %li.desc
+            %span
+              Описание Мечты
+              %span.asterisk *
+        .card
+          .front
+            .label.default MyDreams
+            .picture.filearea.icon
+              %input{ type: "file" }
+              / .picture-wrap
+              /   %img{ alt: "drean", src: "http://unsplash.it/200/200?random=" + Random.rand(200).to_s }
+            .description
+              %h3{ contenteditable: "true" } Введите название
+              %h5{ contenteditable: "true" }
+                Детально опишите
+                %br
+                Вашу Мечту
+            .reactions
+              .icon-text.like
+                .icon.reaction
+                %span.text 0
+              .icon-text.in-progress
+                .icon.reaction
+                %span.text 0
+              .icon-text.reaction.comments
+                .icon
+                %span.text 0
+            .back
+    %hgroup
+      %h3 Выберите марку
+      %h5 платно
+    %p
+      Используя марки, Вы запускаете Мечту во Вселенную.
+      %br
+      Каждая марка изменяет статус Мечты, в зависимости от количества запусков.
+    .mark-list
+      - ([['bronze', 1], ['silver', 5], ['gold', 10], ['platinum', 50], ['vip', 100], ['presidental', 250], ['imperial', 500]]).each do |mark|
+        .mark-wrapper
+          .mark{ class: "#{mark[0]}" }
+          .icon-text
+            .text #{mark[1]}
+            .icon.amount.size-l
+    %button.yellow.accent Запустить Мечту во Вселенную
+    %br
+    %button.gray.accent Добавить в Dreambook
+    %br
+    %br
+    %br
+    %p На Ваш E-mail придет уведомление
+
+:javascript
+  var m = document.querySelector('.belive-in-dream-modal');
+  function beliveInDream(){
+    var page = document.querySelector('.row-page');
+    var colWidth = document.querySelector('.col-right').clientWidth;
+    var headerHeight = document.querySelector('.header-group').clientHeight;
+    m.style.width = document.querySelector('.content-body').clientWidth + colWidth + 'px';
+    m.style.left = page.offsetLeft + colWidth + 'px';
+    m.style.top = headerHeight + 'px';
+    m.style.height = window.innerHeight - headerHeight + 'px'
+  }
+
+  window.addEventListener('resize', beliveInDream);
+
+  document.querySelector('.belive-in-dream-modal .close').onclick = function(){ // close modal
+    m.classList.remove('visible');
+    document.body.classList.remove('scroll-disabled');
+  }
+  function beliveInDreamOpen(){ // open modal
+    beliveInDream();
+    m.classList.add('visible');
+    document.body.classList.add('scroll-disabled');
+  }

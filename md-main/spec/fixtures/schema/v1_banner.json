@@ -1,0 +1,37 @@
+{
+  "title": "Api:v1 Banners",
+  "type": "object",
+  "required": [ "banner", "meta" ],
+  "properties": {
+    "banner": {
+      "type": [ "hash" ],
+      "required": [
+        "link_hash",
+        "image"
+      ],
+      "properties": {
+        "link_hash": { "type": "string" },
+        "image": {
+          "type": [ "hash" ],
+          "required": [
+            "default"
+          ],
+          "properties": {
+            "default": { "type": "string" }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+        "status": { "type": "string" },
+        "code": { "type": "integer" }
+      }
+    }
+  }
+}

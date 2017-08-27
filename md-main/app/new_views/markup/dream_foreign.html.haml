@@ -1,0 +1,142 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ :style => "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %a.link{ href: "#" } Смотреть все Мечты
+      %h2 Мечты
+      .move-buttons
+        .left
+        .right
+  .dream-page
+    .dream-block
+      .dream
+        .header
+          .user-card
+            .avatar.size-m
+              %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/men/7.jpg" }
+            .description
+              %a{ href: "#" } User Name
+              .icon-text
+                .icon.size-8.time
+                %span.text 12 Ноября
+          .action-buttons
+            %a.edit{ href: "#" } Редактировать
+            %a.cancel{ href: "#" } Вернуть
+            %a.save{ href: "#" } Сохранить
+            %a.delete{ href: "#" } Удалить Мечту
+        %h2.title Мечтаю об этом всю свою очень долгую жизнь!
+        .dream-image-block
+          .label.size-l.presidential PRESIDENTIAL
+          .image
+            %img{ src: "http://unsplash.it/500/500", alt: "" }
+            .filearea.icon
+              %input{ type: "file" }
+      .action-list
+        %a.logo{ href: "#" }
+          = image_tag image_url('new/logos/mediamarkt.png')
+        .button.accent.yellow.get-price Узнать цену
+        .button.accent.gray.circle-icon
+          .circle
+          %span Подарить марку
+        .button.accent.gray.circle-icon
+          .circle
+          %span Предложить другу
+        .button.accent.gray.circle-icon
+          .circle
+          %span Поделиться
+        .button.accent.gray.circle-icon
+          .circle
+          %span Добавить себе
+    %p.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptate debitis tenetur quia, blanditiis iusto ut sequi, perferendis ex nostrum quibusdam numquam temporibus obcaecati quam. Cupiditate odio cum sequi nihil nobis provident inventore qui, voluptates, consequatur eaque ipsa aliquam excepturi id soluta omnis neque quis impedit, placeat ducimus molestiae voluptatibus.
+    .likes-block
+      .like-button.icon-text
+        .icon.like
+        .text
+          Нравится
+          %strong 12
+      .like-list
+        - (0..Random.rand(7)).each do |items|
+          %a.avatar.size-xs{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+    .load-more-comments
+      Показать все
+      %strong 228
+      комментариев
+    .comments-list
+      - (0..Random.rand(4)).each do |items|
+        .comment
+          .header
+            .user-card
+              .avatar.size-s
+                %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/women/" + Random.rand(30).to_s + ".jpg" }
+              .description
+                %a{ href: "#" } User Name
+                .icon-text
+                  .icon.size-8.time
+                  %span.text 12 Ноября
+          %p.content
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id
+            %a.answer{ href: "#" } Ответить
+    .comment-textarea
+      .textarea-wrapper
+        %textarea{ placeholder: "Комментировать…", rows: 1 }
+        .attach-button.filearea
+          %input{ type: "file" }
+      .submit-button Отправить
+
+.col-right
+  .col-js
+    .top
+      %ul.vertical-menu
+        %li
+          %a.active.user-card
+            .avatar.size-s
+              %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/men/17.jpg" }
+            .description
+              %strong Etta Pierce
+              .icon-text.info
+                .icon.size-8.female
+                %span 23, Россия, Москва
+      %ul.vertical-menu
+        %li
+          %a{ href: "/markup/balance" }
+            Фотоальбом
+            .count 23
+      .wrapper
+        .widget-photos
+          - (1..6).each do |i|
+            %a.img{ href: "#", style: "background-image: url(http://unsplash.it/100/100/?random=" + Random.rand(50).to_s + ")" }
+        %ul.widget-stats
+          %li.active{ title: "Мечты" }
+            .icon
+            .number 63
+          %li{ title: "Сбывшиеся" }
+            .icon
+            .number 12
+          %li{ title: "Запуски" }
+            .icon
+            .number 112
+          %li{ title: "Друзья" }
+            .icon
+            .number 326
+          %li{ title: "Подписчики" }
+            .icon
+            .number 345
+
+
+
+
+
+:javascript
+  // temp
+  function toggleEdit(e) {
+    document.querySelector('.dream-page').classList.toggle('edit');
+    var title = document.querySelector('.dream-page .title');
+    var desc = document.querySelector('.dream-page .desc');
+    title.setAttribute('contenteditable', !JSON.parse(title.getAttribute('contenteditable')));
+    desc.setAttribute('contenteditable', !JSON.parse(desc.getAttribute('contenteditable')));
+    title.focus();
+    e.preventDefault();
+  }
+  document.querySelector('.action-buttons .edit').addEventListener('click', toggleEdit);
+  document.querySelector('.action-buttons .cancel').addEventListener('click', toggleEdit);

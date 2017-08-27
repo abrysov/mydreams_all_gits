@@ -1,0 +1,17 @@
+.card-modal.card-modal-send-msg.frame.send-message.js-modal{data: {'modal-type' => 'send_message'}}
+
+  = form_for message, url: dreamer_messages_path(dreamer), html: {class: 'chat-form js-chat-form group'} do |f|
+
+    .title= t('modals.send_message.title')
+
+    .textarea-field
+      = f.text_area :message, class: 'js-validation', data: { valid: 'name' }
+
+      -# %label.clip{for: 'message_files'}
+      -# = f.file_field :files, {multiple: true, class: 'js-attachment'}
+
+    .attachment-container.js-attachment-container
+
+    .control.js-form-control
+      = f.submit t('actions.send'), class: 'button-skyblue js-send-message js-form-submit', data: {modal: true}
+      .preloader.js-preloader

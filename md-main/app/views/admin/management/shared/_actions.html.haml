@@ -1,0 +1,10 @@
+.btn-group
+  = link_to t('admin.management.actions.edit'), edit_admin_management_product_path(object),
+    class: 'btn btn-warning block', role: 'button'
+
+  - if object.active?
+    = link_to t('admin.management.actions.locked'), admin_management_product_path(object),
+      remote: false, method: :delete, class: 'btn btn-danger delete', role: 'button'
+  - else
+    = link_to t('admin.management.actions.activate'), admin_management_product_path(object),
+      remote: false, method: :delete, class: 'btn btn-danger delete', role: 'button'

@@ -1,0 +1,31 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+.col-right
+
+.popup-container
+  .popup.popup-likes.popup-label.red
+    .close
+    .header
+      .icon.like
+      %h3 Понравилось
+      %h4
+        %b 98
+        Мечтателям
+    .like-list
+      .btn.top.disabled
+      .mask
+        .tape{ style: "margin-top: -1px" }
+          - (1..10).each do |i|
+            .user-card
+              .avatar.size-s
+                %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/women/" + i.to_s + ".jpg" }
+              .description
+                %a{ href: "#" } Gordon Alvarado
+                .icon-text
+                  .icon.size-8.male
+                  %span.text 25, Россия, Москва
+      .btn.bottom
+
+

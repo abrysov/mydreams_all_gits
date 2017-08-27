@@ -1,0 +1,30 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+  %div.balance-page
+    %h4 Баланс успешно пополнен!
+    .icon.money.size-86.money-ok
+    .plus-money
+      +
+      %b 10
+      монет
+
+
+.col-right
+  .col-js
+    .top
+      .widget-balance
+        .title На моем счете:
+        .count
+          .icon.money.size-28
+          .number
+            %b 146
+            монет
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/balance" } Пополнить баланс
+        %li
+          %a{ href: "/markup/operations_history" } История операций
+
+

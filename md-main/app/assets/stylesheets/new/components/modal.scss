@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  z-index: 2;
+  display: none;
+  background: #fff;
+
+  &.visible {
+    display: flex;
+  }
+
+  .close {
+    height: inherit;
+    cursor: pointer;
+    background: $light-gray-color;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 1rem;
+      height: 1px;
+      margin: auto;
+      content: '';
+      transform: rotate(45deg);
+      background: $light-purple-color;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

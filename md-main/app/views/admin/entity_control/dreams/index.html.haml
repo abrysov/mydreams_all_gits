@@ -1,0 +1,11 @@
+%table.table.dreams
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.picture')
+      %th= t('.title')
+      %th= t('.description')
+      %th= t('.action')
+  %tbody
+    = render @dreams
+    = paginate @dreams, theme: 'moderate'

@@ -1,0 +1,30 @@
+.dreambook_avatar
+  .avatar.dreambook_face
+    - if @dreamer.is_vip?
+      .label_vip
+        %span= t('flybook.vip')
+
+    - if @dreamer.online?
+      .label_online
+        %span= t('flybook.online')
+
+    .dreambook_avatar_image
+      .image_wrapper
+        = image_tag(avatar_or_default(@dreamer, :medium), class: 'js-img-avatar')
+
+      - if current_dreamer?(@dreamer)
+        = link_to(modal_avatar_path, {remote:true, class: 'change_avatar jmod-btn', data: {'modal-type' => 'avatar'}}) do
+          %span= t('dreamers.edit.change_avatar')
+
+  .dreamer_name= truncate(@dreamer.full_name, length: 16, separator: ' ')
+
+  - if !@dreamer.project_dreamer
+    .dreamer_personal_data
+      .age{ class: @dreamer.gender }
+        - if @dreamer.age.present?
+          = @dreamer.age > 0 ? @dreamer.age : 1
+
+      .location
+        %span.country= @dreamer.dream_country.try(:name)
+        - if @dreamer.dream_city.present?
+          %span.city= ", #{@dreamer.dream_city.try(:name)}"

@@ -1,0 +1,24 @@
+%table.table
+  %thead
+    %tr
+      %th{ colspan: 6 }
+        = t('admin.management.dreamer')
+  %tr
+    %td{ rowspan: 2 }
+      = link_to_if (ava_link = dreamer.avatar.url(:large)),
+        image_tag(avatar_or_default(dreamer, :admin)), ava_link
+    %td
+      %h4
+        = dreamer_link dreamer
+    %td
+      = dreamer.email
+    %td
+      = dreamer.status
+    %td
+      = short_date dreamer.created_at
+    %td
+      = dreamer.confirmed? ? short_date(dreamer.confirmed_at) : '-'
+  %tr
+    %td{ colspan: 5 }
+      = t('admin.management.amount')
+      = dreamer.account.amount

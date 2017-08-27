@@ -1,0 +1,232 @@
+input[type='button'],
+input[type='submit'],
+button,
+.button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 10em;
+  height: 1.8125rem;
+  margin: .5em 0;
+  padding: 0 2em;
+  cursor: pointer;
+  color: $light-gray-text-color;
+  border: 1px solid $light-gray-text-color;
+  border-radius: 1.40625rem;
+  outline: none;
+  background: transparent;
+  font-size: .6875rem;
+  font-size: inherit;
+  appearance: none;
+
+  .circle {
+    width: 1.8125rem;
+  }
+
+  &.accent {
+    color: white;
+    background: $light-gray-text-color;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+
+  &.s {
+    height: 1.375rem;
+    font-size: .625rem;
+
+    .circle {
+      width: 1.375rem;
+    }
+  }
+
+  &.l {
+    height: 2.1875rem;
+    font-size: .9375rem;
+
+    .circle {
+      width: 1.2.1875rem;
+    }
+  }
+
+  &.size-xl {
+    height: 3em;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    color: black;
+    box-shadow: inset 0 1px 0 0 rgba(#fff, .3), 0 1px 1px 0 rgba(0, 0, 0, .2);
+    font-size: .8rem;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+
+  &.noti-count {
+    min-width: 1.2em;
+    height: .938rem;
+    margin: 0;
+    padding: 0 .4rem;
+    font-size: .563rem;
+  }
+
+  &.cubic {
+    border-color: $border-gray-color !important;
+    border-radius: 0;
+
+    &.accent {
+      border-color: transparent !important;
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: .5;
+  }
+
+  &.circle {
+    width: 1.563rem;
+    min-width: 0;
+    height: 1.563rem;
+    padding: 0;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+  &.blue {
+    color: $blue-color;
+    border-color: $blue-color;
+
+    &.accent {
+      color: white;
+      background: $blue-color;
+    }
+  }
+
+  &.yellow {
+    color: $yellow-color;
+    border-color: $yellow-color;
+
+    &.accent {
+      color: white;
+      background: $yellow-color;
+    }
+  }
+
+  &.green {
+    color: $green-color;
+    border-color: $green-color;
+
+    &.accent {
+      color: white;
+      background: $green-color;
+    }
+  }
+
+  &.purple {
+    color: $light-purple-color;
+    border-color: $light-purple-color;
+
+    &.accent {
+      color: white;
+      background: $light-purple-color;
+    }
+  }
+
+  &.purple2 {
+    color: $purple-color;
+    border-color: $purple-color;
+
+    &.accent {
+      color: white;
+      background: $purple-color;
+    }
+  }
+
+  &.pink {
+    color: $pink-color;
+    border-color: $pink-color;
+
+    &.accent {
+      color: white;
+      background: $pink-color;
+    }
+  }
+
+  &.gray {
+    color: $light-gray-text-color;
+    border-color: $light-gray-color;
+
+    &.accent {
+      background: $light-gray-color;
+    }
+  }
+
+  &.white {
+    color: #fff;
+    border-color: #fff;
+
+    &.accent {
+      background: #fff;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+
+  &.circle-icon {
+    padding-right: 0;
+    padding-left: 3rem;
+    padding-left: calc(1.8125rem + 1em);
+    text-align: left;
+    font-weight: 100;
+  }
+
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 100%;
+    background: $light-gray-text-color;
+  }
+
+  span {
+    width: 100%;
+  }
+}
+
+.button.circle {
+  &.purple {
+    &.gift {
+      background-image: asset-url('new/gift-purple.svg');
+    }
+    &.send {
+      background-image: asset-url('new/send-purple.svg');
+    }
+  }
+  &.blue {
+    &.gift {
+      background-image: asset-url('new/gift-blue.svg');
+    }
+    &.send {
+      background-image: asset-url('new/send-blue.svg');
+    }
+  }
+}

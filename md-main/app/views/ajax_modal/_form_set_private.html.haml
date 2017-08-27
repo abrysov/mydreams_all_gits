@@ -1,0 +1,9 @@
+.frame.set-privacy{data: {'modal-type' => 'set_private'}}
+  = form_for dream, url: [:account, dream], remote: true, html: { class: 'js-set-private-form' } do |f|
+    .title= t('dreams.popup.private_title')
+    .subtitle= t('dreams.popup.private_scope')
+    = f.select :restriction_level, Dream.restriction_levels_for_select, {}, class: 'ikselect'
+
+    .control.js-form-control
+      = f.submit t('actions.apply'), class: 'button-violet js-form-submit'
+      .preloader.js-preloader

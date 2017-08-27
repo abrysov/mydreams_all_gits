@@ -1,0 +1,34 @@
+- dreamer = current_dreamer
+- time_flag = dreamer.confirmation_sent_at + 10.minutes > Time.zone.now
+
+.confirm-email
+  .content
+    %h1= t('.title')
+    %h3
+      - if dreamer.email
+        = t(time_flag ? '.body' : '.body_after_10_min', email: hidden_email(dreamer.email))
+      - else
+        = t('.add_email_for_confirm')
+    %br
+    %br
+    %br
+    - if !time_flag || dreamer.email.nil?
+      = form_for dreamer, as: dreamer,
+                          url: confirmation_path(dreamer),
+                          html: { method: :post } do |f|
+        - if @error || dreamer.errors.present?
+          %ul
+            %li= @error
+            - dreamer.errors.full_messages.each do |message|
+              %li= message
+        .input_wrapper
+          = f.email_field :email, placeholder: t('.your_email'), autofocus: true, value: (dreamer.unconfirmed_email || dreamer.email), type: 'text', class: 'js-validation', data: {valid: 'email'}
+        %br
+        = f.submit t(dreamer.confirmation_sent_at.nil? ? '.send' : '.send_again'), id:'confirm_email'
+        %hr
+    .mini-footer
+      .info-text= t('.questions')
+      = mail_to 'support@mydreams.club', 'support@mydreams.club', class: 'email'
+      %br
+      - if dreamer_signed_in?
+        = link_to t('.exit'), destroy_dreamer_session_path, class: 'button'

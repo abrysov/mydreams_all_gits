@@ -1,0 +1,7 @@
+- if dreamer.present?
+  .user_info
+    .user_info__img
+      = image_tag avatar_or_default(dreamer, :small)
+    %a.user_info__name{href: "/"}
+      %span= "#{dreamer.first_name},"
+      %span= dreamer.age

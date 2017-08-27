@@ -1,0 +1,11 @@
+%tr
+  %td
+    = complain.complainable_type
+  %td
+    = image_tag avatar_or_default(complain.complainer, :small)
+    = dreamer_link(complain.complainer)
+  %td
+    = image_tag avatar_or_default(complain.suspected, :small)
+    = dreamer_link(complain.suspected)
+  %td
+    = complain.state

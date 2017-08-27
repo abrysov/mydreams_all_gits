@@ -1,0 +1,1522 @@
+en:
+  about:
+    details: Read more
+    info: 'It’s time for your Dream to come true. <br> mail@mydreams.club'
+    one: 'The most famous and the richest people united in the Club of Dreamers (Dreamers
+      Club) with the sole purpose: <br> to fulfill dreams and desires of billions of
+      people all over the world.'
+    three: 'The Dreambook is your personal Book of dreams and desires, <br> which the
+      whole world will see.'
+    title: About the Club
+    two: 'Once you have become a member of the Club you can quickly realize your dreams
+      and desires. <br> To fulfill your desires and dreams you have to share them with
+      others.'
+  actions:
+    accept: Accept
+    accept_request: Accept request
+    apply: Apply
+    back: Back
+    borrow: Borrow dream
+    buy_mark: Buy mark
+    choose_sm: Share in
+    citate: Citate
+    comment: Comment
+    confirm: Are you sure?
+    correct: Сorrect
+    crop: Crop
+    decline_request: Decline request
+    delete: Delete
+    deny_request: Deny request
+    edit: Edit
+    exit: Exit
+    lets_go: Let's go
+    like: Like
+    load_more: Load more
+    login: Login
+    open: Open
+    play_video: Play video
+    skip_video: Skip
+    present_mark: Give mark
+    recovery: Restore
+    reject: Reject
+    reply: Reply
+    request_friendship: Request friendship
+    run_dream: Dream run
+    run_dream_into_universe: Dream run into the universe
+    save: Save
+    select_mark: Select mark
+    send: Send
+    send_message: Send message
+    show: Show
+    show_all: Show all
+    show_all_gifts: Show all gifts
+    show_more: Show all
+    subscribe: Subscribe
+    suggest: Suggest to friend
+    to_friendlist: To friendlist
+    to_subscribers: To followers
+    unfriend: Unfriend
+    unlike: Unlike
+    unsubscribe: Unsubscribe
+    upload: Upload
+    view_dream: View dream
+    write_message: Write message
+  activemodel:
+    errors:
+      messages:
+        invalid: is invalid
+        invalid_event: cannot transition when %{state}
+        invalid_transition: cannot transition via "%{event}"
+  activerecord:
+    errors:
+      messages:
+        invalid: is invalid
+        invalid_event: cannot transition when %{state}
+        invalid_transition: cannot transition via "%{event}"
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          many: Cannot delete record because dependent %{record} exist
+          one: Cannot delete record because a dependent %{record} exists
+  activities:
+    activities_title: News
+    certificate_create: Added mark to his dream
+    create: Create
+    dream_comment: Commented dream
+    dream_create: Created dream
+    dream_like: Liked dream
+    dream_suggest: suggest dream
+    friendship_accept: Added to friendlist
+    friendship_destroy: Remove from friendlist
+    no_activities: You have no activities
+    post_comment: Commented post
+    post_create: Created post
+    post_like: Liked post
+    post_suggest: suggest post
+    subscription_create: Added to followers
+    subscription_destroy: Remove from followers
+    update: Change
+  attachment:
+    add: Add
+    photo: Photo
+  authentication:
+    authentication: Authentication
+    enter_email: Enter your email
+    enter_mydreams: Enter mydreams
+    enter_password: Password
+    forgot_pass: Forgot password?
+    remember_me: Remember me
+    social: Enter through social
+    errors:
+      invalid_password: Invalid email or password
+  bad_image:
+    desc: Too low image quality.
+    recommend_height: Minimum height
+    recommend_width: Minimum width
+  breadcrumbs:
+    application:
+      root: Index
+    pages:
+      pages: Pages
+  comment:
+    create: Comment has created
+    destroy: Comment has deleted
+    update: Comment has updated
+  comments:
+    no_comments: There are no comments
+    placeholder_textarea: Send your message
+    show_last_n_comments: Show all %{count} %{plural}
+    hide: Hide comments
+  date:
+    today: Today
+    yesterday: Yesterday
+    ago: ago
+    datajoin: at
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    many_month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - Oktober
+    - November
+    - December
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - year
+    - month
+    - day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise:
+    confirmations:
+      new:
+        title: Dear user!
+        body: We have sent you an emai with link to confirm. If you can not find the email, check the folder "spam".
+        body_after_10_min: We have sent you an emai with link to confirm. If the letter does not come, try sending again.
+        your_email: your Email
+        send: Send again
+        questions: If you have any problems, please contact Technical Support
+        exit: Sign out
+        wrong_email: Wrong Email address
+      create:
+        bounced: You have entered an invalid e-mail address, enter another Email address
+        spam: Earlier, sent you a letter you have been tagged as "spam". Please enter a valid Email address
+        unsub: You have unsubscribed from this E Mail address, enter another Email address
+      show:
+        wrong_token: Link verification is outdated, you need to go through the procedure again
+      confirmed: Your email address has been successfully confirmed.
+      send_instructions: You will receive an email with instructions for how to confirm
+        your email address in a few minutes.
+      instructions_not_sent: Request to reset password is not sent.
+      send_paranoid_instructions: If your email address exists in our database, you
+        will receive an email with instructions for how to confirm your email address
+        in a few minutes.
+    failure:
+      already_authenticated: You are already signed in.
+      inactive: Your account is not activated yet.
+      invalid: Invalid %{authentication_keys} or password.
+      last_attempt: You have one more attempt before your account is locked.
+      locked: Your account is locked.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+      timeout: Your session expired. Please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your email address before continuing.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmation instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      unlock_instructions:
+        subject: Unlock instructions
+    omniauth_callbacks:
+      failure: Could not authenticate you from %{kind} because "%{reason}".
+      success: Successfully authenticated from %{kind} account.
+    passwords:
+      no_token: You can't access this page without coming from a password reset email.
+        If you do come from a password reset email, please make sure you used the full
+        URL provided.
+      send_instructions: You will receive an email with instructions on how to reset
+        your password in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you
+        will receive a password recovery link at your email address in a few minutes.
+      updated: Your password has been changed successfully. You are now signed in.
+      updated_not_active: Your password has been changed successfully.
+    registrations:
+      destroyed: Bye! Your account has been successfully cancelled. We hope to see you
+        again soon.
+      email_not_unique: This e-mail address is already registered.
+      validation_failed: Validation failed.
+      signed_up: Welcome! You have signed up successfully.
+      signed_up_but_inactive: You have signed up successfully. However, we could not
+        sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not sign
+        you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent to
+        your email address. Please follow the link to activate your account.
+      update_needs_confirmation: You updated your account successfully, but we need
+        to verify your new email address. Please check your email and follow the confirm
+        link to confirm your new email address.
+      updated: Your account has been updated successfully.
+    sessions:
+      already_signed_out: Signed out successfully.
+      dreamer:
+        already_signed_out: Signed out successfully.
+        signed_in: Signed in successfully.
+        signed_out: Signed out successfully.
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+    unlocks:
+      send_instructions: You will receive an email with instructions for how to unlock
+        your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email
+        with instructions for how to unlock it in a few minutes.
+      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+  dream:
+    create: Dream has created
+    destroy: Dream has deleted
+    update: Dream has updated
+  dream_states:
+    admin_accepted: Accepted
+    admin_declined: Declined
+    gifted: Gifted
+    initial: Initial
+    needs_accepting: Needs accepting
+  dreamer:
+    avatar: Your avatar
+    birthday: Your brthday
+    city: City
+    country: Country
+    create: Dreamer has created
+    destroy: Dreamer has deleted
+    email: E-mail
+    first_name: Your name
+    last_name: Last name
+    password: Password
+    phone: Your phone
+    update: Dreamer has updated
+    state: State
+    deleted: Deleted
+    blocked: Blocked
+  dreamers:
+    edit:
+      add_photo: Add photo
+      change_avatar: Change avatar
+      cut_avatar: Cut avatar
+    friendship: In friends list
+    no_dreamers: By specifying parameters dreamers not found
+    send_message: Send Message
+  dreams:
+    buy_mark: Buy mark
+    comes_true: Every second on Earth one dream comes true
+    dreams_come_true: Dreams come true
+    edit: Edit
+    form:
+      add_avatar: Load photo
+    friends_dreams:
+      no_dreams: Not added any dreams
+    fulfill:
+      confirm: You are to be congratulated?
+      not_fulfill: It's yet to come
+    gift:
+      create_gift: Send Gift
+      dream_comment: Comment
+      dream_photo: Dream photo
+      dream_title: Title
+      gift_comment: Enter
+      label_author: From
+      label_email: For
+      notification: You will receive e-mail notification about delivering
+      placeholder_author: Enter your name(any)
+      placeholder_email: Enter e-mail recipient
+      receiver_photo: Receiver photo
+      required_fields: Required fields
+      your_photo: Your photo
+    new:
+      about_mark:
+        part_1: Using the brand , you run into a dream universe.
+        part_2: Each brand changes the status of dreams, depending on the number of
+          starts.
+      add_dream: Add To Dreambook
+      belive_in_dream: Belive in dream
+      create_dream: Create dream
+      create_dream_title: Create dream
+      create_fulfill_dream_title: Fulfill dream
+      create_fulfilled_dream: Create fulfilled dream
+      create_fulfilled_dream_photo_preview: Fulfilled dream photo
+      create_fulfilled_dream_subtitle: Share with the world
+      create_fulfilled_dream_title: My dream has come true
+      create_fulfilled_dream_video_html: Loading video coming soon
+      dream_description: Description
+      dream_description_placeholder: Fill dream description
+      dream_photo: Dream photos
+      dream_status: Dream status
+      dream_title: Dream title
+      dream_title_placeholder: Fill dream title
+      dream_wish: Wish
+      dream_wish_placeholder: Your wish to recipient
+      edit_dream_title: Edit dream
+      email_notification: You will get notification to your e-mail
+      email_required: Email required!
+      fulfill_dream: Fulfill dream
+      fulfill_email_notification: In your e-mail will be notified
+      fulfilled_dream: Fulfilled dream
+      improve_photo: Improve photo
+      photo_change: Change Photo
+      photo_upload: Upload Photo
+      restriction_level: Restriction level
+      run_dream: Run Into The Universe
+      select_mark: Select mark
+      send_universe: Send to Universe
+      statistics_of_fulfilled: Statistics of fulfilled Dreams
+      video: Video
+    no_dreams: Dreams have been added
+    no_top_dreams: No search results
+    popup:
+      add_dream: Add Dream
+      add_photo: Add photo
+      change_photo: Change photo
+      check_sm: Check social media
+      confirm: Are you sure?
+      like: Liked
+      private_scope: Who can see your dream
+      private_title: Private settings
+      recommend: Share dream
+      show_all: Show all
+      show_liked: Show all
+      suggest_title: Suggest dream to a friend
+    present: Present sertificate
+    set_private: Private
+    share: Share
+  errors:
+    appstore:
+      receipt_verify:
+        code_21000: The App Store could not read the JSON object you provided.
+        code_21002: The data in the receipt-data property was malformed.
+        code_21003: The receipt could not be authenticated.
+        code_21004: The shared secret you provided not match the shared secret on file for your account.
+        code_21005: The receipt server is not currently available.
+        code_21006: This receipt is valid but the subscription has expired. When this status code is returned to your server, the receipt data is also decoded and returned as part of the response.
+        code_21007: This receipt is a sandbox receipt,  but it was sent to the production service for verify
+        code_21008: This receipt is a production receipt, but it was sent to the sandbox service for verify.
+    dreamer:
+      avatar:
+        file_format: 'Wrong file format, possible formats are: %{formats}'
+        size_limit: File size was exceeded, max value is %{max} mb
+      phone:
+        wrong_format: Incorrect format
+    format: "%{attribute} %{message}"
+    friendship:
+      friend_self: Can't have friendship with self
+    messages:
+      accepted: must be accepted
+      already_confirmed: was already confirmed, please try signing in
+      blank: can't be blank
+      carrierwave_download_error: could not be downloaded
+      carrierwave_integrity_error: is not of an allowed file type
+      carrierwave_processing_error: failed to be processed
+      confirmation: doesn't match %{attribute}
+      confirmation_period_expired: needs to be confirmed within %{period}, please request
+        a new one
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      expired: has expired, please request a new one
+      extension_black_list_error: 'You are not allowed to upload %{extension} files,
+        prohibited types: %{prohibited_types}'
+      extension_white_list_error: 'has wrong file format, possible formats are: jpg,
+        jpeg, png'
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      in_between: must be in between %{min} and %{max}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      mime_types_processing_error: 'Failed to process file with MIME::Types, maybe not
+        valid content-type? Original Error: %{e}'
+      mini_magick_processing_error: 'Failed to manipulate with MiniMagick, maybe it
+        is not an image? Original Error: %{e}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      not_found: not found
+      not_locked: was not locked
+      not_saved:
+        one: '1 error prohibited this %{resource} from being saved:'
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+      odd: must be odd
+      other_than: must be other than %{count}
+      present: must be blank
+      rmagick_processing_error: 'Failed to manipulate with rmagick, maybe it is not
+        an image? Original Error: %{e}'
+      spoofed_media_type: has contents that are not what they are reported to be
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    photo:
+      file_format: 'Wrong file format, possible formats are: %{formats}'
+      size_limit: File size was exceeded, max value is %{max} mb
+    subscription:
+      subscribe_self: Can't have subscription with self
+  feed:
+    close_feed: Close
+    open_feed: Open
+    title_total: Total
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} was successfully created."
+      destroy:
+        alert: "%{resource_name} could not be destroyed."
+        notice: "%{resource_name} was successfully destroyed."
+      update:
+        notice: "%{resource_name} was successfully updated."
+    success:
+      create: Saved
+    restored: Your Profile has restored
+  flybook:
+    activities: Feed
+    add_to_friends: Add to friends
+    become_vip: Become VIP
+    comments: Comments
+    dream_owner: It your dream
+    dreamer_bg_empty: Background have been loaded
+    dreams: Dreams
+    followers: Followers
+    friends: Friends
+    friends_dreams: Friends dreams
+    get_back: Get back
+    has_friends: Friends
+    messages: Messages
+    my_dreams: Dreams
+    online: Online
+    posts: Posts
+    share_flybook: Share Dreambook
+    subscribe: Subscribe
+    subscribers: Subscribers
+    subscriptions: Subscriptions
+    to_profile: To profile
+    view_pics: View all pics
+    viewed: Viewed
+    vip: VIP
+    vip_label:
+      text_1: Buy
+      text_2: status
+    write_message: Write message
+  friends:
+    new_dreams: New
+    no_friends: Friends have been added
+  friendship:
+    create: Friendship has created
+    destroy: Friendship has deleted
+    update: Friendship has updated
+  genders:
+    female: Female
+    male: Male
+  helpers:
+    actions: Actions
+    links:
+      back: Back
+      cancel: Cancel
+      confirm: Are you sure?
+      destroy: Delete
+      edit: Edit
+      new: New
+    page_entries_info:
+      more_pages:
+        display_entries: Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b>
+          of <b>%{total}</b> in total
+      one_page:
+        display_entries:
+          one: Displaying <b>1</b> %{entry_name}
+          other: Displaying <b>all %{count}</b> %{entry_name}
+          zero: No %{entry_name} found
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+    titles:
+      delete: Delete %{model}
+      edit: Edit %{model}
+      new: New %{model}
+      save: Save %{model}
+  layout:
+    about_project: About
+    contacts: Contacts
+    dream_club: Dream club
+    dreamers: Dreamers
+    dreams: Dreams
+    flybook: Dreambook
+    footer:
+      copyright: MyDreams.club
+      mobile_version: Mobile version
+      support: Support
+    fulfill_dream: Fulfill Dream
+    fulfilled_dreams: Fulfilled dreams
+    how_to_fulfill: How to fulfill dream?
+    top: Top 100
+  like:
+    create: Like has created
+    destroy: Like has deleted
+    update: Like has updated
+  mail:
+    all: All
+    chat_with: Messages from user
+    form_btn: Send
+    messages: messages
+    new: New
+    no_message: You have no messages
+    online: Online
+    placeholder_textarea: Send a private message here
+    replay_btn: Replay
+    write_btn: Write
+    title: Messages
+    male_treatment: Dear
+    female_treatment: Dear
+  management:
+    id: ID
+    amount: Balance of account -
+    dreamer: Dreamer
+    actions:
+      show: Show
+      edit: Edit
+      create: Create new product
+      locked: Locked
+      activate: Activate
+    filters:
+      all: All
+      completed: Completed
+      processing: In progress
+      failed: Failed
+    menu:
+      products: Products
+      locked_products: Locked
+      purchases: Purchases
+      transactions: Transactions
+    products:
+      name: Name
+      cost: Cost
+      product_type: Type
+      state: Status
+      actions: Actions
+      property: Product Properties
+      created_at: Created
+      updated_at: Updated
+      active: Active
+      locked: Locked
+      special: System product
+      certificate: Certificate
+      vip_status: Vip-status
+    properties:
+      certificate_name: Certificate - name
+      certificate_launches: Certificate - launches
+      locale: Payment gateway - locale
+      previous_id: Previous product id
+      gateway_id: Payment gateway
+      gateway_rate: Payment gateway - rate
+      vip_duration: VIP-status - duration
+    purchases:
+      product: Product
+      dreamer: Dreamer
+      destination_dreamer: Destination Dreamer
+      destination: Destination
+      amount: Amount
+      state: Status
+      comment: Comment
+      actions: Actions
+      transactions: Transactions
+    transactions:
+      purchase: Purchase Transaction
+      external: External Transaction
+      actions: Actions
+      dreamer: Dreamer
+      amount: Amount
+      operation: Operation
+      state: Status
+      before: Before
+      after: After
+      reason: Type transaction
+      created_at: Created
+      updated_at: Updated
+      gateway_response: Gateway response
+    errors:
+      not_found: Error! record not found
+  marks:
+    modal_title: Dream starts
+    no_marks: Marks have been added
+  misc:
+    age_range:
+      '1': 18-25
+      '2': 25-32
+      '3': 32-39
+      '4': 39-46
+      '5': 46-53
+      any: Any
+      placeholder: Age
+    choose_dreamers:
+      all: All
+      new: New
+      online: Online
+      top: Top
+      vip: VIP
+    choose_dreams:
+      top100: TOP-100
+      hot: Most discussed
+      new: New
+    choose_fulfill_dreams:
+      all: All
+      female: Female
+      male: Male
+    choose_search_filter:
+      dreamers: Dreamers
+      dreams: Dreams
+      posts: Posts
+    dreamer_friends_dreams: Friend dreams of %{dreamer}
+    filters:
+      any: Any
+      female: Female
+      male: Male
+      placeholder: Gender
+    gender_for_registration:
+      female: Female
+      male: Male
+    my_friends_dreams: My friends dreams
+    my_many: My
+    of_dreamer: of dreamer
+    search: Search
+    search_placeholder: Fast search
+  modals:
+    add_to_feed:
+      message_placeholder: Write your message
+      no_city: Add country and city in your profile and the service will be available
+        to you
+      no_photos: Add photos in the photo album and the service will be available to
+        you
+      submit: Let's go
+      subtitle: Free
+      title: To get to the feed
+    authorization:
+      forgot_password: Foggot your password?
+      login_placeholder: E-mail
+      password_placeholder: Password
+      registration: Registration
+      remember_me: Remember me
+      socials_title: 'Log in with:'
+      submit: Enter
+      title: Enter
+    buy_certificate:
+      cost_option: This option is paid
+      wish_placeholder: Your wish...
+    create_fulfilled_dream:
+      subtitle: Share with the world
+      title: My dream has come true
+    dreambook_background:
+      title: Background image
+    registration:
+      delete_profile: Temporarily remove profile
+      link: Sign Up
+      name: Enter your name
+      necessary: Necessarily
+      not_necessary: Not necessary
+      phone_placeholder: Phone
+      phone_title: To call you to give dream
+      phone_title_profile: Edit phone
+      submit_changes: Save
+      submit_register: let's go!
+      surname: Your last name
+      terms_of_service: I accept the terms of the project
+      title_html: Join the My Dreams Club<sup>®</sup>
+      title_profile: Edit profile
+    send_message:
+      title: To write a message
+    share:
+      subtitle: Select a social network
+      title: Share
+    take_dream:
+      subtitle: Edit
+      title: Add Dream
+  mailing_list:
+    menu:
+      come_true_dreams: Dream come true
+    come_true_dreams:
+      errors:
+        not_found: Dream not found or already came true
+        already_come_true: Drean already come true
+        already_send: Mail already send
+        not_send: Mail not send
+      success:
+        mail_sent: Mail success send
+      buttons:
+        come_true: Dream come true
+        send: Send
+        save: Save
+      forms:
+        dream_id: ID Dream
+        additional_text: Additional Text
+        send_test_mail: Send test email
+        send_mail: Send email to dreamer
+        snapshot: Picture
+        email_content_panel: Email content
+        email_send_panel: Send email
+      form_find_by_id:
+        placeholder: Find by ID
+  moderate:
+    comments:
+      index:
+        body: Body
+        dreamer_link: Dreamer link
+        complains_count: complains count
+        dreamer_complains_count: Dreamer complains count
+    complains:
+      index:
+        type: Type
+        complainer: Complainer
+        suspected: Suspected
+        state: State
+    dreamers:
+      index:
+        id: ID
+        full_name: Full name
+        avatar: Vvatar
+        status: Status
+        reg_date: Дата регистрации
+        confirm_date: Дата подтверждения почты
+        complains_count: Moderator complains count
+        state: Dreamer state
+      dreamer:
+        approve: OK
+        notify: Notify
+      approve:
+        approved: Approved in
+    dreams:
+      index:
+        picture: Picture
+        title: Title
+        description: Description
+        launches_count: Launch count
+        comments_count: Comments count
+        complains_count: Complains count
+        complains_count_from_moder: Complains count Dreamer's entities
+        last_review: Last moderator review
+    menu:
+      dreamers: Dreamers
+      photos: Photos
+      dreams: Dreams
+      posts: Posts
+      comments: Comments
+      complains: Complains
+    photos:
+      index:
+        photo: Photo
+        dreamer_link: Dreamer link
+        complains_count: Photo complains count
+        dreamer_complains_count: Dreamer complains count
+    posts:
+      index:
+        picture: Picture
+        title: Title
+        body: Body
+        comments_count: Comments count
+        complains_count: Complains count
+        complains_count_from_moder: Complains count Dreamer's entities
+  my_dreams: My Dreams
+  my_profile:
+    title: Edit data
+  notice:
+    friendship:
+      not_requested: You can not send a friendship
+      removed: A friend was deleted
+      requested: Friend request has been sent
+    subscription:
+      not_subscribed: Unable to subscribe. Perhaps you are already subscribed
+      removed: Successfully unsubscribed
+      subscribed: You have successfully signed up for updates
+  payments:
+    description: Balance replenishment on mydreams.club
+  photos:
+    album: Your photos
+    all: Photos
+    no_photos: Not added any photos
+  pluralize:
+    comments:
+    - comment
+    - comments
+    - comments
+    dreamers:
+    - dreamer
+    - dreamers
+    - dreamers
+    dreams:
+    - dream
+    - dreams
+    - dreams
+    followers:
+    - follower
+    - followers
+    - followers
+    friends:
+    - friend
+    - friends
+    - friends
+    gifted_marks:
+    - gifted mark
+    - gifted marks
+    - gifted marks
+    like:
+    - like this
+    - like this
+    - like this
+    liked_dreamers:
+    - dreamer
+    - dreamers
+    - dreamers
+    likes_titles:
+    - person liked this
+    - people liked this
+    - people liked this
+    marks:
+    - mark
+    - marks
+    - marks
+    new:
+    - new
+    - new
+    - new
+    new_followers:
+    - new follower
+    - new followers
+    - new followers
+    new_message:
+    - new
+    - new
+    - new
+    people:
+    - person
+    - people
+    - people
+    photo:
+    - photo
+    - photos
+    - photos
+    posts:
+    - post
+    - posts
+    - posts
+    proposed:
+    - proposed
+    - proposed
+    - proposed
+    requests:
+    - request
+    - requests
+    - requests
+    results:
+    - result
+    - results
+    - results
+    subscriptions:
+    - subscription
+    - subscriptions
+    - subscriptions
+    years:
+    - year
+    - years
+    - years
+    news:
+    - news
+    - news
+    - news
+
+  post:
+    create: Post has created
+    destroy: Post has deleted
+    update: Post has updated
+  posts:
+    light_post:
+      more: More
+    new:
+      create_post: Add post
+      create_post_title: Add post
+      edit_post_title: Edit post
+      photo_change: Change Photo
+      photo_upload: Upload Photo
+      placeholder_description: Enter text
+      placeholder_title: Enter title
+    no_posts: Posts have been added
+    popup:
+      add_photo: Add photo
+      change_photo: Change photo
+      suggest_title: Suggest post to a friend
+    show_all: Show all
+  recovery:
+    change_password: Change password
+    change_password_btn: Change password
+    do_recovery: Recover
+    fill_email: Fill your email
+    email_notification: In Your Email will be sent a link to reset your password
+    note: Use email address filled while registration. You will receive link there.
+      Use that link to recover your password.
+    old_password: Old password
+    password: Password
+    password_confirmation: Confirm password
+    recovery: Recover password
+  registration:
+    additional_info: some stuff
+    born_female: I was born
+    born_male: I was born
+    call_for: Calls only for the delivery of your dreams
+    dont_fill1: If you want you
+    dont_fill2: not
+    dont_fill3: been finded, don't fill
+    female: female
+    fill_email: Fill your email
+    fill_field: Fill the field
+    fill_name: Fill your name
+    label_city: City
+    label_country: Country
+    label_first_name: Name
+    label_last_name: Last Name
+    label_phone: Phone
+    last_name: Your last name
+    lets_go: Let's go
+    login: Login
+    male: male
+    me: Me
+    phone: Your phone
+    registration: Registration
+    registration_form: Registration
+    required_data: required data
+    warning1: If you want to be
+    warning2: NOT
+    warning3: founded
+    warning4: do not fill these fields
+    warning5: ")"
+  relations:
+    errors:
+      friends_already: You are friends already
+      friendship_requested: Friendship request has already been sent
+      invalid_dreamer: Invalid dreamer
+      no_dreamer: User not specified
+      subscribed_already: You have already subscribed
+  restriction_levels:
+  - available to everyone
+  - available to friends
+  - available only to me
+  search:
+    filter_city_placeholder: Select сity
+    filter_country_placeholder: Select сountry
+    found: Found
+    no_result: Nothing found
+    title: Search results
+  services:
+    agreement:
+      '1':
+        '1':
+          '1': 'In this Agreement the following terms and definitions:'
+          '10': "<strong>Dream Status</strong> – total launches of Dreams as a result
+            of Mark activation by the User and received from other Users of the Marks.
+            Dream Status appears on the Card of Dream (Dream Card) and is updated after
+            the activation of Mark."
+          '11': "<strong>Advertising</strong> - information disseminated in any way,
+            in any form or by any means, addressed to indefinite circle of persons and
+            aimed at attracting attention to object of promotion, formation or maintenance
+            of interest to it and its promotion on the market."
+          '12': "<strong>Targeted advertising</strong> is a text, media or multimedia
+            advertisements that are shown only to those Users that satisfy a certain
+            set of requirements, specified by the advertiser."
+          '13': "<strong>TOP 50</strong> men's dreams – a list of 50 of the most popular
+            Dreams of male Users (namely Dreams with the highest number of ratings from
+            other Users)."
+          '14': "<strong>TOP 50</strong> women's dreams – a list of 50 of the most popular
+            Dreams of female Users (namely Dreams with the highest number of ratings
+            from other Users)."
+          '15': "<strong>TOP 100</strong> – the 100 most popular Dreams of Site Users
+            all over the world, formed by the Administration on the basis of independent
+            information resources, ratings of the celebrities’ Dreams worldwide and
+            other criteria at the discretion of the Administration."
+          '16': '<strong>VIP status</strong> is a paid service that allows the User:
+            (i) to obtain the original design of its DREAMBOOK marked "VIP User", (ii)
+            to upload any backgrounds, reflecting the individuality of the User. A user
+            can purchase VIP status for him/her and as a gift to other Users.'
+          '17': "<strong>Dream Launch</strong> is a paid service that is provided by
+            means of Mark activation by a User in relation to their own Dreams or the
+            Dreams of another User as a gift. Launch increases Dream Status by Mark
+            face value and is accompanied by entertainment video, the content of which
+            varies depending on Mark value. Persons not registered as Users can be given
+            a Dream by sending an e-mail via the form on the Site, however, to see the
+            video that person will need to register on the Site, accepting the terms
+            of this Agreement."
+          '18': The <strong>agreement</strong> – this agreement concluded between the
+            Administration and a User contains the conditions for granting the User
+            access to the features and services of the Site, as well as the rights and
+            obligations of the User and the Administration. The current version of the
+            Agreement is on the Site at the address http://mydreams.club also includes the conditions
+            placed on other pages of the Site, the link to which is available in this
+            Agreement. User registration at the Site means full and unconditional acceptance
+            of the terms of this Agreement.
+          '2': "<strong>«My Dreams» Club</strong> or the <strong>Site</strong> – a website
+            on the Internet, which may be accessed by the domain name MyDreams.club,
+            created with the aim of uniting all over the world like-minded Dreamers,
+            providing them with unhindered communication between themselves and the
+            opportunity to fulfill the dreams and desires of each other. For purposes
+            of this Agreement, the Site refers to any of its version under the domain
+            name MyDreams.club and applications for various devices, including the web-version
+            of the Site and mobile applications."
+          '3': <strong>The Club administration</strong> or <strong>Administration</strong>
+            – "My Dreams" Limited Liability Company, a legal entity established in accordance
+            with the legislation of the Russian Federation and registered at 107140,
+            Moscow, 1st Krasnoselskiy side street, 3
+          '4': A <strong>Dreamer</strong> or a <strong>User</strong> – a capable person
+            who has attained the age permitted to join this Agreement under the laws
+            of the country of his/her citizenship and joined this Agreement on his/her
+            own interest and acquired the right to use the features and services of
+            the Site provided by the Administration on the terms specified in this Agreement.
+          '5': "<strong>Dream</strong> – a dream, a desire of a User. A Dream has both
+            embodied, tangible and intangible expression, the photographic image and
+            description, which is placed by the User in his DREAMBOOK."
+          '6': "<strong>Dreambook</strong> – a personal virtual book of the User in
+            the form of a set of pages on the Site, available for viewing by other Users
+            or in case of its deliberate distribution by the User, to third parties
+            who are not Users of the Site. The dreamer can add to his/her DREAMBOOK
+            a picture and description of a Dream (the quantity is not limited), create
+            a personal Blog, as well as use other services of the Site."
+          '7': The <strong>blog</strong> section represents a virtual diary in which
+            a User can add personal notes, share comments with other Users, provided
+            that the appropriate access is granted by the User.
+          '8': "<strong>Content</strong> – the content of the Site, including but not
+            limited to information containing objects of copyright and (or) related
+            rights (including photos and videos, text messaging, music, audiovisual
+            works, their combination, or fragments, messages of TV shows)."
+          '9':
+            '1': 1. Bronze (1 launch); 1 $
+            '2': 2. Silver (5 launches); 5 $
+            '3': 3. Gold (10 launches); 10 $
+            '4': 4. Platinum (50 launches); 50 $
+            '5': 5. VIP (100 launches); 100 $
+            '6': 6. Presidential (250 launches); 250 $
+            '7': 7. Imperial (500 launches). 500 $
+            head: '<strong>Mark</strong> is a virtual object used to pay for the service
+              "Dream Launch". The user has the option to buy Marks for his own use or
+              give them to other Users. There are seven types of Marks, depending on
+              the number of launches:'
+        '2': 1.2 If this Agreement uses the terms not specified in this section, these
+          must be understood and construed in accordance with the legislation of the
+          Russian Federation and Code of Business Conduct.
+        head: TERMS AND CONDITIONS
+      '10':
+        '1': Administration reserves the right at any time unilaterally and without
+          prior notice, to amend this Agreement.
+        '2': You agree that you accept all changes to the Agreement from the moment
+          of their publication on the Site or later as may be specified in the Agreement.
+        head: CHANGES
+      '11':
+        '1': This Agreement, its conclusion and execution, as well as issues not regulated
+          by this Agreement is governed by the laws of the Russian Federation. Exceptions
+          are the cases when applicable law expressly stipulates specific provisions
+          of this Agreement otherwise.
+        '2': In the event of any dispute or disagreement related to the use of the Site,
+          the User and the Site Administration will make every effort to resolve them
+          through negotiations.
+        '3': In case of disputes in connection with this Agreement are not resolved
+          by negotiation, the parties shall refer to the court at the location of the
+          Administration in accordance with the legislation of the Russian Federation.
+        head: APPLICABLE LAW AND JURISDICTION
+      '12':
+        '1': This Agreement may be immediately terminated by either party at its discretion.
+        '2': This Agreement is made in Russian, but may be provided to Users for their
+          information in foreign languages. In case of discrepancies between the Russian
+          version of the Agreement and the version in a foreign language, the provisions
+          of the Russian version of the Agreement must be referred to.
+        '3': If for whatever reason one or more provisions of this Agreement are found
+          invalid or unenforceable, this will have no effect on the validity and/or
+          enforceability of the remaining provisions.
+        '4': These terms also regulate the mobile application "My Dreams".
+        head: OTHER PROVISIONS
+      '2':
+        '1': Usage of the features and services of the Site is permitted only after
+          User registration and authorization on the Site in accordance with the established
+          procedure have been completed and the terms of this Agreement have been accepted.
+        '2': By registration a person certifies that he/she is over 18 and that he/she
+          has the right to enter into this Agreement.
+        '3': A User is obliged to read the Agreement before starting registration on
+          the Site.
+        '4': For registration, a User must complete the registration form providing
+          accurate and complete information as prompted in the registration form and
+          keep this information up-to-date.
+        '5': To register the User must provide proof of his/her e-mail specified when
+          completing the registration form. The verification is accomplished by clicking
+          the link sent by the Administration to the User’s e-mail.
+        '6': Login and password specified by the User during registration are necessary
+          and sufficient for subsequent access to the Site. You are solely responsible
+          for their safekeeping, independently choosing a way to store them. The administration
+          is not responsible for the wrongful acts committed by third parties using
+          a User’s login and password.
+        head: REGISTRATION ON THE SITE
+      '3':
+        '1': User Registration on the Site and its basic features are free.
+        '10': Administration reserves the right to modify the design of the Site , its
+          interface, content, features, user services, used scripts, software, or any
+          server applications at any time with or without notice thereof.
+        '11': Administration has the right to assign its rights to third parties.
+        '12': Administration is engaged in a preliminary moderation of Content uploaded
+          by Users only in compliance with the terms of clause 4.2 of this Agreement
+          and shall be entitled at its discretion to refuse to post inappropriate Content.
+        '13': Administration takes action to protect the rights and interests of third
+          parties and to ensure compliance with the requirements of the Russian legislation
+          only after the appeal of the person concerned to Administration in the prescribed
+          manner.
+        '14': You agree that Administration at their discretion and without prior notice,
+          may temporarily or permanently restrict access to DREAMBOOK, block, restrict
+          or terminate your access to the Site to block certain Content or delete a
+          User account without possibility of restoration.
+        '15': Administration is not responsible for any damage or lost profits caused
+          to the User or third parties as a result of the removal of the User account
+          and content uploaded to the site.
+        '2': Basic features of the Site give to a User the opportunity including, but
+          not limited to, to add his/her photos to the DREAMBOOK, to share his/her DREAMBOOK
+          via popular social networks, to send DREAMBOOK via e-mail, to view DREAMBOOK
+          of other Users, photos and videos of Dreams of other Users, to subscribe to
+          DREAMBOOK of other Users to receive news and view personal events that fulfill
+          the Dreams of other Users, to exchange text messages with other Users, to
+          keep a Blog, to participate in discussions of various topics in personal Blogs
+          of other Users.
+        '3': If a User's Dream came true, the user has the right to acknowledge the
+          Dream as fulfilled in his/her DREAMBOOK.
+        '4':
+          '1': VIP Status;
+          '2': Dream Launch.
+          head: 'The Site also provides the following chargeable optional services:'
+        '5': Full information about the availability of paid services and payment terms
+          is located http://mydreams.club.
+        '6': After registration, the User receives the right to create, use and determine
+          the content of his/her own DREAMBOOK and conditions of access of other Users
+          to its content, and obtains access and placing information on DREAMBOOK of
+          other Users (subject to obtaining relevant access rights).
+        '7': A user has the right to delete previously posted information on the Site,
+          and also completely remove his/her DREAMBOOK in the "Settings" section.
+        '8': A User is granted an unlimited time to restore his/her account. For this
+          purpose the Administration reserves the right to store the Content uploaded
+          by the User and its personal data.
+        '9': A User is solely responsible for his/her actions related to the publication
+          in his DREAMBOOK information, in accordance with the legislation of the Russian
+          Federation, international legal acts and this Agreement.
+        head: TERMS OF USE
+      '4':
+        '1': All materials uploaded to the Site shall conform to the requirements of
+          the legislation of the Russian Federation, the rules established in this Agreement
+          and the legislation of the country of domicile or residence of the User.
+        '2':
+          '0': 'By accepting this Agreement, you admit and guarantee that you will not
+            post or transmit through the Website any statement, material or message
+            that:'
+          '1': "(i) contains appeals to mass riots, extremist activities, participation
+            in mass (public) events held with violation of the established procedure;"
+          '2': "(ii) contains the information about ways, methods of development, manufacture
+            and use of narcotic drugs, psychotropic substances and their precursors,
+            places for acquisition of such substances and their precursors, as well
+            as about the ways and places of cultivation of narcotic plants;"
+          '3': "(iii) provides information about methods of committing suicide, as well
+            as calls to commit suicide;"
+          '4': "(iv) represents materials of a pornographic nature, as well as propaganda
+            pornography, child erotica, sexual services;"
+          '5': "(v) contains threats, discredit, insult, defame the honor and dignity
+            or business reputation or violates the privacy of other Users or third parties;"
+          '6': "(vi) contains anything technically harmful such as computer viruses,
+            Trojans or other software or harmful data;"
+          '7': "(vii) constitutes spam."
+        '3': You agree before posting information and materials to pre-assess the legality
+          of their placement.
+        '4': You are solely responsible for ensuring compliance of your DREAMBOOK and
+          information it contains with all applicable laws and the terms of this Agreement.
+        head: RIGHTS AND OBLIGATIONS OF THE USER
+      '5':
+        '1': You guarantee that you are the holder of exclusive rights to the uploaded
+          content, or have received the necessary permissions from the copyright holders.
+          When using the Site You agree not to violate third party rights on objects
+          of intellectual property.
+        '2': You agree that by posting any content on the Site, you are granted the
+          Administration's consent to use such content throughout the world in ways
+          necessary for the functioning and development of the Site, including reproduction,
+          public display, processing, translation into foreign languages, and making
+          available to the public.
+        '3': Content can be used in any promotional and marketing materials by Administration,
+          including, but not limited to, information in the newsletters on the Site,
+          flyers and presentations.
+        '4': Administration does not pre-screen the content posted by Users of the Site,
+          however, will be forced to block it in case of its discrepancy to requirements
+          of the Russian legislation and in the case of obtaining a relevant order from
+          the public authorities.
+        '5': In the case of submission of claims related to the violation of the legislation
+          of the Russian Federation, including legislation on intellectual property,
+          you agree to settle any claim independently and at your own expense.
+        '6': Acceding to this Agreement, the User under any circumstances does not get
+          the right to use trademarks, trade names, domain names, databases, know-how,
+          design, and Website design and other distinctive signs of the Site. The right
+          to use such facilities may be granted only by written agreement of the Site
+          Administration.
+        head: COPYRIGHT, TRADEMARKS AND OTHER INTELLECTUAL PROPERTY
+      '6':
+        '1': By acceding to the terms of this Agreement, you agree to have automated
+          processing of your personal data for the execution of this Agreement. The
+          processing of your personal data is carried out in accordance with the legislation
+          of the Russian Federation.
+        '2': Administration keeps personal data in order to provide you with access
+          to use the features of the Site, including for the purposes of receiving Targeted
+          advertising, in order to identify potentially interesting features of the
+          Site, and to offer you to use these functions.
+        '3': Administration takes all necessary measures to protect your personal information
+          from unauthorized access, alteration, disclosure or destruction. Administration
+          provides access to your personal information only to those employees, contractors
+          and agents to whom this information is necessary for the functioning of the
+          Site and providing you with access to it.
+        '4': Disclosure of User information may be made only in accordance with the
+          current legislation of the Russian Federation by order of the court, law enforcement,
+          and in other cases stipulated by the legislation of the Russian Federation.
+        '5': In the cases constrained by the features of the Site, you determine the
+          accessibility of your personal data to other Users of the Site.
+        '6': Processing of personal data of a User is organized during the time from
+          registration on the Site until termination.
+        head: THE USE OF PERSONAL DATA
+      '7':
+        '1': Administration reserves the right to place advertising on the pages of
+          the Site and, in particular, on DREAMBOOK of Users.
+        '2': You agree not to use any computer programs that block or otherwise inhibit
+          the display of Targeted advertising.
+        '3': To track your interests and to show advertisements relevant to your interests,
+          there may be the cookies placed on your computer in order to recognize your
+          computer to show you Targeted advertising.
+        '4':
+          '1': "(i) narcotic drugs and psychotropic substances;"
+          '10': "(x) games based on risk and betting, including gambling;"
+          '11': "(xi) sites that host advertising that does not meet clause 7.2.4 of
+            this Agreement."
+          '2': "(ii) explosives and materials, except for pyrotechnic products;"
+          '3': "(iii) tobacco, tobacco products, tobacco products and smoking accessories,
+            including pipes, hookahs, cigarette papers, lighters, electronic cigarettes;"
+          '4': "(iv) alcoholic beverages, including beer;"
+          '5': "(v) medical services for artificial termination of pregnancy."
+          '6': "(vi) services for the collection of personal data and/or contact information
+            (including phone numbers, email addresses), without explaining purpose and/or
+            the consent to the processing of personal data."
+          '7': (vii) services by hacking the pages, as well as artificial increase counter
+            "Dream Status" using any program, automated scripts or other actions;
+          '8': "(viii) goods and services of adult sexual nature;"
+          '9': "(ix) military products and weapons;"
+          head: 'The Site prohibits advertising of goods, production and (or) sale of
+            which is prohibited by the legislation of the Russian Federation, including,
+            but not limited to:'
+        '5': Administration is not responsible for posting of Improper advertising by
+          other Users and does not guarantee that such content represents the facts.
+        head: ADVERTISING
+      '8':
+        '1': Administration provides Users with the ability to use the Site and its
+          features, including all Content and design of the website, "as it is".
+        '2': Administration does not guarantee that the Website will be uninterrupted
+          or error-free, and the quality of any products, services, information, and
+          user materials obtained as a result of using the Site will meet your expectations.
+        '3': In accordance with the foregoing, the Administration shall not be liable
+          for damages of any kind related to such errors.
+        '4': THE SITE ADMINISTRATION CANNOT GUARANTEE AND DOES NOT PROMISE ANY BENEFIT
+          FROM USE OF THE SITE AND/OR ITS FEATURES. YOU AGREE THAT USERS MAY WISH TO
+          MAKE A GIFT FOR YOU, FULFILLING YOUR EVERY DREAM. THE ADMINISTRATION RESERVES
+          THE RIGHT FROM TIME TO TIME AND AT ITS DISCRETION, FULFILL THE DREAMS OF USERS,
+          HOWEVER, USE OF THE SITE UNDER ANY CIRCUMSTANCES DOES NOT GUARANTEE YOU THE
+          FULFILLMENT OF YOUR DREAMS
+        '5': By using the Site, you agree that the views expressed in DREAMBOOKs of
+          Users are the views of the authors, but not of the Site Administration, unless
+          the latter says the opposite. The administration is not responsible for any
+          comments, views or remarks, including discrediting the honor, dignity or business
+          reputation, expressed by other Users.
+        '6': The Site Administration does not guarantee the accuracy, validity and reliability
+          of the information and materials posted by other Users, as well as the security
+          of content, and assumes no responsibility for any loss or damage resulting
+          from the use of such materials or as a result of clicking links of other Users.
+        '7': All responsibility for the content and its compliance with the requirements
+          of applicable law shall be taken by the person who created these materials
+          and/or posted it to the Site.
+        '8': By using the Site and its services you accept all-above mentioned, including
+          the risks.
+        head: LIMITATION OF LIABILITY OF THE SITE ADMINISTRATION
+      '9':
+        '1': You agree to receive from Administration promotional materials via email
+          address, indicated in your DREAMBOOK, about important events happening within
+          the Site or in connection therewith, including information about the features
+          of the Site and/or amendments of the terms of this Agreement.
+        head: NOTICE
+    rev: Edition of 22 December 2015 year
+    title: User agreement
+  site_name: MyDreams
+  social_share_button:
+    baidu: Baidu.com
+    delicious: Delicious
+    douban: Douban
+    email: Email
+    facebook: Facebook
+    google_bookmark: Google Bookmark
+    google_plus: Google+
+    kaixin001: Kaixin001.com
+    pinterest: Pinterest
+    plurk: Plurk
+    qq: Qzone
+    renren: Renren.com
+    share_to: Share to %{name}
+    tqq: Tqq
+    tumblr: Tumblr
+    twitter: Twitter
+    weibo: Sina Weibo
+  static_pages:
+    about:
+      title: About Club.
+  status:
+    create: Status has created
+    destroy: Status has deleted
+    update: Status has updated
+  statuses:
+    default_placeholder: What are you thinking about?
+  subscribers:
+    followers: My readerships
+    no_followers: No followers
+    no_subscriptions: No subscriptions
+    subscriptions: I read
+  subscription:
+    create: Subscription has created
+    destroy: Subscription has deleted
+    update: Subscription has updated
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user_feed:
+    modal_placeholder: Write your greetings
+    modal_subtitle: It's free
+    modal_title: Add to feed
+  user_menu:
+    edit: Edit profile
+    exit: Exit
+    friends_dreams: Friends dreams
+    marks: Marks
+    my_comments: Comments
+    my_dreambook: My Dreambook
+    my_dreams: My dreams
+    my_friends: Friends
+    my_messages: Messages
+    my_posts: My posts
+    news: News
+    settings: Settings
+    subscribers: Subscribers
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      more: Show more
+      next: Next &rsaquo;
+      previous: "&lsaquo; Prev"
+      truncate: "&hellip;"
+  wellcome:
+    checkpoint:
+      check: Select the dreams
+      fulfill: A dream fulfilled
+      start: Run it in the Universe
+    club_news_button: Show All
+    club_news_title: MyDreams News
+    our: Our
+  notifications:
+     confirm_email: Confirm your email address
+     send_again: Send again
+  special_pages:
+    blocked:
+      guest:
+        title: User is blocked for violation of the rules of the site
+      owner:
+        greeting: "Dear,"
+        body: Your profile has been disabled for violation of the rules of the site
+    deleted:
+      owner:
+        title: Your profile is temporarily removed
+        body: To restore the profile, click on the "Restore"
+      guest:
+        title: This user has deleted their profile
+  support:
+    conversion: If you have any questions, please contact our Technical Support
+  api:
+    success:
+      search: Success search
+      create: Success create
+      dream_create: Dream has created
+      destroy: Success delete item
+      payment: Payment successful
+    failure:
+      not_found: Not found
+      unprocessable_entity: Unprocessable entity
+      unauthorized: Unauthorized
+      forbidden: Access forbidden

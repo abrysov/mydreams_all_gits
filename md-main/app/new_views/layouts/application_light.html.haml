@@ -1,0 +1,11 @@
+!!!
+%html{ lang: "en" }
+  %head
+    = render 'layouts/shared/head'
+  %body.photo-feed-visible
+    .layout.light
+      = render 'layouts/shared/header'
+      .content-body
+        = yield
+
+    = render 'layouts/shared/javascripts'

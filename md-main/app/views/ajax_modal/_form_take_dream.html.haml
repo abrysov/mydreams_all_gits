@@ -1,0 +1,24 @@
+.frame.take-dream{data: {'modal-type' => 'take_dream'}}
+  .title= t('modals.take_dream.title')
+  .subtitle= t('modals.take_dream.subtitle')
+
+  .frame-content  
+    = form_for new_dream, url: [:account, new_dream], html: {class: "js-imageLoader-form"} do |f|
+      .js-imageLoader-preview
+        = image_tag(dream.photo.url(:large)) if dream.photo.present?
+
+      = f.hidden_field :photo, {value: "#{'data:image/jpeg;base64,'+ photo if photo}", class: 'js-imageLoader-input'}
+      = f.hidden_field :taken_from_id, {value: dream.id}
+
+      .dream-photo-btn.js-imageLoader#js-take-dream-photo{ data: { min_height: 540, min_width: 540, orient: 'square'} }
+        = t("#{dream.photo.present? ? 'dreams.popup.change_photo' : 'dreams.popup.add_photo'}")
+
+      = f.text_field :title, { placeholder: t('dreams.new.placeholder_title'), value: "#{dream.title}", class: 'js-validation', data: {valid: 'name'} }
+
+      = f.text_area :description, { placeholder: t('dreams.new.placeholder_description'), value: "#{dream.description}", class: 'js-validation', data: {valid: 'name'} }
+
+      = f.select :restriction_level, Dream.restriction_levels_for_select, {}, class: 'ikselect'
+
+      .control.js-form-control
+        = f.submit t('dreams.popup.add_dream'), class: 'button-violet js-form-submit'
+        .preloader.js-preloader

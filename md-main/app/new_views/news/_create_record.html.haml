@@ -1,0 +1,13 @@
+.content-items.create-record
+  .row
+    .avatar-col
+      %a.avatar.size-m{ href: "#" }
+        %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+
+    .textarea-col
+      .textarea-wrapper
+        %textarea{ placeholder: "Что нового?" }
+        .attach-button.filearea
+          %input{ type: "file" }
+  .actions
+    %button.blue.accent Добавить запись

@@ -1,0 +1,33 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+.col-right
+
+.popup-container
+  .popup.gift
+    .close
+    %h3.header Подарки
+    #tabs
+      .tabs
+        .tab Подарить VIP статус
+        .tab.active Подарить монеты
+      .tab-body.visible
+        %h4
+          Вы успешно подарили
+          %br
+          %b 130
+          статус Мечтателю!
+        .user-wrapper
+          %a.user{ href: "#" }
+            .avatar-wrapper.success.coins
+              .avatar.size-l
+                %img{ src: "https://randomuser.me/api/portraits/men/27.jpg" }
+            .username
+              Adam Daniel
+            .info.icon-text
+              .icon.size-8.female
+              25, Россия, Москва
+
+
+        %button.blue.accent Готово

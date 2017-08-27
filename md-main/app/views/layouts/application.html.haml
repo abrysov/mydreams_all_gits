@@ -1,0 +1,56 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'robots', content: 'noindex, nofollow'}
+    %title My Dreams
+
+    = render 'favicon'
+    = display_meta_tags
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'application'
+    = render 'layouts/mp'
+
+  %body{ lang: locale, style: page_bg_style(@dreamer), class: [body_class, @feed?'feed':nil] }
+    #layout
+      = render 'unviewed_news' if dreamer_has_unviewed_news?
+      = render 'flash_messages'
+
+      .row.thin
+        .cell
+          = render partial: 'application/dreamers_feed'
+
+      .row.full
+        #wrapper.cell
+          = render 'header'
+
+          .page
+            .container
+              = yield
+
+          .special
+            .special_wrap
+
+          .spotlight-modal.js-spotlight-modal
+            .spotlight-overlay.js-spotlight-overlay
+
+            = form_tag search_index_path, method: :get, class: 'search_form' do
+              .top_menu__search__form_wrap
+                = text_field_tag :search, '', placeholder: t('misc.search')
+                = submit_tag ''
+              .spotlight-close.js-spotlight-close
+
+      .row.thin
+        .cell
+          = render 'footer'
+
+      - if Rails.env.development? && params[:console]
+        = console
+
+    .jmod-container
+
+    = javascript_include_tag 'application'
+    = yield :mydreams_js
+    = render 'layouts/ok'
+    = render 'layouts/ga'
+    = render 'layouts/ym'

@@ -1,0 +1,393 @@
+.mail-box{
+  margin-top: 30px;
+}
+
+.send-msg-modal{
+  background: $w;
+  margin: 0 auto;
+  width: 700px;
+}
+
+.new-messages-count{
+  height: 18px;
+  text-align: right;
+  padding-bottom: 15px;
+}
+
+.all-messages-count{
+  padding-top: 15px;
+  color: #7b7b7b;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: right;
+}
+
+.message-attachment__item{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 15px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+  img{
+    max-height: 150px;
+  }
+}
+
+.conversation {
+  min-height: 164px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+
+  &.fake-card {
+    background-color: none;
+    box-shadow: none;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &.new {
+
+    .conversation__wrap {
+      min-height: 162px;
+      background: #efefef;
+
+    }
+
+  }
+  &.active{
+    .conversation__wrap:after{
+      border-bottom: 1px solid #41b1ff;
+    }
+  }
+  p{
+    padding-top: 10px;
+    color: #7b7b7b;
+  }
+
+  .comment-preview{
+    padding: 10px 0;
+    font-size: 14px;
+    color: #7b7b7b;
+    font-weight: 300;
+
+    img{
+      display: inline-block;
+      margin-left: 10px;
+
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+
+  .dreamer-name{
+    color: $b;
+    text-align: left;
+  }
+}
+
+.conversation__wrap{
+  position: relative;
+
+  &:after{
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid $w;
+  }
+}
+
+.conversation .dreamer-location{
+  display: inline-block;
+  font-size: 16px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #7b7b7b;
+  padding: 0;
+
+  &:before{
+    vertical-align: bottom;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    background: asset_url('svg/location_gray.svg') center no-repeat;
+  }
+}
+
+.conversation__body{
+  float: left;
+  padding: 15px 0;
+  width: 50%;
+}
+
+//TODO: rafactor: проверить используется ли где-то этот класс
+// .comment-date{
+//   font-weight: 300;
+//   font-size: 14px;
+//   color: #7b7b7b;
+
+//   &:before{
+//     content: '';
+//     display: inline-block;
+//     margin-right: 5px;
+
+//     @extend .i_watch;
+//   }
+// }
+
+.conversation__ctrl{
+  float: right;
+  padding: 15px 0;
+  margin-right: 15px;
+}
+
+.response-btn{
+  display: block;
+  font-weight: 300;
+  width: 180px;
+  cursor: pointer;
+  margin: 10px 0;
+  background: #cccccc;
+  color: $w;
+  padding: 10px 0;
+  border-radius: 3px;
+  text-align: center;
+  opacity: 0.7;
+
+  @include transition(opacity, 0.4s, ease-out, 0s);
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.chat{
+  display: none;
+  margin-top: 1px;
+  background: $w;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+
+  .chat__wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.message-container{
+  position: relative;
+  padding: 30px 0;
+}
+
+.message-container .scrollLoader_btn{
+
+  &:hover{
+    &.scrollLoader_btn-prev{
+      background: asset_url('svg/down_blue.svg') center center no-repeat;
+    }
+    &.scrollLoader_btn-next{
+      background: asset_url('svg/up_blue.svg') center center no-repeat;
+    }
+  }
+}
+
+.message-container__wrap{
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0 30px;
+  position: relative;
+}
+
+.scrollLoader_btn{
+  position: absolute;
+  right: 30px;
+  width: 30px;
+  height: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.scrollLoader_btn-next{
+  top: 5px;
+  background: asset_url('svg/up_gray.svg') center center no-repeat;
+}
+
+.scrollLoader_btn-prev{
+  bottom: 5px;
+  background: asset_url('svg/down_gray.svg') center center no-repeat;
+}
+
+.message{
+  position: relative;
+  margin: 20px 0;
+  min-height: 60px;
+
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.message__content, .message__author{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message__author{
+  width: 55px;
+  height: 55px;
+  margin-right: 20px;
+
+  img{
+    max-width: 100%;
+    border-radius: 100%;
+  }
+}
+
+.message__content{
+  width: 450px;
+  
+  p {
+    font-weight: 300;
+  }
+}
+
+.message__time{
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  font-weight: 300;
+  font-size: 12px;
+  right: 0;
+}
+
+.chat__close{
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background: blue;
+  top: -20px;
+  left: 50%;
+  margin-left: -15px;
+  background: asset_url('svg/close_chat.svg') center center no-repeat;
+  opacity: 0.7;
+  cursor: pointer;
+
+  @include transition(opacity, 0.4s, ease-out, 0s);
+
+  &:hover{
+    opacity: 1;
+  }
+
+  &.hide{
+    display: none;
+  }
+}
+
+.send-msg-btn{
+  width: 230px;
+  margin: 20px auto;
+  color: $w;
+  font-size: 14px;
+  background: #41b1ff;
+  padding: 14px 0;
+  text-align: center;
+  opacity: 0.7;
+  cursor: pointer;
+  border-radius: 5px;
+
+  @include transition(opacity, 0.4s, ease-out, 0s);
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.chat-form{
+  position: relative;
+  padding: 30px;
+
+  .chat-form__current, .chat-form__addressee{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+
+    img{
+      max-width: 100%;
+      border-radius: 100%;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 300;
+      color: $b;
+      text-align: center;
+    }
+  }
+
+  .chat-form__current{
+    left: 30px;
+  }
+
+  .chat-form__addressee{
+    right: 30px;
+  }
+  input[type="file"]{
+    display: none;
+  }
+  textarea{
+    width: 100%;
+    height: 75px;
+    resize: vertical;
+    border: 1px solid #817E9A;
+    border-radius: 5px;
+    padding: 4px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #7b7b7b;
+  }
+  .textarea-field{
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .form_btn{
+    margin-bottom: 0;
+    width: 200px;
+    margin-left: 10px;
+    float: right;
+
+    span{
+      color: $w;
+      font-size: 18px;
+    }
+  }
+  input[type="submit"]{
+    display: none;
+  }
+}
+
+.clip{
+  cursor: pointer;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  background: asset_url('svg/icon_attache.svg') center center no-repeat;
+}

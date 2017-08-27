@@ -1,0 +1,15 @@
+= form_for [:admin, :tags, tag], html: { class: 'form-horizontal' } do |f|
+  = render 'admin/tags/shared/form_errors', object: tag
+  .form-group
+    %label.col-sm-2.control-label{ for: 'name' } Name
+    .col-sm-5
+      = f.text_field :name, class: 'form-control'
+      = f.hidden_field :parent_id
+  .form-group
+    %label.col-sm-2.control-label{ for: 'active' } Active
+    .col-sm-5
+      .checkbox
+        = f.check_box :active, checked: true
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit (@tag.new_record? ? 'Create' : 'Save'), class: 'btn btn-default'

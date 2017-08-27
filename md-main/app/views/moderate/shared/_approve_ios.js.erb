@@ -1,0 +1,4 @@
+$('.ios-safe-button-for-object-<%= object.id %>').
+prop('href', "<%=j moderate_remove_ios_safe_path(entity_params(object)) %>").
+removeClass('btn-warning').
+addClass('btn-success');

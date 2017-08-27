@@ -1,0 +1,16 @@
+.frame.foggot-password
+  .card-modal__wrap
+    .card-modal__title= t('recovery.recovery')
+
+    .card-modal__body
+      = form_for resource, url: password_path(resource), html: { remote: true, method: :post, data: {'modal-type' => 'recovery'}, class: 'recovery_form' } do |f|
+        .form_main
+
+          .input-field.js-input-field
+            = f.text_field :email, {placeholder: t('recovery.fill_email'), class: 'js-validation', data: {valid: 'email'}}
+
+          .form_main__wrap.js-success-message
+            %p.note= t('recovery.note')
+            %label.form_btn.form_btn-violet.disabled.js-form-submit{for: 'recovery'}
+              %span= t('recovery.do_recovery')
+            = f.submit id: 'recovery', disabled: true

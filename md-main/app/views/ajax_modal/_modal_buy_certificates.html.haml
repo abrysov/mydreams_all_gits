@@ -1,0 +1,30 @@
+- gift = current_dreamer?(dream.dreamer) ? false : true
+
+.frame.buy-or-present-certificate{ class: "#{gift ? 'buy_a_gift' : 'buy_yourself'}", data: {'modal-type' => 'buy_certificates'} }
+
+  = form_for certificate, url: account_certificates_path, method: :post do |f|
+    .title= t( "#{gift ? 'actions.present_mark' : 'actions.run_dream_into_universe'}" )
+    .subtitle= t('actions.select_mark')
+
+    = f.hidden_field(:gifted_by_id, value: gift ? dreamer.id : nil)
+    = f.hidden_field(:certifiable_id, value: dream.id)
+    = f.hidden_field(:certifiable_type, value: 'Dream')
+
+    - if gift
+      .wish-field-wrap
+        = text_area_tag :wish, nil, maxlength: 60, placeholder: "#{t('modals.buy_certificate.wish_placeholder')}", class: 'js-limit', name: 'certificate[wish]'
+        .text-limit 60
+
+    .frame-certificates
+      - all_certificates = CertificateType.all
+      - all_certificates.each do |c|
+        .frame-certificate
+          = f.radio_button( :certificate_type_id, c.id, checked: c.id == 1 ? true : false )
+          = f.label("certificate_type_id_#{c.id}") do
+            .certificate-image.medium-certificate.certificate-scaled{ data: {'dream-type' => "#{c.name}"} }
+            .certificate-value.medium-value= "#{c.value}"
+
+    .control.js-form-control
+      %h6.mini-text= t("modals.buy_certificate.cost_option")
+      = f.submit t("#{gift ? 'actions.present_mark' : 'actions.lets_go'}"), {class: "js-form-submit #{gift ? 'button-red' : 'button-yellow'}" }
+      .preloader.js-preloader

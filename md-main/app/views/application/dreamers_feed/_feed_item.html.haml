@@ -1,0 +1,16 @@
+= link_to [:account, dreamer, :dreams], { data: {'t-position' => 'bottom', 't-min-width' => '70', 't-max-width' => '155', dreamer_id: dreamer.id}, class: 'feed__item tooltipster js-tooltipster' } do
+  .feed_image_wrapper
+    - if dreamer.photobar_photo
+      = image_tag(dreamer.photobar_photo.file.url(:small))
+
+  .bubble.feed_item__tooltip.js-tooltipster-content
+    %h4= dreamer.photobar_added_text
+    .dreamer_info
+      .dreamer_name= "#{dreamer.first_name},"
+      - if dreamer.age.present?
+        .dreamer_age= " #{dreamer.age}"
+      - if dreamer.dream_city.present?
+        .dreamer_location= "#{dreamer.dream_country}, #{dreamer.dream_city}"
+      - else
+        - if dreamer.dream_country.present?
+          .dreamer_location= "#{dreamer.dream_country}"

@@ -1,0 +1,153 @@
+source 'https://rubygems.org'
+
+gem 'rails', '~> 4.2.6'
+gem 'pg'
+# gem 'unicorn'
+gem 'puma'
+gem 'lens'
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'multi_json'
+gem 'persey'
+gem 'activesupport-json_encoder', '~> 1.1'
+gem 'json-schema'
+gem 'utf8-cleaner'
+gem 'sentry-raven'
+
+gem 'sinatra', require: nil
+
+gem 'restclient_with_cert'
+gem 'wiselinks'
+gem 'devise'
+gem 'cancan'
+gem 'countries', '~> 1.2', '>= 1.2.5'
+gem 'friendly_id'
+gem 'russian'
+gem 'carrierwave'
+gem 'fog'
+gem 'inherited_resources'
+gem 'ancestry'
+gem 'pg_search'
+gem 'mini_magick'
+gem 'email_validator'
+gem 'twitter-bootstrap-rails'
+gem 'paperclip'
+gem 'haml-rails'
+gem 'acts_as_list'
+gem 'closure_tree'
+gem 'squeel', git: 'git://github.com/activerecord-hackery/squeel.git'
+gem 'plupload-rails'
+gem 'paranoia', '~> 2.0'
+gem 'state_machine' # TODO: replace by aasm or workflow
+gem 'aasm'
+gem 'enumerize'
+gem 'kaminari'
+gem 'gibbon'
+gem 'geoip'
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'sidekiq'
+gem 'sidetiq'
+gem 'rails_config'
+gem 'ransack'
+gem 'bootstrap-datepicker-rails'
+# NOTE: fixed undefined nil.downcase https://travis-ci.org/ZeroOneStudio/rubykassa/jobs/50769386
+
+gem 'foreman'
+gem 'rubykassa', github: 'ZeroOneStudio/rubykassa', ref: '71562b86cb04164fdbce9f2aa60def830444f5a1'
+gem 'dry-container', '~> 0.2.6'
+
+gem 'carrierwave-base64'
+gem 'draper', '~> 2.0'
+gem 'virtus'
+gem 'active_model_serializers'
+gem 'mandrill-api', require: 'mandrill'
+gem 'mailgun'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+gem 'omniauth-vkontakte'
+gem 'omniauth-odnoklassniki'
+# TODO: отказались от гугла и пинтереста
+gem 'omniauth-google-oauth2'
+gem 'omniauth-pinterest'
+
+gem 'twitter'
+gem 'instagram'
+gem 'google-api-client', require: 'google/api_client'
+gem 'rails-html-sanitizer'
+gem 'devise-token_authenticatable'
+gem 'meta-tags'
+
+gem 'nokogiri'
+gem 'mechanize'
+gem 'actionpack-page_caching'
+
+gem 'doorkeeper'
+gem 'doorkeeper-grants_assertion', github: 'doorkeeper-gem/doorkeeper-grants_assertion', branch: 'master'
+
+gem 'globalize', '~> 5.0', '>= 5.0.1'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'http_accept_language', '~> 2.0', '>= 2.0.5'
+
+gem 'js-routes'
+gem 'i18n-js'
+gem 'autoprefixer-rails'
+gem 'gon'
+
+gem 'imgkit', '~> 1.6', '>= 1.6.1'
+gem 'wkhtmltoimage-binary', '~> 0.12.2'
+
+# ASSETS
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'sprite-factory', '~> 1.6.2'
+gem 'rmagick', '~> 2.15.0'
+gem 'sass-rails'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'seed_dump'
+  gem 'brakeman'
+  gem 'haml_lint', '0.15.0'
+  gem 'rubocop', require: false
+  gem 'coffeelint'
+  gem 'quiet_assets'
+  gem 'rails_real_favicon'
+  gem 'i18n-country-translations'
+  gem 'awesome_print'
+end
+
+group :test, :development do
+  gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'factory_girl_sequences'
+  gem 'email_spec', '~> 2.1'
+end
+
+group :test do
+  gem 'minitest'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'rspec-sidekiq'
+end
+
+group :production do
+  gem 'logstasher'
+end
+
+group :development, :staging do
+  gem 'web-console'
+end
+
+group :development, :test, :staging do
+  gem 'faker', '~> 1.6', '>= 1.6.3'
+end

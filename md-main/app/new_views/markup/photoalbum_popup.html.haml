@@ -1,0 +1,41 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Фотоальбом
+  .photoalbum
+    - (1..40).each do |i|
+      .photo{ style: "background-image: url(http://unsplash.it/300/300?random=" + i.to_s + ")" }
+.col-right
+  .col-js
+    .top
+      .wrapper
+        .photo-area Перетащите сюда ваши фотографии
+        %br
+        %br
+        .button.purple.filearea
+          Выбрать файлы
+          %input{ type: "file" }
+.photoalbum-popup
+  .left
+  .body
+    .view-box
+      %img{ src: "http://unsplash.it/1200/500" }
+      .close
+      .delete Удалить
+    .gallery
+      .btn.icon-left
+      .btn.icon-right
+      .mask
+        .tape{ style: "left: -100px" }
+          - (1..40).each do |i|
+            .photo{ style: "background-image: url(http://unsplash.it/" + (500 + Random.rand(1000)).to_s + "/" + (500 + Random.rand(1000)).to_s + ")", class: ( 'selected' if (i == 3) ) }
+  .right
+
+
+:javascript
+  var photos = document.querySelectorAll('.gallery .tape .photo');
+  for(i=0;i<photos.length;i++) {
+    photos[i].onclick = function () {
+      document.querySelector('.view-box img').src = this.style.backgroundImage.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+    }
+  }

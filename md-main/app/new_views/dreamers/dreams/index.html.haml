@@ -1,0 +1,20 @@
+.col-center.content-body
+  .header
+    .title
+      %h2= t('layout.mydreams')
+  #my-dreams-list
+    .preloader
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    #my-dreams-filter
+      .preloader
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamsListWidget.init("#my-dreams-list", "#my-dreams-filter", {
+        onlyMyDreams: true,
+        userId: gon.dreamer.id
+      });
+    });

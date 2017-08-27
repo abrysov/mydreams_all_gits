@@ -1,0 +1,22 @@
+.card.card-hover.js-flip.js-card-hover{class: "#{'logged' if dreamer_signed_in?}", data: {'card-type' => 'friend_dream'}}
+  .card__wrap.flip
+    .card_back
+      .card_back__wrap
+        .logo_color
+    .card_front
+      .friend-dream__avatar
+        = image_tag avatar_or_default(friend, :medium)
+
+      .friend-dream__name= "#{friend.first_name}, #{friend.age}"
+
+      - if friend.dream_city.present?
+        .friend-dream__location= "#{friend.dream_city}, #{friend.dream_country}"
+
+      .friend-dream__counter= friend.nb_unviewed_dreams
+
+      .friend-dream__footer.group
+        - friend.last_unviewed_dreams.each do |dream|
+          = link_to account_dream_path(dream), class: 'friend-dream__preview' do
+            = image_tag dream.photo.try(:url, :small)
+
+      = link_to t('actions.show_more'), account_dreamer_dreams_path(friend), class: 'friend-dream__more'

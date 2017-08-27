@@ -1,0 +1,37 @@
+.content_wrap
+  .dreambook_menu.subscriptions-togglers
+    = link_to account_dreamer_subscriptions_path, {data: {push: true, target: '#js-ajax-content'}, class: 'item js-flybook-link'} do
+      /%span.label= t('subscribers.followers')
+      - if current_dreamer?(@dreamer)
+        %span.label= t('subscribers.followers_owner')
+      - else
+        %span.label= t('subscribers.followers_guest')
+    = link_to account_dreamer_subscriptions_path(subscriptions: true), {data: {push: true, target: '#js-ajax-content'}, class: 'item js-flybook-link active'} do
+      /%span.label= t('subscribers.subscriptions')
+      - if current_dreamer?(@dreamer)
+        %span.label= t('subscribers.subscriptions_owner')
+      - else
+        %span.label= t('subscribers.subscriptions_guest')
+
+  .sub-container.js-search-content
+    = hidden_field_tag :filter_url, request.url
+    - if @subscriptions.total_count > 0
+      %h2.page_content-title
+        %b= @subscriptions.total_count
+        = custom_pluralize(@subscriptions.total_count, 'subscriptions')
+
+      .subscribers-filter
+        = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+          = render 'application/fast_search', param_name: :subscribers_search
+
+      .card_group.group.js-card-group
+        = render partial: 'account/subscriptions/subscriptions/subscriptions'
+
+      = paginate @subscriptions, theme: 'more'
+
+    - else
+      %h2.page_content-title= t('subscribers.no_subscriptions')
+
+      .card_group
+        - (0...16).each do
+          .card.fake-card

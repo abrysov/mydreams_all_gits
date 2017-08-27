@@ -1,0 +1,8 @@
+%tr
+  %td
+    = show_link(comment.id)
+  %td
+    = comment.body
+    %p.text-muted= short_date(comment.created_at)
+  %td.actions
+    = render 'admin/entity_control/shared/actions', object: comment

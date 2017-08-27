@@ -1,0 +1,63 @@
+.autorisation-page {
+  .form {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+
+  .content {
+    width: 38rem;
+    text-align: center;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    .col-1 {
+      margin: 0 1.5rem;
+    }
+  }
+
+  .social-buttons {
+    width: 18rem;
+    margin: 0 auto;
+  }
+
+  .conditions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .checkbox {
+    display: block;
+    margin-right: .7rem;
+  }
+}
+
+.login-page {
+  .content {
+    width: 18.75rem;
+    padding-top: 2rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0 3rem;
+
+    label {
+      margin: 0;
+    }
+  }
+
+  hr {
+    margin: 1rem 0 0;
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Api:v1 Dreamer avatar uploaded",
+  "type": "object",
+  "required": [ "profile", "meta" ],
+  "properties": {
+  	"profile": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "full_name",
+        "gender",
+        "birthday",
+        "age",
+        "vip",
+        "celebrity",
+        "avatar",
+        "url",
+        "is_online",
+        "city",
+        "country"
+      ],
+      "properties": {
+    		"id": { "type": "integer" },
+        "full_name": { "type": "string" },
+        "gender": { "type": "string" },
+        "birthday": { "type": "string" },
+        "age": { "type": "integer" },
+        "vip": { "type": "boolean" },
+        "celebrity": { "type": "boolean" },
+        "avatar": { "type": [ "hash", "array" ] },
+        "url": { "type": "string" },
+        "is_online": { "type": "boolean" },
+        "city": { "type": "hash" },
+        "country": { "type": "hash" }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "message"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"message": { "type": "string" }
+      }
+  	}
+  }
+}

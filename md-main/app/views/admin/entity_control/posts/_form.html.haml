@@ -1,0 +1,17 @@
+= form_for [:admin, :entity_control, post], html: { class: 'form-horizontal' } do |f|
+  = render 'admin/tags/shared/form_errors', object: post
+  .form-group
+    %label.col-sm-2.control-label{ for: 'title' } Title
+    .col-sm-5
+      = f.text_field :title, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'body' } Body
+    .col-sm-5
+      = f.text_field :body, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'content' } Content
+    .col-sm-5
+      = f.text_field :content, class: 'form-control'
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit (post.new_record? ? 'Create' : 'Save'), class: 'btn btn-default'

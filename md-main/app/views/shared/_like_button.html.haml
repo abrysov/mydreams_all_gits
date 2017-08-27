@@ -1,0 +1,19 @@
+- css_class = local_assigns[:card_version] ? 'additional_data__likes' : 'icon-likes'
+
+- if dreamer_signed_in?
+  - like_action = current_dreamer.liked?(object) ? :unlike : :like
+  .js-like-btn{class: "#{css_class} #{'js-tooltipster' if object.likes_count != 0} #{'empty' if like_action == :like }", data: {'t-target' => 'liked_list', 't-position' => 'bottom', 't-width' => '300', 't-interactive' => 'true', target: object.class.name.underscore, id: object.id, 'ctrl-type' => like_action, count: object.likes_count}}
+    %span.js-like-btn-count= number_to_human(object.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+    .bubble.js-tooltipster-content
+      .bubble-wrap
+        .bubble_counter.js-bubble-counter
+          = "#{object.likes_count} #{custom_pluralize(object.likes_count, 'people')} #{custom_pluralize(object.likes_count, 'like')}"
+        .bubble_items.js-bubble_items
+          - object.last_likes.limit(5).each do |l|
+            = link_to [:account, l.dreamer, :dreams] do
+              = image_tag avatar_or_default(l.dreamer, :small)
+        .bubble_link.js-bubble-link{class: "#{'active' if object.likes_count > 5}"}
+          = link_to t("dreams.popup.show_liked"), modal_liked_list_path(entity_type: object.class.to_s.underscore, entity_id: object.id), {remote: true, data: {'modal-type' => 'liked_list', 'jmod-width' => '320'}, class: 'jmod-btn'}
+- else
+  = link_to modal_authorization_path, class: "#{css_class} empty jmod-btn", remote: true, data: {"jmod-width" => "410px", "modal-type" => "authorization"} do
+    %span.js-like-btn-count= number_to_human(object.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })

@@ -1,0 +1,18 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Фотоальбом
+  #photo-album
+
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    #photo-album-sideboard
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.PhotoAlbum.init('#photo-album', '#photo-album-sideboard', {
+        userId: gon.dreamer.id
+      });
+    });

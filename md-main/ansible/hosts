@@ -1,0 +1,106 @@
+[balancer01.dreams]
+balancer01.dreams ansible_ssh_host=108.61.151.203
+
+[db01.dreams]
+db01.dreams ansible_ssh_host=208.167.229.91
+
+[app01.dreams]
+app01.dreams ansible_ssh_host=108.61.159.235 branch=master
+
+[app02.dreams]
+app02.dreams ansible_ssh_host=108.61.152.219 branch=master
+
+[app03.dreams]
+app03.dreams ansible_ssh_host=209.222.23.77 branch=master
+
+[app04.dreams]
+app04.dreams ansible_ssh_host=45.32.3.219 branch=master
+
+[app05.dreams]
+app05.dreams ansible_ssh_host=45.32.3.220 branch=master
+
+[app06.dreams]
+app06.dreams ansible_ssh_host=45.32.3.221 branch=master
+
+[app07.dreams]
+app07.dreams ansible_ssh_host=45.32.3.227 branch=master
+
+[app08.dreams]
+app08.dreams ansible_ssh_host=45.32.3.228 branch=master
+
+[gw.dreams]
+gw.dreams ansible_ssh_host=45.32.3.229 branch=master
+
+[bg01.dreams]
+bg01.dreams ansible_ssh_host=209.222.23.75
+
+[redis01.dreams]
+redis01.dreams ansible_ssh_host=209.222.23.76
+
+[staging.dreams]
+staging.dreams ansible_ssh_host=208.167.236.179
+
+[balancer:children]
+balancer01.dreams
+
+[database:children]
+db01.dreams
+
+[application:children]
+gw.dreams
+app01.dreams
+app02.dreams
+app03.dreams
+app04.dreams
+app05.dreams
+app06.dreams
+app07.dreams
+app08.dreams
+staging.dreams
+
+[production:children]
+balancer01.dreams
+app01.dreams
+app02.dreams
+app03.dreams
+app04.dreams
+app05.dreams
+app06.dreams
+app07.dreams
+app08.dreams
+gw.dreams
+bg01.dreams
+db01.dreams
+redis01.dreams
+
+[bg:children]
+bg01.dreams
+staging.dreams
+
+[redis:children]
+redis01.dreams
+
+[all]
+balancer
+application
+database
+redis
+bg
+
+[dbmigrate:children]
+gw.dreams
+staging.dreams
+
+[assets:children]
+gw.dreams
+staging.dreams
+
+[messenger:children]
+gw.dreams
+staging.dreams
+
+[messenger_production:children]
+gw.dreams
+
+[messenger_staging:children]
+staging.dreams

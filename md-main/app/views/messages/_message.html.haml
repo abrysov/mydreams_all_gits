@@ -1,0 +1,16 @@
+.message
+  .message__body
+    .message__author
+      - author = message.sender_id == dreamer.id ? dreamer : current_dreamer
+      = image_tag avatar_or_default(author, :pre_medium)
+
+    .message__content
+      %p= message.message
+
+      - if message.attachments.any?
+        .message-attachments
+          - message.attachments.each do |attachment|
+            .message-attachment__item
+              = image_tag attachment.file
+
+    .message__time= pretty_date_with_time(message.created_at)

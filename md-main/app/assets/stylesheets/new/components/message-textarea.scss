@@ -1,0 +1,27 @@
+.message-textarea {
+  border: 1px solid $border-gray-color;
+  display: block;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    resize: none;
+    color: $light-purple-color;
+    font: inherit;
+    padding: 0.5rem 1.1875rem;
+
+    &::placeholder {
+      color: $light-purple-color;
+      opacity: 0.5;
+    }
+  }
+  .control-panel {
+    text-align: right;
+    background: $light-gray-color;
+    padding: 0 1rem;
+  }
+}

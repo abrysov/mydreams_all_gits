@@ -1,0 +1,11 @@
+stage:
+  before: cp confg/app.teatro.yml config/app.yml
+  database:
+    - bundle exec rake db:create db:migrate db:seed
+  run: bundle exec puma
+
+production:
+  before: cp confg/app.teatro.yml config/app.yml
+  database:
+    - bundle exec rake db:create db:migrate db:seed
+  run: bundle exec puma

@@ -1,0 +1,34 @@
+- dreamer = dreamer_of_object(object)
+- dreamer_params = [dreamer, entity_params(object)]
+
+.entity.col-md-6.btn-group-vertical{ class: "action-for-object-#{object.id}" }
+  = link_to t('.approve'),
+  moderate_approve_path(entity_params(object)), remote: true, role: 'button',
+  class: "btn btn-warning approve-button-for-object-#{object.id}"
+
+  - unless object.ios_safe?
+    = link_to t('.approve_ios'),
+    moderate_approve_ios_path(entity_params(object)), remote: true, role: 'button',
+    class: "btn btn-warning ios-safe-button-for-object-#{object.id}"
+  - else
+    = link_to t('.approve_ios'),
+    moderate_remove_ios_safe_path(entity_params(object)), remote: true, role: 'button',
+    class: "btn btn-success ios-safe-button-for-object-#{object.id}"
+  - if object.deleted?
+    = link_to t('.recovery'), moderate_recovery_path(entity_params(object)),
+      remote: true, method: :put, class: 'btn btn-info recovery'
+  - else
+    = link_to t('.delete'), moderate_delete_path(entity_params(object)),
+      remote: true, method: :delete, class: 'btn btn-danger delete'
+
+.dreamer.col-md-6.btn-group-vertical{ class: "action-for-object-#{object.id}" }
+  %button.btn.btn-warning{ type:'button', onclick:"$('.modal[data-object-id=#{object.id}]').modal('show')" }
+    = t('.notify')
+  - if dreamer.blocked?
+    = link_to t('.unblock'), unblock_moderate_dreamer_path(*dreamer_params),
+    remote: true, class: 'btn btn-info block', role: 'button'
+  - else
+    = link_to t('.block'), block_moderate_dreamer_path(*dreamer_params),
+    remote: true, class: 'btn btn-danger block', role: 'button'
+
+= render 'moderate/shared/modal', object: object

@@ -1,0 +1,7 @@
+.photo.js-photo
+  = image_tag photo.file.url(:medium)
+  = link_to [dreamer, photo], {data: {push: "true", target: "#js-ajax-content"}, class: 'photo-overlay'} do
+    .photo-info
+      .photo-info_wrap
+        .photo-likes= photo.likes_count
+        .photo-comments= photo.comments_count

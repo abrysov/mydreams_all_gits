@@ -1,0 +1,34 @@
+.col-center.content-body
+  .header.dreamer.vip
+    .image-box.size-l
+    .dreamer-header
+      .row
+        .left
+          .button.purple Сменить фон
+          .button.purple.circle.gift
+        .center
+          .avatar-wrapper.online
+            .avatar.size-xl
+              %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/men/17.jpg" }
+          %h2 Louise Lewis
+          %h4 23, Россия, Москва
+        .right
+          .button.purple.accent Редактировать
+          .button.purple.circle.send
+      .description
+        %span 29 Motivational Quotes For Business And Other Work Environments
+  #posts-feed
+    .feed-container
+      = render partial: 'news/create_record'
+      - (0..11).each do |items|
+        = render partial: 'news/post'
+
+.col-right
+  .col-js
+    .top
+      .wrapper
+        .input.circle.icon-right
+          %input{ placeholder: "Поиск", type: "text" }
+          %span.icon.size-10.search-purple
+
+

@@ -1,0 +1,21 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+.col-right
+
+.popup-container
+  .popup.avatar-select
+    .header-title
+      Попасть в фотоленту
+      .close.purple
+    %h4 Это бесплатно
+    .avatar-list
+      - (1..5).each do |i|
+        .avatar-wrapper{ class: i==1 ? 'selected' : false }
+          .avatar.size-m
+            %img{ src: 'https://randomuser.me/api/portraits/men/' + i.to_s + '.jpg' }
+    .textarea-wrapper
+      %textarea.normal{ rows: 4, placeholder: 'Напишите свое приветствие' }
+      .number 70
+    %button.blue.accent Готово

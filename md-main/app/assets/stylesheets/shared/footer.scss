@@ -1,0 +1,122 @@
+.footer{
+  padding: 0;
+  background: #F8F8F9;
+  border-top: 1px solid white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  // margin-top: -83px;
+
+  a{
+    color: $d_bl;
+  }
+
+  .social-link {
+
+    display: inline-block;
+    vertical-align: middle;
+    width: 37px;
+    height: 37px;
+    margin: 6px 3px;
+    opacity: 0.1;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+    @include transition(all, 0.3s, ease-out, 0s);
+
+    &.vkontakte {
+
+      background-image: asset_url( 'socials/vkontakte.svg' );
+
+    }
+    &.facebook {
+
+      background-image: asset_url( 'socials/facebook.svg' );
+
+    }
+    &.instagram {
+
+      background-image: asset_url( 'socials/instagram.svg' );
+
+    }
+    &.twitter {
+
+      background-image: asset_url( 'socials/twitter.svg' );
+
+    }
+    &.odnoklassniki {
+
+      background-image: asset_url( 'socials/odnoklassniki.svg' );
+
+    }
+
+    &:hover {
+
+      opacity: 0.3;
+
+    }
+
+  }
+
+}
+.footer_l{
+  float: left;
+  // padding: 16px 0;
+  cursor: default;
+}
+
+.footer_r{
+  float: right;
+}
+.footer_l__item{
+  display: inline-block;
+  margin: 16px 0;
+  margin-right: 60px;
+
+  font-size: 12px;
+  font-weight: 300;
+  text-shadow: 0 1px 0 white;
+  letter-spacing: 0.3px;
+}
+
+a.footer_l__item{
+   &:hover{
+    opacity: 0.6;
+  }
+  @include transition(all, 0.3s, ease-out, 0s);
+}
+
+.copy:before{
+  content: '\00A9';
+  display: inline-block;
+  margin-right: 3px;
+}
+.footer_r__item{
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 12px;
+  font-weight: 300;
+  cursor: pointer;
+  a, span {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255,0,0,0.1);
+    &:hover{
+      opacity: 0.3;
+    }
+    @include transition(all, 0.3s, ease-out, 0s);
+  }
+
+  span {
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  &[data-app='apple'] span{
+    background: asset_url("svg/app_ios.svg") center center no-repeat;
+  }
+  &[data-app='android'] span{
+    background: asset_url("svg/app_android.svg") center center no-repeat;
+  }
+}

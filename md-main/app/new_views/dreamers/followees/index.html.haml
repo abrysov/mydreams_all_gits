@@ -1,0 +1,25 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Я подписан
+  #dreamers-list
+    .preloader
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    - if @dreamer == current_dreamer
+      .top
+        %ul.vertical-menu
+          %li= link_to_current "Мои подписчики", d_followers_path(current_dreamer)
+          %li= link_to_current "Я подписан", d_followees_path(current_dreamer)
+        #dreamers-filter
+
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamersListWidget.init("#dreamers-list", "#dreamers-filter", {
+        type: 'dreambook_followees',
+        dreamerId: gon.dreamer.id
+      });
+    });

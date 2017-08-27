@@ -1,0 +1,14 @@
+%div
+  = link_to t('mailing_list.come_true_dreams.buttons.come_true'), search_admin_mailing_list_come_true_dreams_path, class: 'btn btn-warning'
+
+= paginate @dream_come_true_email, theme: 'moderate'
+
+%table.table.dreams
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.snapshot')
+      %th= t('.sended_at')
+      %th= t('.dream')
+  %tbody
+    = render partial: @dream_come_true_email

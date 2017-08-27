@@ -1,0 +1,9 @@
+@import "active_admin/mixins";
+@import "active_admin/base";
+//= require activeadmin-sortable
+
+.cke.cke_reset{
+  display: inline-block;
+  width: calc(80% - 2px);
+}
+

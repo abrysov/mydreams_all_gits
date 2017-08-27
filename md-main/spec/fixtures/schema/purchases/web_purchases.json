@@ -1,0 +1,49 @@
+{
+  "title": "Api:Web Purchases::Certificates",
+  "type": "object",
+  "required": [ "purchases", "meta" ],
+  "properties": {
+    "purchases": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "amount",
+        "state",
+        "comment",
+        "destination",
+        "dreamer",
+        "product"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "amount": { "type": "decimal" },
+        "state": { "type": "string" },
+        "comment": { "type": [ "string", "nil" ] },
+        "destination": { "type": [ "hash", "array" ] },
+        "dreamer": { "type": [ "hash", "array" ] },
+        "product": { "type": [ "hash", "array" ] }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "total_count",
+        "pages_count",
+        "remaining_count",
+        "per",
+        "page"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"total_count": { "type": "integer" },
+    		"pages_count": { "type": "integer" },
+    		"remaining_count": { "type": "integer" },
+    		"per": { "type": "integer" },
+    		"page": { "type": "integer" }
+      }
+  	}
+  }
+}

@@ -1,0 +1,27 @@
+.restore-profile-page {
+  .content {
+    width: 25rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .row {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .col {
+    margin: 0 .7rem;
+  }
+
+  .x {
+    width: 7em;
+    height: 7em;
+    margin: 1.2rem auto;
+    border-radius: 100%;
+    background-color: $light-gray-color;
+    background-image: asset_url('new/x_white.svg');
+    background-size: 35%;
+  }
+}

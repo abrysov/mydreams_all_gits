@@ -1,0 +1,29 @@
+- fix_collection(@certificates, @certificates.limit_value).each do |c|
+  - if c.nil?
+    .fake-certificate
+  - else
+    .dreambook-certificate{ class: "#{'js-tooltipster' if c.gifted_by_id.present?} #{c.certificate_type.try(:name)}", data: { 't-position' => 'bottom', 't-min-width' => '200', 't-max-width' => '200', 't-interactive' => 'true' } }
+
+      = link_to account_dream_path(c.certifiable), class: 'dreambook-certificate-wrap' do
+        .dreambook-certificate-back
+          %span= t('actions.view_dream')
+        .dreambook-certificate-front
+          %span= c.certificate_type.try(:name)
+
+      - if c.gifted_by_id.present?
+        .bubble.js-tooltipster-content
+          %h4= c.wish || "..."
+
+          = link_to account_dreamer_dreams_path(c.gifted_by), class: 'dreamer_info' do
+            .avatar.certificates-giver-avatar
+              .avatar-image
+                = image_tag(avatar_or_default(c.gifted_by, :small))
+
+            .dreamer_bio
+              .dreamer_name= c.gifted_by.decorate.first_name_and_age
+
+              - if c.gifted_by.dream_city.present?
+                .dreamer_location= "#{c.gifted_by.dream_country}, #{c.gifted_by.dream_city}"
+              - else
+                - if c.gifted_by.dream_country.present?
+                  .dreamer_location= "#{c.gifted_by.dream_country}"

@@ -1,0 +1,51 @@
+.block
+  .header
+    .title.content
+      %h2 Регистрация
+.block.autorisation-page
+  .content
+    .row.form
+      .col-1
+        %h4 <span class="accent">*</span>Обязательно
+        %label.required
+          %input{ type: 'text', placeholder: 'Ваше имя' }
+        %label.required
+          .select
+            %select{ name: 'gender' }
+              %option{ value: 'male' } Мужчина
+              %option{ value: 'female' } Женьщина
+        %label.required
+          %input{ type: 'text', placeholder: 'E-mail' }
+        %label.required
+          %input{ type: 'text', placeholder: 'Пароль' }
+      .col-1
+        %h4 Необязательно
+        %label
+          %input{ type: 'text', placeholder: 'Ваша фамилия' }
+        %label
+          %input{ type: 'text', placeholder: 'Дата рождения' }
+        %label
+          .select
+            %select{ name: 'country' }
+              %option{ value: '1' } Российская Федерация
+              %option{ value: '2' } Украина
+        %label
+          .select
+            %select{ name: 'city' }
+              %option{ value: '1' } Москва
+              %option{ value: '2' } СПб
+    %h5 Регистрация с помощью социальных сетей
+    .social-buttons.size-xl
+      %a.button.purple.vk{ href: "#" }
+      %a.button.purple.fb{ href: "#" }
+      %a.button.purple.in{ href: "#" }
+      %a.button.purple.tw{ href: "#" }
+      %a.button.purple.ok{ href: "#" }
+    %label.conditions
+      .checkbox.green
+        %input{ name: "sex", type: "checkbox" }
+        %span
+      %span
+        Я принимаю
+        %a.accent{ href: "#" } условия проекта
+    %button.accent.blue Поехали

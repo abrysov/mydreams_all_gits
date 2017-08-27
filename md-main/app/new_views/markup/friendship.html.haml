@@ -1,0 +1,86 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Мои друзья
+  %div
+    .card-list
+      - (0..32).each do |dream|
+        = render partial: 'card/dreamer_friendship'
+    .preloader
+.col-right
+  .col-js
+    .top
+      %ul.vertical-menu
+        %li
+          %a{ href: "/markup/my-friends" } Друзья
+        %li
+          %a.active{ href: "/markup/friendship" }
+            Запросы в друзья
+            .count 64
+      .wrapper
+        .filter
+          .couple
+            %div
+              %label
+                .checkbox
+                  %input{ type: "checkbox" }
+                  %span
+                %span Все
+              %label
+                .checkbox
+                  %input{ type: "checkbox" }
+                  %span
+                %span online
+              %label
+                .checkbox
+                  %input{ type: "checkbox" }
+                  %span
+                %span VIP
+            %div
+              %label
+                .radio
+                  %input{ name: "sex", type: "radio" }
+                  %span
+                %span Девушка
+              %label
+                .radio
+                  %input{ name: "sex", type: "radio" }
+                  %span
+                %span Мужчина
+              %label
+                .radio
+                  %input{ checked: "checked", name: "sex", type: "radio" }
+                  %span
+                %span Любой
+
+        %label.filter
+          %span Возраст
+          .couple
+            .select
+              %select
+                %option{ value: "" } От
+                %option{ value: "" } 1
+                %option{ value: "" } 2
+                %option{ value: "" } 3
+            %span −
+            .select
+              %select
+                %option{ value: "" } До
+                %option{ value: "" } 1
+                %option{ value: "" } 2
+                %option{ value: "" } 3
+        %label.filter
+          %span Страна
+          .select
+            %select
+              %option{ value: "" } Выберити страну
+              %option{ value: "" } Россия
+              %option{ value: "" } Беларусия
+              %option{ value: "" } Украина
+        %label.filter
+          %span Город
+          .select
+            %select
+              %option{ value: "" } Выберити страну
+              %option{ value: "" } Москва
+

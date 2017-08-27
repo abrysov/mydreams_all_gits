@@ -1,0 +1,28 @@
+.message-container
+  .message-container__wrap.js-message-container
+    - @messages.reverse.each do |message|
+      = render partial: 'message', locals: {message: message, dreamer: @dreamer}
+
+= form_for @message, url: dreamer_messages_path, html: {class: 'chat-form js-chat-form group'} do |f|
+  .chat-form__current
+    = image_tag avatar_or_default(current_dreamer, :pre_medium)
+    %p
+      %nobr= current_dreamer.first_name + ', '
+      = "#{(current_dreamer.age != 0) ? current_dreamer.age : 1}"
+
+  .chat-form__addressee
+    = image_tag avatar_or_default(@dreamer, :pre_medium)
+    %p
+      %nobr= @dreamer.first_name + ', '
+      = "#{(@dreamer.age != 0) ? @dreamer.age : 1}"
+
+  .textarea-field
+    = f.text_area :message
+
+    -# %label.clip{for: 'message_files'}
+    -# = f.file_field :files, {multiple: true, class: 'js-attachment'}
+
+  .attachment-container.js-attachment-container
+
+  .send-msg-btn.js-send-message= t('mail.form_btn')
+

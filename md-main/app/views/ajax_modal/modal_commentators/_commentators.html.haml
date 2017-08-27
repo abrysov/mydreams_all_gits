@@ -1,0 +1,6 @@
+- comments.each do |comment|
+  = link_to [:account, comment.dreamer, :dreams] do
+    = image_tag avatar_or_default(comment.dreamer, :medium)
+    .card-modal__user-info
+      %span= comment.dreamer.decorate.full_name
+      %span= comment.body

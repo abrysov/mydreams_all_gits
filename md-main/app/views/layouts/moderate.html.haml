@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'robots', content: 'noindex, nofollow' }
+    %title My Dreams
+
+    = display_meta_tags
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'moderate/application'
+    = javascript_include_tag 'moderate/application'
+
+  %body.body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            - @menu.each do |item|
+              %li{ class:"#{(item[:path]=~/#{controller_name}/) ? 'active' : nil}" }
+                =link_to item[:name], item[:path]
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to t('.to_main_page'), root_path
+    #layout
+      = render 'application/flash_messages'
+      .page
+        .container-fluid
+          = yield
+
+      - if Rails.env.development? && params[:console]
+        = console
+

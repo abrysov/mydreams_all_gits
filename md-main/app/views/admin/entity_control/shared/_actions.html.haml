@@ -1,0 +1,7 @@
+.entity.btn-group-vertical
+  = link_to 'Edit', { controller: controller_name, action: :edit, id: object.id }, role: 'button',
+  class: "btn btn-warning"
+  = link_to 'Show', { controller: controller_name, action: :show, id: object.id }, role: 'button',
+  class: "btn btn-primary"
+  = link_to 'Delete', { controller: controller_name, action: :destroy, id: object.id }, method: :delete, data: { confirm: "Удалить безвозвратно?" }, role: 'button',
+  class: "btn btn-danger"

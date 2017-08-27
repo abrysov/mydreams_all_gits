@@ -1,0 +1,55 @@
+.col-center.content-body
+  .header
+    .title
+      %h2= t('payments.operation.refill')
+  %div.balance-page
+    .select-pay-system.row
+      .col-1
+        .logo
+          = image_tag image_url('new/pay-system/yandex.png');
+        .radio
+          %input{ name: "paySystem", type: "radio", checked: 'true' }
+          %span
+      .col-1
+        .logo
+          = image_tag image_url('new/pay-system/robokassa.png');
+        .radio
+          %input{ name: "paySystem", type: "radio" }
+          %span
+    .coin-course
+      .icon.money.size-86
+      .title
+        = raw t('payments.course', currency: 79)
+
+    %h4= t('payments.choose_amount')
+    .coin-list
+      .coin 1
+      .coin 5
+      .coin 10
+      .coin 50
+      .coin 100
+      .coin.disabled 250
+      .coin.disabled 500
+
+    .wrapper
+      .coin-input
+        .title= t('payments.enter_manual')
+        %input{ type: "text", value: "10" }
+        .coins= t('payments.coins_in_genetive_case')
+
+      %hr
+
+      .total
+        .title= raw t('payments.in_total', sum: 176)
+        .btn-wrapper
+          %button.blue.accent= t('payments.operation.refill_short')
+
+.col-right
+  .col-js
+    = render partial: 'right_menu'
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.BuyCoinsForm.init("#balance-page", { });
+    });

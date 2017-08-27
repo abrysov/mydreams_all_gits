@@ -1,0 +1,10 @@
+%tr
+  %td
+  %td
+    = product_property.key
+  %td
+    - if product_property.key == 'previous_id'
+      = link_to product_property.value, admin_management_product_path(id: product_property.value.to_i)
+    - else
+      = product_property.value
+  %td{ colspan: 3 }

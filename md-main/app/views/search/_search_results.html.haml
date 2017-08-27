@@ -1,0 +1,23 @@
+- if @results.total_count == 0
+  %h2.page_content-title= t('search.no_result')
+
+  - (0...@results.limit_value).each do
+    .card.fake-card{ class: "#{'post' if @type == 'posts'}" }
+
+- else
+  %h2.page_content-title= "#{@results.total_count} #{custom_pluralize(@results.total_count, 'results')}"
+
+  - fix_collection(@results, @results.limit_value).each do |result|
+    - if result.nil?
+      .card.fake-card{ class: "#{'post' if @type == 'posts'}" }
+    - else
+      - if result.is_a?(Dreamer)
+        = render 'account/dreamers/dreamer', dreamer: result
+
+      - elsif result.is_a?(Dream)
+        = render 'account/dreams/dream', dream: result
+
+      - elsif result.is_a?(Post)
+        = render 'account/posts/post', post: result
+
+  = paginate @results, theme: 'more'

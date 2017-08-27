@@ -1,0 +1,7 @@
+---
+- hosts:
+    - staging
+  sudo: no
+  remote_user: dev
+  roles:
+    - rollback

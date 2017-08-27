@@ -1,0 +1,23 @@
+.popup.avatar-select {
+  width: 21rem;
+  padding: 2rem 3.25rem .5rem;
+
+  .header-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .avatar-list {
+    margin: 2rem 0;
+  }
+
+  .textarea-wrapper {
+    margin: 2rem 0;
+
+    textarea {
+      font-size: .875rem;
+    }
+  }
+}

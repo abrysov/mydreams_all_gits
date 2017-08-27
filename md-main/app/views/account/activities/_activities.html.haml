@@ -1,0 +1,8 @@
+- fix_collection(@activities, @activities.limit_value).each do |activity|
+  - if activity.nil?
+    .activity-wrapper.fake-card
+      .activity
+  - else
+    - activity_partial = "account/activities/activity_partials/activity_#{activity.key}"
+
+    = render partial: activity_partial, locals: {activity: activity}

@@ -1,0 +1,10 @@
+.special-page-him
+  .flybook.main
+    .dreambook_header
+      .empty-avatar
+    .dreambook_menu
+    .special_nav_owner
+      .button-back.js-back
+      = link_to '', current_dreamer ? account_dreamer_path(current_dreamer) : '#', class: 'button-profile'
+    .main_content
+      .page-title= title

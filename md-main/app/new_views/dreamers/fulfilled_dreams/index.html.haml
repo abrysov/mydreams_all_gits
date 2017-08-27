@@ -1,0 +1,30 @@
+.col-center.content-body
+  .header
+    .title
+      %h2= t('layout.fulfilled_dreams')
+  #dreams-list
+    .preloader
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    %div
+      #dreams-sort-by
+        .preloader
+      #dreams-user-card
+
+#create-fulfilled-dream
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.FulfilledDreamsListWidget.init({
+        dreamsList: '#dreams-list',
+        dreamsSortBy: '#dreams-sort-by',
+        dreamsUserCard: '#dreams-user-card',
+        dreamsCreateFulfilledDream: '#create-fulfilled-dream'
+      }, {
+        type: 'one_dreamer',
+        userId: gon.dreamer.id
+      });
+    });
+

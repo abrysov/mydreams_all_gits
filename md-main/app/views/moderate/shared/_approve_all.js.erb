@@ -1,0 +1,7 @@
+<%= render partial: 'moderate/shared/approve', collection: @req_ent_objs,
+                                               as: :object %>
+
+$('.approve-button-for-all-objects').
+html('<%=j approved_title(objects.first) %>').
+removeClass('btn-warning').
+addClass('btn-success');

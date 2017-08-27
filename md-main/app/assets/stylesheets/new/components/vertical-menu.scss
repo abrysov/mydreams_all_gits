@@ -1,0 +1,131 @@
+.vertical-menu {
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+
+    a {
+      position: relative;
+      display: block;
+      padding: .53125rem .875rem;
+      transition: background.3s ease;
+      color: $light-gray-text-color;
+
+      &:hover,
+      &:active,
+      &.active {
+        transition: background.1s ease;
+        background: $light-gray-color;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+
+      &.active {
+        background: $light-gray-color;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: .125rem;
+          height: 100%;
+          content: '';
+          background: $blue-color;
+        }
+      }
+
+      &.sub-item {
+        padding-left: 1.5rem;
+      }
+
+      &.user-card {
+        display: flex;
+        padding: .25rem;
+        cursor: pointer;
+      }
+
+      .avatar {
+        border: 1px solid #fff;
+      }
+    }
+  }
+
+  .count {
+    float: right;
+    color: $light-purple-color;
+  }
+
+  &.main {
+    margin-right: -1.3125rem;
+    margin-left: .1875rem;
+    text-align: left;
+
+    a {
+      padding-left: 2.0625rem;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      bottom: 0;
+      margin: auto;
+      pointer-events: none;
+      font-style: normal;
+      line-height: 1rem;
+    }
+    li {
+
+      &:hover i {
+        color: white;
+        background-color: $light-purple-color;
+      }
+
+      a::after {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 3px;
+        display: block;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin: auto;
+        content: '';
+        background: no-repeat center;
+        background-size: contain;
+      }
+
+      &.messages a::after { background-image: asset-url('new/message.svg'); }
+      &.friends a::after { background-image: asset-url('new/friends.svg'); }
+      &.subscribers a::after { background-image: asset-url('new/subscribers.svg'); }
+      &.dreams a::after { background-image: asset-url('new/dreams2.svg'); }
+      &.fulfilled_dreams a::after { background-image: asset-url('new/fulfilled_dreams.svg'); }
+      &.stamps a::after { background-image: asset-url('new/starts.svg'); }
+      &.photos a::after { background-image: asset-url('new/photos.svg'); }
+      &.notification a::after { background-image: asset-url('new/notification.svg'); }
+      &.news a::after { background-image: asset-url('new/news.svg'); }
+      &.settings a::after { background-image: asset-url('new/settings.svg'); }
+    }
+  }
+}
+
+.col-right .vertical-menu .user-card {
+  padding-left: .875rem;
+
+  &::before {
+    display: none;
+  }
+}

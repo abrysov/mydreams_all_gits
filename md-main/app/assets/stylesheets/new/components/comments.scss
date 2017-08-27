@@ -1,0 +1,114 @@
+.load-more-comments {
+  margin: .8rem 0;
+  padding: .5em;
+  cursor: pointer;
+  text-align: center;
+  color: $light-purple-color;
+  border-radius: .313rem;
+  background-color: $light-gray-color;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.comments-list {
+  .comment {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: .5rem 0;
+    color: $gray-text-color;
+    line-height: 1.063rem;
+  }
+
+  .answer {
+    color: $light-purple-color;
+
+    &::before {
+      display: inline-block;
+      width: .563rem;
+      height: .438rem;
+      margin: 0 .4em 0 1em;
+      content: '';
+      background-image: asset-url('new/answer.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 300%;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.comment-textarea {
+  display: flex;
+  margin-top: 0;
+  border-top: 1px solid $border-gray-color;
+
+  .textarea-wrapper {
+    position: relative;
+    flex: 1;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      height: 100%;
+      margin: .3125rem 0;
+      content: '';
+      border-right: 1px solid $border-gray-color;
+    }
+
+    .attach-button {
+      position: absolute;
+      top: 0;
+      right: .625rem;
+      bottom: 0;
+      margin: auto 0;
+    }
+  }
+
+  textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    resize: vertical;
+    color: $light-purple-color;
+    border: 0;
+    outline: none;
+    font: inherit;
+
+    &::placeholder {
+      opacity: .5;
+      color: $light-purple-color;
+    }
+  }
+
+  .submit-button {
+    width: 6rem;
+    cursor: pointer;
+    text-align: center;
+    color: $light-purple-color;
+    font-weight: bold;
+    line-height: 2.8rem;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+}

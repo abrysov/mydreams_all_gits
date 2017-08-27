@@ -1,0 +1,26 @@
+.col-center.content-body
+  .header
+    .title
+      - if @dreamer == current_dreamer
+        %h2 Мои марки
+      - else
+        %h2 Марки
+  %div
+    #certificates-list
+      .preloader
+
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    %div
+      #certificates-sort-by
+      #certificates-filter
+        .preloader
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.CertificatesListWidget.init("#certificates-list", "#certificates-sort-by", "#certificates-filter", {
+        userId: gon.dreamer.id
+      });
+    });

@@ -1,0 +1,35 @@
+= form_for [:advertisement, @banner], html: { class: "form-horizontal" } do |f|
+  - if @banner.errors.any?
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        %ul
+          - @banner.errors.full_messages.each do |message|
+            %li= message
+  .form-group
+    %label.col-sm-2.control-label{ for: 'name' } Name
+    .col-sm-5
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'image' } Image
+    .col-sm-5
+      = f.file_field :image, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'page' } Page
+    .col-sm-5
+      = f.collection_select :ad_page_ids, AdPage.all, :id, :route, {}, { multiple: true, selected: @banner.ad_pages, class: 'form-control' }
+
+  .form-group
+    %label.col-sm-2.control-label{ for: 'link' } Link
+    .col-sm-5
+      = f.text_field :link, class: 'form-control', placeholder: 'http://domain.com'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'date_start' } Start
+    .col-sm-2
+      = f.text_field :date_start, class: 'form-control', placeholder: '31-12-2016 20:58:45 MSK'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'date_end' } End
+    .col-sm-2
+      = f.text_field :date_end, class: 'form-control', placeholder: '31-12-2016 20:58:45 MSK'
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit (@banner.new_record? ? 'Create' : 'Save'), class: 'btn btn-default'

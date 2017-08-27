@@ -1,0 +1,26 @@
+.frame.create-fulfilled-dream{ data: {'modal-type' => 'create-fulfilled-dream'} }
+
+  = form_for @new_dream, url: [:account, @new_dream], html: {class: "js-imageLoader-form"} do |f|
+    
+    .title= t('modals.create_fulfilled_dream.title')
+    .subtitle= t('modals.create_fulfilled_dream.subtitle')
+    
+    = f.hidden_field :came_true, value: true
+    = f.hidden_field :photo, class: 'js-imageLoader-input'
+    = f.hidden_field :restriction_level, value: 0
+
+    .fulfilled-dream-photo
+      .js-imageLoader#js-create-fulfilled-dream-photo.upload-photo{ data: { min_height: 540, min_width: 540, orient: 'square', title_change: t( 'dreams.new.photo_change' ), title_upload: t('dreams.new.photo_upload')} }     
+
+      .image.js-imageLoader-preview
+
+    .subtitle= t('dreams.new.create_fulfilled_dream_photo_preview')
+
+    = f.text_field :title, { placeholder: t('dreams.new.placeholder_title'), class: 'js-validation', data: {valid: 'name'} }
+
+    = f.text_area :description, { placeholder: t('dreams.new.placeholder_description'), class: 'js-validation', data: {valid: 'name'} }
+
+    .control.js-form-control
+      .preloader.js-preloader
+      = f.submit t('dreams.new.create_dream_title'), class: 'button-green js-form-submit'
+

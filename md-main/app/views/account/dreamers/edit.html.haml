@@ -1,0 +1,28 @@
+-# :javascript
+-#   $(function(){
+-#     $('#cropbox').Jcrop({
+-#       aspectRatio: 1,
+-#       onChange: update_crop, onSelect: update_crop,
+-#       setSelect: [0, 0, 200, 200]
+-#     });
+-#   });
+
+-#   function update_crop(coords) {
+-#     var ratio = #{current_dreamer.avatar_geometry(nil).try(:width).to_i} / #{current_dreamer.avatar_geometry(:large).try(:width).to_i};
+-#     $("#avatar_crop_x").val(Math.round(coords.x * ratio));
+-#     $("#avatar_crop_y").val(Math.round(coords.y * ratio));
+-#     $("#avatar_crop_h").val(Math.round(coords.h * ratio));
+-#     $("#avatar_crop_w").val(Math.round(coords.w * ratio));
+-#   }
+
+-# - if @large_avatar.present?
+-#   = form_for [:crop, :account, @dreamer], method: :patch, html: { multipart: true, class: 'registration_form js-registration', id: 'crop_avatar' } do |f|
+-#     = image_tag @large_avatar, id: 'cropbox'
+
+-#     %p.call_message= t('dreamers.edit.cut_avatar')
+
+-#     - for attribute in [:avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h] do
+-#       = f.hidden_field attribute, id: attribute
+-#     = f.submit t('actions.crop')
+-# %br
+-# = render 'account/dreamers/dreamer', dreamer: @dreamer

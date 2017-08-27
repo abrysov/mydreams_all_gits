@@ -1,0 +1,21 @@
+.sort-btn {
+  cursor: pointer;
+  color: $light-gray-text-color;
+
+  &::after {
+    display: inline-block;
+    margin-left: .3rem;
+    content: '';
+    border: .3rem solid transparent;
+  }
+
+  &.up::after {
+    margin-bottom: .07rem;
+    border-bottom-color: $light-purple-color;
+  }
+
+  &.down::after {
+    margin-bottom: -.2rem;
+    border-top-color: $light-purple-color;
+  }
+}

@@ -1,0 +1,9 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.name')
+      %th= t('.description')
+  %tbody
+    = render @advertisers
+    = paginate @advertisers, theme: 'moderate'

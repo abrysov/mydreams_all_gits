@@ -1,0 +1,10 @@
+ru:
+  api:
+    v1:
+      profile:
+        avatar:
+          uploaded: Успешно загружен
+          not_loaded: Не загружен
+        dreambook:
+          bg_uploaded: Фон успешно загружен
+          bg_not_loaded: Не загружен

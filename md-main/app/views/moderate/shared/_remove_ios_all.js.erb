@@ -1,0 +1,7 @@
+<%= render partial: 'moderate/shared/remove_ios', collection: @req_ent_objs,
+                                                   as: :object %>
+
+$('.ios-safe-button-for-all-objects').
+prop('href', "<%=j moderate_approve_ios_all_path(mass_entity_params(objects)) %>").
+removeClass('btn-success').
+addClass('btn-warning');

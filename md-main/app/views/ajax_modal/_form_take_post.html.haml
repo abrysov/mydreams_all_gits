@@ -1,0 +1,21 @@
+.frame.take-post{ data: {'modal-type' => 'take_post'} }
+  .title= t('actions.borrow')
+  .subtitle= t('actions.correct')
+
+  .frame-content
+    = form_for @new_post, url: [:account, @new_post], html: {class: "js-imageLoader-form"} do |f|
+      .js-imageLoader-preview
+        = image_tag(@post.photo.url(:large)) if post.photo.present?
+
+      = f.hidden_field :photo, { value: "#{'data:image/jpeg;base64,'+ photo if photo}", class: 'js-imageLoader-input' }
+
+      .post-photo-btn.js-imageLoader#js-take-dream-photo{ data: {min_height: 540, min_width: 800, orient: 'list'} }
+        = t("#{post.photo.present? ? 'posts.popup.change_photo' : 'posts.popup.add_photo'}")
+
+      = f.text_field :title, { placeholder: t('posts.new.placeholder_title'), value: "#{post.title}", class: 'js-validation', data: {valid: 'name'} }
+
+      = f.text_area :body, { placeholder: t('posts.new.placeholder_description'), value: "#{post.description}", class: 'js-validation', data: {valid: 'name'} }
+
+      .control.js-form-control
+        = f.submit value: t('posts.new.button_publicate'), class: 'button-violet js-form-submit'
+        .preloader.js-preloader

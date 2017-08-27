@@ -1,0 +1,32 @@
+.top#user-left-menu
+  = render (params['id'] == 'index') ? 'layouts/shared/left_login_form' : 'layouts/shared/left_menu'
+
+.bottom
+  .icon-text.center
+    %img.icon.size-16{:alt => "info", :src => asset_url("new/about.svg")}/
+    %span.light-gray.text О клубе
+  %h5 Техническая поддержка:
+  %a.icon-text.center{:href => "mailto:support@mydreams.club"}
+    %span.icon.size-16.email-purple
+    %span support@mydreams.club
+  %hr/
+  .app-list
+    %a.app-store{:href => "#"}
+    %a.google-play{:href => "#"}
+  .apps-buttons
+    %a.app-store{:href => "//itunes.apple.com", :target => "_blank"} App Store
+    %a.google-play{:href => "//play.google.com", :target => "_blank"} Google Pplay
+  .social-buttons.size-s
+    %a.button.purple.vk{:href => "#"}
+    %a.button.purple.fb{:href => "#"}
+    %a.button.purple.in{:href => "#"}
+    %a.button.purple.tw{:href => "#"}
+    %a.button.purple.ok{:href => "#"}
+  .copyright.big.light-gray © MyDreams.club
+
+- if params['id'] != 'index'
+  - content_for :js do
+    :javascript
+      onReady(function() {
+        MyDreams.UserLeftMenu.init("#user-left-menu");
+      });

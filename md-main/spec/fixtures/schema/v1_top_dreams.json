@@ -1,0 +1,47 @@
+{
+  "title": "Api:v1 TOP Dreams Schema",
+  "type": "object",
+  "required": [ "top_dreams", "meta" ],
+  "properties": {
+  	"dreams": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "title",
+        "description",
+        "photo",
+        "likes_count",
+        "comments_count"
+      ],
+      "properties": {
+    		"id": { "type": "integer" },
+    		"title": { "type": "string" },
+    		"description":  { "type": "string" },
+    		"photo": { "type": [ "hash", "array" ] },
+    		"likes_count": { "type": "integer" },
+    		"comments_count": { "type": "integer" }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "page",
+        "per",
+        "total_count",
+        "pages_count",
+        "remaining_count"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"per": { "type": "integer" },
+    		"page": { "type": "integer" },
+    		"total_count": { "type": "integer" },
+    		"pages_count": { "type": "integer" },
+    		"remaining_count": {"type": "integer"}
+      }
+  	}
+  }
+}

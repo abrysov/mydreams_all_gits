@@ -1,0 +1,15 @@
+.photos.js-photos-container
+  - fix_collection(@dreamer.flybook_photos.first(4), 4).each do |photo|
+    - if photo.nil?
+      .photo_holder.empty
+    - else
+      = link_to dreamer_photos_path(@dreamer), remote: true, type: :json, class: 'photo_holder js-open-photoslideshow' do
+        = image_tag(photo.file.url(:small), class: 'image')
+
+- if @dreamer.flybook_photos.count > 0
+  = link_to "#{t('flybook.view_pics')} (#{@dreamer.flybook_photos.count})", dreamer_photos_path(@dreamer), remote: true, type: :json, class: 'all_photos_link js-open-photoslideshow'
+
+.activity
+  .activity_dreams= @dreamer.flybook_not_came_true_dreams.count
+  .activity_resolve_dreams= @dreamer.flybook_came_true_dreams.count
+  .activity_start= @dreamer.flybook_certificates_sum

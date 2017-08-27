@@ -1,0 +1,16 @@
+- unless objects.empty?
+  %hr
+  .row
+    .group-actions
+      .group-buttons
+        = link_to t('moderate.shared.actions.approve'),
+        moderate_approve_all_path(mass_entity_params(objects)), remote: true, role: 'button',
+        class: 'btn btn-warning approve-button-for-all-objects'
+
+        = link_to t('moderate.shared.actions.approve_ios'),
+        moderate_approve_ios_all_path(mass_entity_params(objects)), remote: true, role: 'button',
+        class: 'btn btn-warning ios-safe-button-for-all-objects'
+      %button.btn.btn-default#to_top Up
+  %br
+  %br
+

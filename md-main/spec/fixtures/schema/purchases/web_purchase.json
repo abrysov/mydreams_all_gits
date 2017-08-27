@@ -1,0 +1,39 @@
+{
+  "title": "Api:Web Purchases::Certificates",
+  "type": "object",
+  "required": [ "purchase", "meta" ],
+  "properties": {
+    "purchase": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "amount",
+        "state",
+        "comment",
+        "destination",
+        "dreamer",
+        "product"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "amount": { "type": "decimal" },
+        "state": { "type": "string" },
+        "comment": { "type": [ "string", "nil" ] },
+        "destination": { "type": [ "hash", "array" ] },
+        "dreamer": { "type": [ "hash", "array" ] },
+        "product": { "type": [ "hash", "array" ] }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

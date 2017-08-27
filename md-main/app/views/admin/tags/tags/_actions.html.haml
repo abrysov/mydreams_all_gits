@@ -1,0 +1,5 @@
+.entity.btn-group-vertical
+  = link_to 'Edit', edit_admin_tags_tag_path(tag.id), role: 'button',
+  class: "btn btn-warning"
+  = link_to 'Delete', admin_tags_tag_path(tag.id), method: :delete, role: 'button',
+  class: "btn btn-danger"

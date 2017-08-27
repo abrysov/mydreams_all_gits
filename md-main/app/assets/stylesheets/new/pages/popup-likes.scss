@@ -1,0 +1,54 @@
+.popup.popup-likes {
+  min-width: 19rem;
+  padding-bottom: .4rem;
+
+  .icon.like {
+    width: 3.72375rem;
+    height: 3.265625rem;
+    margin: 1.2rem auto;
+    background-image: asset-url('new/reactions/like_active.svg');
+  }
+
+  .like-list {
+    position: relative;
+    display: block;
+    width: 11.38375rem;
+    margin: 2rem auto;
+    text-align: left;
+    border-top: 1px solid $border-gray-color;
+
+    .mask {
+      overflow: hidden;
+      max-height: 15.625rem;
+    }
+  }
+
+  .user-card {
+    margin: .75rem 0;
+  }
+
+  .btn {
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 1rem;
+    margin: auto;
+    cursor: pointer;
+    transition: filter.3s ease;
+    background: asset-url('new/btn_top_light_red.svg') center no-repeat;
+    background-size: contain;
+
+    &.bottom {
+      top: auto;
+      bottom: -1.5rem;
+      background-image: asset-url('new/btn_bottom_light_red.svg');
+    }
+
+    &.disabled {
+      cursor: default;
+      filter: grayscale(100%);
+    }
+  }
+}

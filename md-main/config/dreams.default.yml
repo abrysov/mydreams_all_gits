@@ -1,0 +1,92 @@
+defaults: &defaults
+  mail:
+    from: 'no-reply@example.com'
+    from_name: 'MyDreams Notification'
+    reply_to: mail@mydreams.club
+    smtp: 'smtp.example.com'
+    port: 587
+    domain: sandbox0d90104d29634c54b9bdf1799bd5e334.mailgun.org
+    user_name: postmaster@sandbox0d90104d29634c54b9bdf1799bd5e334.mailgun.org
+    password: 533c76f873e60f15ad02055202cc7410
+    api_key: key-6c4ad32cea95fd9ef2d394439faf0ca2
+    public_api_key: 'public_api_key'
+    webhook_url: 'webhook_url'
+    authentication: 'plain'
+    enable_starttls_auto: true
+  redis:
+    host: redis
+    port: 6379
+    db: 0
+    password:
+    namespace:
+  images_salt: 'bni3u4bno3i4uh'
+  messenger:
+    host: 'localhost:8081'
+
+production:
+  <<: *defaults
+  mail:
+    from: 'notify@mydreams.club'
+    from_name: 'MyDreams Notification'
+    reply_to: mail@mydreams.club
+    smtp: smtp.mailgun.org
+    port: 25
+    domain: mg.mydreams.club
+    user_name: postmaster@mg.mydreams.club
+    password: cb636230262365fd2d270dc7160d2259
+    api_key: key-6c4ad32cea95fd9ef2d394439faf0ca2
+    public_api_key: pubkey-0ba32e9edb0887b2875bc87b84f84169
+    webhook_url: ''
+    authentication: plain
+    enable_starttls_auto: true
+  redis:
+    host: "209.222.23.76"
+    port: 6379
+    db: 0
+    password: 'd9MGKNaAUn6Php'
+    namespace: 'dreams_production'
+  messenger:
+    host: mydreams.club
+
+staging:
+  <<: *defaults
+  mail:
+    from: 'notify@mydreams.club'
+    from_name: 'MyDreams Notification'
+    reply_to: mail@mydreams.club
+    smtp: smtp.mailgun.org
+    port: 587
+    domain: mg.mydreams.club
+    user_name: postmaster@mg.mydreams.club
+    password: cb636230262365fd2d270dc7160d2259
+    api_key: key-6c4ad32cea95fd9ef2d394439faf0ca2
+    public_api_key: pubkey-0ba32e9edb0887b2875bc87b84f84169
+    webhook_url: ''
+    authentication: plain
+    enable_starttls_auto: true
+  redis:
+    host: localhost
+    port: 6379
+    db: 0
+    password:
+    namespace: 'dreams_staging'
+  messenger:
+    host: staging.mydreams.club
+
+development:
+  <<: *defaults
+  redis:
+    host: redis
+    port: 6379
+    db: 0
+    password:
+    namespace: 'dreams_development'
+
+test:
+  <<: *defaults
+  redis:
+    host: localhost
+    port: 6379
+    db: 0
+    password:
+    namespace: 'dreams_test'

@@ -1,0 +1,1798 @@
+/*                                                                                              */
+/*                                                                                              */
+/*     XXXXXXXX    XXXXXXXXXX    XXXXXXXXXX    XXXXXXXX    XXXXXXXX     XXXXXX     XXXX         */
+/*   XXXXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXX    XXXXXXXX    XXXX         */
+/*   XXXX    XXXX  XXXX    XXXX  XXXX        XXXX    XXXX    XXXX     XXXX  XXXX   XXXX         */
+/*   XXXX          XXXX    XXXX  XXXX        XXXX    XXXX    XXXX    XXXX    XXXX  XXXX         */
+/*   XXXXXXXXXX    XXXXXXXXXXXX  XXXXXXXX    XXXX            XXXX    XXXX    XXXX  XXXX         */
+/*     XXXXXXXXXX  XXXXXXXXXX    XXXXXXXX    XXXX            XXXX    XXXX    XXXX  XXXX         */
+/*           XXXX  XXXX          XXXX        XXXX    XXXX    XXXX    XXXXXXXXXXXX  XXXX         */
+/*   XXXX    XXXX  XXXX          XXXX        XXXX    XXXX    XXXX    XXXXXXXXXXXX  XXXX         */
+/*   XXXXXXXXXXXX  XXXX          XXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXX  XXXX    XXXX  XXXXXXXXXX   */
+/*     XXXXXXXX    XXXX          XXXXXXXXXX    XXXXXXXX    XXXXXXXX  XXXX    XXXX  XXXXXXXXXX   */
+/*                                                                                              */
+/************************************************************************************************/
+
+/*
+
+<div class="jp-video-dream" role="application" aria-label="media player">
+
+	<div class="jp-screen">
+		<div class="jp-jplayer"></div>
+		<div class="jp-video-play">
+			<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+		</div>
+	</div>
+
+	<div class="jp-gui-wrapper">
+		<div class="jp-gui">
+			<div class="jp-wrapper">
+
+				<div class="jp-progress-holder">
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+						</div>
+					</div>
+					<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+					<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				</div>
+
+				<div class="jp-interface">
+
+					<div class="jp-volumes">
+						<button class="jp-mute" role="button" tabindex="0">mute</button>
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+						<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+					</div>
+
+					<div class="jp-controls">
+						<button class="jp-play" role="button" tabindex="0">play</button>
+					</div>
+
+					<div class="jp-toggles">
+						<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+						<button class="jp-skip-video" role="button" tabindex="0">skip video</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="jp-no-solution">
+		<span>Update Required</span>
+		To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+	</div>
+
+</div>
+
+*/
+
+.jp-video-dream {
+
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+}
+.jp-video-dream *:focus {
+
+	outline:none;
+
+}
+.jp-video-dream button::-moz-focus-inner {
+
+	border: 0;
+
+}
+
+/*****************************************************************************************************/
+/*                                                                                                   */
+/*          XX  XXXXXXXX           XXXXXXX     XXXXXXX   XXXXXXXX   XXXXXXXX  XXXXXXXX  XXX     XX   */
+/*          XX  XX     XX         XX     XX   XX     XX  XX     XX  XX        XX        XXXX    XX   */
+/*          XX  XX     XX         XX         XX          XX     XX  XX        XX        XX XX   XX   */
+/*          XX  XXXXXXXX   XXXXX   XXXXXXX   XX          XXXXXXXX   XXXXXX    XXXXXX    XX  XX  XX   */
+/*    XX    XX  XX                       XX  XX          XX     XX  XX        XX        XX   XX XX   */
+/*    XX    XX  XX                XX     XX   XX     XX  XX     XX  XX        XX        XX    XXXX   */
+/*     XXXXXX   XX                 XXXXXXX     XXXXXXX   XX     XX  XXXXXXXX  XXXXXXXX  XX     XXX   */
+/*                                                                                                   */
+/*****************************************************************************************************/
+
+.jp-video-dream .jp-screen {
+
+	position: relative;
+	display: table-row;
+
+}
+.jp-video-dream .jp-screen .jp-jplayer {
+
+	display: table-cell;
+	position: relative;
+	background-color: black;
+
+}
+.jp-video-dream .jp-screen .jp-jplayer img,
+.jp-video-dream .jp-screen .jp-jplayer video,
+.jp-video-dream .jp-screen .jp-jplayer object {
+
+	display: block;
+	min-width: 100%;
+
+}
+.jp-video-dream .jp-screen .jp-video-play {
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+
+}
+.jp-video-dream .jp-screen .jp-video-play .jp-video-play-icon {
+
+	cursor: pointer;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	font-size: 0;
+	border: none;
+	opacity: 0.7;
+	background: url('jplayer-dream-images/jplayer-video-play-large.svg') center center no-repeat;
+
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+
+}
+.jp-video-dream .jp-screen .jp-video-play .jp-video-play-icon:hover {
+
+	opacity: 1;
+
+}
+.jp-video-dream .jp-screen .jp-video-play .jp-video-play-icon:active {
+
+	opacity: 0.5;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+
+/****************************************************************/
+/*                                                              */
+/*          XX  XXXXXXXX            XXXXXXXX   XX      XX  XX   */
+/*          XX  XX     XX          XX      XX  XX      XX  XX   */
+/*          XX  XX     XX         XX           XX      XX  XX   */
+/*          XX  XXXXXXXX   XXXXX  XX   XXXXXX  XX      XX  XX   */
+/*    XX    XX  XX                XX       XX  XX      XX  XX   */
+/*    XX    XX  XX                 XX      XX  XX      XX  XX   */
+/*     XXXXXX   XX                  XXXXXXXX    XXXXXXXX   XX   */
+/*                                                              */
+/****************************************************************/
+
+.jp-video-dream .jp-gui-wrapper {
+
+	display: table-row;
+
+}
+.jp-video-dream .jp-gui-wrapper .jp-gui {
+
+	display: table-cell;
+	min-width: 470px;
+
+}
+.jp-video-dream .jp-gui-wrapper .jp-gui .jp-wrapper {
+
+	display: block;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 0 0 10px 10px;
+
+}
+
+/* PROGRESS */
+
+.jp-video-dream .jp-gui .jp-progress-holder {
+
+	position: relative;
+	font-size: 0;
+
+}
+
+/* jp-progress */
+
+.jp-video-dream .jp-gui .jp-progress-holder .jp-progress {
+
+	position: relative;
+	display: block;
+	height: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #bababa;
+
+}
+.jp-video-dream .jp-gui .jp-progress-holder .jp-progress .jp-seek-bar {
+
+	width: 0;
+	height: 100%;
+
+}
+.jp-video-dream .jp-gui .jp-progress-holder .jp-progress .jp-seek-bar.jp-seeking-bg {
+
+	background: url('jplayer-dream-images/jplayer-seeking-bar.gif');
+
+}
+.jp-video-dream .jp-gui .jp-progress-holder .jp-progress .jp-seek-bar .jp-play-bar {
+
+	width: 0;
+	height: 100%;
+	background-color: #289efe;
+
+}
+
+/* jp-time */
+
+.jp-video-dream .jp-gui .jp-progress-holder .jp-current-time,
+.jp-video-dream .jp-gui .jp-progress-holder .jp-duration {
+
+	display: inline-block;
+	width: 50%;
+	font-size: 14px;
+	font-weight: 300;
+	color: white;
+
+}
+.jp-video-dream .jp-gui .jp-progress-holder .jp-current-time {
+
+	text-align: left;
+	letter-spacing: 0.5px;
+	padding: 5px 10px;
+
+}
+.jp-video-dream .jp-gui .jp-progress-holder .jp-duration {
+
+	text-align: right;
+	letter-spacing: 0.5px;
+	padding: 5px 10px;
+
+}
+
+/* JP-INTERFACE */
+
+.jp-video-dream .jp-gui .jp-interface {
+
+	position: relative;
+	display: table;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width: 100%;
+
+	text-align: center;
+
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+/* CONTROLS */
+
+.jp-video-dream .jp-gui .jp-interface .jp-controls {
+
+	display: table-cell;
+	vertical-align: middle;
+	padding: 10px 5px;
+	text-align: center;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-controls .jp-play {
+
+	cursor: pointer;
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0;
+
+	border-radius: 50%;
+	border: 1px solid rgba(255,255,255,0.2);
+
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	opacity: 0.7;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-controls .jp-play:hover {
+
+	opacity: 1;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-controls .jp-play:active {
+
+	opacity: 0.5;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+
+/* icons */
+
+.jp-video-dream .jp-gui .jp-interface .jp-controls .jp-play {
+
+	background-image: url('jplayer-dream-images/jplayer-play.svg');
+	background-size: 20px auto;
+
+}
+.jp-video-dream.jp-state-playing .jp-gui .jp-interface .jp-controls .jp-play {
+
+	background-image: url('jplayer-dream-images/jplayer-pause.svg');
+	background-size: 20px auto;
+
+}
+
+/* VOLUMES */
+
+.jp-video-dream .jp-gui .jp-interface .jp-volumes {
+
+	display: table-cell;
+	vertical-align: middle;
+	width: 200px;
+	padding: 10px 5px;
+	font-size: 0;
+	text-align: left;
+
+}
+
+/* buttons */
+
+.jp-video-dream .jp-gui .jp-interface .jp-volumes button {
+
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-volumes button:hover {
+
+	border-color: rgba(255,255,255,0.5);
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-volumes button:active {
+
+	border-color: rgba(255,255,255,0.3);
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+
+/* button icons */
+
+.jp-video-dream .jp-gui .jp-interface .jp-volumes .jp-mute {
+
+	background-image: url('jplayer-dream-images/jplayer-mute.svg');
+	background-size: auto 16px;
+
+}
+.jp-video-dream.jp-state-muted .jp-gui .jp-interface .jp-volumes .jp-mute {
+
+	background-image: url('jplayer-dream-images/jplayer-mute-muted.svg');
+	background-size: auto 16px;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-volumes .jp-volume-max {
+
+	background-image: url('jplayer-dream-images/jplayer-volume-max.svg');
+	background-size: auto 16px;
+
+}
+
+/* volume bar */
+
+.jp-video-dream .jp-gui .jp-interface .jp-volumes .jp-volume-bar {
+
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100px;
+	height: 10px;
+	margin: 5px;
+	background-color: #BABABA;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-volumes .jp-volume-bar .jp-volume-bar-value {
+
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background-color: #b501ff;
+
+}
+.jp-video-dream.jp-state-muted .jp-gui .jp-interface .jp-volumes .jp-volume-bar {
+
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100px;
+	height: 10px;
+	background-color: black;
+
+}
+.jp-video-dream.jp-state-muted .jp-gui .jp-interface .jp-volumes .jp-volume-bar .jp-volume-bar-value {
+
+	display: none;
+
+}
+
+/* TOGGLES */
+
+.jp-video-dream .jp-gui .jp-interface .jp-toggles {
+
+	display: table-cell;
+	vertical-align: middle;
+	width: 200px;
+	padding: 10px 5px;
+	font-size: 0;
+	text-align: right;
+
+}
+
+/* fullsceen button */
+
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-full-screen {
+
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	padding: 0;
+
+	border-radius: 50%;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-full-screen:hover {
+
+	border-color: rgba(255,255,255,0.5);
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-full-screen:active {
+
+	border-color: rgba(255,255,255,0.2);
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-full-screen {
+
+	background-image: url( 'jplayer-dream-images/jplayer-fullscreen-expand.svg' );
+
+}
+.jp-video-dream.jp-state-full-screen .jp-gui .jp-interface .jp-toggles .jp-full-screen {
+
+	background-image: url( 'jplayer-dream-images/jplayer-fullscreen-collapse.svg' );
+
+}
+
+/* skip video button */
+
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-skip-video {
+
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	height: 30px;
+	margin: 5px;
+	padding: 5px 8px;
+
+	font-size: 14px;
+	font-family: inherit;
+	font-weight: 300;
+	color: rgba(255,255,255,0.5);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 5px;
+
+	opacity: 0.7;
+	background-color: transparent;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-skip-video:hover {
+
+	opacity: 1;
+
+}
+.jp-video-dream .jp-gui .jp-interface .jp-toggles .jp-skip-video:active {
+
+	opacity: 0.5;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+
+/********************************************************************************************************************************************************/
+/*                                                                                                                                                      */
+/*          XX  XXXXXXXX          XXX     XX    XXXXXXX            XXXXXXX     XXXXXXX    XX        XX      XX  XXXXXXXX  XX    XXXXXXX    XXX     XX   */
+/*          XX  XX     XX         XXXX    XX   XX     XX          XX     XX   XX     XX   XX        XX      XX     XX     XX   XX     XX   XXXX    XX   */
+/*          XX  XX     XX         XX XX   XX  XX       XX         XX         XX       XX  XX        XX      XX     XX     XX  XX       XX  XX XX   XX   */
+/*          XX  XXXXXXXX   XXXXX  XX  XX  XX  XX       XX  XXXXX   XXXXXXX   XX       XX  XX        XX      XX     XX     XX  XX       XX  XX  XX  XX   */
+/*    XX    XX  XX                XX   XX XX  XX       XX                XX  XX       XX  XX        XX      XX     XX     XX  XX       XX  XX   XX XX   */
+/*    XX    XX  XX                XX    XXXX   XX     XX          XX     XX   XX     XX   XX        XX      XX     XX     XX   XX     XX   XX    XXXX   */
+/*     XXXXXX   XX                XX     XXX    XXXXXXX            XXXXXXX     XXXXXXX    XXXXXXXX   XXXXXXXX      XX     XX    XXXXXXX    XX     XXX   */
+/*                                                                                                                                                      */
+/********************************************************************************************************************************************************/
+
+.jp-video-dream .jp-no-solution {
+
+	padding: 5px;
+	font-size: .8em;
+	background-color: #eee;
+	border: 2px solid #009be3;
+	color: #000;
+	display: none;
+
+}
+.jp-video-dream .jp-no-solution a {
+
+	color: #000;
+
+}
+.jp-video-dream .jp-no-solution span {
+
+	font-size: 1em;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+/******************************************************************************************************************/
+/*                                                                                                                */
+/*   XXXXXXXX  XX      XX  XX        XX         XXXXXXX     XXXXXXX   XXXXXXXX   XXXXXXXX  XXXXXXXX  XXX     XX   */
+/*   XX        XX      XX  XX        XX        XX     XX   XX     XX  XX     XX  XX        XX        XXXX    XX   */
+/*   XX        XX      XX  XX        XX        XX         XX          XX     XX  XX        XX        XX XX   XX   */
+/*   XXXXXX    XX      XX  XX        XX         XXXXXXX   XX          XXXXXXXX   XXXXXX    XXXXXX    XX  XX  XX   */
+/*   XX        XX      XX  XX        XX               XX  XX          XX     XX  XX        XX        XX   XX XX   */
+/*   XX        XX      XX  XX        XX        XX     XX   XX     XX  XX     XX  XX        XX        XX    XXXX   */
+/*   XX         XXXXXXXX   XXXXXXXX  XXXXXXXX   XXXXXXX     XXXXXXX   XX     XX  XXXXXXXX  XXXXXXXX  XX     XXX   */
+/*                                                                                                                */
+/******************************************************************************************************************/
+
+.jp-video-dream.jp-state-full-screen {
+
+	display: block;
+	background-color: black;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-screen {
+
+	display: table;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-screen .jp-jplayer {
+
+	display: table-cell;
+	vertical-align: middle;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-screen .jp-jplayer img {
+
+	width: 100%;
+	height: auto;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-gui-wrapper {
+
+	display: block;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-gui-wrapper .jp-gui {
+
+	display: block;
+	position: fixed !important;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1001;
+
+}
+.jp-video-dream.jp-state-full-screen .jp-gui-wrapper .jp-gui .jp-wrapper {
+
+	display: block;
+	width: 100%;
+
+}
+
+/************************************************************************************/
+/*                                                                                  */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXX     XXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXXX    XXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXX   XXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXXX  XXXX    XXXX    XXXX          XXXX     XXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXX XXXX    XXXX    XXXXXXXXXX    XXXXXXXXXXXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXXXXXXX    XXXX      XXXXXXXXXX  XXXXXXXXXXXXX   */
+/*   XXXX            XXXX    XXXX XXXXXXXX    XXXX            XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXX  XXXXXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX   XXXXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX    XXXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*                                                                                  */
+/*                                                                                  */
+
+/*
+<div aria-label="media player" role="application" class="jp-audio" id="jplayer_container_audio">
+	<div class="jp-type-playlist">
+		<div style="width: 0px; height: 0px;" id="jplayer_audio" class="jp-jplayer">
+			<img src="content/main-page/audios/2456.jpg" style="width: 0px; height: 0px; display: block;" id="jp_poster_0">
+			<audio title="Track 1. Название первого трека" src="http://sobranie.kochelev.com/content/audio/01.mp3" preload="metadata" id="jp_audio_0"></audio>
+		</div>
+		<div class="jp-gui">
+
+			INTERFACE
+
+		</div>
+		<div class="jp-playlist">
+			<ul style="display: block;">
+				<li class="jp-playlist-current">
+					<div>
+						<a style="display: none;" href="javascript:;" class="jp-playlist-item-remove">
+							<div class="miniature audio">
+								<img src="content/main-page/audios/2456.jpg">
+							</div>
+							×
+						</a>
+						<a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="0">
+							<div class="miniature audio">
+								<img src="content/main-page/audios/2456.jpg">
+							</div>
+							Track 1. Название первого трека
+						</a>
+					</div>
+				</li>
+				...
+			</ul>
+		</div>
+		<div style="display: none;" class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+</div>
+*
+
+
+
+
+
+.jp-audio *:focus, .jp-audio-stream *:focus, .jp-video *:focus {
+
+	outline:none;
+
+}
+.jp-audio button::-moz-focus-inner, .jp-audio-stream button::-moz-focus-inner, .jp-video button::-moz-focus-inner {
+
+	border: 0;
+
+}
+.jp-state-no-volume .jp-volume-controls {
+
+	display:none;
+
+}
+
+/**********************************************************************/
+/*                                                                    */
+/*   XXXX    XXXX  XXXXXXXX  XXXXXXXXXX    XXXXXXXXXX    XXXXXXXX     */
+/*   XXXX    XXXX  XXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXX  XXXXXXXXXXXX   */
+/*   XXXX    XXXX    XXXX    XXXX    XXXX  XXXX        XXXX    XXXX   */
+/*   XXXX    XXXX    XXXX    XXXX    XXXX  XXXX        XXXX    XXXX   */
+/*   XXXX    XXXX    XXXX    XXXX    XXXX  XXXXXXXX    XXXX    XXXX   */
+/*   XXXX    XXXX    XXXX    XXXX    XXXX  XXXXXXXX    XXXX    XXXX   */
+/*   XXXX    XXXX    XXXX    XXXX    XXXX  XXXX        XXXX    XXXX   */
+/*    XXXX  XXXX     XXXX    XXXX    XXXX  XXXX        XXXX    XXXX   */
+/*     XXXXXXXX    XXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXX  XXXXXXXXXXXX   */
+/*      XXXXXX     XXXXXXXX  XXXXXXXXXX    XXXXXXXXXX    XXXXXXXX     */
+/*                                                                    */
+/**********************************************************************
+
+.jp-video .jp-type-playlist, .jp-video .jp-type-single {
+
+	display: block;
+	width: 100%;
+	height: 100%;
+
+}
+.jp-video .jp-screen {
+
+	width: 100%;
+	height: calc( 100% - 9.4rem );
+	background-color: black;
+
+}
+.jp-video .jp-screen .jp-screen-in {
+
+	position: relative;
+	height: 100%;
+
+}
+.jp-video .jp-screen .jp-screen-in .jp-jplayer {
+
+	margin: 0 auto;
+	max-width: 100%;
+
+}
+.jp-video .jp-screen .jp-screen-in .jp-video-play {
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+
+}
+:root .jp-video-play {
+
+	visibility: hidden;
+
+}
+@media all and (-ms-high-contrast:none) {
+
+	.jp-video-play {
+
+		visibility: hidden;
+
+	}
+
+	*::-ms-backdrop, .jp-video-play {
+
+		visibility: hidden;
+
+	}
+
+}
+.jp-video .jp-screen .jp-screen-in .jp-video-play .jp-video-play-icon {
+
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	font-size: 0;
+	border: none;
+	background: url('jplayer-dream-images/jplayer-video-play-large.svg') center center no-repeat;
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-video .jp-screen .jp-screen-in .jp-video-play .jp-video-play-icon {
+
+		background-image: url( 'jplayer-dream-images/jplayer-video-play-large.png' );
+
+	}
+
+}
+.jp-video .jp-gui {
+
+	display: block;
+	height: 4.4rem;
+
+}
+.jp-video .jp-playlist {
+
+	display: block;
+
+}
+
+/************************************************/
+/*                                              */
+/*   XXXXXXXX  XX      XX  XX        XX         */
+/*   XX        XX      XX  XX        XX         */
+/*   XX        XX      XX  XX        XX         */
+/*   XXXXXX    XX      XX  XX        XX         */
+/*   XX        XX      XX  XX        XX         */
+/*   XX        XX      XX  XX        XX         */
+/*   XX         XXXXXXXX   XXXXXXXX  XXXXXXXX   */
+/*                                              */
+/************************************************
+
+.jp-video-full div div {
+
+	z-index: 1000;
+
+}
+.jp-video-full {
+
+	background-color: black;
+
+}
+.jp-video-full .jp-gui {
+
+	position: fixed !important;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1001;
+
+}
+.jp-video.jp-video-full .jp-interface {
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+}
+
+/******************************************************************************************************************/
+/*                                                                                                                */
+/*   XXXXXXXX  XX      XX  XX        XX         XXXXXXX     XXXXXXX   XXXXXXXX   XXXXXXXX  XXXXXXXX  XXX     XX   */
+/*   XX        XX      XX  XX        XX        XX     XX   XX     XX  XX     XX  XX        XX        XXXX    XX   */
+/*   XX        XX      XX  XX        XX        XX         XX          XX     XX  XX        XX        XX XX   XX   */
+/*   XXXXXX    XX      XX  XX        XX         XXXXXXX   XX          XXXXXXXX   XXXXXX    XXXXXX    XX  XX  XX   */
+/*   XX        XX      XX  XX        XX               XX  XX          XX     XX  XX        XX        XX   XX XX   */
+/*   XX        XX      XX  XX        XX        XX     XX   XX     XX  XX     XX  XX        XX        XX    XXXX   */
+/*   XX         XXXXXXXX   XXXXXXXX  XXXXXXXX   XXXXXXX     XXXXXXX   XX     XX  XXXXXXXX  XXXXXXXX  XX     XXX   */
+/*                                                                                                                */
+/******************************************************************************************************************
+
+.jp-video.jp-state-full-screen .jp-playlist {
+
+	display: none;
+
+}
+.jp-video.jp-state-full-screen .jp-screen {
+
+	height: 100%;
+
+}
+#videoroom.active .jp-jplayer {
+
+	z-index: 0;
+
+}
+#videoroom.active .jp-jplayer video,
+#videoroom.active .jp-jplayer object {
+
+	z-index: -1;
+
+}
+
+.jp-video {
+
+	width: 100%;
+	height: 100%;
+
+}
+.jp-video .jp-type-playlist {
+
+	width: 100%;
+	height: 100%;
+
+}
+.jp-video .jp-type-playlist .jp-playlist {
+
+	text-align: left;
+	display: block;
+	position: absolute;
+	width: calc(100% - 2.0rem);
+	max-height: calc(100% - 6.4rem);
+	max-width: 27rem;
+	right: 1.4rem;
+	bottom: 5.0rem;
+	overflow: auto;
+	margin: 0 auto;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 0 3.0rem rgba(0,0,0,0.3);
+
+	-webkit-transition: width 0.3s ease-in-out;
+	-moz-transition: width 0.3s ease-in-out;
+	-o-transition: width 0.3s ease-in-out;
+	-ms-transition: width 0.3s ease-in-out;
+	transition: width 0.3s ease-in-out;
+
+}
+.jp-video .jp-playlist ul {
+
+	display: block;
+	margin: 0;
+	padding: 0 0.7rem;
+
+}
+.jp-video .jp-playlist ul li {
+
+	margin: 0 0.7rem;
+	padding: 0.7rem 0;
+	border-bottom: 1px solid #d5b2b2;
+
+}
+.jp-video .jp-playlist ul li:last-child {
+
+	border-bottom: none;
+
+}
+.jp-video .jp-playlist ul li:before {
+
+	display: none;
+
+}
+.jp-video .jp-playlist ul li a.jp-playlist-item {
+
+	display: block;
+	padding: 0.2rem 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	overflow: hidden;
+	border: none;
+
+}
+.jp-video .jp-playlist ul li a.jp-playlist-current {
+
+	color: #6f0000;
+	text-shadow: none;
+	clear: both;
+
+}
+.jp-video .jp-playlist ul li a div.miniature {
+
+	float: left;
+	position: relative;
+	width: 9.0rem;
+	margin-right: 0.7rem;
+
+}
+.jp-video .jp-playlist ul li a div.miniature:after {
+
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url('jplayer-dream-images/jplayer-video-play-small.svg') center center no-repeat rgba(0,0,0,0.3);
+
+}
+.jp-video .jp-playlist ul li a div.miniature img {
+
+	display: block;
+	width: 100%;
+
+}
+.jp-video .jp-playlist ul li a span {
+
+	display: inline-block;
+	width: calc(100% - 10.0rem);
+	color: #aaa;
+
+}
+.jp-jplayer {
+
+
+
+}
+.jp-jplayer img, .jp-jplayer video {
+
+	display: block;
+
+}
+
+
+.video-modal .jp-next,
+.video-modal .jp-previous {
+
+	display: none;
+
+}
+
+/*****************************************************************************************************************************/
+/*                                                                                                                           */
+/*   XXXXXXXX  XXXX     XXXX  XXXXXXXXXXXX  XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXXXX     XXXXXX       XXXXXXXX    XXXXXXXXXX   */
+/*   XXXXXXXX  XXXXX    XXXX  XXXXXXXXXXXX  XXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXXXX    XXXXXXXX    XXXXXXXXXXXX  XXXXXXXXXX   */
+/*     XXXX    XXXXXX   XXXX      XXXX      XXXX        XXXX    XXXX  XXXX           XXXX  XXXX   XXXX    XXXX  XXXX         */
+/*     XXXX    XXXXXXX  XXXX      XXXX      XXXX        XXXX    XXXX  XXXX          XXXX    XXXX  XXXX    XXXX  XXXX         */
+/*     XXXX    XXXXXXXX XXXX      XXXX      XXXXXXXX    XXXXXXXXXXXX  XXXXXXXXXX    XXXX    XXXX  XXXX          XXXXXXXX     */
+/*     XXXX    XXXXXXXXXXXXX      XXXX      XXXXXXXX    XXXXXXXXXX    XXXXXXXXXX    XXXX    XXXX  XXXX          XXXXXXXX     */
+/*     XXXX    XXXX XXXXXXXX      XXXX      XXXX        XXXX    XXXX  XXXX          XXXXXXXXXXXX  XXXX    XXXX  XXXX         */
+/*     XXXX    XXXX  XXXXXXX      XXXX      XXXX        XXXX    XXXX  XXXX          XXXXXXXXXXXX  XXXX    XXXX  XXXX         */
+/*   XXXXXXXX  XXXX   XXXXXX      XXXX      XXXXXXXXXX  XXXX    XXXX  XXXX          XXXX    XXXX  XXXXXXXXXXXX  XXXXXXXXXX   */
+/*   XXXXXXXX  XXXX    XXXXX      XXXX      XXXXXXXXXX  XXXX    XXXX  XXXX          XXXX    XXXX    XXXXXXXX    XXXXXXXXXX   */
+/*                                                                                                                           */
+/*****************************************************************************************************************************/
+
+/*
+
+Для видео:
+
+<div class="jp-interface">
+
+	<div class="jp-details">
+
+		<div class="jp-title" aria-label="title">Finding Nemo Teaser</div>
+
+	</div>
+	<div class="jp-progress-holder">
+
+		PROGRESS
+
+	</div>
+	<div class="jp-volumes">
+
+		VOLUMES
+
+	</div>
+	<div class="jp-controls">
+
+		CONTROLS
+
+	</div>
+	<div class="jp-toggles">
+
+		TOGGLES
+
+	</div>
+</div>
+
+*
+
+.jp-interface {
+
+	position: relative;
+	display: table;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+.jp-video .jp-interface {
+
+	display: block;
+
+}
+.jp-audio .jp-gui {
+
+	z-index: 400;
+	border-radius: 8px;
+	box-shadow: 0 0.4rem 1.0rem rgba(0,0,0,0.2);
+	background-color: white;
+
+}
+.audio-player-tool:not(.expanded) .jp-audio .jp-gui {
+
+	box-shadow: none;
+
+}
+
+/* DETAILS FOR FULLSCREEN VIDEO *
+
+.jp-details {
+
+	display: none;
+
+}
+.jp-video.jp-state-full-screen .jp-details {
+
+	position: absolute;
+	display: block;
+	width: 100%;
+	left: 0;
+	bottom: 100%;
+	text-align: center;
+	font-size: 0;
+
+}
+.jp-video.jp-state-full-screen .jp-details .jp-title {
+
+	display: inline-block;
+	padding: 0.3rem 1.0rem;
+	font-size: 1.0rem;
+	font-weight: 300;
+	color: white;
+	border-radius: 4px 4px 0 0;
+	background-color: rgba(0,0,0,0.6);
+
+}
+
+/* CONTROLS *
+
+.jp-controls {
+
+	display: table-cell;
+	vertical-align: bottom;
+	padding: 0.3rem;
+	font-size: 0;
+
+}
+.jp-audio .jp-controls {
+
+	width: 10.0rem;
+	text-align: left;
+	vertical-align: middle;
+
+}
+.jp-video .jp-controls {
+
+	display: inline-block;
+	margin-top: -0.6rem;
+	width: calc(100% - 16.1rem);
+	padding-right: 2.5rem;
+	text-align: center;
+
+}
+
+/* VOLUMES *
+
+.jp-volumes {
+
+	display: table-cell;
+	width: 8.6rem;
+	vertical-align: middle;
+	padding: 0.3rem;
+	font-size: 0;
+
+}
+.jp-video .jp-volumes {
+
+	display: inline-block;
+	min-width: 9.3rem !important;
+	text-align: left;
+	margin-top: -1.3rem;
+	text-align: left !important;
+
+}
+.touch .jp-volumes {
+
+	width: 2.8rem !important;
+	text-align: right;
+
+}
+
+/* TOGGLES *
+
+.jp-toggles {
+
+	display: table-cell;
+	vertical-align: bottom;
+	width: 2.8rem;
+	padding: 0.3rem;
+	font-size: 0;
+
+}
+.jp-video .jp-toggles {
+
+	display: inline-block;
+	width: 6.8rem;
+	text-align: right;
+	margin-top: -0.6rem;
+
+}
+
+/* PROGRESS *
+
+.jp-video .jp-progress-holder {
+
+	position: relative;
+	font-size: 0;
+	margin-bottom: 5px;
+
+}
+.jp-audio .jp-progress-holder {
+
+	position: relative;
+	display: table-cell;
+	vertical-align: bottom;
+	padding: 0.3rem 0.3rem 0.7rem 0.3rem;
+	font-size: 0;
+	width: auto;
+
+}
+
+/*************************************************************************************************/
+/*                                                                                               */
+/*   XXXXXXXX   XXXXXXXX     XXXXXXX      XXXXXXXX   XXXXXXXX   XXXXXXXX   XXXXXXX    XXXXXXX    */
+/*   XX     XX  XX     XX   XX     XX    XX      XX  XX     XX  XX        XX     XX  XX     XX   */
+/*   XX     XX  XX     XX  XX       XX  XX           XX     XX  XX        XX         XX          */
+/*   XXXXXXXX   XXXXXXXX   XX       XX  XX   XXXXXX  XXXXXXXX   XXXXXX     XXXXXXX    XXXXXXX    */
+/*   XX         XX     XX  XX       XX  XX       XX  XX     XX  XX               XX         XX   */
+/*   XX         XX     XX   XX     XX    XX      XX  XX     XX  XX        XX     XX  XX     XX   */
+/*   XX         XX     XX    XXXXXXX      XXXXXXXX   XX     XX  XXXXXXXX   XXXXXXX    XXXXXXX    */
+/*                                                                                               */
+/*************************************************************************************************/
+
+/*
+
+<div class="jp-current-time" role="timer" aria-label="time">00:23</div>
+<div class="jp-duration" role="timer" aria-label="duration">05:27</div>
+<div class="jp-progress">
+	<div style="width: 100%;" class="jp-seek-bar">
+		<div style="width: 7.23245%;" class="jp-play-bar"></div>
+	</div>
+</div>
+
+*
+
+.jp-progress {
+
+	position: relative;
+	display: block;
+	height: 0.5rem;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #ddd;
+
+}
+.jp-audio .jp-progress {
+
+	height: 0.3rem;
+
+}
+.jp-seek-bar {
+
+	width: 0;
+	height: 100%;
+	background-color: #ddd;
+
+}
+.jp-play-bar {
+
+	width: 0;
+	height: 100%;
+	background-color: #993333;
+
+}
+.jp-seeking-bg {
+
+	background: url('jplayer-dream-images/jplayer-seeking-bar.gif');
+
+}
+.jp-current-time, .jp-duration {
+
+	display: inline-block;
+	width: 50%;
+	font-size: 0.8rem;
+	font-weight: 300;
+
+}
+.jp-current-time {
+
+	text-align: left;
+	padding-left: 0.6rem;
+
+}
+.jp-duration {
+
+	text-align: right;
+	padding-right: 0.6rem;
+
+}
+
+/* AUDIO *
+
+.jp-audio .jp-current-time {
+
+	padding-left: 0;
+
+}
+.jp-audio .jp-duration {
+
+	padding-right: 0;
+
+}
+
+/******************************************************************************************/
+/*                                                                                        */
+/*   XX      XX    XXXXXXX    XX        XX      XX  XXX        XXX  XXXXXXXX   XXXXXXX    */
+/*   XX      XX   XX     XX   XX        XX      XX  XXXX      XXXX  XX        XX     XX   */
+/*   XX      XX  XX       XX  XX        XX      XX  XX XX    XX XX  XX        XX          */
+/*   XX      XX  XX       XX  XX        XX      XX  XX  XX  XX  XX  XXXXXX     XXXXXXX    */
+/*    XX    XX   XX       XX  XX        XX      XX  XX   XXXX   XX  XX               XX   */
+/*     XX  XX     XX     XX   XX        XX      XX  XX    XX    XX  XX        XX     XX   */
+/*      XXXX       XXXXXXX    XXXXXXXX   XXXXXXXX   XX          XX  XXXXXXXX   XXXXXXX    */
+/*                                                                                        */
+/******************************************************************************************/
+
+/*
+
+<button class="jp-mute" role="button" tabindex="0">mute</button>
+<div class="jp-volume-bar">
+	<div style="width: 80%;" class="jp-volume-bar-value"></div>
+</div>
+<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+
+*
+
+.jp-volumes button {
+
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 0.3rem;
+	padding: 0;
+	font-size: 0;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1.0rem;
+
+}
+.non-touch .jp-volumes button:hover {
+
+	border-color: #ffa080 !important;
+
+}
+.jp-audio .jp-volumes button:last-child {
+
+	margin-right: 0;
+
+}
+.jp-audio .jp-volumes button:first-child {
+
+	margin-left: 0;
+
+}
+.jp-video .jp-volumes button {
+
+	margin: 0 0.3rem;
+
+}
+
+/* ICONS *
+
+.jp-mute {
+
+	background-image: url('jplayer-dream-images/jplayer-mute.svg');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-mute {
+
+		background-image: url( 'jplayer-dream-images/jplayer-mute.png' );
+
+	}
+
+}
+.jp-state-muted .jp-mute {
+
+	background-image: url('jplayer-dream-images/jplayer-mute-muted.svg');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-state-muted .jp-mute  {
+
+		background-image: url( 'jplayer-dream-images/jplayer-mute-muted.png' );
+
+	}
+
+}
+.jp-volume-max {
+
+	background-image: url('jplayer-dream-images/jplayer-volume-max.svg');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-volume-max {
+
+		background-image: url( 'jplayer-dream-images/jplayer-volume-max.png' );
+
+	}
+
+}
+
+/* BAR *
+
+.jp-volume-bar {
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 4.4rem;
+	max-width: 6.0rem;
+	height: 0.5rem;
+	cursor: pointer;
+	background-color: #ddd;
+
+}
+.jp-volume-bar-value {
+
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background-color: #933;
+
+}
+
+/**************************************************************************************************/
+/*                                                                                                */
+/*     XXXXXXX     XXXXXXX    XXX     XX  XXXXXXXX  XXXXXXXX     XXXXXXX    XX         XXXXXXX    */
+/*    XX     XX   XX     XX   XXXX    XX     XX     XX     XX   XX     XX   XX        XX     XX   */
+/*   XX          XX       XX  XX XX   XX     XX     XX     XX  XX       XX  XX        XX          */
+/*   XX          XX       XX  XX  XX  XX     XX     XXXXXXXX   XX       XX  XX         XXXXXXX    */
+/*   XX          XX       XX  XX   XX XX     XX     XX     XX  XX       XX  XX               XX   */
+/*    XX     XX   XX     XX   XX    XXXX     XX     XX     XX   XX     XX   XX        XX     XX   */
+/*     XXXXXXX     XXXXXXX    XX     XXX     XX     XX     XX    XXXXXXX    XXXXXXXX   XXXXXXX    */
+/*                                                                                                */
+/**************************************************************************************************/
+
+/*
+
+Для аудио:
+
+<button class="jp-previous" role="button" tabindex="0">previous</button>
+<button class="jp-play" role="button" tabindex="0">play</button>
+<button class="jp-next" role="button" tabindex="0">next</button>
+<button class="jp-stop" role="button" tabindex="0">stop</button>
+
+Для видео:
+
+<button class="jp-play" role="button" tabindex="0">play</button>
+<button class="jp-stop" role="button" tabindex="0">stop</button>
+
+*
+
+.jp-controls button {
+
+	display: inline-block;
+	vertical-align: middle;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+
+}
+.non-touch .jp-controls button:hover {
+
+	border-color: #ffa080 !important;
+
+}
+.jp-video .jp-controls button {
+
+	margin: 0 0.3rem;
+
+}
+
+/* ICONS *
+
+.jp-previous {
+
+	background-image: url('jplayer-dream-images/jplayer-previous.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-previous  {
+
+		background-image: url( 'jplayer-dream-images/jplayer-previous.png' );
+
+	}
+
+}
+.jp-play {
+
+	background-image: url('jplayer-dream-images/jplayer-play.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-play {
+
+		background-image: url( 'jplayer-dream-images/jplayer-play.png' );
+
+	}
+
+}
+.jp-state-playing .jp-play {
+
+	background-image: url('jplayer-dream-images/jplayer-pause.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-state-playing .jp-play {
+
+		background-image: url( 'jplayer-dream-images/jplayer-pause.png' );
+
+	}
+
+}
+.jp-stop {
+
+	background-image: url('jplayer-dream-images/jplayer-stop.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-stop {
+
+		background-image: url( 'jplayer-dream-images/jplayer-stop.png' );
+
+	}
+
+}
+.jp-next {
+
+	background-image: url('jplayer-dream-images/jplayer-next.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-next {
+
+		background-image: url( 'jplayer-dream-images/jplayer-next.png' );
+
+	}
+
+}
+
+/**************************************************************************************/
+/*                                                                                    */
+/*   XXXXXXXX    XXXXXXX      XXXXXXXX     XXXXXXXX   XX        XXXXXXXX   XXXXXXX    */
+/*      XX      XX     XX    XX      XX   XX      XX  XX        XX        XX     XX   */
+/*      XX     XX       XX  XX           XX           XX        XX        XX          */
+/*      XX     XX       XX  XX   XXXXXX  XX   XXXXXX  XX        XXXXXX     XXXXXXX    */
+/*      XX     XX       XX  XX       XX  XX       XX  XX        XX               XX   */
+/*      XX      XX     XX    XX      XX   XX      XX  XX        XX        XX     XX   */
+/*      XX       XXXXXXX      XXXXXXXX     XXXXXXXX   XXXXXXXX  XXXXXXXX   XXXXXXX    */
+/*                                                                                    */
+/**************************************************************************************/
+
+/*
+
+Для аудио:
+
+<button class="jp-showlist active" role="button" tabindex="0">show playlist</button>
+
+Для видео:
+
+<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+
+*
+
+.jp-toggles button {
+
+	display: inline-block;
+	vertical-align: middle;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+
+}
+.non-touch .jp-toggles button:hover {
+
+	border-color: #ffa080 !important;
+
+}
+.jp-video .jp-toggles button {
+
+	margin: 0 0.3rem;
+
+}
+
+/* ICONS *
+
+.jp-full-screen {
+
+	background-image: url('jplayer-dream-images/jplayer-fullscreen-expand.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-full-screen {
+
+		background-image: url( 'jplayer-dream-images/jplayer-fullscreen-expand.png' );
+
+	}
+
+}
+.jp-state-full-screen .jp-full-screen {
+
+	background-image: url('jplayer-dream-images/jplayer-fullscreen-collapse.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-state-full-screen .jp-full-screen {
+
+		background-image: url( 'jplayer-dream-images/jplayer-fullscreen-collapse.png' );
+
+	}
+
+}
+.jp-showlist {
+
+	background-image: url('jplayer-dream-images/jplayer-showlist.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-showlist {
+
+		background-image: url( 'jplayer-dream-images/jplayer-showlist.png' );
+
+	}
+
+}
+.jp-showlist.active {
+
+	background-image: url('jplayer-dream-images/jplayer-showlist-active.png');
+
+}
+@media (min-resolution: .001dpcm) {
+
+	_:-o-prefocus, .jp-showlist.active {
+
+		background-image: url( 'jplayer-dream-images/jplayer-showlist-active.png' );
+
+	}
+
+}
+
+/**************************************************************************/
+/*                                                                        */
+/*   XXXXXXXXXX  XXXXXXXXXX    XXXXXXXXXX      XXXXXXXX    XXXXXXXXXX     */
+/*   XXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXXXX  XXXXXXXXXXXX   */
+/*   XXXX        XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX   */
+/*   XXXX        XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX   */
+/*   XXXXXXXX    XXXXXXXXXXXX  XXXXXXXXXXXX  XXXX    XXXX  XXXXXXXXXXXX   */
+/*   XXXXXXXX    XXXXXXXXXX    XXXXXXXXXX    XXXX    XXXX  XXXXXXXXXX     */
+/*   XXXX        XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX   */
+/*   XXXX        XXXX    XXXX  XXXX    XXXX  XXXX    XXXX  XXXX    XXXX   */
+/*   XXXXXXXXXX  XXXX    XXXX  XXXX    XXXX  XXXXXXXXXXXX  XXXX    XXXX   */
+/*   XXXXXXXXXX  XXXX    XXXX  XXXX    XXXX    XXXXXXXX    XXXX    XXXX   */
+/*                                                                        */
+/**************************************************************************
+
+.jp-no-solution {
+
+	padding: 5px;
+	font-size: .8em;
+	background-color: #eee;
+	border: 2px solid #009be3;
+	color: #000;
+	display: none;
+
+}
+.jp-no-solution a {
+
+	color: #000;
+
+}
+.jp-no-solution span {
+
+	font-size: 1em;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+/************************************************************************************/
+/*                                                                                  */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXX     XXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*   XXXXXXXXXXXX  XXXXXXXX  XXXXX    XXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXX   XXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXXXXX  XXXX    XXXX    XXXX          XXXX     XXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXX XXXX    XXXX    XXXXXXXXXX    XXXXXXXXXXXXX   */
+/*   XXXXXXXXXX      XXXX    XXXXXXXXXXXXX    XXXX      XXXXXXXXXX  XXXXXXXXXXXXX   */
+/*   XXXX            XXXX    XXXX XXXXXXXX    XXXX            XXXX  XXXX     XXXX   */
+/*   XXXX            XXXX    XXXX  XXXXXXX    XXXX    XXXX    XXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX   XXXXXX  XXXXXXXX  XXXXXXXXXXXX  XXXX     XXXX   */
+/*   XXXX          XXXXXXXX  XXXX    XXXXX  XXXXXXXX    XXXXXXXX    XXXX     XXXX   */
+/*                                                                                  */
+/*                                                                                  */

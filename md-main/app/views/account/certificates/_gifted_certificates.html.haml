@@ -1,0 +1,39 @@
+- fix_collection(@gifted_certificates.last(2), 2).each do |c_gifted|
+  - if c_gifted.nil?
+    .fake-certificate-gifted
+  - else
+    .gifted-dreambook-certificate
+      .gift-data
+        .giver
+          = link_to account_dreamer_dreams_path(c_gifted.gifted_by), class: 'avatar sender-avatar' do
+            .avatar-image
+              = image_tag(avatar_or_default(c_gifted.gifted_by, :small))
+
+          .giver-info
+            .name= c_gifted.gifted_by.first_name
+
+            - if c_gifted.gifted_by.age.present? && c_gifted.gifted_by.age > 0
+              .age= c_gifted.gifted_by.age
+
+            - if c_gifted.gifted_by.dream_city.present?
+              .location= c_gifted.gifted_by.dream_city
+
+        = link_to account_dream_path(c_gifted.certifiable), class: "dreambook-certificate #{c_gifted.certificate_type.try(:name)}" do
+          .dreambook-certificate-wrap
+            .dreambook-certificate-back
+              %span= t('actions.view_dream')
+            .dreambook-certificate-front
+              %span= "#{c_gifted.certificate_type.try(:name)}"
+      .gift-message
+        .gift-message-container
+          .gift-message-wrapper
+            .gift-message-text= c_gifted.wish || '...'
+
+          .certificate-btns
+            = link_to t('actions.play_video'), account_certificate_accept_path(c_gifted), remote: true, data: {video_id: video_id(c_gifted.certificate_type.name), video_type: "play_video_#{c_gifted.certificate_type.try(:name)}"}, class: 'certificate-btn', id: 'certificate_video_play'
+          .certificate-btns
+            = link_to t('actions.skip_video'), account_certificate_accept_path(c_gifted), data: {video_id: video_id(c_gifted.certificate_type.name), video_type: 'skip_video'}, class: 'certificate-btn'
+
+    - content_for :mydreams_js do
+      / = render 'shared/video', certificate_name: c_gifted.certificate_type.name
+      #certificate_video

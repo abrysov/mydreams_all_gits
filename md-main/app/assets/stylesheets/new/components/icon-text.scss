@@ -1,0 +1,17 @@
+.icon-text {
+  display: flex;
+  align-items: center;
+
+  .icon.size-16 {
+    margin-right: .375rem;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  .text {
+    flex: 1;
+    line-height: 1em;
+  }
+}

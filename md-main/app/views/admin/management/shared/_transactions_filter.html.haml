@@ -1,0 +1,11 @@
+.btn-group{ role: 'group' }
+  %a.btn.btn-default.disabled{ href: '#', role: 'button' }
+    = t('admin.management.transactions.state')
+  = link_to t('admin.management.filters.all'), admin_management_transactions_path,
+    class: "btn btn-default", role: 'button'
+  = link_to t('admin.management.filters.completed'), admin_management_transactions_path(completed: true),
+    class: "btn btn-default #{ params[:completed] ? 'active' : nil }", role: 'button'
+  = link_to t('admin.management.filters.processing'), admin_management_transactions_path(pending: true),
+    class: "btn btn-default #{ params[:pending] ? 'active' : nil }", role: 'button'
+  = link_to t('admin.management.filters.failed'), admin_management_transactions_path(failed: true),
+    class: "btn btn-default #{ params[:failed] ? 'active' : nil }", role: 'button'

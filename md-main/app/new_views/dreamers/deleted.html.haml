@@ -1,0 +1,21 @@
+.block
+  .header
+    .title.content
+      %h2= t('special_pages.deleted.owner.title')
+.block.restore-profile-page
+  .content
+    .icon.x
+    .row
+      .col
+        %h4
+          = raw t('special_pages.deleted.owner.body_new_design')
+      .col
+        %a.button.accent.blue= t('actions.recovery')
+    %hr
+    %h5
+      = raw t('support.conversion_new_design')
+      %br
+      = mail_to 'support@mydreams.club'
+    %br
+    = link_to destroy_dreamer_session_path do
+      %button.blue= t('actions.exit')

@@ -1,0 +1,5 @@
+$('.approve-button-for-object-<%= object.id %>').
+html('<%=j approved_title(object) %>').
+prop('href', '<%=j moderate_remove_approve_path(entity_params(object)) %>').
+removeClass('btn-warning').
+addClass('btn-success');

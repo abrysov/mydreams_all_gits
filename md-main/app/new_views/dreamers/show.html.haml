@@ -1,0 +1,25 @@
+.col-center.content-body
+  #dreamer-info
+  #posts-feed
+
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamerInfo.init("#dreamer-info", {
+        dreamerId: gon.dreamer_id
+      });
+
+      MyDreams.PostsFeed.init("#posts-feed", {
+        dataUrlBuilder: Routes.api_web_dreamer_feeds_path,
+        dataUrlParams: {
+          dreamer_id: gon.dreamer_id
+        },
+        isAddPostFormShown: true,
+        apiCollectionKey: 'feeds'
+      });
+    });

@@ -1,0 +1,9 @@
+- if current_dreamer?(@dreamer)
+
+  = form_for([:account, @dreamer], html: { class: 'js-status-form' }) do |f|
+    = f.text_area(:status, placeholder: t('statuses.default_placeholder'), class: 'autoheight', cols: '70')
+    .status-save-btn.disabled.js-status-btn
+    .status-reset-btn.disabled.js-status-reset
+- else
+
+  = @dreamer.status

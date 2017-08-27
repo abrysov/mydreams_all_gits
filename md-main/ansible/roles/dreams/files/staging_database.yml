@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: 127.0.0.1
+  port: 5432
+  pool: 50
+
+staging:
+  <<: *default
+  database: dreams_staging
+  username: app
+  password: tA3UjcugmhgqK6

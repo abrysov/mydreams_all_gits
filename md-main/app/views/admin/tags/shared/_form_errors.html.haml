@@ -1,0 +1,6 @@
+- if object.errors.any?
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %ul
+        - object.errors.full_messages.each do |message|
+          %li= message

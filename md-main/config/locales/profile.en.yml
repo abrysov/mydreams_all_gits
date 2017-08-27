@@ -1,0 +1,10 @@
+en:
+  api:
+    v1:
+      profile:
+        avatar:
+          uploaded: Successfully loaded
+          not_loaded: Not loaded
+        dreambook:
+          bg_uploaded: Successfully loaded
+          bg_not_loaded: Not loaded

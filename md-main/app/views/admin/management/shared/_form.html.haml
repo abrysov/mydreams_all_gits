@@ -1,0 +1,98 @@
+= form_tag path, method: method, html: { class: 'form-horizontal' } do |f|
+  .form-group.col-xs-12
+    %label.col-xs-2.control-label{ for: 'name' }
+      = t('admin.management.products.name')
+    .col-xs-8
+      %input.form-control{ name: 'name', value: product.name }
+
+  .form-group.col-xs-12
+    %label.col-xs-2.control-label{ for: 'cost' }
+      = t('admin.management.products.cost')
+    .col-xs-8
+      %input.form-control{ name: 'cost', type: 'number', value: product.cost }
+
+  .form-group.col-xs-12
+    %label.col-xs-2.control-label{ for: 'product_type' }
+      = t('admin.management.products.product_type')
+    .col-xs-8
+      .btn-group{ 'data-toggle': 'buttons' }
+        %label.btn.btn-primary{ class: "#{'active' if product.special? }" }
+          %input#special{ autocomplete:'off',checked: product.special?, name: 'product_type', value: 'special', type: 'radio' }
+            = t('admin.management.products.special')
+        %label.btn.btn-primary{ class: "#{'active' if product.certificate? }" }
+          %input#cert{ autocomplete: 'off', checked: product.certificate?, name: 'product_type', value: 'cert', type: 'radio' }
+            = t('admin.management.products.certificate')
+        %label.btn.btn-primary{ class: "#{'active' if product.vip? }" }
+          %input#vip{ autocomplete: 'off', checked: product.vip?, name: 'product_type', value: 'vip', type: 'radio' }
+            = t('admin.management.products.vip_status')
+
+  .form-group
+    %h4
+      = t('admin.management.products.property')
+  .form-group
+    #calc
+      %div.entry.col-xs-12
+        .form-group.col-xs-4
+          .input-group
+            .input-group-addon Property
+            %select.form-control{ name: 'properties[][key]' }
+              - @product_properties.each do |product_property|
+                %option{ value: product_property, type: 'text' }
+                  = product_property
+        .form-group.col-xs-4
+          %label.sr-only{ for: 'property_value' } Value
+          %input.form-control#property_value{ name: 'properties[][value]', type: 'text' }
+        %button.btn.btn-primary.btn-add{ type: 'submit' }
+          %span.glyphicon.glyphicon-plus
+
+    - product.properties.each do |property|
+      %div.entry.col-xs-12
+        .form-group.col-xs-4
+          .input-group
+            .input-group-addon Property
+            - if @product_properties.include? property.key
+              %select.form-control{ name: 'properties[][key]' }
+                = options_for_select(@product_properties, property.key)
+            - else
+              %input.form-control#property_key{ name: 'properties[][key]', value: property.key, type: 'text' }
+
+        .form-group.col-xs-4
+          %label.sr-only{ for: 'property_value' } Value
+          %input.form-control#property_value{ name: 'properties[][value]', value: property.value, type: 'text' }
+        %button.btn.btn-primary.btn-remove.btn-danger{ type: 'submit' }
+          %span.glyphicon.glyphicon-minus
+
+  .form-group
+    .col-xs-6
+      %button.btn.btn-primary{ type: 'submit' }= t('admin.management.actions.create')
+
+
+:javascript
+  $(function()
+  {   var i='New property';
+      $('#calc:first').find('.input-group-addon').html(i);
+      $(document).on('click', '.btn-add', function(e)
+      {
+          e.preventDefault();
+
+          var controlForm = $('#calc:first'),
+              currentEntry = $(this).parent('.entry:first'),
+              newEntry = $(currentEntry.clone()).appendTo(controlForm);
+              $(newEntry).find('.input-group-addon').html(i);
+
+          newEntry.find('input').val('');
+          controlForm.find('.entry:not(:last) .btn-add')
+              .removeClass('btn-add').addClass('btn-remove')
+              .removeClass('btn-success').addClass('btn-danger')
+              .html('<span class="glyphicon glyphicon-minus"></span>');
+      }).on('click', '.btn-remove', function(e)
+      {
+          $(this).parent().nextAll('.entry').each(function() {
+              $(this).find('.input-group-addon').html($(this).find('.input-group-addon').html());
+          });
+  		$(this).parents('.entry:first').remove();
+
+  		e.preventDefault();
+  		return false;
+  	});
+  });

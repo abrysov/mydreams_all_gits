@@ -1,0 +1,47 @@
+{
+  "title": "Api:v1 Feeds",
+  "type": "object",
+  "required": [ "feedbacks", "meta" ],
+  "properties": {
+    "feedbacks": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "action",
+        "created_at",
+        "dreamer",
+        "initiator",
+        "resource"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "action": { "type": "string" },
+        "created_at": { "type": "string" },
+        "dreamer": { "type": [ "hash", "array" ] },
+        "initiator": { "type": [ "hash", "array" ] },
+        "resource": { "type": [ "hash", "array" ] }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "total_count",
+        "pages_count",
+        "remaining_count",
+        "per",
+        "page"
+      ],
+      "properties": {
+        "status": { "type": "string" },
+        "code": { "type": "integer" },
+        "total_count": { "type": "integer" },
+    		"pages_count": { "type": "integer" },
+    		"remaining_count": { "type": "integer" },
+    		"per": { "type": "integer" },
+    		"page": { "type": "integer" }
+      }
+    }
+  }
+}

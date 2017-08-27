@@ -1,0 +1,40 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title= t('admin.mailing_list.come_true_dreams.forms.email_content_panel')
+  .panel-body
+    %form
+      .form-group
+        %label= t('admin.mailing_list.come_true_dreams.forms.dream_id')
+        %div= @dream_come_true_email.dream.id
+      .form-group
+        %label= t('admin.mailing_list.come_true_dreams.forms.additional_text')
+        %div= @dream_come_true_email.additional_text
+      - if @dream_come_true_email.snapshot.present?
+        .form-group
+          %label= I18n.t('admin.mailing_list.come_true_dreams.forms.snapshot')
+          %div= image_tag @dream_come_true_email.snapshot.url
+
+    - unless @dream_come_true_email.state == 'sended' || @dream_come_true_email.dream.came_true == true
+      = link_to t('actions.edit'), edit_admin_mailing_list_come_true_dream_path(id: @dream_come_true_email.id), class: 'btn btn-warning'
+
+
+- if @dream_come_true_email.state == 'sended' || @dream_come_true_email.dream.came_true == true
+  %div= I18n.t('admin.mailing_list.come_true_dreams.errors.already_come_true')
+- else
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= t('admin.mailing_list.come_true_dreams.forms.email_send_panel')
+    .panel-body
+      = form_tag send_mail_mailing_list_come_true_dreams_path, method: :get do
+        .form-group
+          .radio
+            %label
+              = radio_button_tag :test_send_mail, 'true', true
+              = t('admin.mailing_list.come_true_dreams.forms.send_test_mail')
+          .radio
+            %label
+              = radio_button_tag :test_send_mail, 'false'
+              = t('admin.mailing_list.come_true_dreams.forms.send_mail')
+
+          = hidden_field_tag :come_true_email_id, @dream_come_true_email.id
+          = submit_tag I18n.t('admin.mailing_list.come_true_dreams.buttons.send'), class: 'btn btn-default'

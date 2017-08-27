@@ -1,0 +1,13 @@
+%tr
+  %td
+    = tag.id
+  %td
+    = tag.name
+  %td.scheme
+    - hierarchy_tree(tag).map do |tag|
+      = link_to tag.name, [:admin, :tags, tag], class: "#{'active' if tag == @tag}"
+      \->
+  %td
+    = tag.active ? '' : 'off'
+  %td.actions
+    = render 'actions', tag: tag

@@ -1,0 +1,106 @@
+.landing-page
+  .block.promo
+    .grid
+      - (1..8*4).each do |i|
+        .photo{ style: "background-image: url('http://unsplash.it/200/200?random=" + i.to_s + "')" }
+    .content
+      %h1
+        Социальная сеть нового
+        %br
+        формата, в которой сбываются
+        %br
+        Мечты и желания.
+      %ul
+        %li 1. Добавьте свою Мечту в Dreambook
+        %li 2. Поделитесь Мечтой со всем Миром!
+        %li 3. Запустите Мечту во Вселенную
+      %button.accent.yellow.size-xl Исполнить Мечту
+      %p
+        Каждые
+        %span.accent 5
+        секунд на Земле
+        %br
+        сбывается Мечта.
+      .apps-buttons
+        %a.app-store.size-xl{ href: "//itunes.apple.com", target: "_blank" } App Store
+        %a.google-play.size-xl{ href: "//play.google.com", target: "_blank" } Google Pplay
+  .block.device
+    .content
+      .screen
+  .block.dreams
+    .content
+      %h2 Сбывшиеся мечты
+      .slider
+        .btn.left.hidden
+        .btn.right
+        .mask
+          .card-list{ style: "margin-left: -50rem"}
+            - (1..3).each do |i|
+              .screen
+                - (1..4).each do |i|
+                  = render partial: 'card/dream'
+        .slider-actions
+          .screen-btns
+            .screen-btn
+            .screen-btn.active
+            .screen-btn
+          %a.view-all{ href: "#" } Смотреть все
+  .block.news
+    .slider
+      .tape{ style: "left: -40px" }
+        .screen{ style: "background-image: url(http://unsplash.it/1000/800)" }
+        .screen{ style: "background-image: url(http://unsplash.it/1000/800)" }
+    .screen-btns
+      .screen-btn
+      .screen-btn.active
+      .screen-btn
+    .slider-actions
+      .content
+        .btn.left.hidden
+        .btn.right
+        .description
+          %h2
+            Стартап недели: новый сайт
+            %br
+            в российском Интернете
+            %br
+            My Dreams Club
+          .source
+            .avatar.size-s
+              %img{ src: "https://randomuser.me/api/portraits/men/0.jpg", alt: "Posta-Magazine" }
+            .title Posta-Magazine
+            %button.white Читать
+  .block.stars
+    .content
+      %h2 Звезды с нами
+      .slider
+        .tape
+          - (1..3).each do |i|
+            .star-list
+              - (1..5).each do |j|
+                %a.star{ href: "#" }
+                  .avatar.size-xl
+                    %img{ src: "https://randomuser.me/api/portraits/women/" + j.to_s + i.to_s + ".jpg" }
+                  %h3 Ирина чайковская
+                  %h5 29, Россия, Москва
+      .btn.left.hidden
+      .btn.right
+      .screen-btns
+        .screen-btn
+        .screen-btn.active
+        .screen-btn
+  .block.sing-up
+    .content
+      %h2 Станьте частью этого события
+      %p
+        Вступая в клуб Мечтателей, Вы помогаете другим людям приблизиться к своей Мечте и
+        %br
+        получить возможность исполнить свою.
+      %button.accent.purple2.size-xl Зарегистрироваться
+  .block.footer
+    .content
+      %a{ href: "#" } MyDreams.club
+      %a{ href: "#" } О клубе
+      %a{ href: "mailto:support@mydreams.club" } support@mydreams.club
+
+

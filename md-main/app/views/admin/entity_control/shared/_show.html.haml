@@ -1,0 +1,10 @@
+.row
+  .col-md-8.col-md-offset-2
+    %table.table.table-striped
+      %thead
+      %tbody
+        - object.attributes.each do |key, value|
+          %tr
+            %th= key
+            %td= value.inspect
+

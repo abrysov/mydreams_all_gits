@@ -1,0 +1,51 @@
+.label {
+  display: block;
+  height: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1rem;
+
+  &.size-l {
+    height: 1.5rem;
+    font-size: .938rem;
+    font-weight: 100;
+    line-height: 1.43rem;
+  }
+
+  &.default {
+    background: $blue-magenta-gradient;
+  }
+
+  &.vip {
+    background-color: #9e61f2;
+  }
+
+  &.gold {
+    background-color: #f5ae23;;
+  }
+
+  &.presidential {
+    background-color: #0c95ff;
+  }
+
+  &.bronze {
+    background-color: #b47657;
+  }
+
+  &.imperial {
+    background-color: #004274;
+  }
+
+  &.platinum {
+    background-color: #56839e;
+  }
+
+  &.green {
+    background-color: $green-color;
+  }
+
+  &.silver {
+    background-color: #adadad;
+  }
+}

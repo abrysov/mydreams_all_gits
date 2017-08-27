@@ -1,0 +1,16 @@
+.row {
+  position: relative;
+  display: flex;
+  @for $i from 1 through 5 {
+    .col-#{$i} { flex: $i; }
+  }
+}
+.row-page {
+  .col-left,
+  .col-right{
+    width: 13.9375rem;
+  }
+  .col-center {
+    width: 36.125rem;
+  }
+}

@@ -1,0 +1,46 @@
+.suggested-post-group
+  .dreamer-info
+    = link_to account_dreamer_dreams_path(suggest.sender), class: 'avatar sender-avatar' do
+      .avatar-image
+        = image_tag(avatar_or_default(suggest.sender, :small))
+
+    .data
+      .name= suggest.sender.first_name
+      - if suggest.sender.age.present?
+        .age= ", #{suggest.sender.age}"
+      - if suggest.sender.dream_city.present?
+        .city= ", #{suggest.sender.dream_city}"
+
+  .card.post.card-no-flip.card-hover.js-flip
+    .card__wrap.flip
+      .card_back
+        .card_back__wrap
+          .logo_color
+      .card_front
+        .card_post__img
+          .post-default-img
+            - if post.photo.present?
+              = image_tag post.photo.url(:medium), class: 'cover'
+
+          .card_post__menu
+            .card_post__menu__wrapper
+              = link_to t('actions.accept'), accept_account_suggested_post_path(suggest), remote: true, class: 'add js-action', data: {action: 'accept'}
+
+              = link_to t('actions.reject'), reject_account_suggested_post_path(suggest), remote: true, class: 'refuse js-action', data: {action: 'reject'}
+
+        = link_to account_dreamer_post_path(suggest.sender, post), data: {push: "true", target: "#js-ajax-content"} do
+          .card_post__title
+            %span= post.title
+
+          .card_post__date
+            %span= pretty_date(post.created_at)
+
+          .card_post__description
+            %span= post.body
+
+      .card_post__footer
+        .card_post__footer__left
+          .card_post__footer__likes 0
+          .card_post__footer__comments 0
+        .card_post__footer__right
+          .card_post__footer__share

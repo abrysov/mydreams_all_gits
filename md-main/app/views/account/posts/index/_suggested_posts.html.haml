@@ -1,0 +1,15 @@
+- if current_dreamer?(@dreamer) && @dreamer.flybook_nb_suggested_posts > 0
+  %h2.page_content-title
+    %b= @dreamer.flybook_nb_suggested_posts
+    = "#{custom_pluralize(@dreamer.flybook_nb_suggested_posts, 'posts')} #{custom_pluralize(@dreamer.flybook_nb_suggested_posts, 'proposed')}"
+
+  .card_group.group.js-received-cards
+    - fix_collection(@dreamer.flybook_suggested_posts.last(3), 3).each do |suggest|
+      - if suggest.nil?
+        .suggested-post-group
+          .card.fake-card.post
+      - else
+        = render partial: 'account/posts/suggested_post', locals: {post: suggest.post, suggest: suggest}
+
+    - if @dreamer.flybook_nb_suggested_posts > 3
+      = link_to t('actions.show_all'), show_suggested_posts_account_dreamer_posts_path, remote: true, class: 'button-show-all js-show-all'

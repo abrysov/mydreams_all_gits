@@ -1,0 +1,77 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'robots', content: 'noindex, nofollow'}
+    %title My Dreams
+    = render 'favicon'
+    = display_meta_tags
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'application'
+    = render 'layouts/mp'
+
+  %body{ lang: locale, style: page_bg_style(@dreamer), class: 'dreambook-body'}
+    = render 'unviewed_news' if dreamer_has_unviewed_news?
+
+    #layout
+      = render 'flash_messages'
+
+      .row.thin
+        .cell
+          = render partial: 'application/dreamers_feed'
+
+      .row.full
+        #wrapper.cell
+          = render 'header'
+
+          .page
+            .container
+              .main.flybook{class: "#{'owner' if current_dreamer?(@dreamer)}"}
+                = render partial: 'application/flybook_header', locals: {dreamer: @dreamer}
+
+                .main_content
+                  .page-spinner.js-page-spinner
+                    .page-spinner_wrap
+                      .page-spinner__icon
+                  #js-ajax-content.js-main-content
+                    = yield
+
+          -if !@dreamer.is_vip?
+
+            .special.not-vip
+
+              %h3= t("dreambook_advertisement.title")
+              %h4= t("dreambook_advertisement.condition")
+
+              .logo
+
+          -else
+
+            .special
+
+          /  .logo_wrap
+
+
+          /  -# - if @dreamer.is_project_dreamer?
+          /    -# = image_tag('proj_dreambook_special_bg.png')
+
+          .spotlight-modal.js-spotlight-modal
+            .spotlight-overlay.js-spotlight-overlay
+
+            = form_tag search_index_path, {method: :get, class: 'search_form'} do
+              .top_menu__search__form_wrap
+                = text_field_tag :search, '', placeholder: t('misc.search')
+                = submit_tag ''
+              .spotlight-close.js-spotlight-close
+
+      .row.thin
+        .cell
+          = render 'footer'
+
+    .jmod-container.jmod-container
+
+    = javascript_include_tag 'application'
+    = yield :mydreams_js
+    = render 'layouts/ok'
+    = render 'layouts/ga'
+    = render 'layouts/ym'

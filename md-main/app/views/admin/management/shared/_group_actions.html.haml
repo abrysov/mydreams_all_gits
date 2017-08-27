@@ -1,0 +1,10 @@
+
+- unless objects.empty?
+  %hr
+  .row
+    .col-md-6.col-md-offset-3.btn-group-vertical
+      = link_to t('.create_new_product'), new_admin_management_product_path,
+      class: 'btn btn-success block', role: 'button'
+
+    .col-md-1.col-md-offset-2
+      %button.btn.btn-default#to_top Up

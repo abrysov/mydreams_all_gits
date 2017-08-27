@@ -1,0 +1,34 @@
+$(function(){
+  var reg_select = function($select) {
+    $select.first().selectize({
+        plugins: ['remove_button'],
+        valueField: 'name',
+        labelField: 'name',
+        searchField: 'name',
+        create: false,
+        preload: false,
+        options: [],
+        items: $select.data('chosen'),
+        load: function(query, callback) {
+            $.ajax({
+                url: '<%= ::Rails.application.routes.url_helpers.admin_tags_search_tags_path %>',
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    id: $select.data('entity-id'),
+                    q: query
+                },
+                error: function() {
+                    callback();
+                },
+                success: function(res) {
+                    callback(res);
+                }
+            });
+        }
+    });
+  };
+  reg_select($('#dream_hidden_tags'));
+  reg_select($('#ad_link_tags'));
+  reg_select($('#ad_banner_tags'));
+});

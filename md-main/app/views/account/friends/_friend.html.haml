@@ -1,0 +1,46 @@
+- if friend.blank?
+  .card.fake-card
+- else
+  - friend_request ||= false # NOTE: quick optimization
+
+  .card.card-hover.js-flip{data: {type: :dreamer, 'dreamer-gender' => friend.gender, vip: "#{'vip' if friend.is_vip?}"}}
+    .card__wrap.flip
+      .card_back
+        .card_back__wrap
+          .logo_color
+      .card_front
+        = link_to [:account, friend, :dreams], class: 'dreamer-link' do
+          .dreamer-dreambook Dreambook
+          .dreamer-footer
+            .dreamer-footer-wrap
+              .dreamer-name
+                - if friend.last_name.present?
+                  %span.first-name= friend.first_name
+                  %span.last-name= friend.decorate.last_name_and_age
+                - else
+                  %span.first-name= friend.decorate.first_name_and_age
+
+              - if friend.dream_city.present?
+                .dreamer-location= "#{friend.dream_city}"
+
+        .dreamer-avatar
+          .avatar.dreamer_card
+            - if friend.is_vip?
+              .label_vip
+                %span= t('flybook.vip')
+
+            - if friend.online?
+              .label_online
+                %span= t('flybook.online')
+
+            .avatar-image
+              = image_tag avatar_or_default(friend, :medium)
+
+              - if current_dreamer?(@dreamer)
+                .dreamer-ctrl__wrap
+                  - if !friend_request
+                    = link_to t('actions.delete'), friend, :method => :delete, class: 'dreamer-relationship__ctrl', data: {target: 'del'}
+                    = link_to t('actions.to_subscribers'), [:remove_subscription, friend], class: 'dreamer-relationship__ctrl', data: { target: 'sub' }
+                  - else
+                    = link_to t('actions.to_friendlist'), [:accept_request, friend], class: 'dreamer-relationship__ctrl', data: {target: 'accept'}
+                    = link_to t('actions.to_subscribers'), [:deny_request, friend], class: 'dreamer-relationship__ctrl', data: {target: 'sub'}

@@ -1,0 +1,30 @@
+.frame.authorization
+  = form_for dreamer, url: session_path(dreamer), remote: true, html: {method: :post, data: {'modal-type' => 'authorization', 'text-form' => 'true'}} do |f|
+    %h3.title= t('modals.authorization.title')
+    .errors.alert-danger
+    .input-field.js-input-field
+      = f.text_field :login, {placeholder: t('modals.authorization.login_placeholder'), class: 'js-validation auth_login', data: {valid: 'email'}}
+
+    .input-field.js-input-field
+      = f.text_field :password, {type: 'password', autocomplete: 'off', placeholder: t('modals.authorization.password_placeholder'), class: 'js-validation auth_pass', data: {valid: 'password'}}
+
+    .control.js-form-control
+      %label.button-bv-animated.disabled.auth_submit.js-form-submit{for: 'authorization'}
+        %span= t('modals.authorization.submit')
+      .preloader.js-preloader
+      = f.submit id: "authorization", disabled: true
+
+    .addition
+      .left
+        = link_to t('modals.authorization.forgot_password'), modal_new_password_path, { remote: true, class: 'recovery jmod-btn', data: {'modal-type' => 'recovery'} }
+      .right
+        = f.check_box :remember_me, {id: 'remember'}
+        %label{for: 'remember'}= t('modals.authorization.remember_me')
+
+    .socials
+      %p.socials-title= t('modals.authorization.socials_title')
+      .list
+        - dreamer.class.omniauth_providers.each do |provider|
+          = link_to '', omniauth_authorize_path(dreamer, provider), class: 'item', data: { type: provider }
+
+    = link_to t('modals.authorization.registration'), modal_registration_path, {remote: true, class: 'registration jmod-btn', data: {'modal-type' => 'registration'}}

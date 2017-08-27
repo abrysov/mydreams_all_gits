@@ -1,0 +1,57 @@
+.radio {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: .875rem;
+  height: .875rem;
+  margin: .125rem 0;
+
+  input {
+    position: relative;
+    z-index: 1;
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    cursor: pointer;
+    transform: scale(2);
+    opacity: 0;
+    appearance: none;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: inherit;
+    height: inherit;
+    border: 1px solid $border-gray-color;
+    border-radius: 100%;
+  }
+
+  span::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    margin: auto;
+    content: '';
+    border-radius: 100%;
+  }
+
+  input:hover + span::after {
+    background: $border-gray-color;
+  }
+
+  input:checked + span::after {
+    background: $light-purple-color;
+  }
+
+  input:checked + span {
+    border-color: $light-purple-color;
+  }
+}

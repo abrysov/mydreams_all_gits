@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.avatar')
+      %th= t('.full_name')
+      %th= t('.email')
+      %th= t('.status')
+      %th= t('.reg_date')
+      %th= t('.confirm_date')
+      %th= t('.action')
+  %tbody
+    = render @dreamers
+    = paginate @dreamers, theme: 'moderate'

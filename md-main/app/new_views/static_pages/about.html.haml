@@ -1,0 +1,22 @@
+.block
+  .header
+    .title.content
+      %h2 О Клубе
+.block
+  .content.big.align-center
+    %h4 one
+    %p
+      = t('about.one_new_design').html_safe
+      %br
+      %br
+    %h4 two
+    %p
+      = t('about.two').html_safe
+      %br
+      %br
+    %h4 three
+    %p= t('about.three').html_safe
+    %h3= t('about.info_new_design').html_safe
+    %br
+    %br
+    = link_to t('about.agreement'), agreement_path, class: 'accent'

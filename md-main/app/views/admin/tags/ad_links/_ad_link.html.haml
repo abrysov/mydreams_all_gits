@@ -1,0 +1,11 @@
+%tr
+  %td
+    = ad_link.id
+  %td
+    = ad_link.url
+  %td
+    = ad_link.tags.map(&:name)
+  %td
+    = active_flag(ad_link.active)
+  %td.actions
+    = render 'actions', ad_link: ad_link

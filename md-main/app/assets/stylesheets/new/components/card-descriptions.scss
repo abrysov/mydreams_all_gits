@@ -1,0 +1,50 @@
+.card-wrapper {
+  .description-list {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: -11.5rem;
+    width: 11.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $light-gray-text-color;
+    font: inherit;
+
+    li {
+      position: absolute;
+      display: flex;
+      width: 100%;
+
+      &::after {
+        display: block;
+        margin: 0 .8em;
+        margin-bottom: .5em;
+        content: '';
+        border-bottom: 1px solid $border-gray-color;
+
+        flex: 1;
+      }
+    }
+
+    .status {
+      top: .2rem;
+    }
+
+    .photo {
+      margin-top: 5.8rem;
+    }
+
+    .name {
+      margin-top: 11.7rem;
+    }
+
+    .desc {
+      margin-top: 13.2rem;
+    }
+
+    .asterisk {
+      color: $blue-color;
+    }
+  }
+}

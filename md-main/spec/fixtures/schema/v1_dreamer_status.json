@@ -1,0 +1,35 @@
+{
+  "title": "Api:v1 Dreamer status",
+  "type": "object",
+  "required": [ "dreamer", "meta" ],
+  "properties": {
+  	"dreamer": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "coins_count",
+        "friend_requests_count",
+        "messages_count",
+        "notifications_count"
+      ],
+      "properties": {
+    		"id": { "type": "integer" },
+        "coins_count": { "type": "integer" },
+        "friend_requests_count": { "type": "integer" },
+        "messages_count": { "type": "integer" },
+        "notifications_count": { "type": "integer" }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

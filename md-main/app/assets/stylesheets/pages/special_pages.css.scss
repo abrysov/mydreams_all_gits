@@ -1,0 +1,159 @@
+.special-page-empty-layout {
+  height: 100vh;
+  .container {
+    display: table;
+    margin: auto;
+    height: 100%;
+  }
+}
+
+.special-pages {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.blocked-me {
+  color: white;
+  text-align: center;
+
+  div {
+    padding: 10px;
+  }
+  p {
+    padding: 5px;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+  hr {
+    width: 35%;
+    margin: auto;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+  }
+
+  .page-title {
+    font-weight: 400;
+  }
+  .page-body, .page-footer {
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .page-footer {
+   font-size: 16px;
+  }
+
+  .button-exit {
+    color: white;
+    border-color: white;
+  }
+
+}
+
+.special-page-him {
+
+  .dreambook_header {
+    height: 240px;
+  }
+
+  .empty-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: 35px auto;
+    background-color: #eee;
+  }
+
+  .page-title {
+    font-size: 2em;
+    font-weight: 300;
+    color: gray;
+    width: 80%;
+    margin: auto;
+  }
+
+  .main-content {
+    height: 400px;
+  }
+
+}
+
+.deleted-me {
+  color: grey;
+  text-align: center;
+
+  a {
+    color: #1495FE;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  .page-title {
+    font-weight: 300;
+    font-size: 26px;
+    padding: 30px;
+  }
+
+  .page-body {
+    font-weight: 300;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .email {
+    font-weight: 500;
+    color: #666;
+    font-size: 20px;
+    margin: 10px 0 25px;
+  }
+
+  hr {
+    width: 35%;
+    margin: auto;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+  }
+
+  .less-width {
+    max-width: 400px;
+  }
+
+  .div-x {
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    background: #efefef;
+    border-radius: 60px;
+    font-size: 99px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  button.button-skyblue {
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 12px 30px;
+    background-color: #1495FE;
+    margin-bottom: 50px;
+  }
+}
+
+.button-exit {
+  cursor: pointer;
+  border-radius: 15px;
+  border: 2px solid #009cfe;
+  background: none;
+  color: #009cfe;
+  font-size: 16px;
+  margin: 30px;
+  padding: 10px 50px;
+}

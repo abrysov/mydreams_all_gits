@@ -1,0 +1,49 @@
+{
+  "title": "Api:v1 Dreamer conversation",
+  "type": "object",
+  "required": [ "conversations", "meta" ],
+  "properties": {
+  	"conversations": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "last_message",
+        "dreamers",
+        "dreamers_count",
+        "unreaded_messages_count"
+      ],
+      "properties": {
+    		"id": {
+          "type": "integer",
+          "required": [
+            "id",
+            "dreamer",
+            "body",
+            "created_at"
+          ],
+          "properties": {
+            "id": { "type": "integer" },
+            "dreamer": { "type": [ "hash", "array" ] },
+            "body": { "type": "string" },
+            "created_at": { "type": "string" }
+          }
+        },
+        "last_message": { "type": [ "hash", "array" ] },
+        "dreamers": { "type": [ "hash", "array" ] },
+        "dreamers_count": { "type": "integer" },
+        "unreaded_messages_count": { "type": "integer" }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

@@ -1,0 +1,16 @@
+.attach-button {
+  width: .938rem;
+  height: .875rem;
+  cursor: pointer;
+  background-image: asset-url('new/attach.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

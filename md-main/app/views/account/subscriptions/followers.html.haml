@@ -1,0 +1,58 @@
+.content_wrap
+  .dreambook_menu.subscriptions-togglers
+    = link_to account_dreamer_subscriptions_path, {data: {push: true, target: '#js-ajax-content'}, class: 'item js-flybook-link active'} do
+      /%span.label= t('subscribers.followers')
+      - if current_dreamer?(@dreamer)
+        %span.label= t('subscribers.followers_owner')
+      - else
+        %span.label= t('subscribers.followers_guest')
+    = link_to account_dreamer_subscriptions_path(subscriptions: true), {data: {push: true, target: '#js-ajax-content'}, class: 'item js-flybook-link'} do
+      /%span.label= t('subscribers.subscriptions')
+      - if current_dreamer?(@dreamer)
+        %span.label= t('subscribers.subscriptions_owner')
+      - else
+        %span.label= t('subscribers.subscriptions_guest')
+
+  .sub-container.js-search-content
+    = hidden_field_tag :filter_url, request.url
+
+    - if @dreamer.flybook_nb_new_followers > 0 && current_dreamer?(@dreamer)
+      %h2.page_content-title
+        %b= @dreamer.flybook_nb_new_followers
+        = custom_pluralize(@dreamer.flybook_nb_new_followers, 'new_followers')
+
+      .card_group.group.js-received-cards
+        - fix_collection(@received_followers.last(4), 4).each do |follower|
+          - if follower.nil?
+            .card.fake-card
+          - else
+            = render partial: 'subscribe', locals: { dreamer: follower, subscriptions: params[:subscriptions] }
+
+        - if @dreamer.flybook_nb_new_followers > 4
+          = link_to t('actions.show_more'), show_received_followers_account_dreamer_subscriptions_path, remote: true, data: { append: true }, class: 'button-show-all js-show-all'
+
+    - if @followers.total_count > 0
+      %h2.page_content-title
+        %b= @followers.total_count
+        = custom_pluralize(@followers.total_count, 'followers')
+
+      .subscribers-filter
+        = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+          = render 'application/fast_search', param_name: :search
+
+      .card_group.group.js-card-group
+        = render 'account/subscriptions/followers/followers'
+
+      = paginate @followers, theme: 'more'
+
+    - else
+      %h2.page_content-title= t('subscribers.no_followers')
+
+      - if params[:search]
+        .subscribers-filter
+          = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+            = render 'application/fast_search', param_name: :search
+
+      .card_group
+        - (0...16).each do
+          .card.fake-card

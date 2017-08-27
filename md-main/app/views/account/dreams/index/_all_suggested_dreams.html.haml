@@ -1,0 +1,2 @@
+- @suggested_dreams.each do |suggest|
+  = render partial: 'account/dreams/suggested_dream', locals: {dream: suggest.dream, suggest: suggest}

@@ -1,0 +1,29 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ :style => "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %h2 Новости
+  #posts-feed
+    .feed-container
+      = render partial: 'news/create_record'
+      - (0..21).each do |items|
+        = render partial: 'news/post'
+
+.col-right
+  .col-js
+    .top
+      .wrapper
+        .input.circle.icon-right
+          %input{ placeholder: "Поиск", type: "text" }
+          %span.icon.size-10.search-purple
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/news" } Лента новостей
+        %li
+          %a{ href: "/markup/update"} Обновления
+        %li
+          %a{ href: "/markup/recommendations" } Рекомендации
+        %li
+          %a{ href: "/markup/comments" } Комментарии
+
+

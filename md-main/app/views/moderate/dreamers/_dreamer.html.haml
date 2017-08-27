@@ -1,0 +1,22 @@
+%tr{ data: { dreamer_id: dreamer.id}}
+  %td
+    = dreamer.id
+  %td
+    = link_to_if (ava_link = dreamer.avatar.url(:large)),
+      image_tag(avatar_or_default(dreamer, :admin)), ava_link
+  %td
+    = dreamer_link(dreamer)
+  %td
+    = dreamer.email
+  %td
+    = dreamer.status
+  %td
+    = short_date(dreamer.created_at)
+  %td
+    = dreamer.confirmed? ? short_date(dreamer.confirmed_at) : '-'
+  %td
+    = dreamer.abuses.count
+  %td.state
+    = dreamer_state(dreamer)
+  %td.actions
+    = render 'moderate/shared/actions', object: dreamer

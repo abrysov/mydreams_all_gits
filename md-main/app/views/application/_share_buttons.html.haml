@@ -1,0 +1,9 @@
+- encoded_description = URI::escape(object.respond_to?(:description) ? object.description.to_s : object.caption.to_s)
+- encoded_title = URI::escape(object.respond_to?(:title) ? object.title.to_s : '')
+
+.sm_group
+  = link_to '', '#', onclick: "Share.google_plus('#{full_current_url}','#{encoded_title}')", data: {type: 'goo'}, class: 'preview-list__item'
+  = link_to '', '#', onclick: "Share.twitter('#{full_current_url}','#{encoded_title}')", data: {type: 'tw'}, class: 'preview-list__item'
+  = link_to '', '#', onclick: "Share.facebook('#{full_current_url}','#{encoded_title}','#{object.try(:photo).try(:url, :medium)}','#{encoded_description}')", data: {type: 'fb'}, class: 'preview-list__item'
+  = link_to '', '#', onclick: "Share.vkontakte('#{full_current_url}','#{encoded_title}','#{object.try(:photo).try(:url, :medium)}','#{encoded_description}')", data: {type: 'vk'}, class: 'preview-list__item'
+  = link_to '', '#', onclick: "Share.odnoklassniki('#{full_current_url}','#{encoded_description}')", data: {type: 'ok'}, class: 'preview-list__item'

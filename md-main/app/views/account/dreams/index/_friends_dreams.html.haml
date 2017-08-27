@@ -1,0 +1,14 @@
+- if @dreams.total_count == 0
+  %h2.page_content-title= t('dreams.friends_dreams.no_dreams')
+
+  .card_group
+    - (0...16).each do
+      .card.fake-card
+
+- else
+  %h2.page_content-title= t('dreams.friends_dreams.dreams')
+
+  .card_group.friend-dreams.group.js-card-group
+    = render partial: 'account/dreams/dream', collection: fix_collection(@dreams, @dreams.limit_value), as: :dream, locals: { dreambook: true }
+
+  = paginate @dreams, theme: 'more'

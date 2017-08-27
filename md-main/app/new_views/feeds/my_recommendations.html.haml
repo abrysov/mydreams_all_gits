@@ -1,0 +1,21 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %h2 Мои рекоммендации
+
+  #posts-feed
+
+.col-right
+  = render partial: 'right_menu'
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.PostsFeed.init("#posts-feed", {
+        dataUrlBuilder: Routes.api_web_feed_recommendations_path,
+        isAddPostFormShown: false,
+        apiCollectionKey: 'recommendations'
+      });
+    });
+

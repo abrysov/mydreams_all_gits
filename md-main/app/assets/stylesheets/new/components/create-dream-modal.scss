@@ -1,0 +1,61 @@
+.create-dream-modal {
+  flex-direction: column;
+  border: 1px solid $border-gray-color;
+  border-top: 0;
+  border-bottom: 0;
+
+  .header {
+    display: flex;
+    height: 4.375rem;
+    border-bottom: 1px solid $border-gray-color;
+
+    .content {
+      padding-right: 6.5625rem;
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  .body {
+    position: relative;
+    overflow-y: auto;
+    padding-right: 13.9375rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    flex: 1;
+  }
+
+  .close {
+    position: relative;
+    width: 7.375rem;
+    height: auto !important;
+  }
+
+  .card-wrapper {
+    position: absolute;
+    top: .8125rem;
+    left: 12.5rem;
+
+    .card {
+      margin: 0;
+      margin-bottom: 1.8rem;
+    }
+
+    .reactions {
+      pointer-events: none;
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: .8125rem;
+    left: 25.375rem;
+    width: 11.0625rem;
+
+    label {
+      margin-bottom: 1.8rem;
+      text-align: left;
+      color: $light-gray-text-color;
+    }
+  }
+}

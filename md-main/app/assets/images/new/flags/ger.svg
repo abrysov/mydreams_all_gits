@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>ger</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.602913375 0 9.29251462 25.5217545 9.29251462 25.5217545 0.602913375 0 0.602913375"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ger">
+            <g id="Group-2" transform="translate(3.250000, 3.250000)">
+                <g id="Group-3" transform="translate(0.000000, 8.084980)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M25.5217545,4.67589712 C25.5217545,3.24992587 25.2855158,1.88372587 24.8528858,0.602913375 L0.6682995,0.602913375 C0.2356695,1.88372587 -0.00056925,3.24992587 -0.00056925,4.67589712 C-0.00056925,6.30395212 0.309672,7.86085087 0.86469075,9.29251462 L24.6564945,9.29251462 C25.2143595,7.86085087 25.5217545,6.30395212 25.5217545,4.67589712" id="Fill-1" fill="#F83E4F" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M24.6573484,17.3763563 L0.865544625,17.3763563 C2.71560712,22.1409788 7.34076337,25.5223238 12.7600234,25.5223238 C18.1792834,25.5223238 22.8072859,22.1409788 24.6573484,17.3763563" id="Fill-4" fill="#FEB229"></path>
+                <path d="M12.7608773,0 C7.13668725,0 2.3692185,3.6375075 0.667161,8.68960125 L24.8545935,8.68960125 C23.152536,3.6375075 18.3850673,0 12.7608773,0" id="Fill-6" fill="#393C48"></path>
+            </g>
+        </g>
+    </g>
+</svg>

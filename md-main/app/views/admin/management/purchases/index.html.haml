@@ -1,0 +1,29 @@
+= render 'admin/management/shared/purchases_filter'
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t('admin.management.id')
+      %th
+        = t('admin.management.purchases.actions')
+      %th
+        = t('admin.management.purchases.product')
+      %th
+        = t('admin.management.products.product_type')
+      %th
+        = t('admin.management.purchases.amount')
+      %th
+        = t('admin.management.purchases.state')
+      %th
+        = t('admin.management.purchases.dreamer')
+      %th
+        = t('admin.management.purchases.destination')
+      %th
+        = t('admin.management.purchases.destination_dreamer')
+      %th
+        = t('admin.management.purchases.comment')
+  %tbody
+    = render @purchases
+
+= paginate @purchases, theme: 'moderate'

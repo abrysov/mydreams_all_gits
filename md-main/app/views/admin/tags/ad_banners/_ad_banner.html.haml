@@ -1,0 +1,14 @@
+%tr
+  %td
+    = ad_banner.id
+  %td
+    = link_to ad_banner.image.url do
+      = image_tag ad_banner.image.url(:admin)
+  %td
+    = ad_banner.url
+  %td
+    = ad_banner.tags.map(&:name)
+  %td
+    = active_flag(ad_banner.active)
+  %td.actions
+    = render 'actions', ad_banner: ad_banner

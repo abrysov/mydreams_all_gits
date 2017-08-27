@@ -1,0 +1,16 @@
+---
+- name: nginx | update nginx config
+  template: src="nginx/{{ dreams_nginx_conf_tpl }}" dest=/etc/nginx/sites-available/dreams mode=0755
+  sudo: true
+  when: (not "{{ dreams_env }}" == "development") and (not "{{ dreams_env }}" == "test")
+  tags:
+    - dreams
+    - nginx
+
+- name: nginx | enable app
+  file: src=/etc/nginx/sites-available/dreams dest=/etc/nginx/sites-enabled/dreams state=link
+  sudo: true
+  when: (not "{{ dreams_env }}" == "development") and (not "{{ dreams_env }}" == "test")
+  tags:
+    - dreams
+    - nginx

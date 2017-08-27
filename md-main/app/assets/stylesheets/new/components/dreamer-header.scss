@@ -1,0 +1,113 @@
+.dreamer-header {
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border-gray-color;
+
+  .row {
+    margin: 0 1.625rem;
+  }
+
+  .left,
+  .center,
+  .right {
+    flex: 1;
+
+    .button {
+      margin: 1rem 0;
+    }
+
+    .button:first-child {
+      width: 9rem;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .right .button {
+    margin-left: auto;
+  }
+
+  .avatar {
+    border: 1px solid #fff;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: -5.625rem;
+
+    &.online::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: .6875rem;
+      height: .6875rem;
+      content: '';
+      border-radius: 100%;
+      background: $blue-color;
+    }
+  }
+
+  h2 {
+    margin: .3rem 0;
+  }
+
+  h4 {
+    margin: 0;
+    color: $light-gray-text-color;
+    font-size: .875rem;
+    font-weight: 100;
+  }
+
+  .description {
+    text-align: center;
+    color: $light-gray-text-color;
+    font-weight: 100;
+  }
+
+  &.club {
+
+    padding: .4rem 2.375rem 1.8rem;
+    .avatar-wrapper {
+      position: absolute;
+      top: 0;
+    }
+
+    .name {
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 8.5rem;
+    }
+
+    h2 {
+      font-size: 1.3125rem;
+    }
+
+    .description {
+      margin-top: 1rem;
+      text-align: left;
+
+      .text {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+.header.dreamer .image-box {
+  background-color: #cfeaff;
+}
+
+.header.dreamer.vip {
+  .image-box {
+    background-color: #e7e5f7;
+  }
+
+  .avatar-wrapper.online::after {
+    background: $light-purple-color;
+  }
+}
+

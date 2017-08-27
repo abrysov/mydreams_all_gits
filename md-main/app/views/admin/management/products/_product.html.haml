@@ -1,0 +1,14 @@
+%tr.info
+  %td
+    = product.id
+  %td
+    = link_to product.name, admin_management_product_path(product)
+  %td
+    = product.cost
+  %td
+    = product.product_type
+  %td
+    = product.state
+  %td
+    = render 'admin/management/shared/actions', object: product
+= render product.properties

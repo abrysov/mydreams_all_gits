@@ -1,0 +1,17 @@
+%tr{ data: { object_id: comment.id } }
+  %td= comment.id
+  %td
+    = link_to_if (ava_link = comment.dreamer.avatar.url(:large)),
+      image_tag(avatar_or_default(comment.dreamer, :admin)), ava_link
+    = dreamer_link comment.dreamer
+  %td
+    = comment.commentable_id
+  %td
+    = comment.body
+    %p.text-muted= short_date(comment.created_at)
+  %td
+    = comment.complains.count
+  %td
+    = comment.dreamer.abuses.count
+  %td.actions
+    = render 'moderate/shared/actions', object: comment

@@ -1,0 +1,9 @@
+$('.post-list').append("<%= j render(partial: 'post', collection: @posts) %>");
+bindAjaxEvents();
+
+<%- if @posts.empty? %>
+  $('.load_more_posts').remove();
+<%- else %>
+  $('.load_more_posts').prop('href', '<%= j posts_path( from: @posts.last.id ) %>');
+<%- end %>
+

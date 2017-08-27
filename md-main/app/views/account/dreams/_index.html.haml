@@ -1,0 +1,38 @@
+.content_wrap
+  - if current_dreamer?(@dreamer) && params[:action] == 'friends_dreams'
+    = render partial: 'account/dreams/index/friends_dreams'
+  - else
+    = render partial: 'account/dreams/index/suggested_dreams' if params[:search].blank? && @dreams.first_page?
+
+    .dream_owner.js-search-content
+      = hidden_field_tag :filter_url, request.url
+
+      - if @dreams.total_count > 0
+        %h2.page_content-title
+          %b= @dreams.total_count
+          = custom_pluralize(@dreams.total_count, 'dreams')
+
+      - else
+        %h2.page_content-title= t('dreams.no_dreams')
+
+      - if @dreams.total_count > 0 || params[:search].present?
+        .friends-filter
+          = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+            = render 'application/fast_search', param_name: :search
+
+      .card_group.group.js-card-group
+        - if current_dreamer?(@dreamer) && @dreams.first_page?
+          = link_to new_account_dream_path, class: 'card add_card card-no-flip card-hover js-flip js-add-card' do
+            .card__wrap.flip
+              .card_back
+                .card_back__wrap
+                  .logo_color
+              .card_front
+                .add_card__wrap
+                  .add_card__btn__title= t('dreams.new.create_dream')
+
+        = render partial: 'account/dreams/index/dreams'
+
+      = paginate @dreams, theme: 'more'
+
+-# - content_for :mydreams_js do

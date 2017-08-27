@@ -1,0 +1,43 @@
+= form_for [:admin, :entity_control, dreamer], html: { class: 'form-horizontal' } do |f|
+  = render 'admin/tags/shared/form_errors', object: dreamer
+  .form-group
+    %label.col-sm-2.control-label{ for: 'first_name' } First Name
+    .col-sm-5
+      = f.text_field :first_name, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'last_name' } Last Name
+    .col-sm-5
+      = f.text_field :last_name, class: 'form-control'
+  .form-group
+    %label.col-sm-2.control-label{ for: 'is_vip' } Vip
+    .col-sm-5
+      .checkbox
+        = f.check_box :is_vip, checked: dreamer.is_vip
+  .form-group
+    %label.col-sm-2.control-label{ for: 'project_dreamer' } Project Dreamer
+    .col-sm-5
+      .checkbox
+        = f.check_box :project_dreamer, checked: dreamer.project_dreamer
+  .form-group
+    %label.col-sm-2.control-label{ for: 'gender' } Gender
+    .col-sm-5
+      .checkbox
+        = f.select :gender, I18n.t('genders').invert
+  .form-group
+    %label.col-sm-2.control-label{ for: 'role' } Role
+    .col-sm-5
+      .checkbox
+        = f.select :role, Dreamer.role.values
+  .form-group
+    %label.col-sm-2.control-label{ for: 'deleted_at' } Deleted
+    .col-sm-5
+      .checkbox
+        = f.check_box :deleted_at, checked: dreamer.deleted?
+  .form-group
+    %label.col-sm-2.control-label{ for: 'blocked_at' } Blocked
+    .col-sm-5
+      .checkbox
+        = f.check_box :blocked_at, checked: dreamer.blocked?
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit (dreamer.new_record? ? 'Create' : 'Save'), class: 'btn btn-default'

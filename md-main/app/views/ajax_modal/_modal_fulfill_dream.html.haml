@@ -1,0 +1,14 @@
+.frame.fulfiled_dream.js-modal{ data: {'modal-type' => 'fulfill_dream'} }
+  .frame-icon
+  .title= t('dreams.fulfill.confirm')
+
+  .frame-content
+    = form_for dream, url: account_dream_path(dream), remote: true, method: :patch do |f|
+      = f.check_box :came_true
+
+      .control.js-form-control
+        = f.label :came_true, t('dreams.new.fulfilled_dream'), class: 'button-green js-form-submit'
+        .preloader.js-preloader
+        = f.submit
+
+      .not_fulfill.jmod-close= t('dreams.fulfill.not_fulfill')

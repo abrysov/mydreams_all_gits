@@ -1,0 +1,89 @@
+.avatar {
+  display: block;
+  overflow: hidden;
+  border-radius: 100%;
+
+  img {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+
+  &.size-xl {
+    width: 7.8125rem;
+    height: 7.8125rem;
+  }
+
+  &.size-l {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &.size-m {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  &.size-s {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  &.size-xs {
+    width: 1.813rem;
+    height: 1.813rem;
+  }
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+
+  &.success::before {
+    position: absolute;
+    top: -.4rem;
+    right: -.4rem;
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    content: '';
+    border: 1px solid $border-gray-color;
+    border-radius: 100%;
+    background: asset-url('new/check_green.svg') center no-repeat #fff;
+    background-size: 60%;
+  }
+}
+
+.avatar-list {
+  text-align: left;
+  font-size: 0;
+
+  .avatar-wrapper {
+    display: inline-block;
+    margin-right: .25rem;
+    cursor: pointer;
+    transition: transform.3s ease;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &.selected {
+      transform: scale(1.1);
+    }
+
+    &.selected::before {
+      position: absolute;
+      top: -1.4rem;
+      right: 0;
+      left: 0;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin: auto;
+      content: '';
+      background: asset-url('new/check_green.svg') center 120% no-repeat;
+    }
+  }
+}

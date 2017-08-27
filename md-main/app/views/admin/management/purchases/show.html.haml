@@ -1,0 +1,65 @@
+= render 'admin/management/shared/dreamer', dreamer: @purchase.dreamer
+
+%table.table
+  %thead
+    %tr
+      %th= t('admin.management.id')
+      %th= t('admin.management.purchases.product')
+      %th= t('admin.management.products.product_type')
+      %th= t('admin.management.purchases.amount')
+      %th= t('admin.management.purchases.state')
+      %th= t('admin.management.purchases.destination')
+      %th= t('admin.management.purchases.destination_dreamer')
+      %th= t('admin.management.purchases.comment')
+  %tbody
+    %tr
+      %td
+        = @purchase.id
+      %td
+        = link_to @purchase.product.name, admin_management_product_path(@purchase.product)
+      %td
+        = @purchase.product.product_type
+      %td
+        = @purchase.amount
+      %td
+        = @purchase.state
+      %td
+        = destination_link @purchase.destination
+      %td
+        = dreamer_link @purchase.destination_dreamer
+      %td
+
+%h4
+  = t('admin.management.purchases.transactions')
+
+%table.table
+  %thead
+    %tr
+      %th= t('admin.management.id')
+      %th= t('admin.management.transactions.actions')
+      %th= t('admin.management.transactions.dreamer')
+      %th= t('admin.management.transactions.state')
+      %th= t('admin.management.transactions.operation')
+      %th= t('admin.management.transactions.amount')
+      %th= t('admin.management.transactions.created_at')
+      %th= t('admin.management.transactions.updated_at')
+  %tbody
+  - @purchase.purchase_transactions.each do |transaction|
+    %tr
+      %td
+        = transaction.id
+      %td
+        = link_to t('admin.management.actions.show'), admin_management_transaction_path(transaction),
+          class: 'btn btn-info block', role: 'button'
+      %td
+        = dreamer_link transaction.account.dreamer
+      %td
+        = transaction.state
+      %td
+        = transaction.operation
+      %td
+        = transaction.amount
+      %td
+        = short_date transaction.created_at
+      %td
+        = short_date transaction.updated_at

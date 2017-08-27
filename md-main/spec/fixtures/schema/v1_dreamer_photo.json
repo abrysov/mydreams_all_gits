@@ -1,0 +1,36 @@
+{
+  "title": "Api:v1 Dreamer photo",
+  "type": "object",
+  "required": [ "photo", "meta" ],
+  "properties": {
+    "photo": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "photo",
+        "preview",
+        "caption"
+      ],
+      "properties": {
+          "id": { "type": "integer" },
+          "photo": { "type": "string" },
+          "preview": { "type": "string" },
+          "city": { "type": [ "string", "null" ] },
+          "caption": { "type": [ "string", "null" ] }
+      }
+    },
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "message"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"message": { "type": [ "string", "null" ] }
+      }
+  	}
+  }
+}

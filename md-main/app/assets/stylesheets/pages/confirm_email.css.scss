@@ -1,0 +1,113 @@
+.confirm-email {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  min-height: 600px;
+  font-size: 14px;
+
+  h1 {
+    font-size: 38px;
+    margin: 0.4em 0;
+  }
+  h3 {
+    font-size: 21px;
+    line-height: 1.3em;
+    margin: 0.5em 7em;
+    font-weight: 300;
+  }
+  form {
+    width: 345px;
+    margin: 0 auto;
+
+    .info-text {
+      margin: 2em 0;
+    }
+  }
+  .input_wrapper {
+    position: relative;
+
+    &.ok::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: #f0f;
+      background: asset_url('svg/proved.svg') no-repeat center;
+      background-size: contain;
+      top: 8px;
+    }
+  }
+  input[type="text"] {
+    background: rgba(0,0,0,0.05);
+    border: none;
+    color: inherit;
+    font: inherit;
+    font-size: 15px;
+    padding: 13px;
+    text-align: inherit;
+    width: 280px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  input[type="submit"],
+  .button {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 5px 40px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background: transparent !important;
+    color: inherit;
+    font: inherit;
+    transition: all.3s ease;
+
+    &:hover {
+      background: #fff !important;
+      color: #8562fc;
+    }
+    &:active {
+      background: #EEE !important;
+      border-color: #EEE;
+      transition: none;
+    }
+  }
+  .info-text {
+    font-size: 12px;
+  }
+  hr {
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin: 0.5em 0 1.5em;
+  }
+  .mini-footer {
+    margin: 2em 0;
+  }
+  .email {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+    margin: 1em 0 2.5em;
+    color: inherit;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: -26px;
+      height: 20px;
+      width: 20px;
+      background: asset_url('svg/mail_white.svg') no-repeat center;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.row
+  .col-md-3
+    %ul.list-group
+      %li.list-group-item
+        %span.badge= Dreamer.count
+        = t('.dreamers')
+        %ul
+          %li
+            = t('.dreamer_stats.confirmed')
+            %span.badge= Dreamer.where.not(confirmed_at: nil).count
+          %li
+            = t('.dreamer_stats.with_dreams')
+            %span.badge= Dreamer.joins(:dreams).uniq.count
+          %li
+            = t('.dreamer_stats.vip')
+            %span.badge= Dreamer.where(is_vip: true).count
+          %li
+            = t('.dreamer_stats.with_avatar')
+            %span.badge= Dreamer.where.not(avatar: nil).count
+          %li
+            = t('.dreamer_stats.deleted')
+            %span.badge= Dreamer.where.not(deleted_at: nil).count
+          %li
+            = t('.dreamer_stats.blocked')
+            %span.badge= Dreamer.where.not(blocked_at: nil).count
+      %li.list-group-item
+        %span.badge= Dream.count
+        = t('.dreams')
+        %ul
+          %li
+            = t('.dream_stats.with_certificate')
+            %span.badge= Dream.joins(:certificates).uniq.count
+          %li
+            = t('.dream_stats.fulfilled')
+            %span.badge= Dream.where.not(fulfilled_at: nil).count
+      %li.list-group-item
+        %span.badge= Post.count
+        = t('.posts')
+      %li.list-group-item
+        %span.badge= Comment.count
+        = t('.comments')
+      %li.list-group-item
+        %span.badge= Photo.count
+        = t('.photos')
+  .col-md-3
+    %ul.list-group
+      %li.list-group-item
+        %span.badge= Dreamer.where(role: 'admin').count
+        = t('.online')
+      %li.list-group-item
+        %span.badge= Dreamer.where('last_reload_at > ?', Time.zone.today).count
+        = t('.loged_in_today')
+      %li.list-group-item
+        %span.badge= Dreamer.where('last_reload_at > ?', Time.zone.today - 1.month).count
+        = t('.loged_in_last_month')
+  .col-md-3
+    %ul.list-group
+      %li.list-group-item
+        %span.badge= Dreamer.where(role: 'admin').count
+        = t('.administrators')
+      %li.list-group-item
+        %span.badge= Dreamer.where(role: 'moderator').count
+        = t('.moderators')
+  .col-md-3
+    %ul.list-group
+      %li.list-group-item
+        %h5 Statistic of created entities for period
+        = form_tag(admin_entity_control_statistic_for_period_path, method: 'post', remote: true) do
+          .form-group
+            = select_tag :entity_type, options_for_select(%w(Dream Dreamer Post)), class: 'form-control'
+          .form-group
+            .row
+              .col-md-6
+                = text_field_tag :date_start, params[:date_start], class: 'form-control', placeholder: 'Date Start'
+              .col-md-6
+                = text_field_tag :date_end, params[:date_start], class: 'form-control', placeholder: 'Date End'
+          .form-group
+            = submit_tag 'Go', class: 'btn btn-default'
+            #stat-period-result
+

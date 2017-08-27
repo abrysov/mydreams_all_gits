@@ -1,0 +1,54 @@
+.header
+  .top_menu
+    .container
+      .top_menu__item.feedlink.js-feedlink
+        .feedlink-item.js-feedlink-item
+          %span= t('feed.open_feed')
+          .feed_icon-open
+        .feedlink-item.js-feedlink-item
+          .feed_icon-close
+          %span= t('feed.close_feed')
+
+      .top_menu__item.searchblock
+        .spotlight-link.js-spotlight-link
+
+      .top_menu__item.userbar{href: "/"}
+        .top_menu__userbar.js-userbar
+          - if dreamer_signed_in?
+            - if (c = current_dreamer.flybook_nb_new_received_messages) != 0
+              = link_to c, account_mail_path, class: 'pager js-pager'
+
+            .userbar_notification.js-notification{ class: "#{check_notification([current_dreamer.flybook_nb_new_friends_activities, current_dreamer.flybook_nb_new_received_messages, current_dreamer.flybook_nb_suggested_dreams, current_dreamer.flybook_nb_gifted_certificates, current_dreamer.flybook_nb_received_friends, current_dreamer.flybook_nb_new_followers, current_dreamer.flybook_nb_suggested_posts])}"}
+
+            .authorized
+              =link_to account_dreamer_dreams_path(current_dreamer), class: "userbar_img" do
+                = image_tag @small_avatar.presence || avatar_or_default(current_dreamer, :small), class: 'cover js-img-avatar'
+
+              .userbar_name.js-user-menu
+                = truncate(current_dreamer.reload.first_name, length: 16, separator: ' ')
+
+          - else
+            .no_authorized
+              = link_to t('modals.registration.link'), modal_registration_path, {remote: true, class: 'new_reg jmod-btn', data: {'modal-type' => 'registration'}}
+
+              = link_to t('registration.login'), modal_authorization_path, {remote: true, class: 'sign_in jmod-btn', data: {'modal-type' => 'authorization'}}
+              .languages
+                =link_to url_for(locale: 'ru'), class: "#{'active' if locale == :ru}" do
+                  .lang_ru
+                =link_to url_for(locale: 'en'), class: "#{'active' if locale == :en}" do
+                  .lang_en
+
+        - if dreamer_signed_in?
+          = render 'user_menu'
+
+  .navigation
+    .main-menu-container
+      .main-menu-left
+        = navigation_link t('layout.fulfilled_dreams'), fulfilled_dreams_path(gender: 'all'), true
+        = navigation_link t('dreams.new.fulfill_dream'), belive_in_dream_account_belive_in_dream_index_path, dreamer_signed_in?
+      .main-menu-center
+        = navigation_link '<div class="logo"></div>'.html_safe, root_path, true, "logo_wrap"
+      .main-menu-right
+        = navigation_link t('layout.dreamers'), dreamers_path(all: true), true
+        = navigation_link t('layout.top'), dreams_path(top: true), true
+        = navigation_link t('layout.dream_club'), account_dreamer_dreams_path(dreamer_id: 1), true

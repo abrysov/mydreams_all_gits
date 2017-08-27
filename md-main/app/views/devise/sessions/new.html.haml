@@ -1,0 +1,45 @@
+.card-modal.card-modal-passwor-edit
+  .card-modal__wrap.gradient
+    .card-modal__title
+      %h1.page-title= t('authentication.authentication')
+
+    .card-modal__body
+      - if @login_error
+        #error_explanation
+          %ul
+            %li= @login_error
+      .form_main.input.form
+        = form_for resource, url: session_path(resource), html: {class: 'authorization_form'} do |f|
+          .input_wrap.blue--pink.label-column
+            %label.input-field.js-input-field
+              .title= t('authentication.enter_email')
+              = f.text_field :login, autofocus: true, class: "js-validation auth_login", data: {"valid": "email"}
+            %label.input-field.js-input-field
+              .title= t('authentication.enter_password')
+              = f.password_field :password, autocomplete: 'off', class: 'js-validation reg_fill',  data: {"valid": "password"}
+          .form_main__wrap
+            %label.button-bv-animated.auth_submit.js-form-submit{for: 'authorization'}
+              %span#submit= t('authentication.enter_mydreams')
+            = f.submit id: 'authorization'
+            .form_save.group
+              .form_save__item
+                = link_to t('modals.authorization.forgot_password'), modal_new_password_path, { remote: true, class: 'jmod-btn', data: {'modal-type' => 'recovery'} }
+              .form_save__item
+                %label
+                  = f.check_box :remember_me
+                  %span= t('authentication.remember_me')
+
+      .form_bottom
+        .sm_enter
+          %p.form_title= t('authentication.social') + ':'
+          .sm_group
+            - resource_class.omniauth_providers.each do |provider|
+              -#%a.sm_enter__item{href: '/', 'data-type' => provider}
+              = link_to '', omniauth_authorize_path(resource, provider), class: 'sm_enter__item', data: {type: provider}
+
+          %a.reg-btn{href: '#'}= t('registration.registration')
+
+  :javascript
+    window.onload = function() {
+      $('.js-validation').formValidation();
+    }

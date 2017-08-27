@@ -1,0 +1,2 @@
+class AttachmentUploader < BaseSecureUploader
+end

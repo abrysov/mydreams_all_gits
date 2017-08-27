@@ -1,0 +1,12 @@
+%tr
+  %td
+    = show_link(dream.id)
+  %td
+    = link_to dream.photo.url(:large) do
+      = image_tag dream.photo.url(:medium)
+  %td
+    = link_to dream.title, account_dream_path(dream)
+  %td
+    = dream.description
+  %td.actions
+    = render 'admin/entity_control/shared/actions', object: dream

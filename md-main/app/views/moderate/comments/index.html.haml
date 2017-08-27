@@ -1,0 +1,20 @@
+= render 'moderate/shared/form_find_by_id'
+= render 'moderate/shared/form_find_by_fields'
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th= t('.dreamer_link')
+      %th= t('.commentable_id')
+      %th= t('.body')
+      %th
+        %span{ title: t('.complains_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.complains_count_short')
+      %th
+        %span{ title: t('.abuses_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.abuses_count_short')
+      %th= t('moderate.shared.sections.entity_dreamer')
+  %tbody
+    = render @comments
+    = paginate @comments, theme: 'moderate'
+= render 'moderate/shared/group_actions', objects: @comments

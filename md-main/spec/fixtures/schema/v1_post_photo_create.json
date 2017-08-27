@@ -1,0 +1,33 @@
+{
+  "title": "Api:v1 Dreamer avatar uploaded",
+  "type": "object",
+  "required": [ "post_photo", "meta" ],
+  "properties": {
+  	"post_photo": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "photo",
+        "post_id"
+      ],
+      "properties": {
+    		"id": { "type": "integer" },
+        "photo": { "type": [ "hash", "array" ] },
+        "post_id": { "type": [ "integer" ] }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code",
+        "message"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"message": { "type": "string" }
+      }
+  	}
+  }
+}

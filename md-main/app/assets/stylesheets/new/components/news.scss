@@ -1,0 +1,337 @@
+#posts-feed {
+  flex: 1;
+  background: $light-gray-color;
+}
+
+.feed-container {
+  padding: 1px 0;
+
+  .avatar-col,
+  .user-card .avatar {
+    margin-right: 1rem;
+  }
+
+  .user-card {
+    flex: 1;
+  }
+
+  .info {
+    padding: 2rem;
+    text-align: center;
+    color: $light-gray-text-color;
+  }
+}
+
+
+.content-items {
+  overflow: hidden;
+  margin: .625rem;
+  padding: 1.25rem;
+  border: 1px solid $border-gray-color;
+  border-radius: 4px;
+  background: #fff;
+
+  &.create-record {
+    padding-bottom: 0;
+  }
+
+  &.create-record,
+  &.edit {
+    textarea {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding: .6rem .8rem;
+      resize: vertical;
+      color: $light-purple-color;
+      border: 1px solid $border-gray-color;
+      border-radius: 3px;
+      outline: none;
+      font: inherit;
+
+      &::placeholder {
+        opacity: .5;
+        color: $light-purple-color;
+      }
+    }
+
+    .textarea-col {
+      flex: 1;
+    }
+
+    .avatar {
+      margin-top: -.25rem;
+    }
+
+    .attach-button {
+      position: absolute;
+      right: .625rem;
+      bottom: .5rem;
+    }
+
+    .actions {
+      margin: .1rem 0;
+      text-align: center;
+
+      button {
+        padding-right: 1.8rem;
+        padding-left: 1.8rem;
+      }
+    }
+  }
+
+  &.edit {
+    .textarea-wrapper {
+      position: relative;
+    }
+    textarea {
+      padding-right: 2rem;
+      color: $light-gray-text-color;
+    }
+    .attach-button {
+      position: absolute;
+      right: .625rem;
+      bottom: .625rem;
+    }
+    .attach-list {
+      margin-top: 1rem;
+    }
+    .button {
+      width: 10rem;
+      margin: 1rem auto 0;
+    }
+  }
+
+  .info-col,
+  .content-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+
+    .username-row {
+      margin-bottom: .2rem;
+
+      a {
+        font-weight: bold;
+      }
+    }
+
+    .action-type {
+      font-size: .625rem;
+      color: $light-gray-text-color;
+      margin-left: .7em;
+    }
+
+    .time {
+      color: $light-gray-text-color;
+      font-size: .563rem;
+    }
+  }
+
+  p {
+    line-height: 1.063rem;
+  }
+
+  .show-more {
+    margin-bottom: 2em;
+    cursor: pointer;
+    color: $light-purple-color;
+  }
+
+  .likes-block {
+    margin: 1.375rem 0 1rem;
+  }
+
+  .subcontent {
+    margin-top: .5625rem;
+    margin-left: 2.625rem;
+
+    .avatar {
+      margin-top: 0;
+    }
+  }
+
+  .update-content {
+    margin-top: .5625rem;
+    margin-left: 4.125rem;
+  }
+
+  .comment-textarea {
+    margin: -1.25rem;
+    margin-top: 0;
+  }
+
+  .dreamers-list {
+    display: flex;
+    display-direction: rows;
+    flex-wrap: wrap;
+
+    a {
+      display: block;
+      margin-right: 1.125rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .username {
+      margin-top: .8rem;
+    }
+  }
+
+  .new-photos img {
+    max-width: 60%;
+    border-radius: 2px;
+  }
+
+  .new-dream {
+    display: flex;
+
+    .dream-wrapper .user-card {
+      margin-top: .7rem;
+      font-weight: bold;
+    }
+
+    & > .description {
+      width: 11.063rem;
+
+      h3 {
+        margin: 0;
+        margin-top: .2rem;
+      }
+
+      p {
+        color: $light-gray-text-color;
+      }
+    }
+  }
+
+  .get-subject {
+    display: flex;
+
+    .dreamers-list {
+      margin-top: .4rem;
+    }
+
+    .subject {
+      position: relative;
+      width: 5.813rem;
+      height: 6.313rem;
+      background-position: center;
+      border: 1px solid white;
+      background-size: 120%;
+
+      &.vip {
+        background-image: asset-url('new/title-vip.svg');
+      }
+
+      &.money {
+        background-image: asset-url('new/money.svg');
+      }
+
+      &.give {
+        margin-right: 2.2rem;
+      }
+
+      &.get {
+        margin-left: 2.2rem;
+      }
+
+      &.give::after,
+      &.get::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -1.6rem;
+        margin: auto;
+        display: block;
+        width: 1.125rem;
+        height: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: asset_url('new/from-to.svg');
+      }
+
+      &.get::before {
+        right: auto;
+        left: -1.6rem;
+      }
+    }
+
+    .user-card {
+      top: 0;
+      left: 4rem;
+      width: 10rem;
+      position: absolute;
+    }
+  }
+
+  .mark-wrapper {
+    position: relative;
+
+    .user-card {
+      top: 0;
+      left: 3.813rem;
+      height: 100%;
+      position: absolute;
+
+      .username {
+        font-weight: bold;
+      }
+
+      span {
+        color: $light-gray-text-color;
+        margin: 0 1.2em;
+        font-size: 90%;
+      }
+    }
+
+    .icon-text {
+      width: 3.813rem;
+      position: absolute;
+    }
+  }
+  .icon.action {
+    width: .813rem;
+    height: .688rem;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 .3em;
+    margin-bottom: -.1rem;
+
+    &.like {
+      background-image: asset-url('new/reactions/like_active.svg');
+    }
+
+    &.comment {
+      background-image: asset-url('new/reactions/messages_active.svg');
+    }
+  }
+  .attach-list {
+    .img {
+      display: inline-block;
+      width: 60%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .close {
+      background-image: asset-url('new/close_purple.svg');
+      background-size: 100%;
+      background-position: center;
+      width: .688rem;
+      height: .688rem;
+      position: absolute;
+      right: -1.2rem;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+}

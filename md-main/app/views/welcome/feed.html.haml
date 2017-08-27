@@ -1,0 +1,88 @@
+.main
+  .page_header= image_tag asset_url('page_header_slide_3.jpg'), class: "cover"
+  .main_content
+    .content_wrap
+      .homepage-club-news
+      .page-title= t("wellcome.club_news_title")
+      %h4.post-count
+        = t("feed.title_total")
+        = count = @project_dreamer.posts.count
+        = custom_pluralize(count, 'news')
+      .post-list
+        = render partial: 'posts/post', collection: @news, as: :post
+
+      - if @news.any?
+        = link_to posts_path( from: @news.last.id ), remote: true, class:'load_more_posts' do
+          %span= t('actions.load_more')
+
+- content_for :mydreams_js do
+  :javascript
+    $(document).ready( function() {
+      bindAjaxEvents();
+    });
+
+    var bindAjaxEvents = function() {
+      var commentAdd = function(post_id, comment, type){
+        console.log(comment);
+        var link = $('<a href="'+comment.dreamer.url+'"></a>');
+        var author = link.clone().addClass('comment-author').text(comment.dreamer.full_name);
+        var time = $('<div></div>').addClass('time').text(comment.created_at_in_words);
+        var header = $('<div></div>').addClass('comment-header').append(author, time);
+        var body = $('<p class="comment-body"></p>').text(comment.body);
+        var avatar = $('<div class="avatar"></div>')
+              .addClass(comment.dreamer.vip ? 'vip' : false)
+              .addClass(comment.dreamer.online ? 'online' : false)
+              .append(link.clone().addClass('mask')
+              .append($('<img src="'+comment.dreamer.avatar.medium+'">')));
+        var content = $('<div class="comment-content"></div>').append(header, body);
+        var comment = $('<div class="comment"></div>').append(avatar, content);
+        $('article[data-post-id="'+post_id+'"] .list')[type?'prepend':'append'](comment);
+      }
+
+      $('.new_comment')
+        .off('ajax:success')
+         .on('ajax:success', function(e, data, status, xhr) {
+            commentAdd(this.getAttribute('data-post-id'), data.comment, false);
+            $(this).find('textarea')[0].value = '';
+      })
+        .off('ajax:error')
+         .on('ajax:error', function(xhr, status, error) {
+            console.log('error', xhr, error);
+      });
+
+      $('.load-more-comments')
+        .off('ajax:success')
+         .on('ajax:success', function(e, data, status, xhr) {
+            var comments = data.comments;
+            for(var i = 0; i < comments.length; i++){
+              commentAdd(this.getAttribute('data-post-id'), comments[i], true);
+            }
+            var toggle = false;
+            var title = $(this).find('.button').html();
+            var newtitle = "#{t('comments.hide')}";
+            $(this).find('.button').html("#{t('comments.hide')}");
+
+            $(this)
+              .off('click')
+              .click(function() {
+                $(this)
+                  .parent()
+                  .parent()
+                  .parent()
+                  .find('.comments')
+                  .find('.comment')
+                  .not('.last')
+                  .toggle();
+
+                  toggle = !toggle;
+                  text = (toggle == true ? title : newtitle);
+                  $(this).find('.button').html(text);
+
+                  return false; // prevent default click
+              });
+      })
+        .off('ajax:error')
+         .on('ajax:error', function(xhr, status, error) {
+            console.log('error', xhr, error);
+         })
+    };

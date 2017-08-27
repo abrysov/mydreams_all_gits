@@ -1,0 +1,72 @@
+.messages-list {
+  padding: 1.125rem;
+  overflow-y: scroll;
+  .message {
+    display: flex;
+    padding: 1rem 0;
+    padding-right: 0.625rem;
+    border-radius: 3px;
+    .avatar-link {
+      padding: 0 0.625rem;
+      .avatar {
+        margin-top: -0.2rem;
+      }
+    }
+    &.active {
+      background: #f5f8fa;
+      .body::after {
+        display: none;
+      }
+    }
+    .body {
+      position: relative;
+      width: 100%;
+      p {
+        margin: 0;
+        margin-top: 0.3em;
+        line-height: 1.4em;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: $border-gray-color;
+        left: 0;
+        bottom: -1rem;
+        margin-bottom: -1px;
+        z-index: -1;
+      }
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      a {
+        font-weight: 700;
+        margin-right: 1em;
+      }
+      .vip {
+        display: inline-block;
+        width: 1rem;
+        height: 0.5rem;
+        background-image: asset_url('new/crown.svg');
+        background-size: 200%;
+      }
+      .date {
+        margin-left: auto;
+        font-size: 0.55rem;
+        color: $light-gray-text-color;
+      }
+    }
+
+    &:last-child .body::after {
+      display: none;
+    }
+
+    &.outgoing a {
+      color: $gray-text-color;
+    }
+  }
+}

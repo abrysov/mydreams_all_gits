@@ -1,0 +1,283 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ :style => "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %h2 Обновления
+  .feed-container
+
+
+
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a.username{ href: "" }
+              Duane Allison
+            %span.action-type
+              Добавила в друзья
+              %strong 3
+              мечтателей
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.dreamers-list
+        - (1..3).each do |items|
+          %a{ href: "#" }
+            .avatar.size-l
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+            .username Sylvia Keller
+
+
+
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              Duane Allison
+            %span.action-type Добавил новую фотографию
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.new-photos
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.
+        %img{ src: "http://unsplash.it/500/300", alt: "" }
+
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              Duane Allison
+            %span.action-type Добавил новую мечту
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.new-dream
+        .dream
+          .label.presidential PRESIDENTIAL
+          %img{ src: "http://unsplash.it/500/500", alt: "" }
+        .description
+          %h3 Мечтаю об этом
+          %p Мечтаю об этом, с таким очень длинным описанием Мечтаю об этом, с таким очень длинным описанием...Мечтаю об этом, с таким очень длинным описанием...
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              DELETED
+            %span.action-type Удалился
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a.username.vip{ href: "" }
+              Duane Allison
+            %span.action-type
+              Купил
+              %strong VIP
+              статус
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.get-subject
+        .subject.vip
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a.username.vip{ href: "" }
+              Duane Allison
+            %span.action-type
+              Получил в подарок
+              %strong VIP
+              статус
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.get-subject
+        .dreamers-list
+          %a{ href: "#" }
+            .avatar.size-l
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+            .username.vip Sylvia Keller
+        .subject.vip.get
+          %a.user-card{ href: "#" }
+            .avatar.size-xs
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+            .description
+              .username.vip{ href: "#" } User Name
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a.username.vip{ href: "" }
+              Duane Allison
+            %span.action-type
+              Подарил
+              %strong VIP
+              статус
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.get-subject
+        .subject.vip.give
+        .dreamers-list
+          %a{ href: "#" }
+            .avatar.size-l
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+            .username.vip Sylvia Keller
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              Duane Allison
+            %span.action-type Купил марку на свою Мечту
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.new-dream
+        .dream-wrapper
+          .dream
+            .label.presidential PRESIDENTIAL
+            %img{ src: "http://unsplash.it/500/500", alt: "" }
+        .description
+          %h3 Мечтаю об этом
+          %p Мечтаю об этом, с таким очень длинным описанием Мечтаю об этом...
+          .mark-wrapper
+            .mark.imperial
+            .icon-text
+              .text 10
+              .icon.amount.size-l
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              Duane Allison
+            %span.action-type Получил марку на Мечту в подарок
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.new-dream
+        .dream-wrapper
+          .dream
+            .label.presidential PRESIDENTIAL
+            %img{ src: "http://unsplash.it/500/500", alt: "" }
+        .description
+          %h3 Мечтаю об этом
+          %p Мечтаю об этом, с таким очень длинным описанием Мечтаю об этом...
+          .mark-wrapper
+            .mark.gold
+            %a.user-card{ href: "#" }
+              %span от
+              .avatar.size-xs
+                %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+              .description
+                .username Username
+            .icon-text
+              .text 10
+              .icon.amount.size-l
+
+
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a{ href: "" }
+              Duane Allison
+            %span.action-type Подарил марку другу
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+      .update-content.new-dream
+        .dream-wrapper
+          .dream
+            .label.presidential PRESIDENTIAL
+            %img{ src: "http://unsplash.it/500/500", alt: "" }
+          %a.user-card{ href: "#" }
+            .avatar.size-xs
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+            .description
+              .username Username
+        .description
+          %h3 Мечтаю об этом
+          %p Мечтаю об этом, с таким очень длинным описанием Мечтаю об этом...
+          .mark-wrapper
+            .mark.vip
+            .icon-text
+              .text 10
+              .icon.amount.size-l
+
+
+
+
+.col-right
+  .col-js
+    .top
+      .wrapper
+        .input.circle.icon-right
+          %input{ placeholder: "Поиск", type: "text" }
+          %span.icon.size-10.search-purple
+      %ul.vertical-menu
+        %li
+          %a{ href: "/markup/news" } Лента новостей
+        %li
+          %a.active{ href: "/markup/update" } Обновления
+        %li
+          %a{ href: "/markup/recommendations" } Рекомендации
+          %a.sub-item{ href: "#" } Рекомендации друзей
+        %li
+          %a{ href: "#" } Комментарии
+

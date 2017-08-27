@@ -1,0 +1,21 @@
+---
+  messenger_base_dir: "{{ projects_directory }}/messenger"
+  messenger_release_name: messenger
+  messenger_git_repo: git@github.com:MyDreamsClub/mydreams.git
+  messenger_git_branch: staging
+  messenger_src_dir: "{{ messenger_base_dir }}/src"
+  messenger_releases_dir: "{{ messenger_base_dir }}/releases"
+  messenger_run_path_dir: "{{ messenger_base_dir }}/current"
+  messenger_deploy_user:
+    {
+      name: dev,
+      home: /home/dev,
+      groups: 'dev',
+      comment: 'dreams dev deploy user'
+    }
+  messenger_runit_service: messenger
+  messenger_sv_dir: "/etc/sv/{{ messenger_runit_service }}"
+  messenger_db_host: '127.0.0.1'
+  messenger_db_name: 'dreams_staging'
+  messenger_db_user: app
+  messenger_db_password: tA3UjcugmhgqK6

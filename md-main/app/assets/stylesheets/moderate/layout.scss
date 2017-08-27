@@ -1,0 +1,48 @@
+// Place all the styles related to the moderate/dreamers controller here.
+// They will automatically be included in application.css.
+// You can use Sass here: http://sass-lang.com/
+
+
+.navbar {
+  min-height: 0;
+}
+
+body {
+  padding-top: 70px;
+}
+
+button a {
+  color: white;
+}
+
+.btn-group-vertical {
+  padding: 3px;
+}
+
+td.actions {
+  padding: 0 !important;
+  width: 280px;
+}
+
+.dreamer-form-find-by-id,
+.form-find-by-fields {
+  float: left;
+  padding-right: 20px;
+}
+
+.group-actions {
+  position: relative;
+  .group-buttons {
+    width: 500px;
+    margin: auto;
+    a {
+      width: 220px;
+      float: left;
+      margin: 10px;
+    }
+  }
+  #to_top {
+    position: absolute;
+    right: 30px;
+  }
+}

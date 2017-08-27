@@ -1,0 +1,35 @@
+- if dreamer.blank?
+  .card.fake-card
+- else
+  .card.card-hover.js-flip{data: {type: :dreamer, 'dreamer-gender' => dreamer.gender, vip: "#{'vip' if dreamer.is_vip?}"}}
+    .card__wrap.flip
+      .card_back
+        .card_back__wrap
+          .logo_color
+      .card_front
+        = link_to [:account, dreamer, :dreams], class: 'dreamer-link' do
+          .dreamer-dreambook Dreambook
+          .dreamer-footer
+            .dreamer-footer-wrap
+              .dreamer-name
+                - if dreamer.last_name.present?
+                  %span.first-name= dreamer.first_name
+                  %span.last-name= dreamer.decorate.last_name_and_age
+                - else
+                  %span.first-name= dreamer.decorate.first_name_and_age
+
+              - if dreamer.dream_city.present?
+                .dreamer-location= "#{dreamer.dream_city}"
+
+        .dreamer-avatar
+          .avatar.dreamer_card
+            - if dreamer.is_vip?
+              .label_vip
+                %span= t('flybook.vip')
+
+            - if dreamer.online?
+              .label_online
+                %span= t('flybook.online')
+
+            .avatar-image
+              = image_tag(avatar_or_default(dreamer, :medium))

@@ -1,0 +1,39 @@
+{
+  "title": "Api:v1 Likes for Schema",
+  "type": "object",
+  "required": [ "likes", "meta" ],
+  "properties": {
+  	"likes": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "dreamer"
+      ],
+      "properties": {
+    		"id": { "type": "integer" },
+    		"dreamer": { "type": [ "hash", "array" ] }
+      }
+  	},
+  	"meta": {
+      "type": [ "hash" ],
+      "required": [
+        "status",
+        "code",
+        "total_count",
+        "pages_count",
+        "remaining_count",
+        "per",
+        "page"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"total_count": { "type": "integer" },
+    		"pages_count": { "type": "integer" },
+    		"remaining_count": { "type": "integer" },
+    		"per": { "type": "integer" },
+    		"page": { "type": "integer" }
+      }
+  	}
+  }
+}

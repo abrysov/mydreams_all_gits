@@ -1,0 +1,30 @@
+.card-modal.card-modal-add-to-feed.frame.add-to-feed
+
+  = form_tag add_path, method: :post, remote: true, class: 'js-userfeed-form' do |f|
+    .title= t('modals.add_to_feed.title')
+    .subtitle= t('modals.add_to_feed.subtitle')
+
+    - if photos.present?
+      - if current_dreamer.dream_city.blank?
+        .add-to-feed_error=  t('modals.add_to_feed.no_city')
+      - else
+        .photos-for-feed.js-add-to-feed-slider
+          - photos.each_with_index do |photo, index|
+            .photo-for-feed.slick-slide
+              = radio_button_tag :photobar_added_photo_id, photo.id, index == 0 ? true : false
+              .avatar
+                %label.avatar-image{for: "photobar_added_photo_id_#{photo.id}"}
+                  = image_tag(photo.file.url(:small))
+
+        .gradient-field-wrap
+          = text_area_tag :photobar_added_text, nil, maxlength: 80, placeholder: "#{t('modals.add_to_feed.message_placeholder')}", class: 'js-limit'
+          .text-limit 80
+
+        .control.js-form-control
+          %label.button-bv-animated.js-form-submit{for: 'add_to_feed'}
+            %span= t('modals.add_to_feed.submit')
+          .preloader.js-preloader
+          = submit_tag nil, id: "add_to_feed"
+
+    - else
+      .add-to-feed_error= t('modals.add_to_feed.no_photos')

@@ -1,0 +1,68 @@
+.balance-page {
+  box-sizing: border-box;
+  padding: 0 6rem;
+  text-align: center;
+
+  .coin-course {
+    display: flex;
+    width: 16rem;
+    margin: 2rem auto;
+    align-items: center;
+
+    .title {
+      margin-bottom: 1rem;
+      margin-left: 1.3rem;
+      color: $light-gray-text-color;
+    }
+  }
+
+  .plus-money {
+    color: $light-purple-color;
+    font-size: .875rem;
+  }
+
+  .total {
+    display: flex;
+    color: $light-gray-text-color;
+    align-items: center;
+
+    .title {
+      text-align: left;
+      flex: 1;
+    }
+  }
+
+  .wrapper {
+    padding: 0 1.7rem;
+  }
+
+  .money-ok {
+    position: relative;
+    margin: 2rem auto .8rem;
+
+    &::after {
+      position: absolute;
+      top: -.1rem;
+      right: -.7rem;
+      display: block;
+      width: 1.75rem;
+      height: 1.75rem;
+      content: '';
+      border: 1px solid $border-gray-color;
+      border-radius: 100%;
+      background: asset-url('new/check_green.svg') center no-repeat #fff;
+      background-size: 60%;
+    }
+  }
+}
+
+.select-pay-system {
+  text-align: center;
+
+  .logo {
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+}

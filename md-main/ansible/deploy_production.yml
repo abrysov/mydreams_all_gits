@@ -1,0 +1,16 @@
+---
+- hosts:
+    - gw.dreams
+    - app01.dreams
+    - app02.dreams
+    - app03.dreams
+    - app04.dreams
+    - app05.dreams
+    - app06.dreams
+    - app07.dreams
+    - app08.dreams
+    - bg01.dreams
+  sudo: no
+  remote_user: dev
+  roles:
+    - deploy

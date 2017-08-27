@@ -1,0 +1,9 @@
+= link_to '#', modal_unviewed_news_path, remote: true,
+                                         class: 'jmod-btn',
+                                         id: 'show-unviewed-posts',
+                                         style: 'display:none'
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function () {
+    $("#show-unviewed-posts").click();
+  });

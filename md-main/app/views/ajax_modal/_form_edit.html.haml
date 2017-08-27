@@ -1,0 +1,60 @@
+- if dreamer
+  - url = dreamer.persisted? ? [:account, dreamer] : dreamer
+
+  .frame.registration
+
+    = form_for dreamer, url: url, remote: true, html: {method: dreamer.persisted? ? :patch : :post, multipart: true, data: {'modal-type' => 'registration'}} do |f|
+      = hidden_field_tag :authenticity_token, form_authenticity_token
+      %h3.title= "#{dreamer.persisted? ? t('modals.registration.title_profile') : t('modals.registration.title')}"
+
+      /.phone-area
+      /  %h4= "#{dreamer.persisted? ? t('modals.registration.phone_title_profile') : t('modals.registration.phone_title')}"
+      /  = f.text_field :phone, {id: 'user_phone', placeholder: t('modals.registration.phone_placeholder'), data: {valid: 'phone'}, class: 'reg_fill'}
+
+      .info-area
+        .necessary
+          %h4= t('modals.registration.necessary')
+          .input-field.js-input-field
+            = f.text_field :first_name, {placeholder: t('modals.registration.name'), class: 'js-validation reg_fill', data: {valid: 'name'}}
+          .input-field.js-input-field
+            = f.select :gender, options_for_select(t('misc.gender_for_registration').invert, selected: dreamer.persisted? ? dreamer.gender : 'male'), {}, {class: 'ikselect', data: {custom: 'reg_gender_select'}}
+          .input-field.js-input-field
+            = f.text_field :email, {placeholder: t('registration.fill_email'), class: 'js-validation reg_fill', data: {valid: 'email'}}
+          .input-field.js-input-field
+            = f.text_field :password, {placeholder: t('dreamer.password'), class: "#{'js-validation' if dreamer.new_record?} reg_fill", type: "password", data: {valid: 'password'}}
+
+        .not-necessary
+          %h4= t('modals.registration.not_necessary')
+
+          .input-field
+            = f.text_field :last_name, placeholder: t('modals.registration.surname'), class: 'reg_fill'
+
+          .input-field
+            = f.text_field :birthday, value: f.object.pretty_birthday, placeholder: t('dreamer.birthday'), class: 'js-bday reg_fill'
+
+          .input-field
+            - selected_country = dreamer.dream_country_id || DreamCountry.find_by(code:'RU').id
+            = select_tag 'dreamer[dream_country_id]', options_from_collection_for_select(DreamCountry.with_translations(I18n.locale).all, 'id', 'name', selected_country), { data: { url: '#', placeholder: t('search.filter_country_placeholder') }, class: 'search js-select2 js-select2-country' }
+
+          .input-field
+            - selected_city = dreamer.dream_city || DreamCity.moscow
+            = select_tag 'dreamer[dream_city_id]', options_from_collection_for_select([selected_city], 'id', 'name'), { data: { url: dreamer_cities_path, placeholder: t('search.filter_city_placeholder') }, class: 'search js-select2 js-select2-city' }
+
+      .terms
+        - unless dreamer.persisted?
+          = f.check_box :terms_of_service, {id: 'terms_of_service', class: 'js-validation', data: {valid: 'terms'}}
+          %label{for: 'terms_of_service'}
+            = t('modals.registration.terms_of_service_html', href: link_to(t('modals.registration.terms_of_service_link'), agreement_path, target: :_blank ))
+
+      .control.js-form-control
+        %label.button-bv-animated.disabled.js-form-submit{for: 'registration'}
+          %span= "#{dreamer.persisted? ? t('modals.registration.submit_changes') : t('modals.registration.submit_register')}"
+        .preloader.js-preloder
+        = f.submit id: 'registration', disabled: true
+
+      .delete-profile
+        - if dreamer.persisted?
+          = link_to [:remove_profile, :account, current_dreamer] do
+            %span= t('modals.registration.delete_profile')
+
+      -# %p.note= t('registration.additional_info')

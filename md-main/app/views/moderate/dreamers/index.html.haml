@@ -1,0 +1,25 @@
+= render 'moderate/shared/form_find_by_id'
+= render 'moderate/shared/form_find_by_fields'
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.avatar')
+      %th= t('.full_name')
+      %th= t('.email')
+      %th= t('.status')
+      %th
+        %span{ title: t('.reg_date'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.reg_date_short')
+      %th
+        %span{ title: t('.confirm_date'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.confirm_date_short')
+      %th
+        %span{ title: t('.abuses_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.abuses_count_short')
+      %th= t('.state')
+      %th= t('moderate.shared.sections.entity_dreamer')
+  %tbody
+    = render @dreamers
+    = paginate @dreamers, theme: 'moderate'
+= render 'moderate/shared/group_actions', objects: @dreamers

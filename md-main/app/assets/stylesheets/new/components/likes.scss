@@ -1,0 +1,52 @@
+.likes-block {
+  display: flex;
+  min-height: 40px;
+
+  .like-button {
+    margin-bottom: -.2rem;
+
+    .icon {
+      width: .813rem;
+      height: .688rem;
+      cursor: pointer;
+      background-size: contain;
+
+      &::before,
+      &::after {
+        display: block;
+        transition: opacity.3s ease;
+      }
+
+      &::before {
+        background-image: asset_url('new/reactions/like.svg');
+      }
+
+      &::after {
+        opacity: 0;
+        background-image: asset_url('new/reactions/like_active.svg');
+      }
+
+      &:hover::before,
+      &.active::before {
+        opacity: 0;
+      }
+
+      &:hover::after,
+      &.active:after {
+        opacity: 1;
+      }
+    }
+    .text {
+      margin: 0 2em -.1rem 1em;
+      color: $light-purple-color;
+    }
+  }
+  .like-list {
+    display: flex;
+    flex: 1;
+
+    .avatar {
+      margin-right: .4375rem;
+    }
+  }
+}

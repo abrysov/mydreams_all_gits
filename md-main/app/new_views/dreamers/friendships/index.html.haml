@@ -1,0 +1,24 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Заявки в друзья
+  #dreamers-list
+    .preloader
+.col-right
+  .col-js
+    = render 'dreamers/shared/right_menu'
+    .top
+      %ul.vertical-menu
+        %li= link_to_current "Друзья", d_friends_path(current_dreamer)
+        %li= link_to_current "Заявки в друзья", d_friendships_path(current_dreamer)
+      #dreamers-filter
+
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamersListWidget.init("#dreamers-list", "#dreamers-filter", {
+        type: 'dreambook_friendships',
+        dreamerId: gon.dreamer.id
+      });
+    });

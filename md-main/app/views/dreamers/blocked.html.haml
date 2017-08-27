@@ -1,0 +1,13 @@
+.special-pages
+  .blocked-me
+    .page-title
+      = t('special_pages.blocked.owner.greeting')
+      %br/
+      = current_dreamer.full_name + '!'
+    .page-body= t('special_pages.blocked.owner.body')
+    %hr
+    .page-footer
+      %p= t('support.conversion')
+      %p= mail_to 'support@mydreams.club'
+    = link_to destroy_dreamer_session_path do
+      %button.button-exit= t('actions.exit')

@@ -1,0 +1,13 @@
+<%- button_text = t('moderate.shared.actions.block') %>
+<%- link = block_moderate_dreamer_path(@dreamer, entity_params(@req_ent_obj)) %>
+
+var object_actions = $(".action-for-object-<%= @req_ent_obj.id %>");
+var action_blocked = object_actions.find('.block');
+var action_state = object_actions.find('.state');
+
+action_blocked.prop('class', 'btn btn-danger block');
+action_blocked.prop('href', '<%=j link %>');
+action_state.html('<%= dreamer_state(@dreamer) %>');
+action_blocked.html("<%= button_text %>")
+
+<%= render 'moderate/shared/approve', object: @req_ent_obj %>

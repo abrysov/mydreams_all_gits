@@ -1,0 +1,6 @@
+rvm:
+  - 2.2.2
+env:
+  matrix:
+    - BUILD_CMD='rspec'
+script: bundle exec ${BUILD_CMD}

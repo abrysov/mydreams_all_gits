@@ -1,0 +1,37 @@
+.main.dreams
+  = render partial: 'application/page_header'
+
+  .page-title= t('layout.dreams')
+
+  = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+    .dreams-filter
+      = render 'application/fast_search', param_name: :search
+
+    .content-tabs.js-content-tabs
+      .content-tab
+        = link_to dreams_path(top: true), class: "js-link-search-filter content-tab__link #{'active' if params[:top].present? }", remote: true, data: {tab: 'top'} do
+          %span.content-tab__name= t('misc.choose_dreams.top100')
+      .content-tab
+        = link_to dreams_path(hot: true), class: "js-link-search-filter content-tab__link #{'active' if params[:hot].present?}", remote: true, data: {tab: 'hot'} do
+          %span.content-tab__name= t('misc.choose_dreams.hot')
+      .content-tab
+        = link_to dreams_path(new: true), class: "js-link-search-filter content-tab__link #{'active' if params[:new].present?}", remote: true, data: {tab: 'new'} do
+          %span.content-tab__name= t('misc.choose_dreams.new')
+  .main_content
+    .content_wrap
+      .card_group.group.js-card-group.js-content.js-search-content
+        = render partial: 'dreams/dreams'
+
+-# - content_for :mydreams_js do
+  -# :javascript
+  -#   $(function(){
+  -#     $('.js-page-header').slick({
+  -#       autoplay: true,
+  -#       infinite: true,
+  -#       fade: true,
+  -#       cssEase: 'linear',
+  -#       arrows: false,
+  -#       slidesToShow: 1,
+  -#       slidesToScroll: 1
+  -#     });
+  -#   });

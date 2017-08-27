@@ -1,0 +1,166 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 История операций
+  %div.operations_history-page
+    %table.history-tabble
+      %tr
+        %th Дата и время
+        %th Тип операции
+        %th Монет
+        %th Остаток после операции
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td Пополнение счета
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td Покупка VIP статуса
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td
+          Покупка марки
+          %b GOLD
+          на Мечту
+          .dream-mark.row
+            .col-1
+              .dream
+                .label.gold gold
+                %img{ src: "http://unsplash.it/300/300" }
+            .col
+              .mark.gold
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+          .icon.gift.pink
+        %td.present-coin
+          .action.row
+            .title Вам подарили монеты
+            %a.user{ href: "#" }
+              .wrapper.arrow
+                .avatar.size-m
+                  %img{ src: "https://randomuser.me/api/portraits/women/13.jpg" }
+              Etta Pierce
+            .coins
+              .icon.money.size-40
+
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+          .icon.gift.pink
+        %td.present-coin
+          .action.row
+            .title Вы подарили монеты
+            .coins.arrow
+              .icon.money.size-40
+            %a.user{ href: "#" }
+              .wrapper
+                .avatar.size-m
+                  %img{ src: "https://randomuser.me/api/portraits/women/13.jpg" }
+              Etta Pierce
+
+        %td –
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td.present-vip
+          .action.row
+            .title Вы подарили VIP статус Мечтателю
+            .vip.arrow
+            %a.user{ href: "#" }
+              .avatar.size-m
+                %img{ src: "https://randomuser.me/api/portraits/women/14.jpg" }
+              Etta Pierce
+
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td.present-vip
+          .action.row
+            .title Вам подарили VIP статус Мечтателю
+            %a.user{ href: "#" }
+              .wrapper.arrow
+                .avatar.size-m
+                  %img{ src: "https://randomuser.me/api/portraits/women/14.jpg" }
+              Etta Pierce
+            .vip
+
+        %td –
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td
+          Покупка марки
+          %b GOLD
+          на Мечту
+          .dream-mark.row
+            .col-1
+              .dream
+                .label.gold gold
+                %img{ src: "http://unsplash.it/300/300?random=2" }
+              %a.user-card{ href: "#" }
+                .avatar.size-s
+                  %img{ alt: "avatar", :src => "https://randomuser.me/api/portraits/men/22.jpg" }
+                .description User Name
+            .col
+              .mark.gold
+        %td – 50 монет
+        %td 300 монет
+      %tr
+        %td
+          23.02.2016
+          %br 16:15
+        %td.give-coin
+          Вы подарили монеты Мечтателю
+          .action.row
+            .coins.arrow
+              .icon.money.size-40
+            %a.user{ href: "#" }
+              .wrapper
+                .avatar.size-m
+                  %img{ src: "https://randomuser.me/api/portraits/women/13.jpg" }
+              Etta Pierce
+
+        %td – 50 монет
+        %td 300 монет
+
+
+.col-right
+  .col-js
+    .top
+      .widget-balance
+        .title На моем счете:
+        .count
+          .icon.money.size-28
+          .number
+            %b 146
+            монет
+      %ul.vertical-menu
+        %li
+          %a{ href: "/markup/balance" } Пополнить баланс
+        %li
+          %a.active{ href: "/markup/operations_history" } История операций
+
+

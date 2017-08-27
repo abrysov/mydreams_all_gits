@@ -1,0 +1,18 @@
+%tr
+  %td
+    = show_link(dreamer.id)
+  %td
+    = link_to_if (ava_link = dreamer.avatar.url(:large)),
+      image_tag(avatar_or_default(dreamer, :admin)), ava_link
+  %td
+    = dreamer_link(dreamer)
+  %td
+    = dreamer.email
+  %td
+    = dreamer.status
+  %td
+    = short_date(dreamer.created_at)
+  %td
+    = dreamer.confirmed? ? short_date(dreamer.confirmed_at) : '-'
+  %td.actions
+    = render 'admin/entity_control/shared/actions', object: dreamer

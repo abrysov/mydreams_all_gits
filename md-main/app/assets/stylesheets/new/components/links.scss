@@ -1,0 +1,9 @@
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a[href^="mailto"],
+a.accent {
+  color: $light-purple-color;
+}

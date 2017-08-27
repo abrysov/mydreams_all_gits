@@ -1,0 +1,66 @@
+- gift ||= false
+- edit_dream ||= false
+
+.main.execute-dream
+
+  = render partial: 'application/page_header'
+
+  - if edit_dream
+    .page-title= t('dreams.new.edit_dream_title')
+  - else
+    .page-title= t('dreams.new.create_dream_title')
+
+  - unless current_dreamer.email
+    .info.info--error= t('dreams.new.email_required')
+  .content-tabs
+    .content-tab
+      .content-tab__link.js-form-toggler{ class: "#{'active' unless gift}", data: {form: 'add_dream'} }
+        %span.content-tab__name= t('dreams.new.create_dream')
+
+  .main_content
+    .content_wrap.forms-container.js-form-container{ class: "#{'active' unless gift}", data: {form: 'add_dream'} }
+      = render 'account/dreams/form'
+
+- content_for :mydreams_js do
+  = render 'shared/video', certificate_name: @certificate_name if @certificate_name.present?
+
+  :javascript
+    $('.js-form-container').find('.js-form-submit').on('click', function(){
+      $(this).addClass('disabled').closest('.js-form-control').find('.js-preloader').addClass('active');
+    });
+
+    $('.js-validation').formValidation();
+
+    (function formToggler()
+    {
+      var
+      toggler = $('.js-form-toggler'),
+      options = {
+        orient: 'square',
+        min_height: 540,
+        min_width: 540
+      };
+
+      $('.js-imageLoader:visible').imageLoader(options);
+
+      $(document).on('click', '.js-form-toggler', function(){
+        var
+        form_name = $(this).data('form'),
+        target_form = $('.js-form-container[data-form='+ form_name +']');
+
+        if(! $(this).hasClass('active')){
+          toggler.toggleClass('active');
+
+          target_form.siblings('.js-form-container').fadeOut(400, function(){
+            $(this).removeClass('active');
+
+            target_form.fadeIn(400, function(){
+              $(this).addClass('active').find('.js-imageLoader:visible').imageLoader(options);
+            });
+          });
+        }
+      });
+    })();
+
+
+

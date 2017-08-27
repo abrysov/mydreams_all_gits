@@ -1,0 +1,9 @@
+.right-title {
+  color: $light-gray-text-color;
+
+  .number {
+    display: inline-block;
+    float: right;
+    color: $light-purple-color;
+  }
+}

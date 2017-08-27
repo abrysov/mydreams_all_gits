@@ -1,0 +1,2156 @@
+ru:
+  about:
+    agreement: Пользовательское соглашение
+    details: Читать подробную информацию
+    info: 'Наступило время исполнять Мечты.<br>mail@mydreams.club'
+    info_new_design: 'Наступило время исполнять Мечты.'
+    one: 'Самые знаменитые и богатейшие люди Планеты объединились в клуб мечтателей с единственной целью: <br> Исполнять Мечты и желания миллиардов людей по всей Земле.'
+    one_new_design: 'Самые знаменитые и богатейшие люди Планеты объединились в клуб мечтателей <br> с единственной целью: <br> Исполнять Мечты и желания миллиардов людей по всей Земле.'
+    three: 'Dreambook - ваша персональная книга с Мечтами и желаниями, <br> которую увидит весь Мир.'
+    title: О Клубе
+    two: 'Став членом клуба вы сможете быстро воплощать свои Мечты и желания в реальность.<br>Чтобы Мечты сбывались, а желания исполнялись, ими необходимо делиться.'
+  actions:
+    accept: Добавить себе
+    accept_dream: Взять мечту
+    accept_request: Принять заявку
+    apply: Применить
+    back: Назад
+    borrow: Добавить себе
+    buy_mark: Купить марку
+    choose_sm: Выберете социальную сеть
+    citate: Цитировать
+    comment: Комментировать
+    confirm: Вы уверены?
+    correct: Корректировать
+    crop: Обрезать
+    decline_request: Отклонить заявку
+    delete: Удалить
+    deny_request: Отменить заявку
+    edit: Редактрировать
+    exit: Выйти
+    lets_go: Поехали!
+    like: Лайкнуть
+    load_more: Загрузить ещё
+    login: Войти
+    open: Открыть
+    play_video: Смотреть видео
+    skip_video: Пропустить
+    present_mark: Подарить марку
+    recovery: Восстановить
+    reject: Отклонить
+    reject_dream: Отклонить мечту
+    reply: Ответить
+    request_friendship: Дружить
+    run_dream: Запустить Мечту
+    run_dream_into_universe: Запустить Мечту во Вселенную
+    save: Сохранить
+    select_mark: Выбрать марку
+    send: Отправить
+    send_message: Отправить сообщение
+    show: Показать
+    show_all: Смотреть всех
+    show_all_gifts: Смотреть все подарки
+    show_more: Смотреть все
+    subscribe: Подписаться
+    suggest: Предложить другу
+    to_friendlist: В друзья
+    to_subscribers: В подписчики
+    unfriend: Друзья
+    unlike: Убрать лайк
+    unsubscribe: Подписаны
+    upload: Загрузить
+    view_dream: Посмотреть мечту
+    write_message: Написать сообщение
+  activemodel:
+    errors:
+      models:
+        new_dreamer_form:
+          attributes:
+            email:
+              not_unique: уже существует
+  activerecord:
+    attributes:
+      activity:
+        created_at: Создано
+        key: Действие
+        owner: Автор
+        parameters: Пареметры
+        trackable: Сущность
+        updated_at: Изменено
+      admin_user:
+        created_at: Создан
+        current_sign_in_at: Зашел в
+        current_sign_in_ip: Зашел с ip
+        email: E-mail
+        encrypted_password: Зашифрованый пароль
+        last_sign_in_at: Последний раз зашел в
+        last_sign_in_ip: Последний раз зашел с ip
+        manager: Модератор
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        remember_created_at: Запоминание создано в
+        reset_password_sent_at: Запрос на восстановление пароля отправлен в
+        reset_password_token: Токен запрос на восстановление пароля
+        roles: Роли
+        sign_in_count: Заходил (раз)
+        updated_at: Изменен
+      attachment:
+        attachmentable: Куда приложен
+        created_at: Создана
+        download: скачать
+        file: Файл
+        updated_at: Изменена
+      comment:
+        body: Комментарий
+        commentable: Комментируемый объект
+        comments_count: Количество коментариев
+        created_at: Создана
+        dreamer: Кто оставил
+        likes_count: Количество лайков
+        updated_at: Изменена
+      deleted_dreamer:
+        first_name: Мечтатель удален
+        last_name:
+      dream:
+        came_true: Исполнилась
+        comments_count: Количество коментариев
+        created_at: Создано
+        description: Описание
+        dreamer: Мечтатель
+        dreamer_id: Мечтатель
+        likes_count: Количество лайков
+        title: Название
+        updated_at: Изменено
+      dreamer:
+        age: Возраст
+        avatar: Аватар
+        birthday: День рождения
+        celebrity: Звезда
+        created_at: Создан
+        current_sign_in_at: Зашел в
+        current_sign_in_ip: Зашел с ip
+        dreamer_city: Город
+        dreamer_city_id: Город
+        dreamer_country: Страна
+        dreamer_country_id: Страна
+        dream_city: Город
+        dream_city_id: Город
+        dream_country: Страна
+        dream_country_id: Страна
+        email: E-mail
+        encrypted_password: Зашифрованый пароль
+        first_name: Имя
+        gender_male: Мужской пол
+        is_vip: VIP статус
+        last_name: Фамилия
+        last_sign_in_at: Последний раз зашел в
+        last_sign_in_ip: Последний раз зашел с ip
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        phone: Телефон
+        project_dreamer: Флайбук проекта
+        remember_created_at: Запоминание создано в
+        reset_password_sent_at: Запрос на восстановление пароля отправлен в
+        reset_password_token: Токен запрос на восстановление пароля
+        sign_in_count: Заходил (раз)
+        updated_at: Изменен
+        visits_count: Количество посещений
+      dreamer_city:
+        code: Код
+        created_at: Создана
+        dreamer_country: Страна
+        name_en: Название (англ)
+        name_ru: Название (рус)
+        updated_at: Изменена
+      dream_city:
+        code: Код
+        created_at: Создана
+        dream_country: Страна
+        name: Название
+        updated_at: Изменена
+      dreamer_country:
+        code: Код
+        created_at: Создана
+        flag: Флаг
+        name_en: Название (англ)
+        name_ru: Название (рус)
+        updated_at: Изменена
+      dream_country:
+        code: Код
+        created_at: Создана
+        flag: Флаг
+        name: Название
+        updated_at: Изменена
+      friend_request:
+        sender: ''
+      friendship:
+        accepted: Запрос принят
+        accepted_at: Запрос принят
+        created_at: Создана
+        dreamer: Отправитель заявки
+        dreamer_id: Отправитель заявки
+        friend: Друг
+        friend_id: Друг
+        updated_at: Изменена
+      like:
+        created_at: Поставлен
+        dreamer: Кто лайкнул
+        likeable: Лайкнутый объект
+        updated_at: Изменена
+      message:
+        created_at: Создано
+        message: Сообщение
+        read: Прочтено
+        receiver: Получатель
+        receiver_id: Получатель
+        sender: Отправитель
+        sender_id: Отправитель
+        updated_at: Изменено
+      photo:
+        caption: Заголовок
+        created_at: Создано
+        dreamer: Мечтатель
+        dreamer_id: Мечтатель
+        file: Путь к Фото
+        photo_file: Фото
+        updated_at: Изменено
+      post:
+        body: Содержание
+        comments_count: Количество коментариев
+        created_at: Создано
+        dreamer: Мечтатель
+        dreamer_id: Мечтатель
+        likes_count: Количество лайков
+        title: Название
+        updated_at: Изменено
+      static_page:
+        body_en: Тело страницы (en)
+        body_ru: Тело страницы (ru)
+        created_at: Создана
+        slug: Адресс
+        title_en: Название (en)
+        title_ru: Название (ru)
+        updated_at: Изменена
+      status:
+        created_at: Создана
+        current: Являеться текущим
+        dreamer: Мечтатель
+        title: Статус
+        updated_at: Изменена
+      subscription:
+        created_at: Создана
+        dreamer: Подписываемый
+        dreamer_id: Подписываемый
+        subscribed: Под кем
+        subscribed_id: Под кем
+        updated_at: Изменена
+      suggested_dream:
+        created_at: Создана
+        dream: Мечта
+        dream_id: Мечта
+        receiver: Получатель
+        receiver_id: Получатель
+        updated_at: Изменена
+      suggested_post:
+        created_at: Создана
+        dream: Запись
+        dream_id: Запись
+        receiver: Получатель
+        receiver_id: Получатель
+        updated_at: Изменена
+      top_dream:
+        created_at: Создана
+        description: Описание
+        dream: Мечта
+        dream_id: Мечта
+        photo: Фото
+        title: Название
+        updated_at: Изменена
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: нужно подтвердить
+        blank: не может быть пустым
+        confirmation: не совпадает с паролем
+        empty: не может быть пустым
+        equal_to: может иметь лишь значение, равное %{count}
+        even: может иметь лишь нечетное значение
+        exclusion: имеет зарезервированное значение
+        greater_than: может иметь лишь значение большее %{count}
+        greater_than_or_equal_to: может иметь лишь значение большее или равное %{count}
+        inclusion: имеет непредусмотренное значение
+        invalid: имеет неверное значение
+        less_than: может иметь лишь значение меньшее чем %{count}
+        less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+        not_a_number: не является числом
+        odd: может иметь лишь четное значение
+        record_invalid: 'Возникли ошибки: %{errors}'
+        taken: уже существует
+        too_long:
+          few: слишком большой длины (не может быть больше чем %{count} символа)
+          many: слишком большой длины (не может быть больше чем %{count} символов)
+          one: слишком большой длины (не может быть больше чем %{count} символ)
+          other: слишком большой длины (не может быть больше чем %{count} символа)
+        too_short:
+          few: недостаточной длины (не может быть меньше %{count} символов)
+          many: недостаточной длины (не может быть меньше %{count} символов)
+          one: недостаточной длины (не может быть меньше %{count} символа)
+          other: недостаточной длины (не может быть меньше %{count} символа)
+        wrong_length:
+          few: неверной длины (может быть длиной ровно %{count} символа)
+          many: неверной длины (может быть длиной ровно %{count} символов)
+          one: неверной длины (может быть длиной ровно %{count} символ)
+          other: неверной длины (может быть длиной ровно %{count} символа)
+      models:
+        friend_request:
+          attributes:
+            sender:
+              blank: Отправитель не указан
+              taken: Приглашение уже отправлено
+      template:
+        body: 'Проблемы возникли со следующими полями:'
+        header:
+          few: '%{model}: сохранение не удалось из-за %{count} ошибок'
+          many: '%{model}: сохранение не удалось из-за %{count} ошибок'
+          one: '%{model}: сохранение не удалось из-за %{count} ошибки'
+          other: '%{model}: сохранение не удалось из-за %{count} ошибки'
+    models:
+      activity:
+        few: Новостей
+        many: Новостей
+        one: Новость
+        other: Новости
+      attachment:
+        few: Файлов сообщений
+        many: Файлов сообщений
+        one: Файл сообщения
+        other: Файлы сообщений
+      comment:
+        few: Комментариев
+        many: Комментариев
+        one: Комментарий
+        other: Комментарии
+      dream:
+        few: Мечт
+        many: Мечт
+        one: Мечту
+        other: Мечты
+      dreamer:
+        few: Мечтателей
+        many: Мечтателей
+        one: Мечтателя
+        other: Мечтатели
+      dreamer_city:
+        few: Городов
+        many: Городов
+        one: Город
+        other: Города
+      dream_city:
+        few: Городов
+        many: Городов
+        one: Город
+        other: Города
+      dreamer_country:
+        few: Стран
+        many: Стран
+        one: Страну
+        other: Страны
+      dream_country:
+        few: Стран
+        many: Стран
+        one: Страну
+        other: Страны
+      friendship:
+        few: Джужб
+        many: Дружб
+        one: Дружбу
+        other: Дружбы
+      like:
+        few: Лайков
+        many: Лайков
+        one: Лайк
+        other: Лайки
+      message:
+        few: Сообщений
+        many: Сообщений
+        one: Сообщение
+        other: Сообщения
+      photo:
+        few: Фото
+        many: Фото
+        one: Фото
+        other: Фото
+      post:
+        few: Записей
+        many: Записей
+        one: Запись
+        other: Записи
+      role:
+        few: Ролей
+        many: Ролей
+        one: Роль
+        other: Роли
+      static_page:
+        few: Страниц
+        many: Страниц
+        one: Страницу
+        other: Страницы
+      status:
+        few: Статусов
+        many: Статусов
+        one: Статус
+        other: Статусы
+      subscription:
+        few: Подписок
+        many: Подписок
+        one: Подписку
+        other: Подписки
+      suggested_dream:
+        few: Предлагаемых Мечт
+        many: Предлагаемых Мечт
+        one: Предлагаемую Мечту
+        other: Предлагаемые Мечты
+      suggested_post:
+        few: Предлагаемых Записей
+        many: Предлагаемых Записей
+        one: Предлагаемую Запись
+        other: Предлагаемые Записи
+      superuser:
+        few: Ролей
+        many: Ролей
+        one: Суперюзер
+        other: Роли
+      top_dream:
+        few: TOP Мечт
+        many: TOP Мечт
+        one: TOP Мечту
+        other: TOP Мечты
+  activities:
+    activities_title: Новости
+    certificate_create: Добавил(а) марку на свою мечту
+    create: Создание
+    dream_comment: Прокомментировал мечту
+    dream_create: Добавил мечту
+    dream_like: Понравилась мечта
+    dream_suggest: поделился записью
+    friendship_accept: Добавился в друзья
+    friendship_destroy: Удалился из друзей
+    friendship_request: Хочет добавить в друзья
+    no_activities: У вас пока нет новостей
+    post_comment: Прокомментировал запись
+    post_create: Добавил запись
+    post_like: Понравилась запись
+    post_suggest: поделился записью
+    subscription_create: Подписался на вас
+    subscription_destroy: Удалился из подписчиков
+    update: Изменение
+  admin:
+    advertisement:
+      name: Реклама
+      menu:
+        banners: Банеры
+        advertisers: Клиенты
+        ad_pages: Страницы для показа
+    entity_control:
+      name: Админка
+      dashboard:
+        index:
+          administrators: Администраторы
+          comments: Комменты
+          dreams: Мечты
+          dream_stats:
+            with_certificate: С марками
+            fulfilled: Сбывшиеся
+          dreamers: Мечтатели
+          dreamer_stats:
+            with_avatar: С аватарами
+            confirmed: Подтвержденные
+            deleted: Удаленные
+            blocked: Заблокированные
+            vip: Vip
+            with_dreams: C мечатами
+          loged_in_today: Заходили сегодня
+          loged_in_last_month: Заходили за месяц
+          moderators: Модераторы
+          online: Онлайн
+          photos: Фото
+          posts: Посты
+      menu:
+        dreamers: Мечтатели
+        dreams: Мечты
+        posts: Посты
+        comments: Комменты
+        top_dreams: Топ мечты
+    management:
+      name: Управление продуктами
+      id: ID
+      amount: Баланс на счете -
+      dreamer: Мечтатель
+      actions:
+        show: Просмотр
+        edit: Редактировать
+        create: Создать новый продукт
+        locked: Заблокировать
+        activate: Активировать
+      filters:
+        all: Все
+        completed: Выполненные
+        processing: В процессе
+        failed: Ошибочные
+      menu:
+        products: Продукты
+        lockeds: Не активные
+        purchases: Покупки
+        transactions: Транзакции
+      products:
+        name: Название
+        cost: Стоимость
+        product_type: Тип
+        state: Статус
+        actions: Действия
+        property: Параметры продукта
+        created_at: Создан
+        updated_at: Изменен
+        active: Активный
+        locked: Заблокированный
+        special: Системный продукт
+        certificate: Сертификат
+        vip_status: Vip-статус
+      properties:
+        certificate_name: Сертификат - название
+        certificate_launches: Сертификат - количество запусков
+        locale: Платежный шлюз - локаль
+        previous_id: ID предыдущего продукта
+        gateway_id: Платежный шлюз
+        gateway_rate: Платежный шлюз - курс обмена
+        vip_duration: VIP-статус - длительность
+      purchases:
+        product: Продукт
+        dreamer: Мечтатель
+        destination_dreamer: Получатель
+        destination: Назначение
+        amount: Сумма
+        state: Статус
+        comment: Комментарий
+        actions: Действия
+        transactions: Транзакции
+      transactions:
+        purchase: Внутренняя транзакция
+        external: Внешняя транзакция
+        actions: Действия
+        dreamer: Мечтатель
+        amount: Сумма
+        operation: Операция
+        state: Статус
+        before: Баланс до
+        after: Баланс после
+        reason: Тип транзакции
+        created_at: Создан
+        updated_at: Изменен
+        gateway_response: Ответ платежной системы
+      errors:
+        not_found: Ошибка! запись не найдена
+    mailing_list:
+      name: Отправка почты
+      menu:
+        come_true_dreams: Исполненные мечты
+      come_true_dreams:
+        errors:
+          already_come_true: Мечта уже сбылась
+          already_send: Письмо уже отправлено
+          not_send: Не удалось отправить
+          not_found: Мечта не найдена или уже сбылась
+        success:
+          mail_sent: Письмо успешно отправлено
+        buttons:
+          come_true: Сбылась мечта
+          send: Отправить
+          save: Сохранить
+        forms:
+          dream_id: ИД мечты
+          additional_text: Дополнительный текст
+          send_test_mail: Отправить тестовое
+          send_mail: Отправить Мечтателю
+          snapshot: Картинка
+          email_content_panel: Содержимое письма
+          email_send_panel: Отправка email
+          generate_snapshot: Генерация картинки
+          none_spanshot: Не генерировать новую картинку
+          dream_dreamer_spanshot: Картинка Мечтатель + Мечта
+          dream_spanshot: Картинка Мечта
+          dreamer_spanshot: Картинка Мечтатель
+        form_find_by_id:
+          placeholder: Поиск по ID
+    tags:
+      name: Теги
+      menu:
+        tags: Теги
+        dreams: Мечты
+        ad_banners: Баннеры
+        ad_links: Ссылки
+  attachment:
+    add: Прикрепить
+    photo: Фотографию
+  authentication:
+    authentication: Вход
+    enter_email: Email
+    enter_mydreams: Войти
+    enter_password: Пароль
+    enter_account_data: Введите данные учетной записи
+    errors:
+      invalid_password: Неправильный логин или пароль
+    forgot_pass: Забыли пароль?
+    login_with_social: Войти с помощью социальных сетей
+    remember_me: Запомнить меня
+    social: Войти с помощью
+    submit: Поехали
+  bad_image:
+    desc: Слишком низкое качество изображения.
+    recommend_height: Минимальный размер по высоте
+    recommend_width: Минимальный размер по ширине
+  comments:
+    no_comments: Пока нет ни одного комментария
+    placeholder_textarea: Введите свой текст сообщения
+    show_last_n_comments: Показать все %{count} %{plural}
+    hide: Скрыть комментарии
+  date:
+    today: Сегодня
+    yesterday: Вчера
+    ago: назад
+    datajoin: в
+    abbr_day_names:
+    - Вос
+    - Пон
+    - Вто
+    - Сре
+    - Чет
+    - Пят
+    - Суб
+    abbr_month_names:
+    - ''
+    - Янв
+    - Фев
+    - Мар
+    - Апр
+    - Май
+    - Июн
+    - Июл
+    - Авг
+    - Сен
+    - Окт
+    - Ноя
+    - Дек
+    common_abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    common_abbr_month_names:
+    - ''
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    common_day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    common_month_names:
+    - ''
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    day_names:
+    - Воскресенье
+    - Понедельник
+    - Вторник
+    - Среда
+    - Четверг
+    - Пятница
+    - Суббота
+    formats:
+      default: "%Y-%m-%d %Z"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    many_month_names:
+    - ''
+    - Января
+    - Февраля
+    - Марта
+    - Апреля
+    - Мая
+    - Июня
+    - Июля
+    - Августа
+    - Сентября
+    - Октября
+    - Ноября
+    - Декабря
+    month_names:
+    - ''
+    - Январь
+    - Февраль
+    - Март
+    - Апрель
+    - Мая
+    - Июнь
+    - Июль
+    - Август
+    - Сентябрь
+    - Октябрь
+    - Ноябрь
+    - Декабрь
+    order:
+    - :year
+    - :month
+    - :day
+    standalone_abbr_day_names:
+    - вс
+    - пн
+    - вт
+    - ср
+    - чт
+    - пт
+    - сб
+    standalone_abbr_month_names:
+    - ''
+    - янв.
+    - февр.
+    - март
+    - апр.
+    - май
+    - июнь
+    - июль
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    standalone_day_names:
+    - Воскресенье
+    - Понедельник
+    - Вторник
+    - Среда
+    - Четверг
+    - Пятница
+    - Суббота
+    standalone_month_names:
+    - ''
+    - Январь
+    - Февраль
+    - Март
+    - Апрель
+    - Май
+    - Июнь
+    - Июль
+    - Август
+    - Сентябрь
+    - Октябрь
+    - Ноябрь
+    - Декабрь
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      almost_x_years:
+        few: почти %{count} года
+        many: почти %{count} лет
+        one: почти %{count} год
+        other: почти %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
+        few: "%{count} дня"
+        many: "%{count} дней"
+        one: "%{count} день"
+        other: "%{count} дня"
+      x_minutes:
+        few: "%{count} минуты"
+        many: "%{count} минут"
+        one: "%{count} минута"
+        other: "%{count} минуты"
+      x_months:
+        few: "%{count} месяца"
+        many: "%{count} месяцев"
+        one: "%{count} месяц"
+        other: "%{count} месяца"
+      x_seconds:
+        few: "%{count} секунды"
+        many: "%{count} секунд"
+        one: "%{count} секунда"
+        other: "%{count} секунды"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %Z"
+    prompts:
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год
+  devise:
+    confirmations:
+      new:
+        title: Уважаемый мечтатель!
+        body: На Ваш адрес %{email} было отправлено письмо со ссылкой для подтверждения. Если Вы не можете найти письмо, проверьте папку "спам".
+        body_after_10_min: На Ваш адрес %{email} было отправлено письмо со ссылкой для подтверждения. Если письмо не пришло, попробуйте отправить снова.
+        add_email_for_confirm: Чтобы пользоваться всеми разделами сайта требуется подтверждение почты
+        your_email: Ваш Email
+        send: Отправить
+        send_again: Отправить снова
+        questions: Если у Вас возникли трудности, обратитесь в службу технической поддержки
+        exit: Выход
+      create:
+        wrong_email: Неверный Email адрес
+        bounced: Вы ввели некорректный адрес электронной почты, введите другой Email адрес
+        spam: Ранее отправленное Вам письмо было помечено Вами как "спам". Введите корректный Email адрес
+        unsub: Вы отписались с данного Email адреса, введите другой Email адрес
+      show:
+        wrong_token: Ссылка подтверждения устарела, необходимо пройти процедуру заново.
+      confirmed: Ваш Email адрес успешно подтвержден.
+      send_instructions: Через несколько минут Вам придет письмо с инструкциями подтверждения Вашего Email адреса.
+      instructions_not_sent: Запрос на восстановление пароля не отправлен.
+      send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes.
+    dreamer:
+      passwords:
+        no_token: You can't access this page without coming from a password reset email.  If you do come from a password reset email, please make sure you used the full URL provided.
+        send_instructions: В течение нескольких минут вы получите письмо с инструкциями о том, как изменить пароль.
+        send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+        updated: Your password has been changed successfully. You are now signed in.
+        updated_not_active: Your password has been changed successfully.
+    failure:
+      already_authenticated: You are already signed in.
+      inactive: Your account is not activated yet.
+      invalid: Invalid %{authentication_keys} or password.
+      last_attempt: You have one more attempt before your account is locked.
+      locked: Your account is locked.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+      timeout: Your session expired. Please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your email address before continuing.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmation instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      unlock_instructions:
+        subject: Unlock instructions
+    omniauth_callbacks:
+      failure: Ошибка входа через %{kind} (%{reason})
+      success: Вы успешно вошли через %{kind}
+    passwords:
+      dreamer:
+        no_token: You can't access this page without coming from a password reset email.  If you do come from a password reset email, please make sure you used the full URL provided.
+        send_instructions: В течение нескольких минут вы получите письмо с инструкциями о том, как изменить пароль.
+        send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+        updated: Your password has been changed successfully. You are now signed in.
+        updated_not_active: Your password has been changed successfully.
+    registrations:
+      destroyed: Bye! Your account has been successfully cancelled. We hope to see you again soon.
+      email_not_unique: Этот e-mail уже зарегистрирован.
+      validation_failed: Возникли ошибки.
+      signed_up: Добро пожаловать! Вы успешно зарегистрировались.
+      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
+      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address.
+      updated: Your account has been updated successfully.
+    sessions:
+      dreamer:
+        signed_in: Вы вошли
+        signed_out: Вы вышли
+        unauthenticated: Авторизируйтесь
+    unlocks:
+      send_instructions: You will receive an email with instructions for how to unlock your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email with instructions for how to unlock it in a few minutes.
+      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+  dream:
+    create: Создана мечта
+    destroy: Удалена мечта
+    update: Обновлена мечта
+  dream_states:
+    admin_accepted: Подтверждена
+    admin_declined: Отклонена
+    gifted: Подарена
+    initial: Дефолтное состояние
+    needs_accepting: Необходимо подтверждение
+  dreambook_advertisement:
+    condition: Доступно только VIP пользователям
+    title: Ваше персональное рекламное место!
+  dreamer:
+    avatar: Ваш аватар
+    birthday: Дата рождения
+    city: Город
+    country: Страна
+    create: Создан мечтатель
+    destroy: Удален мечтатель
+    email: E-mail
+    first_name: Ваше имя
+    last_name: Фамилия
+    password: Пароль
+    phone: Ваш телефон
+    update: Обновлен мечтатель
+    state: Состояние
+    deleted: Удален
+    blocked: Заблокирован
+    profile_deleted: Профиль удален
+    profile_restored: Профиль восстановлен
+  dreamers:
+    edit:
+      add_photo: Загрузить фото
+      change_avatar: Изменить аватар
+      cut_avatar: Обрезать аватар
+    shared:
+      right_menu:
+        dreams: Мечты
+        fulfilled_dreams: Сбывшиеся
+        launches: Запуски
+        friends: Друзья
+        followers: Подписчики
+    friendship: В друзья
+    no_dreamers: По заданым параметрам мечтатели не найдены
+    send_message: Написать сообщение
+  dreams:
+    borrow: Добавить себе
+    buy_mark: Купить марку
+    certificate_name:
+      id_0: My dreams
+      id_01: Bronze
+      id_02: Silver
+      id_03: Gold
+      id_04: Platinum
+      id_05: Vip
+      id_06: Presedential
+      id_07: Imperial
+    comes_true: Каждую секунду на Земле сбывается Мечта
+    comes_true_html: Каждые <strong>5</strong> секунд на Земле сбывается Мечта
+    delete: Удалить
+    dreams_come_true: Мечта сбылась
+    edit: Редактировать
+    form:
+      add_avatar: Загрузить фото
+    friends_dreams:
+      no_dreams: Не добавлено ни одной Мечты
+    fulfill:
+      confirm: Вас можно поздравить?
+      not_fulfill: Нет, все впереди
+    gift:
+      create_gift: Подарить Мечту
+      dream_comment: Пожелание
+      dream_photo: Фото Мечты
+      dream_title: Название Мечты
+      gift_comment: Введите
+      label_author: От кого
+      label_email: Кому
+      notification: На Ваш e-mail придeт подтверждение о доставке подарка
+      placeholder_author: Ваше имя (любое)
+      placeholder_email: E-mail
+      receiver_photo: Фото получателя
+      required_fields: Необходимо для регистрации
+      your_photo: Ваше фото
+    new:
+      about_marks_html: Используя марки, вы запускаете мечту во Вселенную.<br/>Каждая марка изменяет статус мечты, в зависимости от количества запусков.
+      add_dream: Добавить в Dreambook (бесплатно)
+      after_text_html: Приглашая людей в Клуб My Dreams таким оригинальным способом, —<br/>Вы открываете им целый Мир возможностей<br/>исполнения их Мечтаний и желаний.
+      belive_in_dream: Поверить в мечту
+      create_dream: Добавить мечту
+      create_dream_title: Исполнить Мечту
+      create_fulfill_dream_title: Исполнить Мечту
+      create_fulfilled_dream: Добавить сбывшуюся Мечту
+      create_fulfilled_dream_photo_preview: Фото сбывшейся Мечты
+      create_fulfilled_dream_subtitle: Поделиться со всем миром
+      create_fulfilled_dream_title: Моя Мечта сбылась
+      create_fulfilled_dream_video_html: Загрузка видео</br>Скоро будет доступно
+      description: Описание
+      dream_description: Описание
+      dream_description_placeholder: Опишите Вашу Мечту
+      dream_photo: Фото Мечты
+      dream_status: Статус Мечты
+      dream_title: Название Мечты
+      dream_title_placeholder: Введите название
+      dream_wish: Пожелание
+      dream_wish_placeholder: Напишите пожелание
+      edit_dream_title: Редактировать Мечту
+      email_notification: На Ваш e-mail придет уведомление
+      email_required: Заполните email, чтобы мы могли с вами связаться, когда ваша мечта исполнится
+      fulfill_dream: Исполнить Мечту
+      fulfill_email_notification: На ваш e-mail придет уведомление
+      fulfilled_dream: Мечта исполнена
+      improve_photo: Улучшить фото
+      photo_change: Замените фотографию
+      photo_upload: Загрузите фотографию
+      photos: Фото мечты
+      placeholder_description: Введите описание мечты
+      placeholder_title: Введите название
+      restriction_level: Настройка приватности
+      run_dream: Запустить во Вселенную (платно)
+      select_mark: Выбрать марку
+      select_mark_gift_html: Исполнить Мечту любого человека на Земле проще,<br/>чем приготовить себе чашку кофе.
+      send_universe: Запустить во Вселенную
+      statistics_of_fulfilled: Статистика сбывшихся Мечтаний
+      video: Видео
+      your_photo: Ваше фото
+    no_dreams: Мечты не добавлены
+    no_top_dreams: По вашему запросу ничего не найдено
+    popup:
+      add_dream: Добавить Мечту
+      add_photo: Добавить фото
+      change_photo: Заменить фото
+      check_sm: Выберете социальную сеть
+      confirm: Вы уверены?
+      like: Понравилось
+      private_scope: Кто может видеть вашу мечту
+      private_title: Настройки приватности
+      recommend: Поделиться мечтой
+      show_all: Смотреть все
+      show_liked: Смотреть всех
+      suggest_title: Предложить мечту другу
+    present: Подарить марку
+    present_mark: Подарить марку
+    set_private: Приватность
+    share: Поделиться
+    suggest: Предложить другу
+  errors:
+    appstore:
+      receipt_verify:
+        code_21000: App Store не подтвердил платеж.
+        code_21002: Данные платежа были повреждены.
+        code_21003: Платеж не был подтвержден.
+        code_21004: Не верная подпись платежа.
+        code_21005: Сервер не доступен.
+        code_21006: Срок действия подписки завершен
+        code_21007: This receipt is a sandbox receipt,  but it was sent to the production service for verify.
+        code_21008: This receipt is a production receipt, but it was sent to the sandbox service for verify.
+    dreamer:
+      avatar:
+        file_format: 'Неверный формат загружаемого файла, доступные форматы: %{formats}'
+        size_limit: Превышен лимит на размер файла, максимальный размер %{max} mb
+      phone:
+        wrong_format: имеет неверный формат
+    format: "%{attribute} %{message}"
+    friendship:
+      friend_self: Не может дружить сам с собой
+    messages:
+      accepted: нужно подтвердить
+      already_confirmed: адрес уже подтвержден, пожалуйста, попробуйте войти
+      blank: не может быть пустым
+      confirmation: не совпадает с подтверждением
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      empty: не может быть пустым
+      equal_to: может иметь лишь значение, равное %{count}
+      even: может иметь лишь нечетное значение
+      exclusion: имеет зарезервированное значение
+      expired: has expired, please request a new one
+      extension_white_list_error: 'имеет неверный формат загружаемого файла, доступные форматы: jpg, jpeg, png'
+      greater_than: может иметь значение большее %{count}
+      greater_than_or_equal_to: может иметь значение большее или равное %{count}
+      inclusion: имеет непредусмотренное значение
+      invalid: имеет неверное значение
+      less_than: может иметь значение меньшее чем %{count}
+      less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+      not_a_number: не является числом
+      not_an_integer: не является целым числом
+      not_found: не найден
+      not_locked: was not locked
+      not_saved:
+        one: 'Ошибка текущего %{resource} при сохранении:'
+        other: "%{count} ошибки текущего %{resource} при сохранении:"
+      odd: может иметь лишь четное значение
+      record_invalid: 'Возникли ошибки: %{errors}'
+      taken: уже существует
+      too_long:
+        few: слишком большой длины (не может быть больше чем %{count} символа)
+        many: слишком большой длины (не может быть больше чем %{count} символов)
+        one: слишком большой длины (не может быть больше чем %{count} символ)
+        other: слишком большой длины (не может быть больше чем %{count} символа)
+      too_short:
+        few: недостаточной длины (не может быть меньше %{count} символов)
+        many: недостаточной длины (не может быть меньше %{count} символов)
+        one: недостаточной длины (не может быть меньше %{count} символа)
+        other: недостаточной длины (не может быть меньше %{count} символа)
+      wrong_length:
+        few: неверной длины (может быть длиной ровно %{count} символа)
+        many: неверной длины (может быть длиной ровно %{count} символов)
+        one: неверной длины (может быть длиной ровно %{count} символ)
+        other: неверной длины (может быть длиной ровно %{count} символа)
+    photo:
+      file_format: 'Неверный формат загружаемого файла, доступные форматы: %{formats}'
+      size_limit: Превышен лимит на размер файла, максимальный размер %{max} mb
+    subscription:
+      subscribe_self: Не может подписаться сам под собой
+    template:
+      body: 'Проблемы возникли со следующими полями:'
+      header:
+        few: "%{model}: сохранение не удалось из-за %{count} ошибок"
+        many: "%{model}: сохранение не удалось из-за %{count} ошибок"
+        one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+        other: "%{model}: сохранение не удалось из-за %{count} ошибки"
+  feed:
+    close_feed: Скрыть
+    open_feed: Показать
+    title_total: Всего
+  flash:
+    success:
+      restored: Профиль восстановлен
+      create: Сохранено
+  flybook:
+    activities: Новости
+    add_to_friends: Подружиться
+    become_vip: Купить VIP статус
+    comments: Комментарии
+    dream_owner: Это ваша мечта
+    dreamer_bg_empty: Фон не загружен
+    dreams: мечты
+    followers: Подписчики
+    friends: Друзья
+    friends_dreams: Мечты друзей
+    get_back: Вернуться обратно
+    gift_vip: Подарить VIP статус
+    has_friends: Друзей
+    messages: Сообщения
+    my_dreams: Мечты
+    online: Online
+    posts: Записи
+    share_flybook: Поделиться
+    subscribe: Подписаться
+    subscribers: Подписчиков
+    subscriptions: Подписки
+    to_profile: В мой профиль
+    view_pics: Смотреть все фото
+    viewed: Просмотров
+    vip: VIP
+    vip_label:
+      text_1: Купить
+      text_2: статус
+    write_message: Написать сообщение
+  friends:
+    accept_request: Подружиться
+    btn_reject: Отклонить
+    new_dreams: Новых
+    no_friends: У вас пока нет друзей
+    show_more: Смотреть все
+  friendship:
+    create: Создана дружба
+    destroy: Удалена дружба
+    update: Обновлена дружба
+  genders:
+    female: Женский
+    male: Мужской
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b>
+          of <b>%{total}</b> in total
+      one_page:
+        display_entries:
+          one: Displaying <b>1</b> %{entry_name}
+          other: Displaying <b>all %{count}</b> %{entry_name}
+          zero: No %{entry_name} found
+    select:
+      prompt: 'Выберите: '
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Сохранить %{model}
+  layout:
+    about_project: О проекте
+    contacts: Контакты
+    dream_club: Мечты клуба
+    dreamers: Мечтатели
+    dreams: Мечты
+    flybook: Dreambook
+    footer:
+      copyright: MyDreams.club
+      mobile_version: Мобильная версия
+      support: Служба поддержки
+    fulfill_dream: Исполнить Мечту
+    fulfilled_dreams: Сбывшиеся Мечты
+    how_to_fulfill: Как исполнить мечту?
+    top: Мечты
+  layouts:
+    admin:
+      to_main_page: На главную
+  mail:
+    add_files: Прикрепить файл
+    all: Всего
+    chat_with: Сообщения от пользователя
+    form_btn: Отправить
+    messages: сообщений
+    new: Новых
+    no_message: У вас пока нет сообщений
+    online: Online
+    placeholder_textarea: Напишите здесь персональное сообщение
+    replay_btn: Ответить
+    write_btn: Написать
+    title: Сообщения
+    male_treatment: Уважаемый
+    female_treatment: Уважаемая
+  marks:
+    modal_title: Запуски мечты
+    no_marks: Марки не добавлены
+  misc:
+    age_range:
+      '1': 18-25
+      '2': 25-32
+      '3': 32-39
+      '4': 39-46
+      '5': 46-53
+      any: Любой
+      placeholder: Возраст
+    choose_dreamers:
+      all: Все
+      new: Новые
+      online: Online
+      top: Популярные
+      vip: VIP
+    choose_dreams:
+      top100: TOP-100
+      hot: Самые обсуждаемые
+      new: Новые
+    choose_fulfill_dreams:
+      all: Все
+      female: Женские
+      male: Мужские
+    choose_search_filter:
+      dreamers: Мечтатели
+      dreams: Мечты
+      posts: Записи
+    dreamer_friends_dreams: Мечты друзей мечтателя %{dreamer}
+    filters:
+      any: Любой
+      female: Девушка
+      male: Парня
+      placeholder: Пол
+    gender_for_registration:
+      female: Девушка
+      male: Мужчина
+    my_friends_dreams: Мечты моих друзей
+    my_many: Мои
+    of_dreamer: пользователя
+    search: Найти
+    search_placeholder: Быстрый поиск
+  modals:
+    add_to_feed:
+      message_placeholder: Напишите свое приветствие
+      no_city: Укажите в Вашем профиле город и страну, после чего услуга будет Вам доступна
+      no_photos: Добавьте фото в фотоальбом и услуга будет вам доступна
+      submit: Поехали
+      subtitle: Это бесплатно
+      title: Попасть в фотоленту
+    authorization:
+      forgot_password: Забыли пароль?
+      login_placeholder: E-mail
+      password_placeholder: Пароль
+      registration: Зарегистрироваться
+      remember_me: Запомнить меня
+      socials_title: 'Войти с помощью:'
+      submit: Войти
+      title: Вход
+    buy_certificate:
+      cost_option: Данная опция является платной
+      wish_placeholder: Ваше пожелание...
+    create_fulfilled_dream:
+      subtitle: Поделиться со всем Миром
+      title: Моя Мечта сбылась
+    dreambook_background:
+      title: Фоновое изображение
+    registration:
+      delete_profile: Временно удалить профиль
+      link: Регистрация
+      name: Введите Ваше имя
+      necessary: Обязательно
+      not_necessary: Не обязательно
+      phone_placeholder: Телефон
+      phone_title: Звонить будем только для вручения Мечты
+      phone_title_profile: Изменить номер телефона
+      submit_changes: Сохранить
+      submit_register: Поехали!
+      surname: Ваша фамилия
+      terms_of_service_html: Я принимаю %{href}
+      terms_of_service_link: условия проекта
+      title: Вступить в My Dreams Club®
+      title_profile: Редактировать мой профиль
+    send_message:
+      title: Написать сообщение
+    share:
+      subtitle: Выберите социальную сеть
+      title: Поделиться
+    take_dream:
+      subtitle: Корректировать
+      title: Добавить себе мечту
+  moderate:
+    comments:
+      index:
+        body: Текст комментария
+        commentable_id: ID сущности
+        dreamer_link: Ссылка на мечтателя
+        complains_count: Количество жалоб на комментарий
+        complains_count_short: жал/к (?)
+        abuses_count: Количество предупреждений пользователя
+        abuses_count_short: пред (?)
+    complains:
+      index:
+        type: Тип
+        complainer: Кто пожаловался
+        suspected: На кого пожаловались
+        state: Состояние
+    dreamers:
+      index:
+        id: ID
+        full_name: Имя Фамилия
+        avatar: Аватар
+        status: Статус
+        reg_date: Дата регистрации
+        reg_date_short: рег (?)
+        confirm_date: Дата подтверждения почты
+        confirm_date_short: подтв (?)
+        abuses_count: Количество предупреждений
+        abuses_count_short: пред (?)
+        state: Состояние пользователя
+        state_short: cост (?)
+        find: Найти
+    dreams:
+      index:
+        picture: Картинка
+        title: Название
+        description: Описание
+        dreamer: Мечтатель
+        likes_count: Количество лайков
+        likes_count_short: лай (?)
+        launches_count: Количество запусков
+        launches_count_short: зап (?)
+        comments_count: Количество комментариев
+        comments_count_short: ком (?)
+        complains_count: Количество жалоб на мечту
+        complains_count_short: жал (?)
+        abuses_count: Количество предупреждений пользователя
+        abuses_count_short: пред (?)
+        last_review: Последнее ревью
+    menu:
+      dreamers: Пользователи
+      photos: Фотографии
+      dreams: Мечты
+      posts: Записи
+      comments: Комментарии
+      complains: Жалобы
+    photos:
+      index:
+        photo: Фотография
+        dreamer_link: Ссылка на мечтателя
+        complains_count: Количество жалоб на фото
+        complains_count_short: жал (?)
+        abuses_count: Количество предупреждений пользователя
+        abuses_count_short: пред (?)
+    posts:
+      index:
+        picture: Картинка
+        title: Название
+        body: Описание
+        comments_count: Количество комментариев
+        comments_count_short: ком (?)
+        complains_count: Количество жалоб на запись
+        complains_count_short: жал (?)
+        abuses_count: Количество предупреждений пользователя
+        abuses_count_short: пред (?)
+    shared:
+      abuse_form:
+        notify: Предупредить
+      actions:
+        approve: OK
+        approved: ОК в
+        approve_ios: iOS safe
+        block: Заблокировать
+        delete: Удалить
+        group: Групповые действия
+        notify: Предупредить
+        recovery: Восстановить
+        unblock: Разблокировать
+      form_find_by_id:
+        placeholder: Поиск по ID
+      form_find_by_fields:
+        placeholder: Поиск по E-mail, Name, Last Name
+      sections:
+        entity_dreamer: Сущность / Мечтатель
+  my_dreams: Мои Мечты
+  my_profile:
+    title: Изменить данные
+  notice:
+    friendship:
+      not_requested: Невозможно отправить заявку на дружбу
+      removed: Друг был удален
+      requested: Заявка отправлена
+    subscription:
+      not_subscribed: Невозможно подписаться. Возможно вы уже подписаны
+      removed: Вы успешно отписались от обновлений пользователя
+      subscribed: Вы успешно подписались на обновления пользователя
+  payments:
+    choose_amount: Выберите количество
+    coins: Монеты
+    coins_in_genetive_case: Монет
+    coin_number: '<b>%{number}</b> монет'
+    course: 'Курс: <b>1</b> монета = <b>%{currency}</b> руб.'
+    datetime: Дата и время
+    description: Пополнение баланса на mydreams.club
+    enter_manual: 'Ввести вручную:'
+    in_total: 'Итого в рублях: <span>%{sum}</span> руб.'
+    on_my_account: 'На моем счете:'
+    num_of_coins: '%{num} монет'
+    operation:
+      balance_after: Остаток после операции
+      history: История операций
+      cert_buy: Покупка марки <b>%{name}</b> на Мечту
+      cert_gift: Вы подарили марку <b>%{name}</b> на Мечту
+      coin_gift: Вы подарили монеты Мечтателю
+      coin_gift_to_you: Вам подарили монеты
+      type: Тип операции
+      refill: Пополнить баланс
+      refilling: Пополнение счета
+      refill_short: Пополнить баланс
+      vip_buy: Покупка VIP статуса
+      vip_gift: Вы подарили VIP статус Мечтателю
+  photos:
+    album: Ваши фотографии
+    all: Фотографии
+    no_photos: Не добавлено ни одной фотографии
+    photo_page_title: Фотография
+  pluralize:
+    comments:
+    - комментарий
+    - комментария
+    - комментариев
+    dreamers:
+    - мечтатель
+    - мечтателя
+    - мечтателей
+    dreams:
+    - мечта
+    - мечты
+    - Mечтаний
+    followers:
+    - подписчик
+    - подписчика
+    - подписчиков
+    friends:
+    - друг
+    - друга
+    - друзей
+    gifted_marks:
+    - подаренная марка
+    - подареные марки
+    - подареныx марок
+    like:
+    - оценил это
+    - оценили это
+    - оценили это
+    liked_dreamers:
+    - мечтателю
+    - мечтателям
+    - мечтателям
+    likes_titles:
+    - человек оценил это
+    - человека оценили это
+    - человек оценили это
+    marks:
+    - марка
+    - марки
+    - марок
+    new:
+    - новая
+    - новые
+    - новых
+    new_followers:
+    - новый подписчик
+    - новых подписчика
+    - новых подписчиков
+    new_message:
+    - новое
+    - новых
+    - новых
+    people:
+    - человек
+    - человека
+    - человек
+    photos:
+    - фотография
+    - фотографии
+    - фотографий
+    posts:
+    - запись
+    - записи
+    - записей
+    proposed:
+    - предложена
+    - предложено
+    - предложено
+    requests:
+    - запрос
+    - запроса
+    - запросов
+    results:
+    - результат
+    - результата
+    - результатов
+    subscriptions:
+    - подписка
+    - подписки
+    - подписок
+    years:
+    - год
+    - года
+    - лет
+    news:
+    - новость
+    - новости
+    - новостей
+  posts:
+    borrow: Взять мечту
+    light_post:
+      more: Подробнее
+    new:
+      button_cancel: Отменить
+      button_publicate: Опубликовать
+      create_post: Добавить запись
+      create_post_title: Добавить запись
+      edit_post_title: Редактировать запись
+      photo_change: Измените фотографию
+      photo_upload: Загрузите фотографию
+      placeholder_body: Введите текст записи...
+      placeholder_description: Введите текст записи...
+      placeholder_title: Введите название записи...
+    no_posts: Записи не добавлены
+    popup:
+      add_photo: Добавить фото
+      change_photo: Изменить фото
+      suggest_title: Предложить запись другу
+    present_mark: Подарить марку
+    share: Поделиться
+    show_all: Смотреть все предложенные записи
+  recovery:
+    change_password: Изменить пароль
+    change_password_btn: Изменить пароль
+    do_recovery: Восстановить пароль
+    fill_email: Введите Ваш email
+    email_notification: На Ваш Email будет выслана ссылка для восстановления пароля
+    note: Используйте адрес почты, введенный при регистрации. На него вы получите письмо со
+      ссылкой. Перейдите по ней, чтобы восстановить пароль и войти на сайт.
+    note_new_design: Используйте адрес почты, введенный <br> при регистрации.
+    note2_new_design: На него Вы получите письмо с ссылкой. <br> Перейдите по ней, чтобы восстановить пароль <br> и войти на сайт.
+    old_password: Старый пароль
+    password: Пароль
+    password_confirmation: Подтверждение пароля
+    recovery: Восстановение пароля
+    recovery_btn: Восстановить
+    password_sended: Письмо для восстановления пароля успешно отправлено
+  registration:
+    additional_info: маленькое уточнение мелким текстом и все такое
+    born_female: родилась
+    born_male: родился
+    call_for: Звонки только для вручения Вам исполненной мечты
+    dont_fill1: Если вы хотите, чтобы вас
+    dont_fill2: не
+    dont_fill3: могли найти, не заполняйте
+    female: девушка
+    fill_email: E-mail
+    fill_field: Заполните это поле
+    fill_name: Введите ваше имя
+    label_city: Город
+    label_country: Страна
+    label_first_name: Имя
+    label_last_name: Фамилия
+    label_phone: Телефон
+    last_name: Ваша фамилия
+    lets_go: Поехали
+    login: Вход
+    male: мужчина
+    me: Я
+    phone: Ваш телефон
+    registration: Зарегистрироваться
+    registration_form: Регистрация
+    required_data: Достаточно для регистрации
+    warning1: Если хотите, чтобы Вас
+    warning2: НЕ
+    warning3: могли
+    warning4: найти, не заполняйте
+    warning5: ")"
+  relations:
+    errors:
+      friends_already: Вы уже друзья
+      friendship_requested: Заявка уже была отправлена
+      invalid_dreamer: Некорректный мечтатель
+      no_dreamer: Пользователь не указан
+      subscribed_already: Вы уже подписаны
+  restriction_levels:
+  - доступно всем
+  - доступно друзьям
+  - доступно только мне
+  search:
+    filter_city_placeholder: Выберите город
+    filter_country_placeholder: Выберите страну
+    found: Найдено
+    no_result: Ничего не найдено
+    title: Результаты поиска
+  services:
+    agreement:
+      menu:
+        terms_and_definitions: 1. Термины и определения
+        registration: 2. Регистрация на сайте
+        term_of_use: 3. Условия использования
+        rights_and_obligations: 4. Права и обязанности
+        copyright: 5. Авторские права
+        personal_information: 6. Персональные данные
+        advertising: 7.  Реклама
+        responsibility: 9.  Уведомления
+        changes: 10.  Изменения
+        applicable_right: 11.  Применимое право
+        other_provisions: 12.  Прочие положения
+      '1':
+        '1':
+          '1': 'В настоящем Соглашении используются следующие термины и определения:'
+          '10': "<strong>Статус Мечты</strong> – сумма запусков Мечты по результатам
+            активации приобретенных Пользователем и полученных от других Пользователей
+            Марок. Статус мечты отображается на карточке Мечты и обновляется после активации
+            Марки."
+          '11': "<strong>Реклама</strong> - информация, распространенная любым способом,
+            в любой форме и с использованием любых средств, адресованная неопределенному
+            кругу лиц и направленная на привлечение внимания к объекту рекламирования,
+            формирование или поддержание интереса к нему и его продвижение на рынке."
+          '12': "<strong>Таргетированная реклама</strong> – это текстовые, медийные
+            или мультимедийные рекламные объявления, которые демонстрируются только
+            тем Пользователям, которые удовлетворяют определенному набору требований,
+            заданному рекламодателем."
+          '13': "<strong>ТОП-50</strong> мужских мечтаний – список из 50 самых популярных
+            Мечтаний Пользователей-мужчин (а именно Мечтаний, набравших наибольшее количество
+            оценок от других Пользователей)."
+          '14': "<strong>ТОП-50</strong> женских мечтаний – список из 50 самых популярных
+            Мечтаний Пользователей-женщин (а именно Мечтаний, набравших наибольшее количество
+            оценок от других Пользователей)."
+          '15': "<strong>ТОП 100</strong> – 100 самых популярных Мечтаний Пользователей
+            Сайта во всем мире, сформированных Администрацией на основании независимых
+            информационных ресурсов, рейтингов просмотра Мечтаний знаменитостей во всем
+            мире и каких-либо иных критериев на усмотрение Администрации."
+          '16': "<strong>VIP-статус</strong> – платная услуга, позволяющая Пользователю:
+            (i) получить оригинальный дизайн своего DREAMBOOK с отметкой «VIP-Пользователь»,
+            (ii) загружать любые фоны, отражающие его индивидуальность Пользователя.
+            Пользователь может приобрести VIP-статус как для себя, так и в качестве
+            подарка иным Пользователям."
+          '17': "<strong>Запуск Мечты</strong> - платная услуга, состоящая в активации
+            Пользователем Марки в отношении собственной Мечты или в отношении Мечты
+            иного Пользователя в качестве подарка. Запуск Мечты увеличивает Статус Мечты
+            на номинал Марки и сопровождается показом развлекательного видеоролика,
+            содержание которого варьируется в зависимости от номинала Марки. Лицам,
+            не зарегистрированным в качестве Пользователей, можно подарить Мечту, отправив
+            соответствующее сообщение на электронную почту посредством специальной формы
+            на Сайте, однако, для просмотра видеоролика такому лицу потребуется пройти
+            регистрацию на Сайте, приняв условия настоящего Соглашения."
+          '18': "<strong>Соглашение</strong> – настоящее пользовательское соглашение,
+            заключенное между Администрацией и Пользователем, которое содержит условия
+            предоставления Пользователю доступа к функциональным возможностям и сервисам
+            Сайта, а также права и обязанности Пользователя и Администрации. Действующея
+            редакция Соглашения располагается на Сайте по адресу http://mydreams.club, при этом включает
+            условия, размещенные на иных страницах Сайта, прямая ссылка на которые имеется
+            в настоящем Соглашении. Регистрация Пользователя на Сайте означает полное
+            и безоговорочное принятие Пользователем условий настоящего Соглашения."
+          '2': "<strong>Клуб «Мои Мечты»</strong> или <strong>Сайт</strong> – сайт в
+            сети «Интернет», доступ к которому обеспечивается по доменному имени MyDreams.club,
+            созданный с целью объединения во всем мире Мечтателей-единомышленников,
+            обеспечив им беспрепятственное общение между собой и возможность исполнять
+            мечты и желания друг друга. В целях настоящего Соглашения под Сайтом понимаются
+            любые его версии, объединенные под доменным именем MyDreams.club и работающие
+            для различных устройств, в том числе, web-версия Сайта и мобильные приложения."
+          '3': "<strong>Администрация Клуба</strong> или <strong>Администрация</strong>
+            – Общество с ограниченной ответственностью «Мои Мечты», юридическое лицо,
+            созданное в соответствии с законодательством Российской Федерации и зарегистрированное
+            по адресу 107140, г. Москва, 1-й Красносельский переулок д.,3 пом. I, комн.
+            75."
+          '4': "<strong>Мечтатель</strong> или <strong>Пользователь</strong> – дееспособное
+            физическое лицо, достигшее возраста, допустимого для присоединения к настоящему
+            Соглашению по законодательству страны, гражданином которой оно является,
+            присоединившееся к настоящему Соглашению в собственном интересе и получившее
+            право пользоваться функционалом и сервисами Сайта, предоставляемыми Администрацией
+            на условиях, определенных настоящим Соглашением."
+          '5': "<strong>Мечта</strong> – мечта, желание Пользователя, имеющее как овеществленное,
+            материальное, так и неовеществленное выражение, фотоизображение и описание
+            которой размещены Пользователем в его DREAMBOOK."
+          '6': "<strong>Дримбук (Dreambook)</strong> – персональная виртуальная книга
+            Пользователя в виде набора страниц в сети «Интернет» на Сайте, доступная
+            для ознакомления иным Пользователям или, в случае ее намеренной рассылки
+            самим Пользователем, третьим лицам, не являющимся Пользователями Сайта.
+            Мечтатель может добавлять в свой DREAMBOOK изображение и описание своей
+            Мечты (их количество не ограничено) вести в DREAMBOOK личный Блог, а также
+            пользоваться иными сервисами Сайта."
+          '7': "<strong>Блог</strong> – раздел DREAMBOOK Пользователя, представляющий
+            собой его виртуальный дневник, в который Пользователь может добавлять личные
+            записи, обмениваться комментариями с другими Пользователями, получившими
+            от Пользователя соответствующий доступ."
+          '8': "<strong>Контент</strong> – содержимое, информационное наполнение Сайта,
+            включая, но не ограничиваясь, информацией, содержащей объекты авторских
+            и (или) смежных прав (в том числе фото- и видеоматериалы, текстовые сообщения,
+            музыка, аудиовизуальные произведения, их совокупность или фрагменты, сообщения
+            телепередач)."
+          '9':
+            '1': Bronze (1 запуск);
+            '2': Silver (5 запусков);
+            '3': Gold (10 запусков);
+            '4': Platinum (50 запусков);
+            '5': VIP (100 запусков);
+            '6': Presidential (250 запусков);
+            '7': Imperial (500 запусков).
+            head: "<strong>Марка</strong> – виртуальный объект, используемый для оплаты
+              сервиса «Запуск Мечты». Пользователь имеет возможность приобретать Марки
+              для себя или дарить их другим Пользователям. Имеется семь видов марок
+              в зависимости от количества Запусков:\n"
+        '2': 1.2 В случае если в настоящем Соглашении используются термины, не указанные
+          в данном разделе, то они понимаются и толкуются в соответствии с действующим
+          законодательством Российской Федерации и обычаями делового оборота.
+        head: ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ
+      '10':
+        '1': Администрация оставляет за собой право в любое время в одностороннем порядке
+          и без какого-либо специального уведомления внести изменения в настоящее Соглашение.
+        '2': Вы соглашаетесь, что к Вам применимы все изменения Соглашения с момента
+          их публикации на Сайте или с более поздней даты, которая может быть указана
+          в Соглашении.
+        head: ИЗМЕНЕНИЯ
+      '11':
+        '1': Настоящее Соглашение, порядок его заключения и исполнения, а также вопросы,
+          не урегулированные настоящим Соглашением, регулируется действующим законодательством
+          Российской Федерации. Исключения составляют случаи, когда в конкретных положениях
+          данного Соглашения прямо установлено иное применимое право.
+        '2': В случае возникновения любых споров или разногласий, связанных с использованием
+          Сайта, Пользователь и Администрация Сайта приложат все усилия для их разрешения
+          путем проведения переговоров между ними.
+        '3': В случае, если споры в связи с настоящим Соглашением не будут разрешены
+          путем переговоров, они подлежат рассмотрению в суде по месту нахождения Администрации
+          в соответствии с действующим законодательством Российской Федерации.
+        head: ПРИМЕНИМОЕ ПРАВО И ПОДСУДНОСТЬ
+      '12':
+        '1': Настоящее Соглашение может быть немедленно расторгнуто любой стороной по
+          ее усмотрению.
+        '2': Настоящее Соглашение составлено на русском языке, но может быть предоставлено
+          Пользователям для ознакомления на иностранных языках. В случае расхождения
+          русскоязычной версии Соглашения и версии на иностранном языке, применяются
+          положения русскоязычной версии Соглашения.
+        '3': Если по тем или иным причинам одно или несколько положений настоящего Соглашения
+          будут признаны недействительными или не имеющими юридической силы, это не
+          оказывает влияния на действительность и/или применимость остальных положений.
+        '4': Настоящие правила распространяются на мобильные приложения «Мои Мечты».
+        head: ПРОЧИЕ ПОЛОЖЕНИЯ
+      '2':
+        '1': Использование функциональных возможностей и сервисов Сайта допускается
+          только после прохождения Пользователем регистрации и авторизации на Сайте
+          в соответствии с установленной Администрацией процедурой и принятия условий
+          настоящего Соглашения.
+        '2': Регистрируясь на Сайте, Вы подтверждаете, что Вам больше 18 лет и что Вы
+          имеете право заключить настоящее Соглашение.
+        '3': Пользователь обязан полностью ознакомиться с Соглашением до регистрации
+          на Сайте.
+        '4': Для регистрации Пользователь должен заполнить регистрационную форму, предоставив
+          достоверную и полную информацию о себе по вопросам, предлагаемым в регистрационной
+          форме, и поддерживать эту информацию в актуальном состоянии.
+        '5': Для регистрации обязательно подтверждение адреса электронного почтового
+          ящика (e-mail), указанного Пользователем при заполнении регистрационной формы,
+          которое осуществляется путем перехода по ссылке, отправленной Администрацией
+          на e-mail Пользователя.
+        '6': Указанные Вами при регистрации логин и пароль являются необходимой и достаточной
+          информацией для последующего доступа на Сайт. Вы несете полную ответственность
+          за их сохранность, самостоятельно выбирая способ их хранения. Администрация
+          не несет ответственности за неправомерные действия, совершенные третьими лицами
+          с использованием Ваших логина пароля.
+        head: РЕГИСТРАЦИЯ НА САЙТЕ
+      '3':
+        '1': Регистрация Пользователя на Сайте и использование его основного функционала
+          является бесплатной.
+        '10': Администрация сохраняет за собой право в любое время изменять оформление
+          Сайта, его интерфейс, содержание, функционал, доступные сервисы, изменять
+          или дополнять используемые скрипты, программное обеспечение, а также любые
+          серверные приложения в любое время с предварительным уведомлением или без
+          такового.
+        '11': Администрация имеет право уступить свои права в отношении Сайта третьим
+          лицам.
+        '12': Администрация Сайта занимается предварительной модерацией Контента, загружаемого
+          Пользователями, лишь на предмет его соответствия условиям п. 4.2 настоящего
+          Соглашения и имеет право по своему усмотрению отказать в публикации ненадлежащего
+          Контента.
+        '13': Администрация предпринимает действия по защите прав и интересов третьих
+          лиц и обеспечению соблюдения требований законодательства Российской Федерации
+          только после обращения заинтересованного лица к Администрации Сайта в установленном
+          порядке.
+        '14': Вы соглашаетесь с тем, что Администрация по своему усмотрению без предварительного
+          уведомления может как временно, так и постоянно ограничить доступ к DREAMBOOK,
+          заблокировать, ограничить или прекратить доступ Пользователя на Сайт, заблокировать
+          определенный Контент или удалить учетную запись Пользователя без возможности
+          восстановления.
+        '15': Администрация не несет ответственности за возможный материальный ущерб
+          или упущенную выгоду, причиненные Пользователю или третьим лицам в результате
+          удаления учетной записи Пользователя и загруженного им на Сайт Контента.
+        '2': Основной функционал Сайта дает Вам возможность включая, но не ограничиваясь,
+          добавлять в свой DREAMBOOK фотоматерилы, делиться своим DREAMBOOK в популярных
+          социальных сетях, осуществлять рассылку DREAMBOOK по e-mail, просматривать
+          DREAMBOOK других Пользователей, а также просматривать фото-и видеоматериалы
+          о сбывшихся Мечтах других Пользователей, подписываться на DREAMBOOK интересующих
+          их Пользователей с целью получения новостей и просмотра персональных событий,
+          исполнять Мечты других Пользователей, обмениваться текстовыми сообщениями
+          с другими Пользователями, вести Блог, участвовать в обсуждениях различных
+          тем в персональных Блогах других Пользователей.
+        '3': В случае если Мечта Пользователя исполнилась, Пользователь вправе в своем
+          DREAMBOOK отметить Мечту как исполненную.
+        '4':
+          '1': VIP-статус;
+          '2': Запуск Мечты.
+          head: 'Сайт предоставляет также следующие платные, но необязательные сервисы:'
+        '5': Полную информацию о доступных платных сервисах и условиях оплаты можно
+          найти по адресу http://mydreams.club.
+        '6': После регистрации Пользователь получает право самостоятельно создавать,
+          использовать и определять содержание собственного DREAMBOOK и условия доступа
+          других Пользователей к его содержанию, а также получает возможности доступа
+          и размещения информации в DREAMBOOK других Пользователей (при условии получения
+          соответствующих прав доступа от их обладателей).
+        '7': Пользователь имеет право самостоятельно удалить размещенную им ранее информацию
+          на Сайте, а также полностью удалить свой DREAMBOOK в разделе «Настройки».
+        '8': Пользователю предоставляется неограниченный срок для восстановления своей
+          учетной записи. Для указанной цели Администрация оставляет за собой право
+          хранить Контент, загруженный Пользователем, а также его персональные данные.
+        '9': Пользователь несет полную ответственность за свои действия, связанные с
+          публикацией в своем DREAMBOOK информации, в соответствии с действующим законодательством
+          Российской Федерации, международными правовыми актами и настоящим Соглашением.
+        head: УСЛОВИЯ ИСПОЛЬЗОВАНИЯ САЙТА
+      '4':
+        '1': Все загружаемые Вами на Сайт материалы должны соответствовать требованиям
+          законодательства Российской Федерации, правилам, установленным в настоящем
+          Соглашении, а также законодательству страны места жительства или пребывания
+          Пользователя.
+        '2':
+          '0': 'Принимая условия настоящего Соглашения, вы подтверждаете и гарантируете,
+            что не будете размещать или передавать через Сайт заявления, материалы и
+            сообщения, которые:'
+          '1': "(i) содержат призывы к массовым беспорядкам, осуществлению экстремистской
+            деятельности, участию в массовых (публичных) мероприятиях, проводимых с
+            нарушением установленного порядка;"
+          '2': "(ii)  содержат информацию о способах, методах разработки, изготовления
+            и использования наркотических средств, психотропных веществ и их прекурсоров,
+            местах приобретения таких средств, веществ и их прекурсоров, а также о способах
+            и местах культивирования наркосодержащих растений;"
+          '3': "(iii) содержат информацию о способах совершения самоубийства, а также
+            призывов к совершению самоубийства;"
+          '4': "(iv)  представляют собой материалы порнографического характера, а равно
+            пропаганду порнографии, детской эротики, интимных услуг;"
+          '5': "(v) содержат угрозы, дискредитируют, оскорбляют, порочат честь и достоинство
+            или деловую репутацию или нарушает неприкосновенность частной жизни других
+            Пользователей или третьих лиц;"
+          '6': "(vi)  содержат вредоносные объекты, такие как компьютерные вирусы, трояны
+            или другие вредоносные программы или данные;"
+          '7': "(vii) представляют собой спам-рассылки.'"
+        '3': Вы обязуетесь перед размещением информации и материалов предварительно
+          оценивать законность их размещения.
+        '4': Вы несете личную ответственность за обеспечение соответствия своего DREAMBOOK
+          и информации в нем всем применимым законам, и условиям настоящего Соглашения.
+        head: ПРАВА И ОБЯЗАННОСТИ ПОЛЬЗОВАТЕЛЯ
+      '5':
+        '1': Вы гарантируете, что являетесь правообладателем исключительных прав на
+          загружаемый Вами на Сайт Контент, либо получили необходимые разрешения от
+          правообладателей. При использовании Сайта Вы обязуетесь не нарушать права
+          третьих лиц на объекты интеллектуальной собственности.
+        '2': Вы соглашаетесь с тем, что, размещая любой Контент на Сайте, Вы даете Администрации
+          согласие на использования такого Контента на территории всех стран мира способами,
+          необходимыми для функционирования и развития Сайта, в том числе на воспроизведение,
+          публичный показ, переработку, включая перевод на иностранные языки, и доведение
+          до всеобщего сведения.
+        '3': Контент может быть использован в любых промо- и маркетинговых материалах
+          Администрации, включая, но не ограничиваясь, в информационных рассылках на
+          Сайте, листовках и презентациях.
+        '4': Администрация не осуществляет предварительную проверку Контента, размещенного
+          Пользователями Сайта, однако, будет вынуждена заблокировать его в случае его
+          несоответствия требованиям российского законодательства и в случае получения
+          соответствующего распоряжения от органов государственной власти.
+        '5': В случае предъявления к Администрации претензий от третьих лиц, связанных
+          с нарушением действующего законодательства РФ, в том числе, законодательства
+          об интеллектуальной собственности, Вы обязуетесь самостоятельно и за свой
+          счет урегулировать все возникшие претензии.
+        '6': Присоединяясь к настоящему Соглашению, Пользователь ни при каких обстоятельствах
+          не получает права использования товарных знаков, коммерческих обозначений,
+          доменных имен, баз данных, ноу-хау, дизайна и оформления Сайта и иных отличительных
+          знаков Сайта. Право на использование таких объектов может быть предоставлено
+          исключительно по письменному соглашению с Администрацией Сайта.
+        head: АВТОРСКИЕ ПРАВА, ПРАВА НА ТОВАРНЫЕ ЗНАКИ И ДРУГИЕ ОБЪЕКТЫ ИНТЕЛЛЕКТУАЛЬНОЙ
+          СОБСТВЕННОСТИ
+      '6':
+        '1': Присоединяясь к условиям настоящего Соглашения, Вы соглашаетесь на автоматизированную
+          обработку Ваших персональных данных в целях исполнения настоящего Соглашения.
+          Обработка Ваших персональных данных осуществляется в соответствии с законодательством
+          Российской Федерации.
+        '2': Администрация Сайта обрабатывает Ваши персональные данные в целях предоставления
+          Вам доступа к использованию функционала Сайта, в том числе в целях получения
+          Таргетированной рекламы, в целях определения потенциально интересных для Вас
+          функций Сайта, а также предложения Вам использовать эти функции.
+        '3': Администрация Сайта принимает все необходимые меры для защиты Ваших персональных
+          данных от неправомерного доступа, изменения, раскрытия или уничтожения. Администрация
+          предоставляет доступ к Вашим персональным данным только тем работникам, подрядчикам
+          и агентам Администрации, которым эта информация необходима для обеспечения
+          функционирования Сайта и предоставления Вам доступа к его использованию.
+        '4': Раскрытие предоставленной Пользователем информации может быть произведено
+          лишь в соответствии с действующим законодательством Российской Федерации по
+          требованию суда, правоохранительных органов, а равно в иных предусмотренных
+          законодательством Российской Федерации случаях.
+        '5': В случаях, допускаемых функциональными возможностями Сервиса, Вы самостоятельно
+          определяете степень доступности своих персональных данных иным Пользователям
+          Сайта.
+        '6': Обработка персональных данных Пользователя осуществляется в течение всего
+          периода времени с момента регистрации на Сайте и до момента ее прекращения.
+        head: УСЛОВИЯ ИСПОЛЬЗОВАНИЯ ПЕРСОНАЛЬНЫХ ДАННЫХ
+      '7':
+        '1': Администрация оставляет за собой право на размещение рекламы на страницах
+          Сайта, и, в частности, в DREAMBOOK Пользователей.
+        '2': Вы обязуетесь не использовать какие-либо компьютерные программы, которые
+          блокируют, либо иным образом препятствуют отображению Таргетированной рекламы.
+        '3': Для отслеживания Ваших интересов и показа соответствующей таким интересам
+          рекламы на Вашем компьютере могут размещаться cookie- файлы, чтобы идентифицировать
+          этот компьютер каждый раз во время показа ему Таргетированной рекламы.
+        '4':
+          '1': "(i) наркотических средств и психотропных веществ;"
+          '10': "(x) игр, основанных на риске и пари, в т.ч. азартных игр;"
+          '11': "(xi)  сайтов, на которых размещается реклама, не соответствующая п.
+            2.4 настоящего Соглашения."
+          '2': "(ii)  взрывчатых веществ и материалов, за исключением пиротехнических
+            изделий;"
+          '3': "(iii) табака, табачной продукции, табачных изделий и курительных принадлежностей,
+            в том числе трубок, кальянов, сигаретной бумаги, зажигалок, электронных
+            сигарет;"
+          '4': "(iv)  алкогольной продукции, в том числе пива;"
+          '5': "(v) медицинских услуг по искусственному прерыванию беременности."
+          '6': "(vi)  услуг по сбору персональных данных и/или контактной информации
+            (в т.ч. номера телефонов, адреса электронной почты), без пояснения цели
+            и/или согласия на обработку персональных данных."
+          '7': "(vii) услуг по взлому страниц, а также искусственному повышению счётчиков
+            «Статуса Мечты» с использованием любых программ, автоматизированных скриптов
+            либо иных действий;"
+          '8': "(viii)  товаров и услуг для взрослых интимного характера;"
+          '9': "(ix)  продукции военного назначения и оружия;"
+          head: 'На Сайте запрещается реклама товаров, производство и (или) реализация
+            которых запрещены законодательством Российской Федерации, включая, но не
+            ограничиваясь:'
+        '5': Администрация не несет ответственности за размещение другими Пользователями
+          Ненадлежащей рекламы, а также за соответствие ее содержания действительности.
+        head: РЕКЛАМА
+      '8':
+        '1': Администрация предоставляет Пользователям возможность использовать Сайт
+          и его функционал, включая весь Контент и оформление сайта, «как есть».
+        '2': Администрация не гарантирует, что работа Сайта будет непрерывной и безошибочной,
+          а качество какого-либо продукта, услуги, информации и пользовательских материалов,
+          полученных в результате использования Сайта, будет соответствовать Вашим ожиданиям.
+        '3': В соответствии с вышесказанным, Администрация не несет ответственности
+          за убытки и ущерб любого рода, связанные с такими ошибками.
+        '4': АДМИНИСТРАЦИЯ НЕ МОЖЕТ ГАРАНТИРОВАТЬ И НЕ ОБЕЩАЕТ КАКОЙ-ЛИБО ВЫГОДЫ ОТ
+          ИСПОЛЬЗОВАНИЯ САЙТА И/ИЛИ ЕГО ФУНКЦИОНАЛА. ВЫ СОГЛАШАЕТЕСЬ С ТЕМ, ЧТО ПОЛЬЗОВАТЕЛИ
+          МОГУТ ПО СВОЕМУ ЖЕЛАНИЮ СДЕЛАТЬ ВАМ ПОДАРОК, ИСПОЛНИВ ЛЮБУЮ ВАШУ МЕЧТУ. АДМИНИСТРАЦИЯ
+          ОСТАВЛЯЕТ ЗА СОБОЙ ПРАВО ВРЕМЯ ОТ ВРЕМЕНИ И ПО СВОЕМУ УСМОТРЕНИЮ ИСПОЛНЯТЬ
+          МЕЧТЫ ПОЛЬЗОВАТЕЛЕЙ, ОДНАКО, ИСПОЛЬЗОВАНИЕ САЙТА НИ ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ
+          НЕ ГАРАНТИРУЕТ ВАМ ИСПОЛНЕНИЯ ВАШЕЙ МЕЧТЫ.
+        '5': Используя Сайт, Вы соглашаетесь с тем, что мнения, высказанные в DREAMBOOK
+          Пользователей – это мнения их авторов, но не Администрации Сайта, если последняя
+          не заявляет об обратном. Администрация не несет ответственности за любые комментарии,
+          точки зрения или замечания, в том числе порочащие Вашу честь, достоинство
+          или деловую репутацию, выраженные иными Пользователями.
+        '6': Администрации Сайта не может гарантировать точности, достоверности и надежности
+          информации и материалов, размещенных иными Пользователями, а также безопасность
+          Контента, и не несет ответственности за любые убытки или ущерб, наступившие
+          в результате использования таких материалов или в результате перехода по ссылкам
+          иных Пользователей.
+        '7': Всю ответственность за содержание материалов и соответствие его требованиям
+          применимого права несет лицо, создавшее данные материалы и/или добавившее
+          его на Сайт.
+        '8': Используя Сайт и его услуги, Вы соглашаетесь с этим и принимаете описанные
+          выше риски.
+        head: ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ АДМИНИСТРАЦИИ САЙТА
+      '9':
+        '1': Вы соглашаетесь получать от Администрации на указанный в вашем DREAMBOOK
+          на Сайте электронный адрес информационные электронные сообщения о важных событиях,
+          происходящих в рамках Сайта или в связи с ним, в том числе для информирования
+          о возможностях Сайта и/или об изменении условий настоящего Соглашения.
+        head: УВЕДОМЛЕНИЯ
+    rev: Редакция от 22 декабря 2015 г.
+    title: Пользовательское соглашение
+  site_name: МоиМечты
+  social_share_button:
+    baidu: Baidu.com
+    delicious: Delicious
+    douban: Douban
+    email: Email
+    facebook: Facebook
+    google_bookmark: Google Bookmark
+    google_plus: Google+
+    kaixin001: Kaixin001.com
+    pinterest: Pinterest
+    plurk: Plurk
+    qq: Qzone
+    renren: Renren.com
+    share_to: Share to %{name}
+    tqq: Tqq
+    tumblr: Tumblr
+    twitter: Twitter
+    weibo: Sina Weibo
+  static_pages:
+    about:
+      title: О клубе
+  status:
+    create: Создан статус
+    destroy: Удален статус
+    update: Обновлен статус
+  statuses:
+    default_placeholder: О чем ты думаешь, мечтатель?
+  subscribers:
+    followers: Меня
+    followers_guest: Подписчики
+    followers_owner: Меня читают
+    no_followers: Подписчики не добавлены
+    no_subscriptions: Подписки не добавлены
+    subscriptions: Я
+    subscriptions_guest: Подписан
+    subscriptions_owner: Я читаю
+  subscription:
+    create: Создана подписка
+    destroy: Удалена подписка
+    update: Обновлена подписка
+  support:
+    array:
+      last_word_connector: " и "
+      sentence_connector: и
+      skip_last_comma: true
+      two_words_connector: " и "
+      words_connector: ", "
+    select:
+      prompt: 'Выберите: '
+  time:
+    am: am
+    formats:
+      default: '"r(hge-uyueryue"'
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user_menu:
+    edit: Редактировать профиль
+    exit: Выход
+    friends_dreams: Мечты друзей
+    marks: Марки
+    my_comments: Комментарии
+    my_dreambook: Мой Dreambook
+    my_dreams: Мечты
+    my_friends: Друзья
+    my_messages: Сообщения
+    my_posts: Записи
+    news: Новости
+    settings: Настройки
+    subscribers: Подписчики
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      more: Показать еще
+      next: Next &rsaquo;
+      previous: "&lsaquo; Prev"
+      truncate: "&hellip;"
+  wellcome:
+    checkpoint:
+      check: Выберете мечту
+      fulfill: Она исполнится
+      start: Запустите ее во Вселенную
+    club_news_button: Смотреть все
+    club_news_title: Новости клуба
+    d_slogan_html: Ваша персональная<br/>книга с Мечтами, которую<br/>увидит весь Мир
+    dreams_fulfilled_button: Смотреть все Сбывшиеся Мечты
+    dreams_fulfilled_text_html: Каждый день у&nbsp;миллионов людей по&nbsp;всей Планете<br/>Мечты
+      сбываются
+    dreams_fulfilled_title: Сбывшиеся Мечты
+    dreams_top_button: Смотреть все Мечты ТОП-100
+    dreams_top_text_html: Самые популярные Мечты и&nbsp;желания<br/>людей во&nbsp;всем
+      Мире
+    dreams_top_title: Новости клуба
+    our: Наш
+    slogan_text_1_html: Самые знаменитые и&nbsp;богатейшие люди Планеты объединились<br/>в&nbsp;клуб
+      мечтателей с&nbsp;единственной целью
+    slogan_text_2_html: Исполнять Мечты и&nbsp;желания миллиардов людей по&nbsp;всей
+      Земле.
+    slogan_title: Проект, который меняет Мир
+  notifications:
+    confirm_email: Подтвердите Ваш адрес электронной почты
+    send_again: Отправить повторно
+  special_pages:
+    blocked:
+      guest:
+        title: Пользователь заблокирован за нарушение правил сайта
+      owner:
+        greeting: "Уважаемый,"
+        body: Ваш профиль был заблокирован за нарушение правил сайта.
+        body_new_design: Ваш профиль был заблокирован <br> за нарушение правил сайта.
+    deleted:
+      owner:
+        title: Ваш профиль временно удален
+        body: Для восстановления профиля нажмите на кнопку "Восстановить"
+        body_new_design: Для восстановления профиля <br> нажмите на кнопку «Восстановить»
+      guest:
+        title: Пользователь удалил свой профиль
+  support:
+    conversion: Если у Вас возникли вопросы, обратитесь в службу технической поддержки
+    conversion_new_design: Если у Вас возникли вопросы, обратитесь в службу <br> поддержки
+  api:
+    success:
+      search: Успешный поиск
+      create: Успешное создание
+      dream_create: Мечта добавлена
+      destroy: Успешное удаление
+      payment: Успешный платеж
+    failure:
+      not_found: Не найдено
+      unprocessable_entity: Необрабатываемые данные или не хватает данных.
+      unauthorized: Не авторизован
+      forbidden: Доступ запрещен

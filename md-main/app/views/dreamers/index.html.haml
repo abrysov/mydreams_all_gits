@@ -1,0 +1,73 @@
+.main.dreamers
+  = render partial: 'application/page_header'
+
+  .page-title= t('layout.dreamers')
+
+  .dreamers-filter
+    = form_tag dreamers_path, { method: :get, class: 'fast_search js-fast-search'} do
+      .fast_search-wrap
+        .search_field_holder
+          = text_field_tag :search, params[:search], placeholder: t('misc.search_placeholder')
+          .fast_search__btn
+            = label_tag :fast_search do
+              %span.js-fast-search-btn
+
+        .advanced_search.group.js-geo-select
+          = select_tag 'gender', options_for_select(t('misc.filters').invert, selected: (params[:gender].present? ? params[:gender] : 'placeholder'), disabled: 'placeholder'), class: 'ikselect', data: {'custom-dd' => 'dreamer-select'}
+
+          = select_tag 'age_range', options_for_select(t('misc.age_range').invert, selected: (params[:filter].present? ? params[:age_range] : 'placeholder'), disabled: 'placeholder' ), class: 'ikselect', data: {'custom-dd' => 'dreamer-select'}
+
+          - selected_country = DreamCountry.find_by(code:'RU').id
+          = select_tag 'country_id', options_from_collection_for_select(DreamCountry.with_translations(I18n.locale).all, 'id', 'name', selected_country), {data: {url: '#', placeholder: t('search.filter_country_placeholder')}, class: 'search js-select2 js-select2-country'}
+
+          - selected_city = DreamCity.moscow
+          = select_tag 'city_id', options_from_collection_for_select([selected_city], 'id', 'name'), { data: { url: dreamer_cities_path, placeholder: t('search.filter_city_placeholder') }, class: 'search js-select2 js-select2-city' }
+
+          = submit_tag t('misc.search'), id: 'fast_search'
+
+          = label_tag :advanced_search, class: 'form_btn form_btn-violet advanced_search__btn js-fast-search-btn' do
+            %span= t('misc.search')
+
+      .content-tabs.js-content-tabs
+        .content-tab
+          = link_to params.deep_merge(all: true), { class: "js-link-search-filter content-tab__link #{'active' if params[:all].present? }", remote: true, data: {tab: 'all'}}  do
+            %span.content-tab__name= t('misc.choose_dreamers.all')
+        .content-tab
+          = link_to params.deep_merge(new: true), { class: "js-link-search-filter content-tab__link #{'active' if params[:new].present? }", remote: true, data: {tab: 'new'}}  do
+            %span.content-tab__name= t('misc.choose_dreamers.new')
+        .content-tab
+          = link_to params.deep_merge(online: true), { class: "js-link-search-filter content-tab__link #{'active' if params[:online].present? }", remote: true, data: {tab: 'online'}}  do
+            %span.content-tab__name= t('misc.choose_dreamers.online')
+        .content-tab
+          = link_to params.deep_merge(top: true), { class: "js-link-search-filter content-tab__link #{'active' if params[:top].present? }", remote: true, data: {tab: 'top'}}  do
+            %span.content-tab__name= t('misc.choose_dreamers.top')
+        .content-tab
+          = link_to params.deep_merge(vip: true), { class: "js-link-search-filter content-tab__link #{'active' if params[:vip].present? }", remote: true, data: {tab: 'vip'}}  do
+            %span.content-tab__name= t('misc.choose_dreamers.vip')
+
+  .main_content
+    .content_wrap
+      .card_group.group.js-card-group.js-content.js-search-content
+        = render partial: 'dreamers/dreamers'
+
+
+- content_for :mydreams_js do
+
+  :javascript
+    DreamersFilter.init();
+
+    $(document).off('click', '.js-fast-search-btn').on('click', '.js-fast-search-btn', function(){
+      $(this).closest('form').find('input[type=submit]').trigger('click');
+    });
+
+    $(function(){
+      $('.js-page-header').slick({
+        autoplay: true,
+        infinite: true,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+    });

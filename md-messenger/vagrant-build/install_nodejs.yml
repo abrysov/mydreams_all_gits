@@ -1,0 +1,7 @@
+- name: Fetch
+  unarchive:
+    src: "{{ nodejs_url }}"
+    dest: "{{ base_dir }}"
+    copy: no
+    owner: "{{ ansible_user_id }}"
+    creates: "{{ base_dir }}/{{ nodejs_distrname }}"

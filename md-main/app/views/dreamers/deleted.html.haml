@@ -1,0 +1,14 @@
+.special-pages
+  .main
+    .deleted-me
+      .page-title= t('special_pages.deleted.owner.title')
+      .div-x &times;
+      .page-body= t('special_pages.deleted.owner.body')
+      = link_to restore_profile_account_dreamer_path(current_dreamer) do
+        %button.button-skyblue= t('actions.recovery')
+      %hr
+      .page-body
+        = t('support.conversion')
+        %p= mail_to 'support@mydreams.club'
+      = link_to destroy_dreamer_session_path do
+        %button.button-exit= t('actions.exit')

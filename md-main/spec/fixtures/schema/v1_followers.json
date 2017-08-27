@@ -1,0 +1,81 @@
+{
+    "title": "Api:v1 Dreams Schema",
+    "type": "object",
+    "required": [ "followers", "meta" ],
+    "properties": {
+        "followers": {
+            "type": [ "hash", "array" ],
+            "required": [
+                "id",
+                "full_name",
+                "gender",
+                "vip",
+                "celebrity",
+                "city",
+                "country",
+                "visits_count",
+                "avatar",
+                "first_name",
+                "last_name",
+                "birthday",
+                "status",
+                "friends_count",
+                "dreams_count",
+                "fulfilled_dreams_count",
+                "views_count",
+                "launches_count",
+                "is_blocked",
+                "is_deleted",
+                "is_online",
+                "i_friend",
+                "i_follower"
+            ],
+            "properties": {
+                "id": { "type": "integer" },
+                "full_name": { "type": "integer" },
+                "gender": { "type": "string" },
+                "vip": { "type": "boolean" },
+                "celebrity": { "type": "boolean" },
+                "city": { "type": [ "hash", "null" ] },
+                "country": { "type": [ "hash", "null" ] },
+                "visits_count": { "type": "integer" },
+                "avatar": {"type": [ "hash", "array" ] },
+                "first_name": { "type": "string" },
+                "last_name": { "type": [ "string", "null" ] },
+                "birthday": { "type": [ "string", "null" ] },
+                "status": { "type": [ "string", "null" ] },
+                "friends_count": { "type": "integer" },
+                "dreams_count": { "type": "integer" },
+                "fulfilled_dreams_count": { "type": "integer" },
+                "views_count": { "type": "integer" },
+                "launches_count": { "type": "integer" },
+                "is_blocked": { "type": "boolean" },
+                "is_deleted": { "type": "boolean" },
+                "is_online": { "type": "boolean" },
+                "i_friend": { "type": "boolean" },
+                "i_follower": { "type": "boolean" }
+            }
+        },
+        "meta": {
+            "type": [ "hash", "array" ],
+            "required": [
+                "status",
+                "code",
+                "page",
+                "per",
+                "total_count",
+                "pages_count",
+                "remaining_count"
+            ],
+            "properties": {
+                "status": { "type": "string" },
+                "code": { "type": "integer" },
+                "per": { "type": "integer" },
+                "page": { "type": "integer" },
+                "total_count": { "type": "integer" },
+                "pages_count": { "type": "integer" },
+                "remaining_count": {"type": "integer"}
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211)"}
+    .title
+      %h2= t('layout.dreams')
+  #dreams-list
+    .preloader
+.col-right
+  .col-js#dreams-filter
+    .preloader
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamsListWidget.init("#dreams-list", "#dreams-filter");
+    });

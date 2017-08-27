@@ -1,0 +1,54 @@
+.user_menu
+  .first_group
+    = link_to account_dreamer_dreams_path(current_dreamer), class: 'user_menu__item my_dreambook' do
+      %span= t('user_menu.my_dreambook')
+      .counter_new
+
+  .links_group
+    = link_to account_activities_path, class: 'user_menu__item group js-user-menu-link', data: {target_page: 'activities'} do
+      %span= t('user_menu.news')
+      - if (c = current_dreamer.flybook_nb_new_friends_activities) != 0
+        .counter_new= c
+
+    = link_to account_mail_path, class: 'user_menu__item group js-user-menu-link', data: {target_page: 'message'} do
+      %span= t('user_menu.my_messages')
+      - if (c = current_dreamer.flybook_nb_new_received_messages) != 0
+        .counter_new= c
+
+    = link_to account_dreamer_dreams_path(current_dreamer), class: 'user_menu__item js-user-menu-link' do
+      %span= t('user_menu.my_dreams')
+      - if (c = current_dreamer.flybook_nb_suggested_dreams) != 0
+        .counter_new= c
+
+    = link_to account_dreamer_certificates_path(current_dreamer), class: 'user_menu__item group js-user-menu-link' do
+      %span= t('user_menu.marks')
+      - if (c = current_dreamer.flybook_nb_gifted_certificates) != 0
+        .counter_new= c
+
+    = link_to account_dreamer_friends_path(current_dreamer), class: 'user_menu__item group js-user-menu-link' do
+      %span= t('user_menu.my_friends')
+      - if (c = current_dreamer.flybook_nb_received_friends) != 0
+        .counter_new= c
+
+    = link_to account_dreamer_friends_dreams_path(current_dreamer), class: 'user_menu__item group js-user-menu-link' do
+      %span= t('user_menu.friends_dreams')
+
+    = link_to account_dreamer_subscriptions_path(current_dreamer), class: 'user_menu__item group js-user-menu-link', data: {target_page: 'followers'} do
+      %span
+        = t('user_menu.subscribers')
+        - if (c = current_dreamer.flybook_nb_new_followers) != 0
+          .counter_new= c
+
+    = link_to account_dreamer_posts_path(current_dreamer), class: 'user_menu__item js-user-menu-link' do
+      %span= t('user_menu.my_posts')
+      - if (c = current_dreamer.flybook_nb_suggested_posts) != 0
+        .counter_new= c
+
+  .settings_group
+    = link_to  modal_edit_profile_path, {remote: true, class: 'user_menu__item jmod-btn profile', data: {'modal-type' => 'registration'}} do
+      %span= t('user_menu.edit')
+      .counter_new
+
+    = link_to destroy_dreamer_session_path, class: 'user_menu__item logout', method: :delete do
+      %span= t('user_menu.exit')
+      .counter_new

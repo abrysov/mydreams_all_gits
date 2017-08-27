@@ -1,0 +1,32 @@
+.header-group
+  .photo-feed#leaders-bar
+    .add-btn
+      %span
+
+  %header.block
+    .photo-feed-toggler{title: "Скрыть ленту"}
+    .content.row.row-page
+      .col-left
+        /
+          <div class="search">
+          <input type="text" class="search-input">
+          <div class="search-icon"></div>
+          </div>
+        .icon.search-icon
+      %nav.col-center
+        .left
+          %a{ href: "#", id: "believe-in-dream-menu-btn" } Исполнить Мечту
+          %a{ href: fulfilled_dreams_path } Сбывшиеся
+          %a{ href: dreams_path } Мечты
+        %a.logo{ href: root_path }
+          %img{ alt: "logo", src: asset_url("new/logo.svg") }
+        .right
+          %a{ href: dreamers_path } Мечтатели
+          %a{ href: "/top/dreams" } ТОП-100
+          %a{ href: d_path(1) } Мечты Клуба
+      .col-right
+        // .lang-toggle-btn.lang-ru
+        %a.amount.icon-text{href: history_account_path, class: (current_page?(history_account_path) ? 'active' : '') }
+          .text 146
+          .icon
+

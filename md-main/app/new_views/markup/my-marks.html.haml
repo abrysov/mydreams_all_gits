@@ -1,0 +1,35 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Мои Марки
+  %div
+    .mark-list
+      - (0..11).each do |i|
+        .mark-wrapper-picture
+          %img{ src: "http://unsplash.it/300/300/?random="+ i.to_s }
+          .mark.gold
+    .preloader
+.col-right
+  .col-js
+    .top
+      .wrapper.size-l.justify
+        .row
+          .col-1.sort-btn.down По статусу
+          .col-1.sort-btn.up По дате
+      .wrapper
+        .filter
+          %label
+            .checkbox
+              %input{ type: "checkbox" }
+              %span
+            %span Все
+          %label
+            .checkbox
+              %input{ type: "checkbox" }
+              %span
+            %span Подаренные
+          %label
+            .checkbox
+              %input{ type: "checkbox" }
+              %span
+            %span Купленные

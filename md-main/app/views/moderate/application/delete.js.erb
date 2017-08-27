@@ -1,0 +1,9 @@
+<%= render 'moderate/shared/approve', object: @req_ent_obj %>
+
+<%- object = @req_ent_obj %>
+var action_div = $('.action-for-object-<%= object.id %>');
+action_div.find('.delete').
+  prop('class', 'btn btn-info recovery').
+  prop('href', '<%=j moderate_recovery_path(entity_params(object)) %>').
+  data('method', 'put').
+  html("<%=j t('moderate.shared.actions.recovery') %>");

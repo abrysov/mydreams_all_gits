@@ -1,0 +1,68 @@
+---
+- name: enshure created {{ dreams_deploy_user.comment }}
+  user: state=present
+        name={{ dreams_deploy_user.name }}
+        home={{ dreams_deploy_user.home }} groups={{ dreams_deploy_user.groups }}
+        generate_ssh_key=yes
+        comment='{{ dreams_deploy_user.comment }}'
+  sudo: true
+  tags:
+    - dreams
+
+- name: enshure created {{ dreams_deploy_user.comment }} .ssh directory
+  file: state=directory path={{ dreams_deploy_user.home }}/.ssh mode=700
+        owner={{ dreams_deploy_user.name }} group={{ dreams_deploy_user.name }}
+  sudo: true
+  tags:
+    - dreams
+
+  # /home/dreams/.ssh/authorized_keys
+- name: Upload SSH authorized_keys for {{ dreams_deploy_user.comment }}.
+  copy: src=authorized_keys
+        dest={{ dreams_deploy_user.home}}/.ssh/authorized_keys
+        owner={{ dreams_deploy_user.name }}
+        group={{ dreams_deploy_user.name }}
+        mode=0600
+  sudo: true
+  tags:
+    - dreams
+
+- name: send key to remote deploy user
+  copy: src=id_rsa dest={{ dreams_deploy_user.home }}/.ssh/id_rsa
+
+- name: send key to remote deploy user
+  copy: src=id_rsa.pub dest={{ dreams_deploy_user.home }}/.ssh/id_rsa.pub
+
+  # /rest/u/apps/dreams
+  # /rest/u/apps/dreams/releases
+  # /rest/u/apps/dreams/shared
+  # /rest/u/apps/dreams/shared/uploads
+  # /rest/u/apps/dreams/log
+  # /rest/u/apps/dreams/system
+  # /rest/u/apps/dreams/pids
+- name: create project directory
+  file: state=directory path={{ item }} owner={{ dreams_deploy_user.name }} group="{{ dreams_deploy_user.groups }}"
+  with_items:
+    - "{{ dreams_web_base_dir }}"
+    - "{{ dreams_web_releases_dir }}"
+    - "{{ dreams_web_shared_dir }}"
+    - "{{ dreams_web_shared_dir }}/config"
+    - "{{ dreams_web_bundle_dir }}"
+    - "{{ dreams_web_uploads_dir }}"
+    - "{{ dreams_web_log_dir }}"
+    - "{{ dreams_web_system_dir }}"
+    - "{{ dreams_web_pids_dir }}"
+  sudo: true
+  tags:
+    - dreams
+
+- name: database.yml
+  copy: src={{ dreams_env }}_database.yml dest={{ dreams_web_shared_dir }}/config/database.yml
+
+- name: secrets.yml
+  copy: src={{ dreams_env }}_secrets.yml dest={{ dreams_web_shared_dir }}/config/secrets.yml
+
+- name: Install bundler
+  shell: $SHELL -lc "gem install bundler"
+  sudo_user: '{{ dreams_deploy_user.name }}'
+

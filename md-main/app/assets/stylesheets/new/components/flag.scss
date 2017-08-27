@@ -1,0 +1,23 @@
+.flag {
+  width: 1.6875rem;
+  height: 1.6875rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &.rus {
+    background-image: asset-url('new/flags/rus.svg');
+  }
+
+  &.ger {
+    background-image: asset-url('new/flags/ger.svg');
+  }
+
+  &.usa {
+    background-image: asset-url('new/flags/usa.svg');
+  }
+
+  &.eng {
+    background-image: asset-url('new/flags/eng.svg');
+  }
+}

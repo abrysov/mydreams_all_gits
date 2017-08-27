@@ -1,0 +1,10 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th.name= t('.name')
+      %th= t('.scheme')
+      %th= t('.active')
+  %tbody
+    = render @tags, as: :tag
+    = paginate @tags, theme: 'moderate'

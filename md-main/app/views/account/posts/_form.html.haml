@@ -1,0 +1,23 @@
+= form_for @post, url: account_posts_path(@post), method: :post, html: {class: 'js-imageLoader-form group'} do |f|
+  .create-post
+    .today-date= pretty_date(DateTime.now.to_date)
+
+    .post-photo
+
+      .js-imageLoader#js-add-post-photo{ class: "#{@post.photo.present? ? 'change-photo' : 'upload-photo'}", data: { min_height: 540, min_width: 800, orient: 'list', title_change: t( 'dreams.new.photo_change' ), title_upload: t('dreams.new.photo_upload')} }
+
+        = f.hidden_field :photo, class: 'js-imageLoader-input'
+
+      .image.js-imageLoader-preview
+        = image_tag @post.photo.url(:large)
+
+    .post-title
+      = f.text_field :title, placeholder: t('posts.new.placeholder_title')
+
+    .post-body
+      = f.text_area :body, placeholder: t('posts.new.placeholder_body')
+
+    .post-controls
+      = f.submit value: t('posts.new.button_publicate'), class: "publicate"
+
+      = link_to t('posts.new.button_cancel'), account_dreamer_posts_path(@post.dreamer), data: {push: "true", target: "#js-ajax-content"}, class: 'cancel js-flybook-link'

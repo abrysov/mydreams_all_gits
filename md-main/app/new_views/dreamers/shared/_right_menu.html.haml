@@ -1,0 +1,42 @@
+- if dreamer.id != current_dreamer.id || dreamer.id == 1
+  .top
+    %ul.vertical-menu
+      %li
+        %a.active.user-card{ href: d_path(dreamer) }
+          .avatar.size-s= image_tag(avatar_or_default(dreamer, :pre_medium))
+          .description
+            %strong= dreamer.full_name
+            .icon-text.info
+              %div{ class: "icon size-8 #{dreamer.gender}"}
+              %span= dreamer.age_and_location
+    %ul.vertical-menu
+      %li
+        = link_to d_photos_path(dreamer) do
+          Фотоальбом
+          .count= dreamer.photos.count
+    .wrapper
+      .widget-photos
+        - dreamer.photos.limit(6).each do |photo|
+          %a.img{ href: "#", style: "background-image: url(#{photo.file.url(:small)})" }
+      %ul.widget-stats
+        %li
+          = link_to_current t('.dreams'), d_dreams_path(dreamer) do
+            .icon.dreams
+            .number= dreamer.dreams_count
+        %li
+          = link_to_current t('.fulfilled_dreams'), d_fulfilled_dreams_path(dreamer) do
+            .icon.dreams-fulfilled
+            .number= dreamer.fulfilled_dreams_count
+        %li
+          = link_to_current t('.launches'), d_certificates_path(dreamer) do
+            .icon.starts
+            .number= dreamer.launches_count
+        - if !dreamer.project_dreamer
+          %li
+            = link_to_current t('.friends'), d_friends_path(dreamer) do
+              .icon.friends
+              .number= dreamer.friends_count
+          %li
+            = link_to_current t('.followers'), d_followers_path(dreamer) do
+              .icon.followers
+              .number= dreamer.followers_count

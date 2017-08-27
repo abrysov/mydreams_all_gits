@@ -1,0 +1,3 @@
+- amount = transaction.operation == 'refill' ? transaction.amount : -transaction.amount
+%td= t('payments.num_of_coins', num: amount)
+%td= t('payments.num_of_coins', num: transaction.after)

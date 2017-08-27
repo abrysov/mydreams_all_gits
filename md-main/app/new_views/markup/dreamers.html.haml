@@ -1,0 +1,13 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{:style => "background-image: url(http://unsplash.it/578/211);"}
+    .title
+      %h2 Мечтатели
+  %div
+    .card-list
+      - (0..11).each do |dream|
+        = render partial: 'card/dreamer'
+    .preloader
+.col-right
+  .col-js
+    = render 'layouts/shared/right_menu'

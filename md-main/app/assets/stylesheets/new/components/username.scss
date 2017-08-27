@@ -1,0 +1,15 @@
+// TDOD: Заиспользовать в других местах этот класс
+.username {
+  &.vip::after {
+    display: inline-block;
+    width: 1em;
+    height: .5em;
+    margin-bottom: -.05em;
+    margin-left: .4em;
+    content: '';
+    background-image: asset-url('new/crown.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200%;
+  }
+}

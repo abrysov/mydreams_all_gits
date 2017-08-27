@@ -1,0 +1,47 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Фотоальбом
+  .photoalbum
+    - (1..40).each do |i|
+      .photo{ style: "background-image: url(http://unsplash.it/300/300?random=" + i.to_s + ")" }
+.col-right
+  .col-js
+    .top
+      %ul.vertical-menu
+        %li
+          %a.active.user-card
+            .avatar.size-s
+              %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/men/17.jpg" }
+            .description
+              %strong Etta Pierce
+              .icon-text.info
+                .icon.size-8.female
+                %span 23, Россия, Москва
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/balance" }
+            Фотоальбом
+            .count 23
+      .wrapper
+        .widget-photos
+          - (1..6).each do |i|
+            %a.img{ href: "#", style: "background-image: url(http://unsplash.it/100/100/?random=" + Random.rand(50).to_s + ")" }
+        %ul.widget-stats
+          %li{ title: "Мечты" }
+            .icon
+            .number 63
+          %li{ title: "Сбывшиеся" }
+            .icon
+            .number 12
+          %li{ title: "Запуски" }
+            .icon
+            .number 112
+          %li.active{ title: "Друзья" }
+            .icon
+            .number 326
+          %li{ title: "Подписчики" }
+            .icon
+            .number 345
+
+

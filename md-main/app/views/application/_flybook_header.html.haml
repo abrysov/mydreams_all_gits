@@ -1,0 +1,115 @@
+.dreambook_header
+  - if @dreamer.is_vip? && current_dreamer?(@dreamer)
+    .change-page-bg
+      = link_to '', page_background_destroy_account_dreamer_path(@dreamer), method: :delete, class: 'change-btn change-btn--rm'
+
+      = form_tag update_page_bg_account_dreamer_path(@dreamer), multipart: true, method: :patch do
+        %label{for: 'page_bg', class: 'change-btn change-btn--set'}
+        = file_field_tag :page_bg, class: 'change-page-bg__input js-change-page-bg'
+        = submit_tag
+
+  .dreambook_header__preview.js-dreambook_bg
+    = image_tag dreambook_bg_url(@dreamer)
+
+  - if current_dreamer?(@dreamer)
+    .change-dreambook-bg
+      = link_to '', dreambook_background_destroy_account_dreamer_path(@dreamer), method: :delete, class: 'change-btn change-btn--rm'
+
+      = link_to '', modal_update_dreambook_bg_path, remote: true, data: {'modal-type' => 'dreambook_bg'}, class: 'jmod-btn change-btn change-btn--set'
+
+.dreambook_info{data: {vip: "#{'vip' if @dreamer.is_vip?}"}}
+
+  .top_block
+
+    .left_block
+      = render partial: 'application/flybook_header/top_left'
+
+    .center_block
+      = render partial: 'application/flybook_header/top_center'
+
+    .right_block
+      = render partial: 'application/flybook_header/top_right'
+
+  .bottom_block
+    .dreamer_slogan
+      = render partial: 'application/flybook_header/bottom_slogan'
+
+    .dreamer_activity_data
+      = render partial: 'application/flybook_header/bottom_activity'
+
+.dreambook_menu
+  - if @dreamer.is_project_dreamer?
+    = render partial: 'application/flybook_header/project_dreamer_page'
+
+  -else
+    - if current_dreamer?(@dreamer)
+      = flybook_menu_link(account_activities_path, {data: {target_page: 'activities'}}) do
+        %span.label= t('flybook.activities')
+        - if (c = current_dreamer.flybook_nb_new_friends_activities) != 0
+          %span.new= c
+
+      = flybook_menu_link(account_mail_path, {data: {target_page: 'message'}}) do
+        %span.label= t('flybook.messages')
+        - if (c = current_dreamer.flybook_nb_new_received_messages) != 0
+          %span.new= c
+
+    = flybook_menu_link(account_dreamer_dreams_path(@dreamer)) do
+      %span.label= t('flybook.my_dreams')
+      - if current_dreamer? @dreamer
+        - if (c = current_dreamer.flybook_nb_suggested_dreams) != 0
+          %span.new= c
+
+    = flybook_menu_link(account_dreamer_certificates_path(@dreamer)) do
+      %span.label= t('user_menu.marks')
+      - if current_dreamer? @dreamer
+        - if (c = current_dreamer.flybook_nb_gifted_certificates) != 0
+          %span.new= c
+
+    = flybook_menu_link(account_dreamer_friends_path(@dreamer)) do
+      %span.label= t('flybook.friends')
+      - if current_dreamer? @dreamer
+        - if (c = current_dreamer.flybook_nb_received_friends) != 0
+          %span.new= c
+
+    - if current_dreamer?(@dreamer)
+      = flybook_menu_link(account_dreamer_friends_dreams_path(current_dreamer)) do
+        %span.label= t('flybook.friends_dreams')
+
+    = flybook_menu_link(account_dreamer_subscriptions_path(@dreamer), {data: {target_page: 'followers'}}) do
+      %span.label= t('flybook.followers')
+      - if current_dreamer? @dreamer
+        - if (c = current_dreamer.flybook_nb_new_followers) != 0
+          %span.new= c
+
+    = flybook_menu_link(account_dreamer_posts_path(@dreamer)) do
+      %span.label= t('flybook.posts')
+      - if current_dreamer? @dreamer
+        - if (c = current_dreamer.flybook_nb_suggested_posts) != 0
+          %span.new= c
+
+- if dreamer_signed_in?
+  - if current_dreamer?(@dreamer)
+    .special_nav_owner
+      .button-back.js-back
+      = link_to '', account_dreamer_dreams_path(current_dreamer), class: 'button-profile'
+
+  - else
+    .special_nav_guest
+      .button-back.js-back= t('flybook.get_back')
+      = link_to t('flybook.to_profile'), account_dreamer_dreams_path(current_dreamer), class: 'button-profile'
+
+
+- content_for :mydreams_js do
+  :javascript
+    $('.js-change-page-bg').on('change', function(){
+      $(this).closest('form').submit();
+    });
+
+    $('.js-change-dreambook-bg .js-imageLoader').imageLoader({
+      orient: 'dreambook',
+      min_height: 198,
+      min_width: 936,
+      beforeLoaded: function(form){
+        form.submit();
+      }
+    });

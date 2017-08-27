@@ -1,0 +1,75 @@
+.widget-stats {
+  padding: 2rem 0;
+  list-style: none;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    width: 33.3333%;
+    margin-bottom: .8rem;
+    text-align: center;
+
+    a.active .icon {
+      background-color: $light-purple-color;
+
+      &.dreams {
+        background-image: asset_url('new/icon-dream-white.svg');
+      }
+
+      &.dreams-fulfilled {
+        background-image: asset_url('new/icon-dream-ok-white.svg');
+      }
+
+      &.starts {
+        background-image: asset_url('new/icon-start-white.svg');
+      }
+
+      &.friends {
+        background-image: asset_url('new/icon-friends-white.svg');
+      }
+
+      &.followers {
+        background-image: asset_url('new/icon-followers-white.svg');
+      }
+    }
+  }
+  .icon {
+    display: inline-block;
+    width: 2.375rem;
+    height: 2.375rem;
+    margin: 0;
+    border-radius: 100%;
+    background-color: $light-gray-color;
+    background-size: 58%;
+
+    &.dreams {
+      background-image: asset_url('new/icon-dream-gray.svg');
+    }
+
+    &.dreams-fulfilled {
+      background-image: asset_url('new/icon-dream-ok-gray.svg');
+      background-position: .45rem center;
+      background-size: 73%;
+    }
+
+    &.starts {
+      background-image: asset_url('new/icon-start-gray.svg');
+    }
+
+    &.friends {
+      background-image: asset_url('new/icon-friends-gray.svg');
+      background-size: 62%;
+    }
+
+    &.followers {
+      background-image: asset_url('new/icon-followers-gray.svg');
+      background-size: 52%;
+    }
+  }
+
+  .number {
+    margin-top: .1rem;
+    color: $light-purple-color;
+    font-size: .6875rem;
+  }
+}

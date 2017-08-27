@@ -1,0 +1,16 @@
+= form_for [:admin, :tags, @dream], html: { class: 'form-horizontal' } do |f|
+  = render 'admin/tags/shared/form_errors', object: @dream
+  .form-group
+    %label.col-sm-2.control-label{ for: 'banner' } Hidden Tags
+    .col-sm-5
+      = f.collection_select :dream_hidden_tags, @dream.hidden_tags,
+                            :id, :name, {}, { multiple: true,
+                                              class: 'form-control',
+                                              id: 'dream_hidden_tags',
+                                              data: { entity_id: @dream.id,
+                                                      chosen: @dream.hidden_tags.map(&:name) } }
+  .form-group
+    .col-sm-5.col-md-offset-2
+      = f.submit 'Save', class: 'btn btn-default'
+
+

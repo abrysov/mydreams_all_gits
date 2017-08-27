@@ -1,0 +1,41 @@
+.col-bars .col-left {
+  text-align: center;
+  
+  input[type='submit'],
+  input[type='button'] {
+    width: 9.5rem;
+  }
+
+  h4 {
+    margin-top: .3125rem;
+  }
+
+  form {
+    margin-bottom: 1.5625rem;
+  }
+
+  h5 {
+    margin: .8em 0;
+  }
+
+  .bottom hr {
+    margin: .75rem;
+  }
+
+  .social-buttons {
+    margin-bottom: 1.25rem;
+  }
+
+  .copyright {
+    opacity: .3;
+    font-size: .8rem;
+  }
+}
+.col-left .user-card {
+  margin-bottom: 1rem;
+
+  a {
+    color: $light-gray-text-color;
+    font-weight: 400;
+  }
+}

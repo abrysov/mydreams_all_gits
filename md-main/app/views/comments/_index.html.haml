@@ -1,0 +1,24 @@
+.comments
+  .comments__title= t('actions.comment')
+
+  .comments__new
+    = form_tag [:create, :comments, entity_type: object.class.to_s.underscore, entity_id: object.id], {class: 'comment-form js-comments-form'} do
+
+      .textarea-field
+        = text_area_tag :body, nil, { placeholder: t("comments.placeholder_textarea") }
+
+        - if dreamer_signed_in?
+          %label.clip{for: 'files_'}
+          = file_field_tag "files[]", {multiple: true, class: 'js-attachment'}
+
+      .attachment-container.js-attachment-container
+
+      - if dreamer_signed_in?
+        .new_comment_btn.js-comment-send-btn{data: {action: 'create'}}
+          = t("actions.send")
+
+      - else
+        = link_to t("actions.send"), modal_authorization_path, { remote: true, class: 'new_comment_btn jmod-btn', data: { 'modal-type' => 'authorization'} }
+
+  .comments__group.js-card-group.js-commnets-group
+    = render partial: 'comments/comments', locals: { comments: @comments, object: object }

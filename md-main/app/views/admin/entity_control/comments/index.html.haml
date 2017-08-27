@@ -1,0 +1,9 @@
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th= t('.body')
+      %th= t('.action')
+  %tbody
+    = render @comments
+    = paginate @comments, theme: 'moderate'

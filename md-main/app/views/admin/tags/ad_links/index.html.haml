@@ -1,0 +1,10 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.url')
+      %th= t('.tags')
+      %th= t('.active')
+  %tbody
+    = render @ad_links
+    = paginate @ad_links, theme: 'moderate'

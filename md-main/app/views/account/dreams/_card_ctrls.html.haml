@@ -1,0 +1,36 @@
+- if dreamer_signed_in?
+  - if can?(:take, dream) || dream.top_dream?
+    = link_to modal_take_dream_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, class: 'jmod-btn card-ctrl', data: {'ctrl-act' => 'take', 'modal-type' => 'take_dream'}} do
+      .card-ctrl_icon
+      .card-ctrl_name= t('actions.borrow')
+  - else
+    = link_to modal_set_private_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, class: 'jmod-btn card-ctrl', data: {'ctrl-act' => 'hide', 'modal-type' => 'set_private'}} do
+      .card-ctrl_icon
+      .card-ctrl_name= t('dreams.set_private')
+
+  = link_to modal_suggest_dream_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id, dreamer_id: current_dreamer.id), {remote: true, class: 'jmod-btn card-ctrl', data: {'ctrl-act' => 'suggest', 'modal-type' => 'suggest_dream'}} do
+    .card-ctrl_icon
+    .card-ctrl_name= t('actions.suggest')
+
+  - unless dream.top_dream?
+    = link_to modal_buy_certificates_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id, dreamer_id: current_dreamer.id), {remote: true, class: 'jmod-btn card-ctrl', data: {'ctrl-act' => "#{current_dreamer?(@dreamer) ? 'buy_mark' : 'present_mark'}", 'modal-type' => 'present_mark'}} do
+      .card-ctrl_icon
+      .card-ctrl_name= "#{t(current_dreamer?(@dreamer) ? 'actions.run_dream' : 'actions.present_mark')}"
+
+  = link_to modal_share_path(entity_type: dream.class.to_s.underscore, entity_id: dream.id), {remote: true, class: 'card-ctrl jmod-btn',data: {'ctrl-act' => 'share', 'modal-type' => 'share'}} do
+    .card-ctrl_icon
+    .card-ctrl_name= t('dreams.share')
+
+- else
+  = link_to modal_authorization_path, {remote: true, class: 'card-ctrl jmod-btn', data: {'modal-type' => 'authorization'}} do
+    .card-ctrl_icon
+    .card-ctrl_name= t('actions.suggest')
+
+  - unless dream.top_dream?
+    = link_to modal_authorization_path, {remote: true, class: 'card-ctrl jmod-btn', data: {'ctrl-act' => 'buy_mark', 'modal-type' => 'authorization'}} do
+      .card-ctrl_icon
+      .card-ctrl_name= t('dreams.buy_mark')
+
+  = link_to modal_authorization_path, {remote: true, class: 'card-ctrl jmod-btn', data: {'ctrl-act' => 'share', 'modal-type' => 'authorization'}} do
+    .card-ctrl_icon
+    .card-ctrl_name= t('dreams.share')

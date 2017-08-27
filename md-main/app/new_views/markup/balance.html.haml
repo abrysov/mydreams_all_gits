@@ -1,0 +1,71 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+  %div.balance-page
+    .select-pay-system.row
+      .col-1
+        .logo
+          = image_tag image_url('new/pay-system/yandex.png');
+        .radio
+          %input{ name: "paySystem", type: "radio", checked: 'true' }
+          %span
+      .col-1
+        .logo
+          = image_tag image_url('new/pay-system/robokassa.png');
+        .radio
+          %input{ name: "paySystem", type: "radio" }
+          %span
+    .coin-course
+      .icon.money.size-86
+      .title
+        Курс:
+        %b 1
+        монета =
+        %b 79
+        руб.
+
+    %h4 Выберите количество
+    .coin-list
+      .coin 1
+      .coin 5
+      .coin 10
+      .coin 50
+      .coin 100
+      .coin.disabled 250
+      .coin.disabled 500
+
+    .wrapper
+      .coin-input
+        .title Ввести вручную:
+        %input{ type: "text", value: "10" }
+        .coins Монет
+
+      %hr
+
+      .total
+        .title
+          Итого в рублях:
+          %span 176
+          руб.
+        .btn-wrapper
+          %button.blue.accent Пополнить
+
+
+.col-right
+  .col-js
+    .top
+      .widget-balance
+        .title На моем счете:
+        .count
+          .icon.money.size-28
+          .number
+            %b 146
+            монет
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/balance" } Пополнить баланс
+        %li
+          %a{ href: "/markup/operations_history" } История операций
+
+

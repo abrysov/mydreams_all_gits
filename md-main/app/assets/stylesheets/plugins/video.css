@@ -1,0 +1,12 @@
+.jmod-overlay--visible {
+  display: block;
+}
+
+.jmod-overlay--invisible {
+  display: none;
+}
+
+.video {
+  position: relative;
+  top: 10%;
+}

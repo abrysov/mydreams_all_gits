@@ -1,0 +1,49 @@
+.comment.js-comment{data: {'id' => comment.id}}
+  = link_to account_dreamer_dreams_path(comment.dreamer), class: 'comment__user' do
+    .comments__user__img
+      .avatar.comment-block
+        - if comment.dreamer.is_vip?
+          .label_vip
+            %span= t('flybook.vip')
+
+        - if comment.dreamer.online?
+          .label_online
+            %span= t('flybook.online')
+
+        .avatar-image
+          = image_tag(avatar_or_default(comment.dreamer, :pre_medium))
+
+  .comment__content.js-comment-content
+    .comment-content-row.group
+      .comments__user__info
+        %p= comment.dreamer.decorate.full_name_and_age
+        %p= comment.dreamer.city_and_country
+
+      .comment__date= pretty_date_with_time(comment.created_at)
+
+    .comment-content-row.group
+      %p.js-comment-text= comment.body
+
+      .js-comment-attachments
+        - comment.attachments.each do |attachment|
+          .comment-attachments__item
+            = image_tag attachment.file
+
+    .comment-content-row.group
+      - if dreamer_signed_in?
+        - like_action = current_dreamer.liked?(comment) ? :unlike : :like
+
+        .comment__like.js-like-btn{class: "#{'js-tooltipster' if comment.likes_count != 0} #{'empty' unless current_dreamer.liked?(comment)}", data: {'ctrl-type' => like_action, id: comment.id, target: 'comment', count: comment.likes_count, 't-position' => 'top', 't-width' => '300', 't-interactive' => 'true'}}
+          %span.js-like-btn-count= number_to_human(comment.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+          .bubble.js-tooltipster-content
+            .bubble-wrap
+              .bubble_counter.js-bubble-counter
+                = "#{comment.likes_count} #{custom_pluralize(comment.likes_count, 'people')} #{custom_pluralize(comment.likes_count, 'like')}"
+              .bubble_items.js-bubble_items
+                - comment.last_likes.each do |i|
+                  = link_to [:account, i.dreamer, :dreams] do
+                    = image_tag avatar_or_default(i.dreamer, :small)
+              .bubble_link{class: "#{'active' if comment.likes_count > 5}"}
+                = link_to liked_path('comment', comment.id, :json), {data: {'modal-type' => 'liked_list'}, class: 'js-modal-btn'} do
+                  = t('actions.show_all')

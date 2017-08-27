@@ -1,0 +1,29 @@
+= hidden_field_tag :filter_url, request.url
+
+- if @fulfilled_dreams.first_page?
+  - if dreamer_signed_in?
+    = link_to modal_create_fulfilled_dream_path, { remote: true, class: 'card add_card card-hover js-flip js-add-card jmod-btn', data: {'modal-type' => 'create-fulfilled-dream'} } do
+      .card__wrap.flip
+        .card_back
+          .card_back__wrap
+            .logo_color
+        .card_front.green
+          .add_card__wrap
+            .add_card__btn__title= t('dreams.new.create_fulfilled_dream')
+  - else 
+    = link_to modal_authorization_path, { remote: true, class: 'card add_card card-hover js-flip js-add-card jmod-btn', data: {'modal-type' => 'authorization'} } do
+      .card__wrap.flip
+        .card_back
+          .card_back__wrap
+            .logo_color
+        .card_front
+          .add_card__wrap
+            .add_card__btn__title= t('dreams.new.create_fulfilled_dream')    
+
+- fix_collection(@fulfilled_dreams, @fulfilled_dreams.limit_value).each do |dream|
+  - if dream.nil?
+    .card.fake-card
+  - else
+    = render partial: 'fulfilled_dreams/fulfilled_dream', locals: {dream: dream}
+
+= paginate @fulfilled_dreams, theme: 'more'

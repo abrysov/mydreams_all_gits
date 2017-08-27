@@ -1,0 +1,48 @@
+.col-center.content-body
+  .header.minimal
+    .title
+      %h2 Редактировать профиль
+  %div.settings-page
+    .avatar-wrapper
+      .avatar.size-xl.filearea
+        %input{ type: "file" }
+        %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/men/17.jpg" }
+      .btn
+    .form
+      %label.title
+        .name Имя:
+        %input{ type: "text", value: "Александр" }
+      %label.title
+        .name Фамилия:
+        %input{ type: "text", value: "Бородач" }
+      %label.title
+        .name Пол:
+        .select
+          %select
+            %option Мужской
+            %option Женский
+      %label.title
+        .name Дата рождения:
+        %input{ type: "text", value: "21.01.1996" }
+      %label.title
+        .name Страна:
+        .select
+          %select
+            %option Россия
+            %option Украина
+      %label.title
+        .name Город:
+        .select
+          %select
+            %option Москва
+            %option Санкт-Петербург
+    %hr
+    %button.blue Сохранить
+.col-right
+  .col-js
+    .top
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/settings" } Редактировать профиль
+        %li
+          %a{ href: "/markup/settings2" } Настройки аккаунт

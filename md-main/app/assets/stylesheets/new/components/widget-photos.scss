@@ -1,0 +1,20 @@
+.widget-photos {
+  display: flex;
+  justify-content: space-between;
+  margin: -.15rem;
+  flex-wrap: wrap;
+
+  .img {
+    box-sizing: border-box;
+    width: 33.333%;
+    border: .15rem solid #fff;
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+      display: block;
+      margin-top: 100%;
+      content: '';
+    }
+  }
+}

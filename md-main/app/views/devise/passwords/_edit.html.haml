@@ -1,0 +1,19 @@
+.card-modal.card-modal-passwor-edit
+  .card-modal__wrap
+    %br/
+    .card-modal__title= t('recovery.change_password')
+
+    .card-modal__body
+      = form_for(resource, url: url_for(controller: 'passwords', action:'update'), method: :put, html: { data: {'modal-type' => 'edit_pass'}, class: 'edit_pass_form'}) do |f|
+        = f.hidden_field :reset_password_token, val: ( params[:reset_password_token] || params[:dreamer][:reset_password_token] )
+        %ul
+          - resource.errors.full_messages.each do |message|
+            %li= message
+        .form_main
+          .input_wrap.blue--pink
+            = f.password_field :password, { placeholder: t('recovery.password'), class: 'js-validation', data: {valid: 'password'}}
+            = f.password_field :password_confirmation, { placeholder: t('recovery.password_confirmation'), class: 'js-validation', data: {valid: 'confirm_password'}}
+          .form_main__wrap.js-success-message
+            %label.form_btn.form_btn-violet.disabled.js-form-submit{for: 'edit_pass'}
+              %span= t('recovery.change_password_btn')
+            = f.submit id: 'edit_pass'

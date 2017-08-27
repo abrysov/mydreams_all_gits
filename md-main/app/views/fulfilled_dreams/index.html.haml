@@ -1,0 +1,20 @@
+.main.dreams
+  = render partial: 'application/page_header'
+
+  .page-title= t('layout.fulfilled_dreams')
+
+  = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+    .fulfilled-dreams-filter
+      = render 'application/fast_search', param_name: :search
+
+  .content-tabs.content-tabs__fulfilled.js-content-tabs
+    - t('misc.choose_fulfill_dreams').each do |key, word|
+      .content-tab
+        = link_to params.deep_merge(gender: key), { class: "js-link-search-filter content-tab__link #{'active' if params[:gender] == key.to_s}", remote: true, data: {tab: key}}  do
+          %span.content-tab__name= word
+          -# %span.hidden_count= "(#{Dream.came_true.search(params[:search]).filter_by_choose(key.to_s).count})"
+
+  .main_content
+    .content_wrap
+      .card_group.group.js-card-group.js-search-content
+        = render partial: 'fulfilled_dreams/index'

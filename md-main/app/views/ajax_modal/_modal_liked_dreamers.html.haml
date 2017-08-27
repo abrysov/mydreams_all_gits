@@ -1,0 +1,10 @@
+- url = url_for(liked_path(entity_type: entity_type, entity_id: entity_id))
+
+.frame.liked-dreamers.js-modal{ data: {'modal-type' => 'liked_list', page: '1', url: url} }
+  .frame-icon
+  .title= t('dreams.popup.like')
+  .count-title= "#{liked_dreamers.total_count} #{custom_pluralize(liked_dreamers.count, 'liked_dreamers')}"
+
+  .frame-content
+    .list-body.js-list-body
+      = render partial: 'ajax_modal/modal_liked_dreamers/liked_dreamers', locals: { liked_dreamers: liked_dreamers }

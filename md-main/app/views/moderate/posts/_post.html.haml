@@ -1,0 +1,17 @@
+%tr
+  %td= post.id
+  %td
+    = link_to (post.photo.url(:large) || '#') do
+      = image_tag post.photo.url(:admin)
+  %td
+    = link_to post.title, account_dreamer_post_path(post.dreamer, post)
+  %td
+    = post.body
+  %td
+    = post.likes_count
+  %td
+    = post.complains.count
+  %td
+    = post.dreamer.abuses.count
+  %td.actions
+    = render 'moderate/shared/actions', object: post

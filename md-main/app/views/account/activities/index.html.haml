@@ -1,0 +1,12 @@
+.content_wrap
+  .activities_group.js-card-group
+    - if @activities.total_count > 0
+      %h2.page_content-title= t('activities.activities_title')
+    
+    - else
+      %h2.page_content-title= t('activities.no_activities')
+      
+    .card_group.js-card-group
+      = render partial: 'account/activities/activities'
+
+        

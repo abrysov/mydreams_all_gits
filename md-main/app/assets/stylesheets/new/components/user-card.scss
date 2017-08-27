@@ -1,0 +1,40 @@
+// TODO: Заиспользовать везед этот класс
+
+.user-card {
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    margin-right: .625rem;
+    margin-left: 1px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+
+    a {
+      font-weight: 700;
+    }
+
+    .icon-text {
+      margin-top: .25rem;
+      color: $light-gray-text-color;
+      font-size: .6rem;
+    }
+
+    .text {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .icon {
+      width: .6rem;
+      height: .6rem;
+    }
+  }
+}

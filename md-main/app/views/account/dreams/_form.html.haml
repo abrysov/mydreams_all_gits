@@ -1,0 +1,77 @@
+- fulfill ||= false
+
+= form_for @dream, url: (fulfill ? fulfill_account_fulfill_dreams_path : [:account, @dream]), html: {class: "js-imageLoader-form"} do |f|
+
+  .new-dream
+
+    .CARD
+      .status.js-dream-status
+        .label My Dreams
+        .text-line
+          %span= t('dreams.new.dream_status')
+
+      .preview
+
+        .dream-photo
+          .js-imageLoader#js-add-dream-photo{ class: "#{@dream.photo.present? ? 'change-photo' : 'upload-photo'}", data: { min_height: 540, min_width: 540, orient: 'square', title_change: t( 'dreams.new.photo_change' ), title_upload: t('dreams.new.photo_upload')} }
+
+            = f.hidden_field :photo, class: 'js-imageLoader-input'
+
+          .image.js-imageLoader-preview
+            = image_tag @dream.photo.url
+
+        .text-line
+          %span= t('dreams.new.dream_photo') + '*'
+
+      .title
+        = f.text_area :title, { placeholder: t('dreams.new.dream_title_placeholder'), class: 'js-validation', data: {valid: 'name'} }
+        .text-line
+          %span= t('dreams.new.dream_title') + '*'
+
+      .description
+        = f.text_area :description, { placeholder: t('dreams.new.dream_description_placeholder'), class: 'js-validation', data: {valid: 'name'} }
+        .text-line
+          %span= t('dreams.new.dream_description') + '*'
+
+      .data
+        .likes.empty
+          %span 0
+        .starts.empty
+          %span 0
+        .comments.empty
+          %span 0
+
+    .options
+
+      .visibility
+        %span= t('dreams.new.restriction_level')
+        = f.select :restriction_level, Dream.restriction_levels_for_select, {}, class: 'ikselect'
+
+        - if @dream.persisted?
+          .fulfilled
+            = f.check_box :came_true
+            %label= t('dreams.new.fulfilled_dream')
+
+    .choosen-mark
+      = f.hidden_field :certificate_id, { class: 'js-checked-mark-input', data: {'dream-type' => ''} }
+      .certificate-image{class: "js-checked-mark"}
+        .clear-marks.js-mark-delete
+
+  = render partial: 'application/add_marks', locals: {gift: false}
+
+  .controls
+    - if current_dreamer.email
+      - if dreamer_signed_in?
+
+        .control.js-form-control
+          = f.submit t("dreams.new.run_dream"), disabled: true, class: "disabled run-dream button-yellow disabled js-create-dream-submit"
+          .preloader.js-preloader
+
+        .control.js-form-control
+          = f.submit t("dreams.new.add_dream"), disabled: true, class: "disabled add-dream button-lightgray js-create-dream-submit js-form-submit"
+          .preloader.js-preloader
+
+      - else
+        = link_to t("dreams.new.run_dream"), modal_authorization_path, {class: 'run-dream button-yellow jmod-btn', remote: true, data: {"modal-type" => "authorization"}}
+        = link_to t("dreams.new.add_dream"), modal_authorization_path, {class: 'add-dream button-lightgray jmod-btn', remote: true, data: {"modal-type" => "authorization"}}
+      .information= t('dreams.new.email_notification')

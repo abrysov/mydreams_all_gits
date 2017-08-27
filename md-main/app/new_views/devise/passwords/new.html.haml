@@ -1,0 +1,18 @@
+.col-center.content-body
+  .header
+    .title
+      %h2= t('recovery.recovery')
+  .content.password-reset-page
+    = form_for resource, url: password_path(resource), html: { method: :post, class: 'recovery_form' } do |f|
+      %h5= raw t('recovery.note_new_design')
+      = hidden_field_tag :new_design, value: '1'
+      %ul
+      - @dreamer.errors.full_messages.each do |message|
+        %li= message
+      %br
+      = f.text_field :email, { placeholder: t('recovery.fill_email'), class: 'js-validation', data: { valid: 'email' }}
+      %h5= raw t('recovery.note2_new_design')
+      %button.accent.blue{ type: :submit }= t('recovery.recovery_btn')
+.col-right
+  .col-js
+

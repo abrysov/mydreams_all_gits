@@ -1,0 +1,23 @@
+.frame.dreambook-background{data: {'modal-type' => 'dreambook_bg'}}
+
+  = form_tag upload_crop_dreambook_bg_account_dreamer_path(dreamer.id), remote: true, multipart: true, method: :patch, data: { crop: 'dreambook_bg' }, class: "js-imageLoader-form" do
+
+    .title= t('modals.dreambook_background.title')
+    
+    = hidden_field_tag :dreambook_bg, nil, class: 'js-imageLoader-input'
+
+    .crop-img-container.js-imageLoader-preview
+      - if dreamer.dreambook_bg.present?
+        = image_tag(dreamer.dreambook_bg.url(:cropped), class: 'current_dreambook_bg')
+      - else
+        .dreambook_bg-empty
+          %span= t('flybook.dreamer_bg_empty')
+
+    .submit-photo.control.js-form-control.js-imageSaver
+      %label.button-bv-animated.js-form-submit{for: 'dreambook_bg-save'}
+        %span= t('actions.save')
+      .preloader.js-preloader 
+      = submit_tag nil, id: 'dreambook_bg-save'
+    
+  .load-photo.button-bv-animated.active.js-imageLoader#js-add-avatar{ data: { min_height: 198, min_width: 936, orient: 'list', input_name: 'dreambook_bg' } }
+    %span= t('actions.upload')

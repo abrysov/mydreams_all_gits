@@ -1,0 +1,340 @@
+body.homepage {
+
+  .wellcome {
+    margin-top: -20px;
+    height: 470px !important;
+  }
+
+  #wrapper {
+    background: no-repeat center;
+    background-size: cover;
+  }
+
+  .main {
+    // height: 2000px;
+    // background-color: white;
+
+    background: white;
+
+    .homepage-title {
+      margin: 10px auto;
+      font-size: 30px;
+      line-height: 1.5em;
+      letter-spacing: 1px;
+      font-weight: 300;
+      color: #3b3b3b;
+      text-align: center;
+      text-shadow: 0 0 20px white;
+    }
+
+    .homepage-text {
+      margin: 15px auto;
+      font-size: 18px;
+      line-height: 1.5em;
+      letter-spacing: 0.5px;
+      font-weight: 300;
+      color: #3b3b3b;
+      text-align: center;
+      text-shadow: 0 0 20px white;
+    }
+
+    .balloon {
+      width: 940px;
+      height: 735px;
+      margin: 0 -50px;
+      background: asset_url("balloon.jpg") center center no-repeat;
+      // background: asset_url("balloon_action.jpg") center center no-repeat;
+      background-size: 940px auto;
+    }
+
+    .homepage-top-dreams,
+    .homepage-fulfilled-dreams {
+
+      .slick-list {
+        padding: 15px 5px 30px;
+        margin: 0 -5px;
+
+        .slick-track {
+          font-size: 0;
+
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .slick-slide {
+        float: none;
+        position: relative;
+        display: inline-block;
+        padding: 40px 0 0;
+
+        .card {
+          margin: 0 10px !important;
+
+          &.card-hover:hover {
+            @include scale(1.03);
+          }
+
+          .card_back__wrap {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+          }
+        }
+      }
+    }
+    .homepage-club-news {
+
+      .slick-list {
+
+        padding: 20px 5px 40px;
+        margin: 0 -5px;
+
+        .slick-track {
+
+          font-size: 0;
+
+          &:before,
+          &:after {
+
+            display: none;
+
+          }
+        }
+      }
+
+      .slick-slide {
+
+        float: none;
+        position: relative;
+        display: inline-block;
+
+        .card {
+
+          margin: 0 10px !important;
+
+          &.card-hover:hover {
+
+            @include scale(1.03);
+
+          }
+
+          .card__wrap {
+
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+            .card_front {
+
+              img {
+
+                width: 100%;
+
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    .homepage-fulfilled-dreams{
+      .slick-slide{
+        padding: 0;
+      }
+    }
+
+    .homepage-top-dreams {
+      margin-bottom: 50px;
+    }
+
+    .homepage-balloon {
+      margin-bottom: 0px;
+    }
+
+    .homepage-fulfilled-dreams {
+      margin-top: -30px;
+
+      .fulfilled-dreams-list {
+        padding-bottom: 30px;
+
+        .card {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .special {
+    height: 880px;
+  }
+}
+
+.wellcome__user {
+  position: absolute;
+  display: block;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(255,255,255,0.7);
+  opacity: 0;
+  //@include webkit-border-radius-fix;
+
+  img {
+    display: block;
+    @include transition(transform, 0.3s, ease-out, 0s);
+  }
+
+  &:hover {
+
+    img {
+      @include scale(1.08);
+    }
+  }
+
+  &:active {
+
+    img {
+      @include scale(1.04);
+      @include transition(all, 0s, ease-out, 0s);
+    }
+  }
+
+  &[data-user-num="0"] {
+    width: 85px;
+    height: 85px;
+    top: 100px;
+    left: -40px;
+  }
+
+  &[data-user-num="1"] {
+    width: 80px;
+    height: 80px;
+    top: 190px;
+    left: 90px;
+  }
+
+  &[data-user-num="2"] {
+    width: 65px;
+    height: 65px;
+    top: 70px;
+    left: 145px;
+  }
+
+  &[data-user-num="3"] {
+    width: 55px;
+    height: 55px;
+    top: 20px;
+    left: 280px;
+  }
+
+  &[data-user-num="4"] {
+    width: 40px;
+    height: 40px;
+    top: 25px;
+    right: 350px;
+  }
+
+  &[data-user-num="5"] {
+    width: 85px;
+    height: 85px;
+    top: 40px;
+    right: 210px;
+  }
+
+  &[data-user-num="6"]{
+    width: 70px;
+    height: 70px;
+    top: 65px;
+    right: 80px;
+  }
+}
+
+.wellcome__btn {
+  display: block;
+  padding: 18px 0px 12px;
+  width: 255px;
+  position: absolute;
+  right: 14px;
+  top: 180px;
+  border-radius: 9px;
+  box-shadow: 0 0 30px rgba(255,255,0,0.5);
+
+  span {
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+}
+
+.wellcome__slogan {
+  position: absolute;
+  width: 262px;
+  right: 6px;
+  top: 264px;
+  font-size: 20px;
+  line-height: 1.3em;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  color: #FFF;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  font-variant: small-caps;
+
+  strong {
+    font-size: 28px;
+    color: #f0c75e;
+  }
+}
+
+.wellcome__d_slogan {
+  width: 240px;
+  margin: 0 auto;
+  padding-top: 230px;
+  font-size: 17px;
+  line-height: 1.2em;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  background: asset_url('svg/d_logo.svg') center 135px no-repeat;
+  background-size: 78px auto;
+}
+
+.wellcome__banner {
+  width: 100%;
+  height: 767px;
+  margin: 0 auto;
+  background: asset_url('wellcome-banner.png') center no-repeat;
+
+  @include box-shadow(inset, 0, 0, 50px, rgba(250,250,250,0.6));
+}
+
+body.homepage:not(.feed) {
+  #wrapper {
+    background: no-repeat center;
+    background-size: cover;
+  }
+
+  $size-list: (3000, 4269),
+              (1920, 2732),
+              (1280, 1822),
+              (720, 1031);
+
+  @each $screan-size, $image-size in $size-list {
+    @media only screen and (max-width: #{$screan-size}px) {
+      #wrapper {
+        background-image: asset_url("main-page-background-#{$image-size}.jpg");
+      }
+    }
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+         only screen and (min--moz-device-pixel-ratio: 2),
+         only screen and (-o-min-device-pixel-ratio: 2/1),
+         only screen and (min-device-pixel-ratio: 2),
+         only screen and (min-resolution: 192dpi),
+         only screen and (min-resolution: 2dppx){
+           #wrapper {
+             background-image: asset_url("main-page-background-4269.jpg");
+           }
+         }
+}

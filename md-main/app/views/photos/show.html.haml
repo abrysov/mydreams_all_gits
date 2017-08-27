@@ -1,0 +1,60 @@
+.single_page.ajax_photo_page.js-single-page{data: {'page-id' => @photo.id, type: 'photo'}}
+  .content_wrap
+    /%h2= t('photos.photo_page_title')
+    .single_page__img
+      = image_tag @photo.file.url(:medium)
+    .additional_data.additional_data-big.group
+      .additional_data__likes.js-like-count= @photo.likes_count
+      .additional_data__date= pretty_date(@photo.created_at)
+      .additional_data__comments.js-comment-counter= @photo.comments_count
+
+    .single_page__text
+      = form_for @photo, url: ([@dreamer, @photo]), html: {method: 'patch', remote: true, class: 'caption-form js-caption-form'} do |f|
+        = f.text_area :caption, {placeholder: ''}
+        = f.submit t('actions.save'), class: 'js-caption-form-btn'
+
+      %p= @photo.caption
+
+    - if dreamer_signed_in?
+      .page_ctrls
+
+        - if dreamer_signed_in?
+          - like_action = current_dreamer.liked?(@photo) ? :unlike : :like
+          .button-bv-animated.like-btn.js-list.js-like{data: {target: 'photo', id: @photo.id, 'ctrl-type' => like_action, count: @photo.likes_count}}
+            %span= t("actions.#{like_action}")
+
+        .preview-list.js-preview-list{'data-type' => 'like'}
+          .preview-list-wrap
+            .preview-list_counter.js-preview-counter
+              = "#{@photo.likes_count} #{custom_pluralize(@photo.likes_count, 'people')} #{custom_pluralize(@photo.likes_count, 'like')}"
+            .preview-list_users.js-preview-users
+              - @photo.liked_dreamers.last(5).each do |i|
+                = link_to [:account, i, :dreams] do
+                  = image_tag avatar_or_default(i, :small)
+
+            .preview-list_link.js-show-liked{class: "#{'active' if @photo.likes_count > 5}"}
+              = link_to liked_path('photo', @photo.id, :json), {data: {'modal-type' => 'liked_list'}, class: 'js-modal-btn'} do
+                = t('actions.show_all')
+
+        .button-bv-animated.js-list{data: {'ctrl-type' => 'share'}}
+          %span= t('dreams.share')
+
+        .preview-list.js-preview-list{'data-type' => 'share'}
+          .preview-list-wrap
+            .preview-list_title
+              %span= t('actions.choose_sm')
+            = render 'share_buttons', object: @photo
+
+        - if can? :manage, @photo
+          .button-bv-animated.js-photo-edit
+            %span= t('actions.edit')
+          -# = link_to [@dreamer, @photo],  {data: {'ctrl-type' => 'edit', method: :patch}, class: 'page_ctrls__item'} do
+          -#   = t('actions.edit')
+          = link_to [@dreamer, @photo], {data: {'ctrl-type' => 'delete', method: :delete}, class: 'button-bv-animated'} do
+            %span= t('actions.delete')
+
+
+    = render partial: 'comments/index', locals: {object: @photo}
+
+- content_for :mydreams_js do
+  -# = javascript_include_tag 'photo.mydreams'

@@ -1,0 +1,24 @@
+// Place all the styles related to the moderate/dreamers controller here.
+// They will automatically be included in application.css.
+// You can use Sass here: http://sass-lang.com/
+
+
+.navbar {
+  min-height: 0;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.list-group-item {
+  ul li {
+    list-style-type: none;
+    text-align: right;
+  }
+}
+
+#stat-period-result {
+  float: right;
+  padding: 5px;
+}

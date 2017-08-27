@@ -1,0 +1,25 @@
+-# - encoded_description = URI::escape(object.respond_to?(:description) ? object.description.to_s : object.caption.to_s)
+-# - encoded_title = URI::escape(object.respond_to?(:title) ? object.title.to_s : '')
+
+.frame.share{data: {'modal-type' => 'share'}}
+  
+  .title= t("modals.share.title")
+  .subtitle= t("modals.share.subtitle")
+
+  .socials
+    .social.js-share{ data:{ type: 'facebook', url: url_for([:account, object.dreamer, object]), title: object.title, description: object.description, img: object.try(:photo).try(:url, :medium) } }
+    
+    .social.js-share{ data:{ type: 'vkontakte', url: url_for([:account, object.dreamer, object]), title: object.title, description: object.description, img: object.try(:photo).try(:url, :medium) } }
+    
+    .social.js-share{ data:{ type: 'twitter', url: url_for([:account, object.dreamer, object]), title: object.title } }
+
+    .social.js-share{ data:{ type: 'google', url: url_for([:account, object.dreamer, object]), title: object.title } }
+
+    .social.js-share{ data:{ type: 'odnoklassniki', url: url_for([:account, object.dreamer, object]), title: object.description } }
+
+
+    -# = link_to '', '#', onclick: "Share.facebook('#{full_current_url}','#{encoded_title}','#{object.try(:photo).try(:url, :medium)}','#{encoded_description}')", data: {type: 'facebook'}, class: 'social'
+    -# = link_to '', '#', onclick: "Share.twitter('#{full_current_url}','#{encoded_title}')", data: {type: 'twitter'}, class: 'social'
+    -# = link_to '', '#', onclick: "Share.vkontakte('#{full_current_url}','#{encoded_title}','#{object.try(:photo).try(:url, :medium)}','#{encoded_description}')", data: {type: 'vkontakte'}, class: 'social'
+    -# = link_to '', '#', onclick: "Share.google_plus('#{full_current_url}','#{encoded_title}')", data: {type: 'google'}, class: 'social'
+    -# = link_to '', '#', onclick: "Share.odnoklassniki('#{full_current_url}','#{encoded_description}')", data: {type: 'odnoklassniki'}, class: 'social'

@@ -1,0 +1,95 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211?random=5);" }
+    .title
+      %h2 Сбывшиеся Мечты
+  %div
+    .card-list
+      .card.add-dream
+        .front
+          .plus
+          .title Добавить сбывшуюся Мечту
+      - (0..10).each do |dream|
+        = render partial: 'card/dream'
+    .preloader
+.col-right
+  .col-js
+    = render 'layouts/shared/right_menu'
+
+.modal.create-dream-modal
+  .header
+    .content
+      %h2 Добавить сбывшуюся Мечту
+    .close
+  .body
+    .options
+      %label.filter.access
+        %span Кто может видеть эту Мечту
+        .select
+          %select
+            %option{ value: "" } Я и мои друзья
+      %label.filter.access
+        %span Когда Ваша Мечта сбылась?
+    .card-wrapper
+      %ul.description-list
+        %li.photo
+          %span
+            Фото Мечты
+            %span.asterisk *
+        %li.name
+          %span
+            Название Мечты
+            %span.asterisk *
+        %li.desc
+          %span
+            Описание Мечты
+            %span.asterisk *
+      .card
+        .front
+          .label.green MyDreams
+          .picture.filearea.icon
+            %input{ type: "file" }
+            / .picture-wrap
+            /   %img{ alt: "drean", src: "http://unsplash.it/200/200?random=" + Random.rand(200).to_s }
+          .description
+            %h3{ contenteditable: "true" } Введите название
+            %h5{ contenteditable: "true" }
+              Детально опишите
+              %br
+              Вашу Мечту
+          .reactions
+            .icon-text.like
+              .icon.reaction
+              %span.text 0
+            .icon-text.in-progress
+              .icon.reaction
+              %span.text 0
+            .icon-text.reaction.comments
+              .icon
+              %span.text 0
+      .button.accent.green Добавить
+
+:javascript
+  var m = document.querySelector('.create-dream-modal');
+  function beliveInDream(){
+    var page = document.querySelector('.row-page');
+    var colWidth = document.querySelector('.col-right').clientWidth;
+    var headerHeight = document.querySelector('.header-group').clientHeight;
+    m.style.width = document.querySelector('.content-body').clientWidth + colWidth + 'px';
+    m.style.left = page.offsetLeft + colWidth + 'px';
+    m.style.top = headerHeight + 'px';
+    m.style.height = window.innerHeight - headerHeight + 'px'
+  }
+
+  window.addEventListener('resize', beliveInDream);
+
+  document.querySelector('.create-dream-modal .close').onclick = function(){ // close modal
+    m.classList.remove('visible');
+    document.body.classList.remove('scroll-disabled');
+  }
+  function createDream(){ // open modal
+    beliveInDream();
+    m.classList.add('visible');
+    document.body.classList.add('scroll-disabled');
+  }
+  document.querySelector('.add-dream').onclick = createDream;

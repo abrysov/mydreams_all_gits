@@ -1,0 +1,42 @@
+%article{ 'data-post-id': post.id, id: post.id }
+  .post
+    .post-header
+      = link_to post.dreamer.decorate.full_name,
+      account_dreamer_dreams_path(post.dreamer),
+      class: 'post-author'
+      .time= pretty_date_with_time(post.created_at)
+    .avatar
+      = link_to account_dreamer_dreams_path(post.dreamer) do
+        = image_tag avatar_or_default(post.dreamer, :pre_medium)
+
+    .post-title= post.title
+    %div.post-body= clear_format post.body
+    = image_tag post.photo.url(:large), class: 'post-image'
+    .post-actions
+      .post-data
+        .right-cell
+          .additional_data__likes.js-like-btn{class: (current_dreamer.liked?(post) ? false : 'empty')}
+            = render 'shared/like_button', object: post
+
+    .load_more_comments
+      - if post.comments.count > 3
+        - from = post.comments.last(3).first.id
+        = link_to index_comments_path('post', post.id, from: from), remote: true, class: 'load-more-comments', 'data-post-id': post.id, 'data-from': from, 'data-locale': locale do
+          .button=  t('comments.show_last_n_comments', count: post.comments.count, plural: custom_pluralize(post.comments.count, 'comments'))
+  .comments
+    .list
+      - post.comments.last(3).each do |comment|
+        .comment.last
+          .avatar{class: [('vip' if comment.dreamer.is_vip?), ('online' if comment.dreamer.online?)]}
+            = link_to account_dreamer_dreams_path(comment.dreamer) do
+              = image_tag avatar_or_default(comment.dreamer, :pre_medium)
+          .comment-content
+            .comment-header
+              = link_to comment.dreamer.decorate.full_name,
+              account_dreamer_dreams_path(comment.dreamer), class: 'comment-author'
+              .time= pretty_date_with_time(comment.created_at)
+            %p.comment-body= comment.body
+    .comment-form
+      = form_for Comment.new, url: create_comments_path('post', post.id), remote: true, data: { type: :json, 'post-id': post.id } do |form|
+        = form.text_area :body, placeholder: t('actions.write_message')+'...'
+        .ctrl-panel= form.submit t('actions.send')

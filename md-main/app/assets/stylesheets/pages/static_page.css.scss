@@ -1,0 +1,47 @@
+.static_page{
+  .about{
+    a, p, h1, h2, h3, span, td, div {
+      color: #282828;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .gray {
+      color:#D3D3D3 !important;
+    }
+  }
+
+  strong{
+    font-weight: bold;
+  }
+  .services ol li{
+    padding-bottom: 30px;
+    margin-right: 30px;
+  }
+  .services {
+    p, h1, h2, h3, span, td, div{
+      color: #282828;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  .table_marks tr{
+    td{
+      border-bottom: 1px solid #282828;
+      padding: 15px;
+    }
+    &:last-child{
+      td{
+        border-bottom: none;
+      }
+    }
+  }
+  .terms-and-conditions > .li {
+    margin: 10px;
+  }
+}

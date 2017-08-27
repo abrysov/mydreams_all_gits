@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'robots', content: 'noindex, nofollow' }
+    %title My Dreams
+
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,cyrillic-ext'
+    = stylesheet_link_tag 'application'
+
+    :css
+      body {
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        background: none;
+      }
+
+      .card {
+        margin: 10px 10px;
+      }
+
+      html {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        overflow-y: auto;
+        background-color: white;
+      }
+
+      .avatar-image img{
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+      }
+
+      .dream_dreamer {
+      	display: inline-block;
+        width: 430px;
+      }
+
+      .dream_dreamer .left {
+        float: left;
+      }
+
+      .dream_dreamer .right {
+        float: right;
+      }
+
+  %body{ lang: locale }
+    = yield

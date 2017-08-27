@@ -1,0 +1,15 @@
+-# - cache 'certificate_types', skip_digest: true do
+
+.form-certificates-block{class: "#{gift.present? ? 'as-gift' : 'create-new'}"}
+  .title
+    - if gift
+      %h3= t('dreams.new.select_mark_gift_html')
+    - else
+      %h2= t('dreams.new.select_mark')
+      %h3= t('dreams.new.about_marks_html')
+
+  .form-certificates
+    - CertificateType.all.each_with_index do |c, index|
+      .form-certificate
+        .certificate-image.large-certificate.certificate-scaled.js-add-mark{'data-dream-type' => c.name, 'data-certificate-id' => c.id}
+        .certificate-value.large-value= c.value

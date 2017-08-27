@@ -1,0 +1,124 @@
+.spotlight-modal {
+
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  .spotlight-overlay {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1000;
+
+  }
+
+  .search_form {
+
+    z-index: 2000;
+    display: block;
+    position: relative;
+    padding: 15px 30px;
+    width: 580px;
+    margin: 140px auto 0;
+    border-radius: 4px;
+    box-shadow: 15px 15px 25px rgba(0,0,0,0.3);
+    background: asset_url("svg/spotlight.svg") 18px center no-repeat rgba(27,27,32,0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    &:before {
+
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 0 0 4px 4px;
+
+      @extend .blue--violet_new;
+
+      transform: rotate(180deg);
+
+    }
+    input[type='text'] {
+
+      width: 480px;
+      background: transparent none repeat scroll 0% 0%;
+      color: #FFF;
+      padding: 5px 10px 5px 0;
+      border: medium none;
+      font-size: 26px;
+      font-family: inherit;
+      letter-spacing: 0.4px;
+      font-weight: 300;
+      margin-left: 40px;
+
+      &::-webkit-input-placeholder { color: $w; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 26px; }
+      &::-moz-placeholder { color: $w; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 26px; }
+      &:-moz-placeholder { color: $w; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 26px; }
+      &:-ms-input-placeholder { color: $w; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 26px; }
+
+    }
+    input[type='submit'] {
+
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      margin-top: -10px;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      background: none;
+
+      &:hover {
+
+        opacity: 1;
+
+      }
+
+    }
+    .spotlight-close {
+
+      cursor: pointer;
+      position: absolute;
+      display: block;
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      top: -30px;
+      right: -30px;
+      z-index: 10000;
+      background: asset_url('svg/modal_close_button.svg') center center no-repeat;
+      background-size: 17px 17px;
+
+      opacity: 0.7;
+      @include transition(opacity, 0.2s, ease-out, 0s);
+
+      &:hover {
+
+        opacity: 1;
+
+      }
+      &:active {
+
+        opacity: 0.5;
+        @include transition(opacity, 0s, ease-out, 0s);
+
+      }
+
+    }
+
+  }
+
+}

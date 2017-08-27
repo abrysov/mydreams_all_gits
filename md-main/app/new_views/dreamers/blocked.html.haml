@@ -1,0 +1,19 @@
+.block
+  .header
+    .title.content
+      %h2
+        = t('special_pages.blocked.owner.greeting')
+        = current_dreamer.full_name
+.block.blocked-page
+  .content.center
+    %h3
+      = raw t('special_pages.blocked.owner.body_new_design')
+      %br
+      %br
+    %hr
+    %h4
+      = t('support.conversion')
+      %br
+      = mail_to 'support@mydreams.club'
+  .content
+    = link_to t('actions.exit'), destroy_dreamer_session_path, class: 'button blue'

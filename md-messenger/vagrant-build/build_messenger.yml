@@ -1,0 +1,13 @@
+- name: Build messenger
+  command: rebar3 as {{ profile }} tar
+  args:
+    chdir: "{{ project_dir }}"
+    creates: "{{ target }}"
+  environment:
+    PATH: "{{ base_dir }}/bin:{{ base_dir }}/node-v5.9.0-linux-x64/bin:{{ ansible_env.PATH }}"
+
+- name: Fetch release
+  fetch:
+    src: "{{ target }}"
+    dest: ./releases
+    flat: yes

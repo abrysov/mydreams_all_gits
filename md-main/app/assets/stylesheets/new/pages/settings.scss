@@ -1,0 +1,79 @@
+.settings-page {
+  padding-bottom: 2rem;
+  text-align: center;
+
+  .avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background: #0fa0de;
+    box-shadow: 0 0 0 .25rem #fff;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 10px;
+      height: 2px;
+      margin: auto;
+      content: '';
+      background: #fff;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  .avatar {
+    display: inline-block;
+  }
+
+  .form {
+    width: 27.5rem;
+    margin: 2rem 0;
+
+    input,
+    .select {
+      width: 18.75rem;
+    }
+
+    .name {
+      text-align: right;
+      flex: 1;
+    }
+  }
+
+  hr {
+    margin: 1rem 3rem;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .delete-profile-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: $light-gray-text-color;
+  }
+
+  .lang-select {
+    width: 8rem;
+    margin: 0 auto;
+  }
+}

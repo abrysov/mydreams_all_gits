@@ -1,0 +1,59 @@
+- cache('unlogged_id:main_page', expires_in: 1.hour) do
+  .wellcome
+    - @celebrities.each_with_index do |u, i|
+      = link_to [:account, u, :dreams], class: 'wellcome__user js-wellcome-user js-tooltipster', data: {'user-num' => "#{i}", 't-position' => 'bottom', 't-width' => '230', 't-interactive' => false } do
+        = image_tag avatar_or_default(u, :pre_medium), class: 'cover'
+        .bubble.feed_item__tooltip.js-tooltipster-content
+          - if u.age != 0
+            %h4= "#{u.first_name}, #{u.age}"
+          - else
+            %h4= u.first_name
+          - if u.dream_city.present? || u.dream_country.present?
+            .dreamer_info
+              .dreamer_location= [u.country_name, u.city_name].compact.join(', ')
+
+    = link_to belive_in_dream_account_belive_in_dream_index_path, {data: {'modal-type' => "#{'authorization' unless dreamer_signed_in?}"}, class: "wellcome__btn button-yo-animated #{'js-modal-btn' unless dreamer_signed_in?}"} do
+      %span= t('layout.fulfill_dream')
+    %span.wellcome__slogan= t('dreams.comes_true_html')
+
+  .main
+    .main_content
+      .content_wrap
+
+        .homepage-club-news
+          %h2.homepage-title= t("wellcome.club_news_title")
+          .slick-slider.js-homepage-slider
+            = render partial: 'shared/post', collection: @news, as: :post
+
+          = link_to t('wellcome.club_news_button'), account_dreamer_posts_path(@project_dreamer), class: 'button-show-all'
+
+        .homepage-balloon
+          %h2.homepage-title= t("wellcome.slogan_title")
+          %h4.homepage-text= t("wellcome.slogan_text_1_html")
+          %h4.homepage-text= t("wellcome.slogan_text_2_html")
+          .balloon
+
+        .homepage-fulfilled-dreams
+          %h2.homepage-title= t('wellcome.dreams_fulfilled_title')
+          %h4.homepage-text= t("wellcome.dreams_fulfilled_text_html")
+
+          .fulfilled-dreams-list.card_group.one-line
+            .slick-slider.js-homepage-slider
+              - dreams = Dream.came_true.where(restriction_level: 0).preload(:certificates, :dreamer, :last_likes, :last_comments).last(12)
+              - dreams.each do |dream|
+                .slick-slide
+                  = render partial: 'fulfilled_dreams/fulfilled_dream', locals: {dream: dream}
+
+          = link_to t('wellcome.dreams_fulfilled_button'), fulfilled_dreams_path, class: 'button-show-all'
+
+- content_for :mydreams_js do
+
+  :javascript
+    $(function(){
+      $('.js-homepage-slider').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        variableWidth: true
+      });
+    });

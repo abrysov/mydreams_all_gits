@@ -1,0 +1,99 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ :style => "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %h2 Новости
+  .feed-container
+    .content-items.edit
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .textarea-wrapper
+            %textarea
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel
+            .attach-button.filearea
+              %input{ type: "file"}
+          .attach-list
+            - (0..Random.rand(3)).each do |items|
+              .img{ style: "background-image: url(http://unsplash.it/800/600/?random=" + Random.rand(200).to_s + ")" }
+                .close
+      .button.accent.blue Добавить запись
+
+    .content-items
+      .row
+        .avatar-col
+          %a.avatar.size-m{ href: "#" }
+            %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+        .info-col
+          .username-row
+            %a.username{ href: "#" }
+              Duane Allison
+          .icon-text.time
+            .icon.size-8.time
+            .text 13:00
+        .action-buttons
+          %a.edit{ href: "#" } Редактировать
+          %a{ href: "#" } Скрыть публикацию
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros. Vestibulum condimentum lectus in convallis feugiat. Sed vulputate fringilla felis.
+      %line
+      .show-more Показать полностью…
+      .image-grid
+        .row
+          - (0..Random.rand(3)).each do |items|
+            .img{ style: "background-image: url(http://unsplash.it/800/600/?random=" + Random.rand(200).to_s + ")" }
+      .likes-block
+        .like-button.icon-text
+          .icon.like
+          .text
+            Нравится
+            %strong 12
+        .like-list
+          - (0..Random.rand(7)).each do |items|
+            %a.avatar.size-xs{ href: "#" }
+              %img{ src: "https://randomuser.me/api/portraits/men/" + Random.rand(50).to_s + ".jpg", alt: "" }
+      .load-more-comments
+        Показать все
+        %strong 228
+        комментариев
+      .comments-list
+        - (0..Random.rand(4)).each do |items|
+          .comment
+            .header
+              .user-card
+                .avatar.size-s
+                  %img{ alt: "avatar", src: "https://randomuser.me/api/portraits/women/" + Random.rand(30).to_s + ".jpg" }
+                .description
+                  %a{ href: "#" } User Name
+                  .icon-text
+                    .icon.size-8.time
+                    %span.text 12 Ноября
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id
+                %a.answer{ href: "#" } Ответить
+        .comment-textarea
+          .textarea-wrapper
+            %textarea{ placeholder: "Комментировать…", rows: 1 }
+            .attach-button.filearea
+              %input{ type: "file" }
+          .submit-button Отправить
+
+.col-right
+  .col-js
+    .top
+      .wrapper
+        .input.circle.icon-right
+          %input{ placeholder: "Поиск", type: "text" }
+          %span.icon.size-10.search-purple
+      %ul.vertical-menu
+        %li
+          %a.active{ href: "/markup/news" } Лента новостей
+        %li
+          %a{ href: "/markup/update"} Обновления
+        %li
+          %a{ href: "/markup/recommendations" } Рекомендации
+        %li
+          %a{ href: "/markup/comments" } Комментарии
+
+

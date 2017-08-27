@@ -1,0 +1,21 @@
+.card-modal.foggot-password
+  .card-modal__wrap
+    %h1.page-title= t('recovery.recovery')
+
+    .card-modal__body
+      = form_for resource, url: password_path(resource), html: { method: :post, class: 'recovery_form' } do |f|
+        .form_main.form
+
+          %label.input-field.js-input-field
+            .title Введите Ваш Email
+            = f.text_field :email, {placeholder: t('recovery.fill_email'), class: 'js-validation', data: {valid: 'email'}}
+
+          .form_main__wrap.js-success-message
+            %p.note= t('recovery.email_notification')
+            %label.form_btn.form_btn-violet.disabled.js-form-submit{for: 'recovery'}
+              %span= t('recovery.do_recovery')
+            = f.submit id: 'recovery'
+  :javascript
+    window.onload = function() {
+      $('.js-validation').formValidation();
+    }

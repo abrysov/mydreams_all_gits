@@ -1,0 +1,20 @@
+.blocked-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  text-align: center;
+
+  .content {
+    width: 21rem;
+  }
+
+  .center {
+    margin: auto;
+  }
+
+  .button {
+    width: 9rem;
+    margin: 0 auto 3rem;
+  }
+}

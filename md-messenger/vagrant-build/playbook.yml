@@ -1,0 +1,17 @@
+---
+- hosts: all
+  vars:
+    nodejs_version: v5.9.0
+    nodejs_distrname: "node-{{ nodejs_version }}-linux-x64"
+    nodejs_url: "https://nodejs.org/dist/{{ nodejs_version }}/{{ nodejs_distrname }}.tar.xz"
+    base_dir: "{{ ansible_user_dir }}"
+    project_dir: "{{ base_dir }}/messenger"
+    profile: staging
+    release_ver: 0.0.1
+    release_name: mydreams
+    target: "{{ project_dir }}/_build/{{ profile }}/rel/{{ release_name }}/{{ release_name }}-{{ release_ver }}.tar.gz"
+  remote_user: vagrant
+  tasks:
+    - include: install_erlang.yml
+    - include: install_nodejs.yml
+    - include: build_messenger.yml

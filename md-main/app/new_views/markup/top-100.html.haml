@@ -1,0 +1,10 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 ТОП-100
+  %div
+    .card-list
+      - (0..11).each do |dream|
+        = render partial: 'card/dream_top'
+    .preloader
+.col-righ

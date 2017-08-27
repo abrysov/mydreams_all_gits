@@ -1,0 +1,32 @@
+= render 'admin/management/shared/transactions_filter'
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t('admin.management.id')
+      %th
+        = t('admin.management.transactions.actions')
+      %th
+        = t('admin.management.transactions.dreamer')
+      %th
+        = t('admin.management.transactions.amount')
+      %th
+        = t('admin.management.transactions.operation')
+      %th
+        = t('admin.management.transactions.state')
+      %th
+        = t('admin.management.transactions.before')
+      %th
+        = t('admin.management.transactions.after')
+      %th
+        = t('admin.management.transactions.reason')
+      %th
+        = t('admin.management.transactions.updated_at')
+      %th
+        = t('admin.management.transactions.created_at')
+
+  %tbody
+    = render @transactions
+
+= paginate @transactions, theme: 'moderate'

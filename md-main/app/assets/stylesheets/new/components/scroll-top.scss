@@ -1,0 +1,20 @@
+.scroll-top {
+  position: fixed;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: #f5f8fa asset_url('new/up.svg') center no-repeat;
+  background-size: 60%;
+  border-radius: 0.188rem;
+  right: 0.8125rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  z-index: 1;
+  &:hover{
+    opacity: .8;
+  }
+}
+@media (max-width: 1210px) {
+  .scroll-top { display: none; }
+}

@@ -1,0 +1,244 @@
+header {
+  position: relative;
+  box-sizing: border-box;
+  height: $main-menu-height;
+  color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  background: $blue-magenta-gradient;
+
+  & > .content {
+    height: 100%;
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  nav.col-center {
+    position: relative;
+    display: flex;
+    align-items: initial;
+
+    .left,
+    .right {
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      height: $main-menu-height;
+      transition: opacity.3s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      font-size: .625rem;
+      line-height: $main-menu-height;
+
+      &::before {
+        position: absolute;
+        top: .6rem;
+        right: 0;
+        left: 0;
+        width: .3125rem;
+        height: .3125rem;
+        margin: auto;
+        content: '';
+        transition: opacity.5s ease;
+        opacity: 0;
+        border-radius: 100%;
+        background: white;
+      }
+
+      &:hover::before {
+        opacity: .5;
+      }
+
+      &:active,
+      &.active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition-standard;
+
+      &::before {
+        display: none;
+      }
+
+      img {
+        display: block;
+        width: 2rem;
+        margin: 0 1rem;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+    width: 100%;
+    height: 1.4375rem;
+    margin: 0 1.3125rem;
+
+    .search-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: .6875rem;
+      width: .5625rem;
+      height: .5625rem;
+      margin: auto;
+      pointer-events: none;
+      background-image: url(../img/search-white.svg);
+    }
+
+    input.search-input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 0 1.875rem;
+      transition: $transition-standard;
+      border: none;
+      border-radius: .75rem;
+      outline: none;
+      background-color: rgba(255, 255, 255, .12);
+      font: inherit;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, .2);
+      }
+
+      &:focus {
+        color: $gray-text-color;
+        background-color: white;
+        & ~ .search-icon {
+          background-image: asset_url('new/search.svg');
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .search {
+      margin-left: 3.75rem;
+    }
+  }
+
+  .photo-feed-toggler {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 1.1875rem;
+    width: 1.3125rem;
+    height: 1.3125rem;
+    margin: auto;
+    cursor: pointer;
+    transition: $transition-standard;
+    transform: rotate(180deg);
+    background: asset_url('new/arrow_feed.svg') no-repeat center;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  .col-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .lang-toggle-btn {
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-right: 2.5rem;
+    cursor: pointer;
+    background-size: contain;
+    &.lang-ru {
+      background-image: asset_url('new/flags/rus.svg');
+    }
+  }
+
+  .amount {
+    position: relative;
+    height: 100%;
+    margin-right: 1.1875rem;
+    padding: 0 1em;
+    text-decoration: none;
+    color: #fff;
+    font-size: .6875rem;
+
+    .icon {
+      width: 1.688rem;
+      height: 1.688rem;
+      transition: background.3s ease;
+      border-radius: 100%;
+      background-image: asset_url('new/amount.svg');
+      background-size: 115%;
+    }
+
+    .text {
+      margin-right: 1em;
+    }
+
+    &:hover,
+    &.active {
+      .icon {
+        background-color: rgba(#ffbd00, .4);
+      }
+    }
+
+    &.active {
+      background: rgba(#fff, .27);
+    }
+
+    &:active {
+      background: rgba(#000, .27);
+    }
+  }
+}
+
+
+// temp search icon in head
+.col-left > .search-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.7rem;
+  width: .6875rem;
+  height: .6875rem;
+  margin: auto;
+  cursor: pointer;
+  transition: $transition-standard;
+  background-image: asset_url('new/search-white.svg');
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+body.photo-feed-visible {
+  .photo-feed-toggler {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 1130px) {
+  .col-left > .search-icon {
+    left: 4rem;
+  }
+}

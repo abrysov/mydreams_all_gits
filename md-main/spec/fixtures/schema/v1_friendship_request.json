@@ -1,0 +1,33 @@
+{
+  "title": "Api:v1 FriendshipRequest",
+  "type": "object",
+  "required": [ "friendship_request", "meta" ],
+  "properties": {
+    "friendship_request": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "sender",
+        "receiver"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "sender": { "type": [ "hash", "array" ] },
+        "receiver": { "type": [ "hash", "array" ] }
+      }
+    },
+    "meta": {
+      "type": [ "hash" ],
+      "required": [
+        "status",
+        "code",
+        "message"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"message": { "type": "string" }
+      }
+  	}
+  }
+}

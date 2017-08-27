@@ -1,0 +1,81 @@
+.messages-modal {
+  .main,
+  .right {
+    &  > .header {
+      height: 2.8125rem;
+      line-height: 2.95rem;
+      border-bottom: 1px solid $border-gray-color;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid $border-gray-color;
+    border-top: 0;
+    border-bottom: 0;
+
+    & > .header {
+      padding: 0 1.750rem;
+      .dreamer-link {
+        margin-right: 1.5em;
+        font-weight: 700;
+      }
+      .status {
+        font-size: 0.688rem;
+        color: $light-purple-color;
+      }
+    }
+    .messages-list {
+      flex: 1;
+    }
+    .textarea-block {
+      padding: 1.125rem;
+      border-top: 1px solid $border-gray-color;
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    width: 17.938rem;
+    & > .header {
+      position: relative;
+      padding: 0 1rem;
+      font-size: 0.688rem;
+      color: $light-purple-color;
+      .dialog-count {
+        margin-left: 0.5em;
+        font-weight: 700;
+      }
+    }
+    .dialog-list {
+      flex: 1;
+    }
+    border-right: 1px solid $border-gray-color;
+  }
+  .dialog-info {
+    width: 5.5rem;
+    margin: 20% auto 0;
+    text-align: center;
+    color: $light-gray-text-color;
+    &:before {
+      content: '';
+      display: block;
+      height: 5rem;
+      width: inherit;
+      margin-bottom: 2rem;
+      opacity: 0.2;
+      background: asset_url('new/message.svg') no-repeat;
+      background-size: 160%;
+      background-position: center;
+    }
+  }
+}

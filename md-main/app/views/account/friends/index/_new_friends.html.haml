@@ -1,0 +1,11 @@
+- if @dreamer.flybook_nb_received_friends > 0
+  %h2.page_content-title
+    %b= @dreamer.flybook_nb_received_friends
+    = custom_pluralize(@dreamer.flybook_nb_received_friends, 'requests')
+
+  .card_group.friend_card_group.group.js-received-cards{class: "#{'show-friend' if @dreamer.flybook_nb_received_friends > 4}"}
+    - requests = fix_collection(@dreamer.friend_applicants.last(4), 4)
+    = render partial: 'friend', collection: requests, as: :friend, locals: { friend_request: true }
+
+    - if @dreamer.flybook_nb_received_friends > 4
+      = link_to t('actions.show_more'), show_received_friends_account_dreamer_friends_path, remote: true, class: 'button-show-all js-show-all'

@@ -1,0 +1,3 @@
+web: rails s -b 0.0.0.0
+frontend: RAILS_ENV=development make frontend_watch
+sidekiq: sidekiq -C config/sidekiq.yml

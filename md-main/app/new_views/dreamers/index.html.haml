@@ -1,0 +1,18 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{:style => "background-image: url(http://unsplash.it/578/211);"}
+    .title
+      %h2= t('layout.dreamers')
+  #dreamers-list
+    .preloader
+.col-right
+  .col-js#dreamers-filter
+
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamersListWidget.init("#dreamers-list", "#dreamers-filter", {
+        type: 'all_dreamers'
+      });
+    });

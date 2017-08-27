@@ -1,0 +1,75 @@
+/****************************************************************/
+/*                                                              */
+/*   XXX        XXX  XX  XX     XX  XX  XXX     XX   XXXXXXX    */
+/*   XXXX      XXXX  XX   XX   XX   XX  XXXX    XX  XX     XX   */
+/*   XX XX    XX XX  XX    XX XX    XX  XX XX   XX  XX          */
+/*   XX  XX  XX  XX  XX     XXX     XX  XX  XX  XX   XXXXXXX    */
+/*   XX   XXXX   XX  XX    XX XX    XX  XX   XX XX         XX   */
+/*   XX    XX    XX  XX   XX   XX   XX  XX    XXXX  XX     XX   */
+/*   XX          XX  XX  XX     XX  XX  XX     XXX   XXXXXXX    */
+/*                                                              */
+/****************************************************************/
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+@mixin transition($transition-property, $transition-time, $method, $delay) {
+  -webkit-transition: $transition-property $transition-time $method $delay;
+  -moz-transition: $transition-property $transition-time $method $delay;
+  -ms-transition: $transition-property $transition-time $method $delay;
+  -o-transition: $transition-property $transition-time $method $delay;
+  transition: $transition-property $transition-time $method $delay;
+}
+
+// generic transform
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// rotate
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+
+@mixin scale($scale) {
+   @include transform(scale($scale));
+}
+
+// translate
+
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+// skew
+
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+
+@mixin transform-origin ($origin) {
+    -moz-transform-origin: $origin;
+       -o-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+//webkit bugfix for border-radius
+
+@mixin webkit-border-radius-fix() {
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  //http://stackoverflow.com/questions/5736503/how-to-make-css3-rounded-corners-hide-overflow-in-chrome-opera/10296258#10296258
+}

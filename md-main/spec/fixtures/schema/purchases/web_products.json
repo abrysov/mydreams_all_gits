@@ -1,0 +1,33 @@
+{
+  "title": "Api:WEB Products Schema",
+  "type": "object",
+  "required": [ "products", "meta" ],
+  "properties": {
+    "products": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "name",
+        "cost",
+        "product_type"
+      ],
+      "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "cost": { "type": "decimal" },
+          "product_type": { "type": [ "string", "null" ] }
+      }
+    },
+    "meta": {
+      "type": [ "hash" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

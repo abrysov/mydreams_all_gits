@@ -1,0 +1,32 @@
+.col-center.content-body
+  .header.minimal
+    .title
+      %h2 Настройки аккаунта
+  %div.settings-page
+    .lang-select
+      .flag.rus
+      .title Русский
+    .form
+      %label.title
+        .name E-mail:
+        %input{ type: "text", value: "myemail@mail.ru" }
+      %label.title
+        .name Пароль:
+        %input{ type: "password", value: "Бородач" }
+      %label.title
+        .name Новый пароль:
+        %input{ type: "text", value: "2638ьоыв" }
+      %label.title
+        .name Подтвердите:
+        %input{ type: "text", value: "2638ьоыв" }
+    %a.delete-profile-btn{ href: "#" } Временно удалить профиль
+    %hr
+    %button.blue Сохранить
+.col-right
+  .col-js
+    .top
+      %ul.vertical-menu
+        %li
+          %a{ href: "/markup/settings" } Редактировать профиль
+        %li
+          %a.active{ href: "/markup/settings2" } Настройки аккаунт

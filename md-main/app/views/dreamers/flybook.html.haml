@@ -1,0 +1,9 @@
+.main.flybook
+  = render partial: 'application/flybook_header'
+
+  .main_content
+    .page-spinner.js-page-spinner
+      .page-spinner_wrap
+        .page-spinner__icon
+    #js-ajax-content
+      = render 'account/dreams/index'

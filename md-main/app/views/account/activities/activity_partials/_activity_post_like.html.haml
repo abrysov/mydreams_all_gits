@@ -1,0 +1,31 @@
+.activity-wrapper
+  .activity
+    = link_to [:account, activity.owner, :dreams], class: "activity-dreamer" do
+      .avatar.activity-block
+        - if activity.owner.is_vip?
+          .label_vip
+            %span= t('flybook.vip')
+
+        - if activity.owner.online?
+          .label_online
+            %span= t('flybook.online')
+
+        .avatar-image
+          = image_tag(avatar_or_default(activity.owner, :pre_medium))
+
+      .info
+        - # FIXME decorate owner somewhere else
+        .name= activity.owner.decorate.full_name
+        - if activity.owner.age > 0
+          .age= activity.owner.age
+        - if activity.owner.dream_city.present?
+          .location= activity.owner.dream_city
+
+    .activity-data
+      .date= pretty_date(activity.updated_at)
+      .description
+        %span= t("activities.#{activity.key}")
+        %span= activity.trackable.try(:title)
+
+    .activity-addition
+      .liked= activity.trackable.likes_count

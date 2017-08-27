@@ -1,0 +1,114 @@
+.dialog-list {
+  overflow-y: scroll;
+
+  .dialog {
+    position: relative;
+    display: flex;
+    padding: .8rem 0;
+    padding-right: .625rem;
+    cursor: pointer;
+
+    &.new {
+      background: #f5f8fa;
+    }
+
+    &.active {
+      background: #daf0ff;
+    }
+
+    &.new,
+    &.active {
+      .body::after {
+        display: none;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        content: '';
+        background: $border-gray-color;
+      }
+    }
+    .avatar-link {
+      position: relative;
+      padding: 0 .625rem;
+
+      .avatar {
+        margin-top: -.2rem;
+      }
+      &::before {
+        position: absolute;
+        display: none;
+        width: 5px;
+        height: 5px;
+        margin-top: -.2em;
+        margin-left: -.2rem;
+        content: '';
+        border-radius: 3px;
+        background-color: $blue-color;
+      }
+    }
+
+    .body {
+      position: relative;
+      flex: 1;
+
+      &::after {
+        position: absolute;
+        bottom: -.8rem;
+        display: block;
+        width: 100%;
+        height: 1px;
+        content: '';
+        background: $border-gray-color;
+      }
+
+      p {
+        overflow: hidden;
+        width: 17em;
+        margin: 0;
+        margin-top: .3em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 1.4em;
+      }
+    }
+    .header {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-right: 1em;
+        font-weight: 700;
+      }
+
+      .vip {
+        display: inline-block;
+        width: 1rem;
+        height: .5rem;
+        margin-right: 1em;
+        background-image: asset_url('new/crown.svg');
+        background-size: 200%;
+      }
+
+      .date {
+        margin-left: auto;
+        color: $light-gray-text-color;
+        font-size: .55rem;
+      }
+
+      .message-count {
+        margin-top: -.1rem;
+        margin-bottom: -.1rem;
+      }
+    }
+
+    &.online .avatar-link::before {
+      display: block;
+    }
+  }
+}

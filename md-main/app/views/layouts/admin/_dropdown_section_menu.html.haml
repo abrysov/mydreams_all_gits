@@ -1,0 +1,10 @@
+%ul.nav.navbar-nav.navbar-right
+  %li.dropdown
+    = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown', role: 'button', 'aria-haspopup' => 'true', 'aria-expanded' => false do
+      = I18n.t(:name, scope: [:admin, current_section])
+      %span.caret
+    %ul.dropdown-menu
+      - admin_menu.each do |menu|
+        %li{ class: "#{'active' if menu[:path].split('/').last == current_section}" }
+          = link_to menu[:name], menu[:path]
+  %li= link_to t('layouts.admin.to_main_page'), root_path

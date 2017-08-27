@@ -1,0 +1,56 @@
+{
+  "title": "Api:v1 Certificates",
+  "type": "object",
+  "required": [ "certificates", "meta" ],
+  "properties": {
+    "certificates": {
+      "type": "array",
+      "items": {
+        "type": "hash",
+        "required": [
+          "id",
+          "accepted",
+          "wish",
+          "launches",
+          "certificate_type",
+          "certificate_type_name",
+          "certifiable",
+          "gifted_by",
+          "created_at"
+        ],
+        "properties": {
+          "id": { "type": "integer" },
+          "accepted": { "type": "boolean" },
+          "wish": { "type": [ "string", "nil" ] },
+          "launches": { "type": "integer" },
+          "certificate_type": { "type": "string" },
+          "certificate_type_name": { "type": "string" },
+          "certifiable": { "type": [ "hash", "array" ] },
+          "gifted_by": { "type": [ "hash", "nil" ] },
+          "created_at": { "type": "string" }
+        }
+      }
+    },
+    "meta": {
+      "type": [ "hash" ],
+      "required": [
+        "status",
+        "code",
+        "total_count",
+        "pages_count",
+        "remaining_count",
+        "per",
+        "page"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" },
+    		"total_count": { "type": "integer" },
+    		"pages_count": { "type": "integer" },
+    		"remaining_count": { "type": "integer" },
+    		"per": { "type": "integer" },
+    		"page": { "type": "integer" }
+      }
+  	}
+  }
+}

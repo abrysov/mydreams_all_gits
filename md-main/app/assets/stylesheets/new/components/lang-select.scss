@@ -1,0 +1,20 @@
+.lang-select {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  color: $light-purple-color;
+  align-items: center;
+
+  .title {
+    margin-left: .5rem;
+  }
+
+  &::after {
+    display: block;
+    width: 1.75rem;
+    height: .5rem;
+    content: '';
+    pointer-events: none;
+    background: asset-url('new/arrow_selector.svg') center no-repeat;
+  }
+}

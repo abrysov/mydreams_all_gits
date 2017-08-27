@@ -1,0 +1,34 @@
+.content_wrap
+  - if params[:posts_search].blank? && @posts.first_page?
+    = render partial: 'account/posts/index/suggested_posts'
+
+  .post_owner.js-search-content
+    = hidden_field_tag :filter_url, request.url
+
+    - if @posts.total_count > 0
+      %h2.page_content-title
+        %b= @posts.total_count
+        = custom_pluralize(@posts.total_count, 'posts')
+
+    - else
+      %h2.page_content-title= t('posts.no_posts')
+
+    - if @posts.total_count > 0 || params[:posts_search].present?
+      .posts-filter
+        = form_tag '#', method: :get, class: 'fast_search js-fast-search' do
+          = render 'application/fast_search', param_name: :posts_search
+
+    .card_group.group.js-card-group
+      - if current_dreamer?(@dreamer) && @posts.first_page?
+        = link_to new_account_post_path, data: {push: 'true', target: '#js-ajax-content'}, class: 'card post add_card card-no-flip card-hover js-flip js-flybook-link' do
+          .card__wrap.flip
+            .card_back
+              .card_back__wrap
+                .logo_color
+            .card_front
+              .add_card__wrap
+                .add_card__btn__title= t('posts.new.create_post_title')
+
+      = render partial: 'account/posts/index/posts'
+
+    = paginate @posts, theme: 'more'

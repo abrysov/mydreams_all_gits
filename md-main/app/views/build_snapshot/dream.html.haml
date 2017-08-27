@@ -1,0 +1,29 @@
+- certificates_count = dream.certificates.count
+.card.fulfilled-dream.card-hover.js-flip
+  .card__wrap
+    .card_back
+      .card_back__wrap
+        .logo_color
+    .card_front
+      %a{ href: '/' }
+        .card_dream__header.group
+          .card_dream__header__status
+            %span= dream.summary_certificate_type_name || 'My Dreams'
+        .card_dream__img
+          - if dream.photo.present?
+            = image_tag dream.photo.url(:medium)
+        .card_dream__name
+          %span= strig_tags(simple_format(dream.title)).truncate(30)
+        .card_dream__description
+          %p= strig_tags(simple_format(dream.description)).truncate(50)
+      .card_dream__footer
+        .additional_data.group
+          - like_action = current_dreamer.liked?(dream) ? :unlike : :like
+          .additional_data__likes.js-like-btn{ class: "#{'js-tooltipster' if dream.likes_count != 0} #{'empty' unless current_dreamer.liked?(dream)}", data: {'t-target': 'liked_list', 't-position': 'bottom', 't-width': '300', 't-interactive': 'true', target: 'dream', id: dream.id, 'ctrl-type': like_action, count: dream.likes_count} }
+            %span.js-like-btn-count= number_to_human(dream.likes_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+          .additional_data__starts{ class: "#{(certificates_count == 0) ? 'empty' : 'js-tooltipster'}", data: {'t-position': 'bottom', 't-width': '300', 't-interactive': 'true'} }
+            %span.js-starts-btn-count= number_to_human(dream.launches_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+          .additional_data__comments{ class: "#{(dream.comments_count == 0) ? 'empty' : 'js-tooltipster'}", data: {'t-target': 'comments', 't-position': 'bottom', 't-width': '300', 't-interactive': 'true'} }
+            %span.js-comments-btn-count= number_to_human(dream.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })

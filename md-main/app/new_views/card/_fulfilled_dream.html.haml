@@ -1,0 +1,43 @@
+.group
+  .card
+    .front
+      %a.label.green{ href: "#" } MYDREAMS
+      %a.picture{ href: "#" }
+        .picture-wrap
+          %img{ alt: "drean", src: "http://unsplash.it/200/200?random=" + Random.rand(200).to_s }
+        .menu
+          .opt-list
+            %li.icon-text
+              .icon.circle.add
+                %span.text Добавить себе
+            %li.icon-text
+              .icon.circle.share-friends
+                %span.text Предложить другу
+            %li.icon-text
+              .icon.circle.shere
+                %span.text Поделиться
+            %li.icon-text
+              .icon.circle.gift
+                %span.text Подарить марку
+            %li.icon-text
+              .icon.circle.in-progress
+                %span.text Исполнить мечту
+
+        .icon.circle.options
+      %a.description{ href: "#" }
+        %h3 Мечтаю свою большую мечту
+        %h5 Мечтаю об этом, с таким длинным описанием...
+      .reactions
+        .icon-text.like
+          .icon.reaction
+          %span.text
+            = Random.rand(200)
+        .icon-text.in-progress
+          .icon.reaction
+          %span.text
+            = Random.rand(200)
+        .icon-text.comments
+          .icon.reaction
+          %span.text
+            = Random.rand(200)
+      .back

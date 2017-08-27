@@ -1,0 +1,8 @@
+- if @dreams.count == 0
+  %h2.page_content-title= t('dreams.no_top_dreams')
+
+= hidden_field_tag :filter_url, request.url
+
+= render partial: 'account/dreams/dream', collection: fix_collection(@dreams, @dreams.limit_value), as: :dream
+
+= paginate @dreams, theme: 'more'

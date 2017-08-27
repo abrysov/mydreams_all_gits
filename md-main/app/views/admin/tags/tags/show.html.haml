@@ -1,0 +1,21 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th.name= t('.name')
+      %th= t('.scheme')
+      %th= t('.active')
+  %tbody
+    = render @tag, as: :tag
+
+.container
+  .row
+    .col-md-4
+      %h4 Add child
+      = render 'form', tag: Tag.new(parent: @tag)
+      = render 'childs', tag: @tag
+    .col-md-4
+      %h4 Add sibling
+      = render 'form', tag: Tag.new(parent: @tag.parent)
+      = render 'siblings', tag: @tag
+

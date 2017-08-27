@@ -1,0 +1,145 @@
+.photoalbum-popup {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgba(#293340, .9);
+
+  .left,
+  .right {
+    width: 6.25rem;
+    min-width: 6.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(#fff, .08);
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 3rem 0;
+  }
+
+  .view-box {
+    flex: 1;
+  }
+
+  .gallery {
+    position: relative;
+    height: 8.375rem;
+    margin-top: 4rem;
+
+    .btn {
+      position: absolute;
+      width: 6.25rem;
+      height: inherit;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.56375rem 3.1275rem;
+    }
+
+    .icon-left {
+      left: -6.25rem;
+      background-image: asset-url('new/gallery-arrow-left.svg');
+    }
+
+    .icon-right {
+      right: -6.25rem;
+      background-image: asset-url('new/gallery-arrow-right.svg');
+    }
+  }
+
+  .mask {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: inherit;
+    margin-top: -3rem;
+    padding-top: 3rem;
+  }
+
+  .tape {
+    left: 50%;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0;
+    transition: margin-left ease 0.5s;
+  }
+
+  .photo {
+    position: relative;
+    display: inline-block;
+    width: 8.375rem;
+    height: 8.375rem;
+    margin: 0 1px;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+
+    &.selected::before {
+      position: absolute;
+      top: -1.2rem;
+      right: 0;
+      left: 0;
+      display: block;
+      width: .5rem;
+      height: .5rem;
+      margin: auto;
+      content: '';
+      border: 1px solid #979797;
+      border-radius: 100%;
+      background: #fff;
+    }
+  }
+
+  .view-box {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: -2rem;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background: asset-url('new/gallery-close.svg') no-repeat center 100%;
+  }
+
+  .delete {
+    position: absolute;
+    right: 1rem;
+    bottom: -2rem;
+    height: 1rem;
+    line-height: 1rem;
+  }
+
+  .close,
+  .delete {
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

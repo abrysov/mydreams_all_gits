@@ -1,0 +1,24 @@
+%tr
+  %td
+    = dream.id
+  %td
+    = link_to dream.photo.url(:large) do
+      = image_tag dream.photo.url(:medium)
+  %td
+    = link_to dream.title, account_dream_path(dream)
+  %td
+    = dream.description
+  %td
+    = dreamer_link(dream.dreamer)
+  %td
+    = dream.likes_count
+  %td
+    = dream.launches_count
+  %td
+    = dream.comments_count
+  %td
+    = dream.complains.count
+  %td
+    = dream.dreamer.abuses.count
+  %td.actions
+    = render 'moderate/shared/actions', object: dream

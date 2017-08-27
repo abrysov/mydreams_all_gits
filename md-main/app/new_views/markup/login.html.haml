@@ -1,0 +1,28 @@
+.block
+  .header
+    .title.content
+      %h2 Вход на сайт
+.block.autorisation-page.login-page
+  .content
+    %h4 Введите данные учетной записи
+    .form
+      %label
+        %input{ type: 'text', placeholder: 'E-mail' }
+      %label
+        %input{ type: 'text', placeholder: 'Пароль' }
+    .actions
+      %label.conditions
+        .checkbox.green
+          %input{ name: "sex", type: "checkbox" }
+          %span
+        %span Запомнить меня
+      %a.accent{ href: "#" } Забыли пароль?
+    %button.accent.blue Поехали
+    %hr
+    %h5 Войти с помощью социальных сетей
+    .social-buttons.size-xl
+      %a.button.purple.vk{ href: "#" }
+      %a.button.purple.fb{ href: "#" }
+      %a.button.purple.in{ href: "#" }
+      %a.button.purple.tw{ href: "#" }
+      %a.button.purple.ok{ href: "#" }

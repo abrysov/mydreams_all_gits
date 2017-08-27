@@ -1,0 +1,15 @@
+{
+  "provider": "instagram",
+  "uid": "12345678",
+  "info":  {
+    "nickname": "ivanpetrov",
+    "name": "Ivan Petrov",
+    "image": "https://example.com/image.jpg",
+    "bio": "",
+    "website": ""
+  },
+  "credentials": {
+    "token": "123",
+    "expires": false
+  }
+}

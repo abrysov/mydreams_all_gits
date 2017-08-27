@@ -1,0 +1,20 @@
+- certificates.each do |c|
+  .frame-certificate
+    - if c.gifted_by
+      .gift-data
+        .giver
+          = link_to account_dreamer_dreams_path(c.gifted_by), class: 'avatar sender-avatar' do
+            .avatar-image
+              = image_tag(avatar_or_default(c.gifted_by, :small))
+
+          .giver-info
+            .name= c.gifted_by.first_name
+
+            - if c.gifted_by.age.present? && c.gifted_by.age > 0
+              .age= c.gifted_by.age
+
+            - if c.gifted_by.dream_city.present?
+              .location= c.gifted_by.dream_city
+
+    .certificate-image.medium-certificate{ data: {'dream-type' => "#{c.certificate_type.try(:name)}"} }
+    .certificate-value.medium-value= c.certificate_type.try(:value)

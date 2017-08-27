@@ -1,0 +1,60 @@
+/* font-family: "LatoRegular"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoRegular/LatoRegular.eot");
+  src: asset_url("LatoRegular/LatoRegular.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoRegular/LatoRegular.woff") format("woff"),
+  asset_url("LatoRegular/LatoRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+/* font-family: "LatoBold"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoBold/LatoBold.eot");
+  src: asset_url("LatoBold/LatoBold.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoBold/LatoBold.woff") format("woff"),
+  asset_url("LatoBold/LatoBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+/* font-family: "LatoItalic"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoItalic/LatoItalic.eot");
+  src: asset_url("LatoItalic/LatoItalic.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoItalic/LatoItalic.woff") format("woff"),
+  asset_url("LatoItalic/LatoItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+/* font-family: "LatoLight"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoLight/LatoLight.eot");
+  src: asset_url("LatoLight/LatoLight.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoLight/LatoLight.woff") format("woff"),
+  asset_url("LatoLight/LatoLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+/* font-family: "LatoBoldItalic"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoBoldItalic/LatoBoldItalic.eot");
+  src: asset_url("LatoBoldItalic/LatoBoldItalic.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoBoldItalic/LatoBoldItalic.woff") format("woff"),
+  asset_url("LatoBoldItalic/LatoBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+/* font-family: "LatoLightItalic"; */
+@font-face {
+  font-family: "Lato";
+  src: asset_url("LatoLightItalic/LatoLightItalic.eot");
+  src: asset_url("LatoLightItalic/LatoLightItalic.eot?#iefix")format("embedded-opentype"),
+  asset_url("LatoLightItalic/LatoLightItalic.woff") format("woff"),
+  asset_url("LatoLightItalic/LatoLightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200;
+}

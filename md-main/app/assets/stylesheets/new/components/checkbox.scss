@@ -1,0 +1,52 @@
+.checkbox {
+  display: inline-block;
+  position: relative;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin: 0.125rem 0;
+  overflow: hidden;
+
+  input {
+    appearance: none;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    transform: scale(2);
+    opacity: 0;
+    z-index: 1;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    box-sizing: border-box;
+    border: 1px solid $border-gray-color;
+    border-radius: 0.125rem;
+  }
+  span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    margin-right: -1px;
+    margin-top: -1px;
+    background-size: 100%;
+  }
+  input:hover + span::after {
+    background-image: asset_url('new/check_gray.svg');
+  }
+  input:checked + span::after {
+    background-image: asset_url('new/check.svg');
+  }
+  &.green {
+    input:checked + span::after {
+      background-image: asset_url('new/check_green.svg');
+    }
+  }
+}

@@ -1,0 +1,33 @@
+:ruby
+  purchase = transaction.reason.purchase
+  dreamer = purchase.dreamer
+  destination_dreamer = purchase.destination_dreamer
+  gift_for_me = transaction.operation == :refill
+  gift_from_me = transaction.operation == :buy
+
+%td
+  = render 'datetime', transaction: transaction
+  - if gift_for_me
+    .icon.gift.pink
+%td{ class: (gift_for_me ? 'present-coin' : 'give-coin') }
+  = t('payments.operation.coin_gift') if gift_from_me
+  .action.row
+    - if gift_from_me
+      .coins.arrow
+        .icon.money.size-40
+      = link_to account_dreamer_path(destination_dreamer), class: 'user' do
+        .wrapper
+          .avatar.size-m
+            = image_tag destination_dreamer.avatar.url(:small)
+        = destination_dreamer.first_name
+
+    - if gift_for_me
+      .title= t('payments.operation.coin_gift_to_you')
+      = link_to account_dreamer_path(dreamer), class: 'user' do
+        .wrapper.arrow
+          .avatar.size-m
+            = image_tag dreamer.avatar.url(:small)
+        = dreamer.first_name
+      .coins
+        .icon.money.size-40
+= render 'amount_and_balance', transaction: transaction

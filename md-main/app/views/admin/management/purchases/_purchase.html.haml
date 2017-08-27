@@ -1,0 +1,22 @@
+%tr
+  %td
+    = purchase.id
+  %td
+    = link_to t('admin.management.actions.show'), admin_management_purchase_path(purchase),
+      class: 'btn btn-info block', role: 'button'
+  %td
+    = link_to purchase.product.name, admin_management_product_path(purchase.product)
+  %td
+    = purchase.product.product_type
+  %td
+    = purchase.amount
+  %td
+    = purchase.state
+  %td
+    = dreamer_link purchase.dreamer
+  %td
+    = destination_link purchase.destination
+  %td
+    = dreamer_link purchase.destination_dreamer
+  %td
+    = purchase.comment

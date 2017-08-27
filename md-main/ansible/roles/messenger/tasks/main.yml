@@ -1,0 +1,9 @@
+---
+- name: Install erlang
+  include: install_erlang.yml
+
+- name: Setup project dirs
+  include: directories.yml
+
+- name: Setup runit scripts
+  include: runit.yml

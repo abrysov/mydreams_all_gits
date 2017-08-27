@@ -1,0 +1,5 @@
+.main.form_action
+  .content_wrap
+    .page-title= t('dreams.new.create_fulfill_dream_title')
+    -# = render 'application/form_dream_create', fulfill: true, locals: {url: fulfill_account_fulfill_dreams_path}
+    = render 'account/dreams/form', fulfill: true

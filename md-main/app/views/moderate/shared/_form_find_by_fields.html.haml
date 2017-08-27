@@ -1,0 +1,6 @@
+- path = "search_moderate_#{controller_name.classify.downcase}s_path"
+= form_tag(send(path), method: :get, class: 'form-find-by-fields form-inline') do
+  .form-gorup
+    = text_field_tag :search, params[:search], placeholder: t('.placeholder'),
+                                            size: 35, class: 'form-control'
+    %button.btn.btn-primary{ type: 'submit' }= t('.find')

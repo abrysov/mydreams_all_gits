@@ -1,0 +1,15 @@
+- if current_dreamer?(@dreamer) && @dreamer.flybook_nb_suggested_dreams > 0
+  .dream_offer.group.js-suggested-dreams
+    %h2.page_content-title
+      %b= @dreamer.flybook_nb_suggested_dreams
+      = "#{custom_pluralize(@dreamer.flybook_nb_suggested_dreams, 'dreams')} #{custom_pluralize(@dreamer.flybook_nb_suggested_dreams, 'proposed')}"
+    .card_group.group.js-suggested-dreams-group.js-received-cards
+      - fix_collection(@dreamer.flybook_suggested_dreams.first(4), 4).each do |suggest|
+        - if suggest.nil?
+          .suggested-dream-group
+            .card.fake-card
+        - else
+          = render partial: 'account/dreams/suggested_dream', locals: {dream: suggest.dream, suggest: suggest}
+
+      - if @dreamer.flybook_nb_suggested_dreams > 4
+        = link_to t('actions.show_more'), show_suggested_dreams_account_dreamer_dreams_path, {remote: true, class: 'button-show-all js-show-all'}

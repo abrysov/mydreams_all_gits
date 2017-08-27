@@ -1,0 +1,90 @@
+{
+    "title": "Api:v1 Dreams Schema",
+    "type": "object",
+    "required": [ "dreams", "meta" ],
+    "properties": {
+        "dreams": {
+            "type": "array",
+            "items": {
+                "type": "hash",
+                "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "photo",
+                    "certificate_type",
+                    "fulfilled",
+                    "liked_by_me",
+                    "likes_count",
+                    "comments_count",
+                    "launches_count",
+                    "dreamer",
+                    "restriction_level",
+                    "created_at"
+                ],
+                "properties": {
+                    "id": { "type": "integer" },
+                    "title": { "type": "string" },
+                    "description":  { "type": "string" },
+                    "photo": { "type": [ "hash", "array" ] },
+                    "certificate_type": { "type": "string" },
+                    "fulfilled": { "type": "boolean" },
+                    "liked_by_me": { "type": "boolean" },
+                    "likes_count": { "type": "integer" },
+                    "comments_count": { "type": "integer" },
+                    "launches_count": { "type": "integer" },
+                    "dreamer": {
+                        "type": [ "hash", "array" ],
+                        "required": [
+                            "id",
+                            "full_name",
+                            "gender",
+                            "birthday",
+                            "age",
+                            "vip",
+                            "celebrity",
+                            "avatar",
+                            "url",
+                            "is_online"
+                        ],
+                        "properties": {
+                            "id": { "type": "integer" },
+                            "full_name": { "type": "string" },
+                            "gender": { "type": "string" },
+                            "birthday": { "type": "string" },
+                            "age": { "type": "integer" },
+                            "vip": { "type": "boolean" },
+                            "celebrity": { "type": "boolean" },
+                            "avatar": { "type": [ "hash", "array" ] },
+                            "url": { "type": "string" },
+                            "is_online": { "type": "boolean" }
+                        }
+                    },
+                    "restriction_level": { "type": "string" },
+                    "created_at": { "type": "string", "format": "date-time" }
+                }
+            }
+        },
+        "meta": {
+            "type": [ "hash", "array" ],
+            "required": [
+                "status",
+                "code",
+                "page",
+                "per",
+                "total_count",
+                "pages_count",
+                "remaining_count"
+            ],
+            "properties": {
+                "status": { "type": "string" },
+                "code": { "type": "integer" },
+                "per": { "type": "integer" },
+                "page": { "type": "integer" },
+                "total_count": { "type": "integer" },
+                "pages_count": { "type": "integer" },
+                "remaining_count": {"type": "integer"}
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "",
+  "private": true,
+  "engines": {
+    "node": "5"
+  },
+  "dependencies": {
+    "classnames": "*",
+    "core-js": "*",
+    "css-loader": "^0.23.1",
+    "debug": "*",
+    "immutable": "^3.8.0",
+    "keymirror": "^0.1.1",
+    "lodash": "*",
+    "moment": "*",
+    "react": "v15.0.1",
+    "react-dom": "v15.0.1",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.2.4",
+    "react-router-redux": "^4.0.2",
+    "react-select": "^1.0.0-beta12",
+    "redux": "^3.4.0",
+    "redux-actions": "^0.9.1",
+    "redux-logger": "^2.6.1",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.0.1",
+    "style-loader": "^0.13.1",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "*",
+    "eslint-loader": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-plugin-react": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-loader": "*",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "webpack": "*"
+  }
+}

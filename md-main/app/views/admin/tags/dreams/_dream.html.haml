@@ -1,0 +1,14 @@
+%tr
+  %td
+    = dream.id
+  %td
+    = link_to dream.photo.url(:large) do
+      = image_tag dream.photo.url(:medium)
+  %td
+    = link_to dream.title, account_dream_path(dream)
+  %td
+    = dream.description
+  %td
+    = dream.hidden_tags.map(&:name)
+  %td.actions
+    = render 'actions', dream: dream

@@ -1,0 +1,49 @@
+.upload
+  #filelist.filelist
+  %a#pickfiles{:href => "#"} [Select files]
+  %a#uploadfiles{:href => "#"} [Upload files]
+:javascript
+  $(function(){
+    var uploader = new plupload.Uploader({
+      runtimes : "html5",
+      browse_button : 'pickfiles',
+      max_file_size : '0.1mb',
+      url : "/photos/upload",
+      multipart: true,
+      urlstream_upload: true,
+      multipart_params: {
+        '#{request_forgery_protection_token}': '#{form_authenticity_token}',
+        '#{Rails.application.config.session_options[:key]}': '#{request.session_options[:id]}'
+      }
+    });
+
+    uploader.bind('FilesAdded', function(up, files) {
+      $.each(files, function(i, file) {
+        $('#filelist').append(
+          '<div id="' + file.id + '">' +
+          'File: ' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b>' +
+          '</div>'
+          );
+        });
+      });
+
+    uploader.bind('UploadProgress', function(up, file) {
+      $('#' + file.id + " b").html(file.percent + "%");
+    });
+
+    uploader.bind('FileUploaded', function(up, file) {
+      if(file.name.match(/^\w*-(([a-zA-Z]|)*(_|$))*/)){
+      }
+      else{
+        $('#' + file.id + " b").html("<span style='color:red;'>Wrong filename</span>");
+      }
+      $('#' + file.id + " b").html("OK");
+    });
+
+    $('#uploadfiles').click(function(e) {
+      uploader.start();
+      e.preventDefault();
+    });
+
+    uploader.init();
+  });

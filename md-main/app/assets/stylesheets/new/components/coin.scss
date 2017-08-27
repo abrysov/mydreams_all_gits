@@ -1,0 +1,25 @@
+.coin {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 6px;
+  cursor: pointer;
+  text-align: center;
+  color: $light-gray-text-color;
+  background-image: asset-url('new/coin.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  line-height: 2.75rem;
+
+  &.disabled {
+    opacity: .4;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.coin-list {
+  display: flex;
+}

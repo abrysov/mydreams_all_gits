@@ -1,0 +1,38 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Пополнить баланс
+.col-right
+
+.popup-container
+  .popup.gift
+    .close
+    %h3.header Подарки
+    #tabs
+      .tabs
+        .tab Подарить VIP статус
+        .tab.active Подарить монеты
+      .tab-body.visible
+        %h4
+          На Вашем счете
+          %b 130
+          монет
+        .gift-to
+
+          .gift-wrapper
+            .gift.coins
+            .title Введите количество:
+            .coin-input
+              %input{ type: "text", value: "10" }
+              .coins Монет
+          .arrow
+          %a.user{ href: "#" }
+            .avatar.size-l
+              %img{ src: "https://randomuser.me/api/portraits/men/27.jpg" }
+            .username
+              Adam Daniel
+            .info.icon-text
+              .icon.size-8.female
+              25, Россия, Москва
+        %textarea.normal{ placeholder: "Введите пожелание…", rows: "4" }
+        %button.blue.accent Поделиться

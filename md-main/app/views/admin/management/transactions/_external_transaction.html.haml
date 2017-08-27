@@ -1,0 +1,60 @@
+%h4
+  = t('admin.management.transactions.external')
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t('admin.management.id')
+      %th
+        = t('admin.management.transactions.gateway_id')
+      %th
+        = t('admin.management.transactions.amount')
+      %th
+        = t('admin.management.transactions.operation')
+      %th
+        = t('admin.management.transactions.state')
+      %th
+        = t('admin.management.transactions.external_transaction')
+      %th
+        = t('admin.management.transactions.updated_at')
+      %th
+        = t('admin.management.transactions.created_at')
+  %tbody
+    %tr
+      %td
+        = object.id
+      %td
+        = object.gateway_id
+      %td
+        = object.amount
+      %td
+        = object.operation
+      %td
+        = object.state
+      %td
+        = object.external_transaction_id
+      %td
+        = object.updated_at
+      %td
+        = object.created_at
+
+= t('admin.management.transactions.gateway_response')
+
+%pre
+  = object.response || t('admin.management.transactions.gateway_null_response')
+
+TODO: inc\out??? уточнить типы ответов платежной системы и исправить
+
+%div
+  Out money
+  = object.out_money
+  %br
+  Out currency
+  = object.out_currency
+  %br
+  Inc money
+  = object.inc_money
+  %br
+  inc currency
+  = object.inc_currency

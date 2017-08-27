@@ -1,0 +1,53 @@
+.main
+  .main_container{ style: "padding: 50px 0 0 0" }
+    - set_meta_tags og: { title: @dream.title, descroption: @dream.description, image: image_url(@dream.photo.medium) }
+    .dream.js-single-page{ data: {'page-id' => @dream.id, type: 'dream'} }
+      .content_wrap
+        .containers.js-containers
+          .container-show.active.js-container-show{ data: { container: 'show' } }
+            .dream-header
+              .creation-date= pretty_date(@dream.created_at)
+              .dream-title
+                %span.js-edit-node{ data: { node: 'title' } }= @dream.title
+
+            - dream_certificate = 'my_dreams'
+
+            .dream-status{ 'data-dream-type' => dream_certificate }
+              = dream_certificate.humanize.titleize
+
+            .dream-photo.js-edit-node{ data: { node: 'photo' } }
+              = image_tag @dream.photo.url(:large)
+
+            .dream-description
+              %p.js-edit-node{ data: { node: 'description' } }= @dream.description.to_s.html_safe
+
+            .dream-data
+              .left-cell
+                = render 'shared/like_button', object: @dream
+              .center-cell
+
+              .right-cell
+                .icon-comments.js-comment-counter= number_to_human(@dream.comments_count, format: '%n%u', strip_insignificant_zeros: true, units: { thousand: 'K' })
+
+        .dream-controls.js-controls
+          - if dreamer_signed_in?
+            = link_to t('actions.suggest'), modal_suggest_dream_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id, dreamer_id: current_dreamer.id), { remote: true, class: "#{'disabled' if current_dreamer.friends.count > 0} jmod-btn control suggest"  , data: {'modal-type' => 'suggest_dream'}}
+          - else
+            = link_to t('actions.suggest'), modal_authorization_path, { remote: true, class: 'control suggest jmod-btn', data: { 'modal-type' => 'authorization' } }
+
+          = link_to t('dreams.share'), modal_share_path(entity_type: @dream.class.name.underscore, entity_id: @dream.id), {remote: true, class: 'control share jmod-btn',data: {'modal-type' => 'share', 'link' => dream_path(@dream)}}
+
+          %br
+            %br
+
+            = link_to t('dreams.borrow'), modal_take_dream_path(entity_type: @dream.class.to_s.underscore, entity_id: @dream.id), {remote: true, class: 'jmod-btn control add', data: {'modal-type' => 'take_dream'}}
+
+            .control.soon Скоро :)
+
+
+        .main_content
+          = render partial: 'comments/index', locals: { object: @dream }
+
+- content_for :mydreams_js do
+  :javascript
+    $('.js-imageLoader:visible').imageLoader();

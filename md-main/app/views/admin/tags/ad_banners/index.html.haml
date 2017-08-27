@@ -1,0 +1,11 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.image')
+      %th= t('.link')
+      %th= t('.tags')
+      %th= t('.active')
+  %tbody
+    = render @ad_banners
+    = paginate @ad_banners, theme: 'moderate'

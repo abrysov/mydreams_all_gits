@@ -1,0 +1,10 @@
+%table.table
+  %thead
+    %tr
+      %th= t('.type')
+      %th= t('.complainer')
+      %th= t('.suspected')
+      %th= t('.state')
+  %tbody
+    = render @complains
+    = paginate @complains, theme: 'moderate'

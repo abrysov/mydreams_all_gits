@@ -1,0 +1,62 @@
+- button_type = @dreamer.is_vip? ? 'button-w-bordered' : 'button-gray'
+
+- if dreamer_signed_in? && !current_dreamer?(@dreamer)
+  - is_friend = current_dreamer.friends.include?(@dreamer)
+
+  -# ПОДПИСКА
+  .subscribers.strange
+    = subscription_button(current_dreamer, @dreamer)
+
+    %span.count= @dreamer.followers_count
+    %span.label.small= t('flybook.subscribers')
+
+  -# ДРУЖБА
+  - unless @dreamer.is_project_dreamer?
+    .friends.strange
+      = friend_button(current_dreamer, @dreamer)
+
+      %span.count= @dreamer.friends.count
+      %span.label.small= t('flybook.has_friends')
+
+  -# ШАРИНГ
+  .viewed.strange
+    = link_to [:share_flybook, @dreamer], class: "button #{button_type}" do
+      %span= t('flybook.share_flybook')
+    %span.count= @dreamer.visits_count
+    %span.label.small= t('flybook.viewed')
+
+- else
+  - if dreamer_signed_in?
+    .subscribers
+      %span.label= t('flybook.subscribers')
+      %span.count= @dreamer.followers_count
+
+    - unless @dreamer.is_project_dreamer?
+      .friends
+        %span.label= t('flybook.friends')
+        %span.count= @dreamer.friends.count
+
+    .viewed
+      %span.label= t('flybook.viewed')
+      %span.count= @dreamer.visits_count
+
+  - else
+    .subscribers.strange
+      = link_to modal_authorization_path, {remote: true, class: "jmod-btn button #{button_type}", data: {'modal-type' => 'authorization'}} do
+        %span= t('flybook.subscribe')
+      %span.count= @dreamer.followees_count
+      %span.label.small= t('flybook.subscribers')
+
+    - unless @dreamer.is_project_dreamer?
+      .friends.strange
+        = link_to modal_authorization_path, {remote: true, class: "jmod-btn button #{button_type}", data: {'modal-type' => 'authorization'}} do
+          %span= t('flybook.add_to_friends')
+        %span.count= @dreamer.friends.count
+        %span.label.small= t('flybook.friends')
+
+    .viewed.strange
+      = link_to modal_authorization_path, {remote: true, class: "jmod-btn button #{button_type}", data: {'modal-type' => 'authorization'}} do
+        %span= t('flybook.share_flybook')
+      %span.count= @dreamer.visits_count
+      %span.label.small= t('flybook.viewed')
+

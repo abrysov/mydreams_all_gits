@@ -1,0 +1,12 @@
+= form_for Abuse.new, url: moderate_abuses_path, remote: true, html: {class: "nifty_form"} do |f|
+  .modal-header
+    %button.close{ type: "button", aria_label: "Close", data: {dismiss:"modal"}}
+      %span{ aria_hidden:"true" } &times;
+    %h4.modal-title= t('.notify') + " (#{dreamer_name_of_object(abusable)})"
+  .modal-body
+    = f.text_area :text, size: "60x12"
+    = f.hidden_field :abusable_id,   value: abusable.id
+    = f.hidden_field :abusable_type, value: abusable.model_name.to_s
+  .modal-footer
+    %button.btn.btn-default{ type: "button", data: { dismiss: "modal" } } Close
+    = f.submit t('.notify'), class: 'btn btn-warning'

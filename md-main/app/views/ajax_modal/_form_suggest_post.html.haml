@@ -1,0 +1,13 @@
+- url = url_for(search_account_dreamer_friends_path(dreamer))
+
+.card-modal.card-modal-suggest.frame.suggest-post.js-modal{data: {'modal-type' => 'suggest_post'}}
+
+  = form_for suggested_post, url: suggest_multiple_account_post_path(post), remote: true, method: :post do |f|
+    .title= t('posts.popup.suggest_title')
+    
+    .suggest-content.js-suggest-content
+      = select_tag :receiver_id, nil, {data: {url: url, placeholder: t('dreams.popup.suggest_title')}, class: 'js-select2'}
+
+    .control.js-form-control
+      = f.submit t('dreams.share'), disabled: true, class: 'button-skyblue disabled js-form-submit'
+      .preloader.js-preloader

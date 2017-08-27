@@ -1,0 +1,399 @@
+//defaults
+.avatar{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  .avatar-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #F5F5F5;   
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  .label_vip{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #fdd221;  
+    
+    span {
+      position: absolute;
+      color: $b;
+      font-weight: 300;
+    }      
+  }
+
+  .label_online {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #26e2f9;
+
+    span {
+      position: absolute;
+      color: $w;
+      font-weight: 300;
+    }
+  }  
+}
+
+
+//avatar comment
+.avatar.comment-block{
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+  .avatar-image {
+    border: 3px solid $w;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+  }
+  .label_vip{
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0 4px;
+    
+    span{
+      font-size: 8px;
+      left: 2px;
+      bottom: 2px;      
+    }    
+  }
+  .label_online{
+    right: 0;
+    top: 0;
+    border-radius: 0 4px 0 0;
+
+    span{
+      font-size: 8px;
+      right: 2px;
+      top: 2px;      
+    }
+  }  
+}
+
+
+//sender avatar(suggested post/dream)
+.avatar.sender-avatar{
+  width: 46px;
+  height: 46px;
+  margin: 10px auto;  
+  border: 2px solid $w;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);  
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 0.5;
+    @include transition(all, 0s, ease-out, 0s);
+  }  
+}
+
+
+//activity avatar
+.avatar.activity-block{
+  margin: 20px;
+  // float: left;
+  width: 75px;
+  height: 75px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+  .avatar-image {
+    border: 3px solid $w;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+  }
+  .label_vip{
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0 4px;
+    
+    span{
+      font-size: 6px;
+      left: 2px;
+      bottom: 2px;      
+    }    
+  }
+  .label_online{
+    right: 0;
+    top: 0;
+    border-radius: 0 4px 0 0;    
+
+    span{
+      font-size: 6px;
+      right: 2px;
+      bottom: 2px;      
+    }
+  } 
+}
+
+
+//conversation
+.avatar.mail-box{
+  margin: 20px;
+  float: left;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+  .avatar-image {
+    border: 3px solid $w;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+  }
+  .label_vip{
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0 4px;
+    
+    span{
+      font-size: 9px;
+      left: 4px;
+      bottom: 4px;      
+    }    
+  }
+  .label_online{
+    right: 0;
+    top: 0;
+    border-radius: 0 4px 0 0;
+
+
+    span{
+      font-size: 8px;
+      right: 2px;
+      top: 2px;      
+    }
+  } 
+}
+
+//dreamer card avatar
+.avatar.dreamer_card{
+  width: 170px;
+  height: 170px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+  .avatar-image {
+    border: 4px solid $w;
+    @include webkit-border-radius-fix;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+  }
+  .label_vip{
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0 6px;
+    
+    span{
+      font-size: 12px;
+      left: 8px;
+      bottom: 5px;      
+    }    
+  }
+  .label_online{
+    right: 0;
+    top: 0;
+    border-radius: 0 6px 0 0;
+
+    span{
+      font-size: 12px;
+      right: 4px;
+      top: 1px;      
+    }
+  }  
+}
+
+//certificates giver avatar
+.avatar.certificates-giver-avatar{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  
+  .avatar-image {
+    border: 2px solid $w;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+    }
+  }  
+}
+
+
+//dreambook avatar
+.avatar.dreambook_face{
+  width: 250px;
+  height: 250px;
+
+
+  .label_vip{
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0 8px;
+    
+    span{
+      left: 8px;
+      bottom: 5px;      
+    }    
+  }
+  .label_online{
+    right: 0;
+    bottom: 0;
+    border-radius: 0 0 8px 0;
+
+    span{
+      right: 8px;
+      bottom: 5px;      
+    }
+  }
+  .dreambook_avatar_image {
+    overflow: hidden;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid $w;
+    background: $w;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: inset 0px 4px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .image_wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #F5F5F5;
+      // @include webkit-border-radius-fix;
+      -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+
+      img {
+        max-width: 100%;
+        display: block;
+        width: 100%;
+        height: 100%;
+        @include scale(1.01);
+        @include transition(all, 0.3s, ease-out, 0s);
+      }
+    }
+
+    .change_avatar {
+      opacity: 0;
+      border-radius: 50%;
+      position: absolute;
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.2);
+      z-index: 100;
+      @include transition(all, 0.3s, ease-out, 0s);
+      @include webkit-border-radius-fix;
+
+      span {
+        cursor: pointer;
+        display: table-cell;
+        vertical-align: middle;
+        color: white;
+        text-align: center;
+        font-size: 19px;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+        font-weight: 300;
+        padding: 0 30px;
+
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:active {
+        background-color: rgba(0,0,0,0.3);
+        @include transition(all, 0s, ease-out, 0s);
+      }
+    }
+    &:hover {
+      .image_wrapper {
+        img {
+          @include scale(1.1);
+        }
+      }
+    }
+  }
+}

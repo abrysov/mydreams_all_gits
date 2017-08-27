@@ -1,0 +1,39 @@
+{
+  "title": "Api:Web Purchases::Vip status",
+  "type": "object",
+  "required": [ "vip_status", "meta" ],
+  "properties": {
+    "vip_status": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "dreamer",
+        "from_dreamer",
+        "comment",
+        "duration",
+        "completed_at",
+        "paid_at"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "dreamer": { "type": [ "hash", "array" ] },
+        "from_dreamer": { "type": [ "hash", "array" ] },
+        "comment": { "type": [ "string", "nil" ] },
+        "duration": { "type": "integer" },
+        "completed_at": { "type": "string" },
+        "paid_at": { "type": "string" }
+      }
+    },
+    "meta": {
+      "type": [ "hash" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+    		"status": { "type": "string" },
+    		"code": { "type": "integer" }
+      }
+  	}
+  }
+}

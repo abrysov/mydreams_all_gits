@@ -1,0 +1,8 @@
+%article{ 'data-post-id': post.id }
+  .post
+    .post-header= post.title
+    = image_tag post.photo.url(:large), class: 'post-image'
+    %div.post-body= clear_format cutted_post_body(post.body)
+    .details
+      = link_to post_details_link(post) do
+        .button= t('.more')

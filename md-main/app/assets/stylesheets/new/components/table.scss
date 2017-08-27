@@ -1,0 +1,17 @@
+table {
+  box-sizing: border-box;
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    background: $light-gray-color;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: .8rem 1rem;
+    border: 1px solid $border-gray-color;
+  }
+}

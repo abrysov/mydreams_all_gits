@@ -1,0 +1,30 @@
+= render 'moderate/shared/form_find_by_id'
+= render 'moderate/shared/form_find_by_fields'
+%table.table.dreams
+  %thead
+    %tr
+      %th= t('.id')
+      %th= t('.picture')
+      %th= t('.title')
+      %th= t('.description')
+      %th= t('.dreamer')
+      %th
+        %span{ title: t('.likes_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.likes_count_short')
+      %th
+        %span{ title: t('.launches_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.launches_count_short')
+      %th
+        %span{ title: t('.comments_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.comments_count_short')
+      %th
+        %span{ title: t('.complains_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.complains_count_short')
+      %th
+        %span{ title: t('.abuses_count'), data: { toggle: 'tooltip', placement: 'top' } }
+          = t('.abuses_count_short')
+      %th= t('moderate.shared.sections.entity_dreamer')
+  %tbody
+    = render @dreams
+    = paginate @dreams, theme: 'moderate'
+= render 'moderate/shared/group_actions', objects: @dreams

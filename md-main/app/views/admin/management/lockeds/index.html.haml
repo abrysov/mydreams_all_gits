@@ -1,0 +1,17 @@
+= render 'admin/management/shared/locked_products_filter'
+
+%table.table.dreams
+  %thead
+    %tr
+      %th= t('admin.management.id')
+      %th= t('admin.management.products.name')
+      %th= t('admin.management.products.cost')
+      %th= t('admin.management.products.product_type')
+      %th= t('admin.management.products.state')
+      %th= t('admin.management.products.actions')
+  %tbody
+    = render @products
+
+= paginate @products, theme: 'moderate'
+
+= render 'admin/management/shared/group_actions', objects: @products

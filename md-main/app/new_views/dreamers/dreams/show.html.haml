@@ -1,0 +1,17 @@
+.col-center.content-body
+  .header
+    .title
+      %h2 Мечты
+  #dream-page
+    .preloader
+.col-right
+  .col-js
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.DreamPage.init("#dream-page", {
+        dreamId: gon.dream_id
+      });
+    });
+

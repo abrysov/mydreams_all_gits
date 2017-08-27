@@ -1,0 +1,26 @@
+.popup-crop {
+  padding: .875rem;
+  padding-top: 0;
+
+  .zoom-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.3rem 0;
+
+    .icon {
+      width: 1.3125rem;
+      height: 1.3125rem;
+      margin: 0 .75rem;
+      background-image: asset-url('new/image_size.svg');
+
+      &.little {
+        background-size: 70%;
+      }
+    }
+  }
+
+  .control {
+    width: 14.875rem;
+  }
+}

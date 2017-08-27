@@ -1,0 +1,34 @@
+%meta{charset: 'utf-8'}
+%meta{name: 'robots', content: 'noindex, nofollow'}
+%title My Dreams
+
+= stylesheet_link_tag 'new/application', rel: 'stylesheet'
+= render 'favicon'
+= display_meta_tags
+= csrf_meta_tags
+= include_gon
+
+:javascript
+  window.onLoadCallbacks = [];
+  window.applicationJsLoaded = false;
+
+  function onApplicationJsLoaded() {
+    window.applicationJsLoaded = true;
+  }
+
+  function onScriptLoadError(script, e) {
+    alert('You have troubles with js code loading');
+  }
+
+  window.addEventListener("load", function(e) {
+    //if (window.applicationJsLoaded) {
+      window.onLoadCallbacks.forEach(function(cb) {
+        cb(e);
+      });
+    //}
+  });
+
+  function onReady(f) {
+    window.onLoadCallbacks.push(f);
+  }
+

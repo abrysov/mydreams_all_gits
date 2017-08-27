@@ -1,0 +1,16 @@
+.col-center.content-body
+  .header
+    .image-box.size-l{ style: "background-image: url(http://unsplash.it/578/211);" }
+    .title
+      %h2 Обновления
+
+  #updates
+
+.col-right
+  = render partial: 'right_menu'
+
+- content_for :js do
+  :javascript
+    onReady(function() {
+      MyDreams.UpdatesFeed.init("#updates");
+    });

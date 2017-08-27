@@ -1,0 +1,6 @@
+- flash_types = { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }
+
+- flash.each do |msg_type, message|
+  - css_class = flash_types[msg_type.to_sym] || msg_type.to_s
+  %div{ class: "alert #{css_class}" }
+    = message

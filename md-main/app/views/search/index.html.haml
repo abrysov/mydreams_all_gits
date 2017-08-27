@@ -1,0 +1,19 @@
+.main
+  .content_wrap
+    .page-title= t('search.title')
+
+    .content-tabs.js-content-tabs
+      - t('misc.choose_search_filter').each do |key, word|
+        .content-tab
+          = link_to search_index_path(search_type: key, search: params[:search]), {remote: true, class: "js-link-search-filter content-tab__link #{'active' if @type == key.to_s}", data: {tab: key} } do
+            %span.content-tab__name= word
+
+    .main_content
+      .card_group.group.js-card-group
+        = hidden_field_tag :filter_url, url_for(params.merge(search_type: @type))
+
+        = render partial: 'search/search_results'
+
+- content_for :mydreams_js do
+  :javascript
+    window.history.pushState(document.location.hostname, "Title", $('#filter_url').val());

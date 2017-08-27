@@ -1,0 +1,27 @@
+.content_wrap.dreambook-marks
+  - if (c = @gifted_certificates.count) > 0 && current_dreamer?(@dreamer)
+    %h2.page_content-title
+      %b= c
+      = "#{custom_pluralize(c, 'gifted_marks')}"
+
+    .gifted-dreambook-certificates.js-received-cards
+      = render partial: 'account/certificates/gifted_certificates'
+
+      - if c > 2
+        = link_to t('actions.show_all_gifts'), show_gifted_certificates_account_certificates_path, remote: true, class: 'button-show-all js-show-all'
+
+  - if @certificates.total_count == 0
+    %h2.page_content-title= t('marks.no_marks')
+
+  -else
+    %h2.page_content-title
+      %b= @certificates.total_count
+      = "#{custom_pluralize(@certificates.total_count, 'marks')}"
+
+  .dreambook-certificates.js-card-group
+    = render partial: 'account/certificates/certificates'
+
+  = paginate @certificates, theme: 'more'
+
+- content_for :mydreams_js do
+  = render 'shared/video', certificate_name: @new_certificate_type if @new_certificate_type.present?

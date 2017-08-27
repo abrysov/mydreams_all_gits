@@ -1,0 +1,12 @@
+.photo-area {
+  box-sizing: border-box;
+  height: 15.125rem;
+  padding: 8rem 2rem;
+  text-align: center;
+  color: $light-purple-color;
+  border: 2px dashed $light-purple-color;
+  border-radius: .3rem;
+  background: asset-url('new/upload-file-purple.svg') center 3.875rem no-repeat;
+  font-size: .875rem;
+  line-height: 1.3em;
+}

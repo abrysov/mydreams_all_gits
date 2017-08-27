@@ -1,0 +1,8 @@
+.form_action
+  .content_wrap
+    .page-title= t('posts.new.create_post_title')
+    = render 'form'
+
+- content_for :mydreams_js do
+  :javascript
+    $('#js-add-post-photo.js-imageLoader').imageLoader();

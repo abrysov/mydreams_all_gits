@@ -1,0 +1,6 @@
+.entity.col-md-6.btn-group-vertical{ class: "action-for-object-#{object.id}" }
+  = link_to t('.edit'), [:edit_advertisement, object], role: 'button',
+  class: "btn btn-warning approve-button-for-object-#{object.id}"
+
+  = link_to t('.delete'), [:advertisement, object], method: :delete, role: 'button',
+  class: "btn btn-danger approve-button-for-object-#{object.id}"

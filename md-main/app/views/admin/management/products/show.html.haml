@@ -1,0 +1,45 @@
+%table.table
+  %thead
+    %tr
+      %th= t('admin.management.id')
+      %th= t('admin.management.products.name')
+      %th= t('admin.management.products.cost')
+      %th= t('admin.management.products.product_type')
+      %th= t('admin.management.products.state')
+
+  %tbody
+    %tr
+      %td
+        = @product.id
+      %td
+        = @product.name
+      %td
+        = @product.cost
+      %td
+        = @product.product_type
+      %td
+        = @product.state
+    %tr
+      %td{ colspan: 2 }
+        = t('admin.management.products.created_at')
+        = short_date @product.created_at
+      %td{ colspan: 2 }
+        = t('admin.management.products.updated_at')
+        = short_date @product.updated_at
+      %td
+    %tr
+      %td{ colspan: 5 }
+        = t('admin.management.products.property')
+    - @product.properties.each do |property|
+      %tr
+        %td
+        %td{ colspan: 2 }
+          = property.key
+        %td{ colspan: 2 }
+          - if property.key == 'previous_id'
+            = link_to property.value, admin_management_product_path(id: property.value.to_i)
+          - else
+            = property.value
+    %tr
+      %td{ colspan: 5 }
+        = render 'admin/management/shared/actions', object: @product

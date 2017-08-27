@@ -1,0 +1,37 @@
+{
+  "title": "Api:v1 Recommendations",
+  "type": "object",
+  "required": [ "recommendations", "meta" ],
+  "properties": {
+    "recommendations": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "id",
+        "content",
+        "photos",
+        "dreamer",
+        "likes_count",
+        "comments_count"
+      ],
+      "properties": {
+        "id": { "type": "integer" },
+        "content": { "type": "string" },
+        "photos": { "type": [ "hash", "array" ] },
+        "dreamer": { "type": [ "hash", "array" ] },
+        "likes_count": { "type": "string" },
+        "comments_count": { "type": "string" }
+      }
+    },
+    "meta": {
+      "type": [ "hash", "array" ],
+      "required": [
+        "status",
+        "code"
+      ],
+      "properties": {
+        "status": { "type": "string" },
+        "code": { "type": "integer" }
+      }
+    }
+  }
+}

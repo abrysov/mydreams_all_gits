@@ -1,0 +1,3 @@
+.vagrant
+releases/*.tar.gz
+playbook.retry
